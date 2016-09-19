@@ -12,13 +12,14 @@
     quanto mais próximo do nó raiz, maior sua importância. Sua escolha ocorreu
     pelo fato do TED normalizado possuir maior índice na qualidade de agrupamentos.
     
-    Os autores do artigo analisado utilizaram os algoritmos de classificação
-    DBSCAN e OPTICS para agrupar os códigos semelhantes, visto que obtiveram
-    a maior pontuação de silhueta que verifica a distância entre pares dentro
-    do agrupamento e entre os agrupamentos. Quanto maior sua pontuação, melhor
-    a qualidade do \textit{cluster}. Conforme a Figura \ref{fig:t-SNE}, para
-    visualizar os agrupamentos foi utilizado o t-SNE – técnica de redução
-    dimensional não linear que preserva a estrutura local dos dados.
+    Os autores do artigo analisado utilizaram os algoritmos de agrupamento
+    DBSCAN\cite{Ester1996} e OPTICS\cite{Ankerst1999} para agrupar os códigos
+    semelhantes, visto que obtiveram a maior pontuação de silhueta que verifica
+    a distância entre pares dentro do agrupamento e entre os agrupamentos.
+    Quanto maior sua pontuação, melhor a qualidade do \textit{cluster}. Conforme
+    a Figura \ref{fig:t-SNE}, para visualizar os agrupamentos foi utilizado o
+    t-SNE – técnica de redução dimensional não linear que preserva a estrutura
+    local dos dados.
     \begin{figure}[ht]
         \centering
         \includegraphics[scale=0.5]{imagem/visualizacao-tSNE.png}
@@ -51,7 +52,7 @@
     número de variáveis e valores constantes, por exemplo.
     
     \citeonline{Glassman:2014} utiliza o classificador \textit{K-means} para agrupar
-    as implementações dos estudante. Foi utilizado diversos valores para \textit{k}
+    as implementações dos estudante. Foi utilizado diversos valores para $k$
     e a validação dos agrupamentos ocorreu por meio da comparação dos \textit{clusters}
     criado pelo algoritmo de classificação com o que foi criado pelos
     \textit{teaching assistants} (TA). Para os TAs foi entregue 50 códigos
@@ -62,14 +63,14 @@
     probabilístico - para comparar os agrupamentos dos TA's com cada agrupamento
     gerado pelo \textit{k-means}. Quando o valor de AMI é 0 (zero), quer dizer
     que os agrupamentos são independentes, entretanto, se for igual a 1, indica
-    perfeita concordância entre os \textit{clusters}. Quando \textit{k} tinha um
+    perfeita concordância entre os \textit{clusters}. Quando $k$ tinha um
     valor maior ou igual a 15, os agrupamentos do classificador concordaram com
     o agrupamento de cada \textit{teaching assistants}, conforme medição do AMI.
     
     Em \citeonline{Taherkhani:2012}, testou-se a ferramenta Aari para cinco tipos
     de métodos de ordenação: \textit{bubble sort}, \textit{insertion sort},
     \textit{selection sort}, \textit{mergesort} e \textit{quicksort}. Os
-    algorítimos classificados como \textit{Others} na Figura \ref{fig:clusterManual}
+    algoritmos classificados como \textit{Others} na Figura \ref{fig:clusterManual}
     é referente ao \textit{shellsort}, \textit{heapsort} e um algoritmo híbrido de
     \textit{quicksort} com \textit{selection sort}. Os autores separaram as
     características em três categorias: características numéricas, características
@@ -90,7 +91,7 @@
     possui informações sobre blocos e laços de repetição, informação do contador do
     \textit{loop} e informações de dependência. As características de algoritmos de
     ordenação consideram as variáveis mais utilizadas, o uso de variáveis temporárias,
-    se o algoritmo necessita de uma memória extra. Caso existam dois loops aninhados,
+    se o algoritmo necessita de uma memória extra. Caso existam dois \textit{loops} aninhados,
     pode ocorrer dois tipos de características: o laço externo incrementa e o laço
     interno decrementa; e quando o laço interno é inicializado com o valor do laço
     externo. 
@@ -124,10 +125,10 @@
     Após o agrupamento manual dos métodos de ordenação implementados pelos alunos,
     \citeonline{Taherkhani:2012} realizou o reconhecimento automático das
     implementações por meio da ferramenta Aari. Inicialmente a ferramenta foi
-    treinada para reconhecer os algorítmos de ordenação: \textit{bubble sort},
+    treinada para reconhecer os algoritmos de ordenação: \textit{bubble sort},
     \textit{insertion sort}, \textit{selection sort}, \textit{mergesort} e
     \textit{quicksort}. A Figura \ref{fig:clusterAutomatico} apresenta o gráfico
-    no qual o eixo x indica o algoritmo de ordenação e o eixo y indica a
+    no qual o eixo $x$ indica o algoritmo de ordenação e o eixo $y$  indica a
     quantidade de implementações realizadas. Para cada algoritmo há duas colunas:
     a primeira coluna indica a quantidade de implementações que foram realizadas
     pelos alunos; e a segunda coluna representa a quantidade de implementações
@@ -234,7 +235,7 @@
 		\includegraphics[width=0.7\linewidth]{imagem/clusteringPerformance}
 		\caption{Distribuição do agrupamentos. A barra azul representa o agrupamento
 			sem normalização, enquanto as barras verde e vermelho possuem o valor
-			de \textit{k} diferente, entretanto, ambas estão normalizadas. O
+			de $k$ diferente, entretanto, ambas estão normalizadas. O
 			\textit{cluster size} é referente ao tamanho dos pedaços e os
 			\textit{clusters} representa o número de agrupamentos.}
 		\label{fig:clusteringPerformance}
@@ -245,7 +246,7 @@
 	visto que vários pedaços nas atribuições 2 e 4 estavam sozinhos, e o maior
 	agrupamento possuía apenas 3 pedaços. Enquanto a tarefa 1 e 2 apresentou
 	bons agrupamentos e o tamanho dos grupos era condizente com a quantidade de
-	estudantes (200) quando \textit{k} era igual a 3.0. As tarefas 4 e 5 não foram
+	estudantes (200) quando $k$ era igual a 3.0. As tarefas 4 e 5 não foram
 	satisfeitas devido ao total de pedaços em um grupo ser próximo de 20 e o
 	restante dos códigos foram pequenos agrupamentos.
 	
