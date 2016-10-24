@@ -7,25 +7,49 @@
 		que podem ser extraídas por meio da análise estática, do estilo de escrita
 		e da analise dinâmica de uma implementação.
 		
-		Classificação, conforme a definição de CITAR, é a tarefa de aprendizagem
-		de uma função alvo $f$ que mapeia cada conjunto de atributo $x$ a um dos
-		rótulos de classe predefinidas $y$. A fim de realizar essas classificações,
-		são implementados os classificadores com diversas abordagens, como a
-		Árvore de Decisão, redes neurais e \foreign{support vector machine}, por exemplo.
-		Esses classificadores são mais utilizados para predizer ou descrever um conjunto
-		de dados com categorias binário ou nominal. Por exemplo, para classificar um
-		animal como mamífero, réptil, peixe, anfíbio ou pássaro, deve-se sumarizar dados
-		como a temperatura do corpo, característica da pele, se é uma criatura aquática,
-		se possui patas e hiberna.
+		Classificação é a tarefa de aprendizagem de uma função alvo $f$ que mapeia cada
+		conjunto de atributo $x$ a um dos rótulos de classe predefinidas $y$ \cite{Tan:2005:ch4}. A
+		fim de realizar essas classificações, são implementados os classificadores com
+		diversas abordagens, como a Árvore de Decisão, redes neurais e \foreign{support
+		vector machine}, por exemplo. Esses classificadores são mais utilizados para
+		predizer ou descrever um conjunto de dados com categorias binário ou nominal.
+		Por exemplo, para classificar um animal como mamífero, réptil, peixe, anfíbio
+		ou pássaro, deve-se sumarizar dados como a temperatura do corpo, característica
+		da pele, se é uma criatura aquática, se possui patas e hiberna.
 		
 		Enquanto o objetivo dos agrupamentos são realizados baseados somente na informação
 		dos dados que descrevem o objeto e suas relações. Desta forma, os objetos dentro
-		de um grupo devem ser similares ou relacionados entre si e diferentes ou não
+		de um grupo devem ser similares ou relacionados entre si e, diferentes ou não
 		relacionados entre objetos de grupos diferentes, ou seja, quanto maior a similaridade
 		dos objetos dentro de um grupo e mais diferentes são os agrupamentos, melhor ou mais
-		distinto os agrupamentos. O K-means e o DBSCAN são exemplos de algoritmos de
+		distinto os agrupamentos \cite{Tan:2005:ch8}. O K-means e o DBSCAN são exemplos de algoritmos de
 		agrupamento.
 		
+		Para extrair as características das submissões há três formas de serem realizadas:
+		análise estática, do estilo de escrita e dinâmica. A análise estática ocorre por meio
+		da observação do código-fonte, considerando apenas sua implementação, ou seja, não
+		é necessário sua execução. Há diversas características que podem ser extraídas dessa
+		análise. Há abordagens que extrai somente a Árvore de Sintaxe Abstrata (AST) que pode
+		ser gerada durante a análise sintática do compilador. Esse tipo de árvore possui símbolos
+		não terminais como nós filhos e símbolos terminais como nós folhas. Enquanto outras
+		abordagens extraem características como: a quantidade de linhas e atribuições da
+		implementação, a complexidade ciclomática \cite{mccabe}, quantidade de variáveis, 
+		operadores, operandos, laços de repetição e laços de repetição aninhados, por exemplo.
+		
+		A análise dinâmica do código-fonte consiste na observação da execução do programa,
+		por meio do \foreign{trace} - uma espécie de histórico de execução do programa. Analisando
+		esse histórico é possível verificar algumas características, como: em que momento foi
+		realizado uma atribuição, chamada de função e recursão, qual bloco de código foi
+		executado em uma declaração de condição, a quantidade de vezes que um laço de repetição
+		foi executado e a saída no final da execução.
+		
+		E a análise do estilo de escrita, que será utilizada no desenvolvimento desse projeto,
+		é um tipo da análise estática da implementação, no qual é considerado o estilo de
+		escrita do programador. Além da possibilidade de coletar características da análise
+		estática citada anteriormente, como a quantidade de linhas de código e a complexidade
+		ciclomática, é possível coletar se: há mais que uma instrução e importação de bibliotecas
+		por linha, há espaços entre operando e operador, os métodos são separados por uma linha
+		em branco e tamanho da instrução, medido em caracteres.
 
 	\section{Qual título por aqui?}
 	
