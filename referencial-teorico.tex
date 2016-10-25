@@ -51,7 +51,7 @@
 		por linha, há espaços entre operando e operador, os métodos são separados por uma linha
 		em branco e tamanho da instrução, medido em caracteres.
 
-	\section{Qual título por aqui?}
+	\section{Trabalhos Relacionados}
 	
 	    A fim de encontrar a semelhança entre os códigos, \citeonline{Yin:2015}
 	    utilizou a Árvore de Sintaxe Abstrata (AST) - estrutura de dados em árvore
@@ -77,17 +77,20 @@
 	    \begin{figure}[ht]
 	        \centering
 	        \includegraphics[scale=0.5]{imagem/visualizacao-tSNE.png}
-	        \caption{Visualização t-SNE. Identificação de quatro grupos: roxo, verde,
-	        	laranja e vermelho. Os pontos azuis não obtiveram similaridade
-	        	suficiente para formar um agrupamento ou serem classificados em
-	        	outro agrupamento. Os agrupamentos foram identificados na semelhança
-	        	dos códigos. Todas as implementações possuem a função \foreign{combine\_anagrams}
-	        	que possui a variável \foreign{words} como parâmetro: no grupo vermelho,
-	        	essa função possui 3,7 linhas; no agrupamento roxo, 10.9 linhas; no
-	        	grupo laranja, a função possui 12.5 linhas; e no agrupamento verde,
-	        	a solução possui 21,3 linhas.}
+	        \caption{Visualização t-SNE.}
 	        \label{fig:t-SNE}
 	    \end{figure}
+	    
+	    Na Figura \ref{fig:t-SNE} é possível observar cinco grupos distintos
+	    criados a partir da comparação das TEDs normalizadas: roxo, verde, laranja,
+	    vermelho e azul. Cada ponto presente na visualização corresponde a uma
+	    implementação. Todas as implementações possuem a função \foreign{combine\_anagrams}
+	    que possui a variável \foreign{words} como parâmetro: no grupo vermelho,
+	    essa função possui 3,7 linhas; no agrupamento roxo, 10,9 linhas; no
+	    grupo laranja, a função possui 12,5 linhas; e no agrupamento verde,
+	    a solução possui 21,3 linhas. Enquanto os pontos azuis não obtiveram
+	    similaridade suficiente para formar um agrupamento ou serem classificados
+	    em outro agrupamento. 
 	
 	    
 	    Em \citeonline{Glassman:2014}, foi proposto o agrupamento hierárquico de dois
@@ -203,12 +206,12 @@
 	    \end{figure}
 	    
 	    \citeonline{Glassman:2015} apresentam o OverCode (Figura \ref{fig:interfaceOverCode}),
-	    ferramenta para visualização de informação no qual demonstra os \foreign{clusters} formados,
+	    ferramenta de visualização de informação no qual demonstra os \foreign{clusters} formados,
 	    as principais instruções utilizadas pelas implementações presentes em um
 	    determinado agrupamento e as linhas de código de uma determinada função/método.
 	    A ferramenta é voltada para aqueles que realizarão a validação das submissões.
 	    
-	    Após a clusterização dos códigos fontes, é realizado uma limpeza de código,
+	    Após o agrupamento dos códigos fontes, é realizado uma limpeza de código,
 	    no qual é retirado todas as linhas em branco do código gerando o código limpo,
 	    tornando-o legível, executável e descrito na ferramenta. Como um \foreign{cluster}
 	    é um conjunto de várias soluções, pode ocorrer das soluções, mesmo semelhantes,
@@ -216,30 +219,16 @@
 	    para poder renomear as variáveis de um algoritmo por meio da interface,
 	    seguindo regras que foram encontradas durante os testes com os primeiros protótipos.
 	    
-	    OverCode também registra os valores que uma determinada variável assume como
-	    um teste de mesa. Entretanto, tal funcionalidade foi retirada, pois alguns
-	    usuários pilotos o classificaram como confuso. Outra utilidade realizada pela
-	    análise da execução do programa (trace) é a identificação de variáveis idênticas
-	    que são encontradas a partir da análise das sequências de variáveis, assim, se
-	    duas variáveis com nomes diferente, possuem os mesmos valores durante o
-	    \foreign{trace}, elas são consideradas variáveis idênticas.
-	    
-	    Por fim, os autores concluíram que a interface auxilia os assistentes de
-	    ensino a terem uma visão de alto nível dos alunos, podendo compreender os
-	    erros e fornecer um \foreign{feedback} mais relevante, devido a clusterização
-	    das implementações, visto que diminui consideravelmente a quantidade de
-	    projetos a serem corrigidos.
+	    A ferramenta OverCode também realiza a identificação de variáveis idênticas
+	    que são encontradas a partir da análise das sequências de variáveis obtidas por meio
+	    da análise da execução do programa (\foreign{trace}), com isso, se duas variáveis
+	    com nomes diferente, possuem os mesmos valores durante o \foreign{trace}, elas são
+	    consideradas variáveis idênticas.
 	    
 	    \begin{figure}[ht]
 	        \centering
 	        \includegraphics[scale=0.4]{imagem/overCode.png}
-	        \caption{Interface OverCode. A coluna a esquerda mostra dois painéis, o
-	        	primeiro painel apresenta o número de agrupamentos, nesse caso, as
-	        	pilhas, e o número total de submissões, enquanto o segundo painel,
-	        	mostra a maior pilha. A coluna central apresenta: a opção de busca,
-	        	filtrando por uma determinada palavra no quadro superior; e as pilhas
-	        	remanescentes no quadra inferior. Enquanto a terceira coluna apresenta
-	        	a frequência com que as linhas de códigos estão presentes nas soluções}
+	        \caption{Interface OverCode.}
 	        \label{fig:interfaceOverCode}
 	    \end{figure}
 	    
@@ -251,6 +240,21 @@
 	    classificar as submissões, é possível verificar o \foreign{traceback} da
 	    variável que desejar ao longo de sua execução em um caso de teste a fim de
 	    auxiliar os usuários a entenderem a execução do algoritmo.
+	    
+	    Na Figura \ref{fig:interfaceOverCode} é possível notar a utilização das pilhas
+	    (\foreign{stacks}). A primeira coluna da esquerda exibe dois painéis. O
+	    primeiro painel apresenta o número de agrupamentos, representado pelas pilhas,
+	    e o número total de submissões, enquanto o segundo painel, mostra a maior
+	    \foreign{stack}. A coluna central apresenta a opção de busca, filtrando por
+	    uma determinada palavra no quadro superior, e as pilhas remanescentes no
+	    quadro inferior. Enquanto a terceira coluna apresenta a frequência com que as
+	    linhas de códigos estão presentes nas soluções.
+	    
+	    Por fim, os autores concluíram que a interface auxilia os assistentes de
+	    ensino a terem uma visão de alto nível dos alunos, podendo compreender os
+	    erros e fornecer um \foreign{feedback} mais relevante, devido ao agrupamento
+	    das implementações, visto que diminui consideravelmente a quantidade de
+	    submissões a serem corrigidos.
 	    
 	    \citeonline{Wei2015} apresenta uma ferramenta para auxiliar na correção das
 	    submissões dos MOOC's de forma a agrupar pedaços (\foreign{chuncks}) de códigos
@@ -287,27 +291,35 @@
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.7\linewidth]{imagem/clusteringPerformance}
-			\caption{Distribuição do agrupamentos. A barra azul representa o agrupamento
-				sem normalização, enquanto as barras verde e vermelho possuem o valor
-				de $k$ diferente, entretanto, ambas estão normalizadas. O
-				\foreign{cluster size} é referente ao tamanho dos pedaços e os
-				\foreign{clusters} representa o número de agrupamentos.}
+			\caption{Distribuição do agrupamentos.}
 			\label{fig:clusteringPerformance}
 		\end{figure}
 	    
-		Conforme a Figura \ref{fig:clusteringPerformance} pode-se notar que a
-		distribuição dos \foreign{chuncks} sem normalização de código é inadequado,
-		visto que vários pedaços nas atribuições 2 e 4 estavam sozinhos, e o maior
-		agrupamento possuía apenas 3 pedaços. Enquanto a tarefa 1 e 2 apresentou
-		bons agrupamentos e o tamanho dos grupos era condizente com a quantidade de
-		estudantes (200) quando $k$ era igual a 3.0. As tarefas 4 e 5 não foram
-		satisfeitas devido ao total de pedaços em um grupo ser próximo de 20 e o
-		restante dos códigos foram pequenos agrupamentos.
+%		Conforme a Figura \ref{fig:clusteringPerformance} pode-se notar que a
+%		distribuição dos \foreign{chuncks} sem normalização de código é inadequado,
+%		visto que vários pedaços nas atribuições 2 e 4 estavam sozinhos, e o maior
+%		agrupamento possuía apenas 3 pedaços. Enquanto a tarefa 1 e 2 apresentou
+%		bons agrupamentos e o tamanho dos grupos era condizente com a quantidade de
+%		estudantes (200) quando $k$ era igual a 3.0. As tarefas 4 e 5 não foram
+%		satisfeitas devido ao total de pedaços em um grupo ser próximo de 20 e o
+%		restante dos códigos foram pequenos agrupamentos.
 		
-		É possível notar que tal abordagem não obteve sucesso, pois, independente da
-		tarefa selecionada, nota-se que a maioria dos \foreign{clusters} formados
-		possuíam apenas um pedaço de código. Com isso pode-se aumentar o tempo de
-		correção das submissões, visto que uma implementação completa pode gerar um
-		ou mais pedaços de código, dificultando a revisão da submissão e podendo tomar
-		um tempo maior para que fosse realizado um \foreign{feedback} preciso para o
-		estudante.
+		A Figura \ref{fig:clusteringPerformance} apresenta a distribuição dos
+		agrupamentos em quatro problemas distintos. Para todos os gráficos, a
+		abcissa é referente ao tamanho dos pedaços, enquanto a ordenada representa
+		o número de agrupamentos. É possível notar três tipos de agrupamento. A barra
+		horizontal azul representa o agrupamento sem normalização. enquanto as barras
+		verde e vermelho possuem o valor de $k$ diferente, entretanto, ambas estão
+		normalizadas. Enquanto a tarefa 1 e 2 apresentou bons agrupamentos e o tamanho
+		dos grupos era condizente com a quantidade de estudantes (200) quando $k$ era
+		igual a 3.0. As tarefas 4 e 5 não foram satisfeitas devido ao total de pedaços
+		em um grupo ser próximo de 20 e o restante dos códigos formaram pequenos
+		agrupamentos.
+				
+%		É possível notar que tal abordagem não obteve sucesso, pois, independente da
+%		tarefa selecionada, nota-se que a maioria dos \foreign{clusters} formados
+%		possuíam apenas um pedaço de código. Com isso pode-se aumentar o tempo de
+%		correção das submissões, visto que uma implementação completa pode gerar um
+%		ou mais pedaços de código, dificultando a revisão da submissão e podendo tomar
+%		um tempo maior para que fosse realizado um \foreign{feedback} preciso para o
+%		estudante.
