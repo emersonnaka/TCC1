@@ -48,12 +48,6 @@
 \programen{Undergradute Program in Computer Science}
 \degree{Bacharel}
 \degreearea{Ciência da Computação}
-% Caso seja TSI:
-% \program{Curso Superior de Tecnologia em Sistemas para Internet}
-% \programen{Undergradute Program in Tecnology for Internet Systems}
-% \degree{Tecnólogo}
-% \degreearea{Tecnologia em Sistemas para Internet}
-
 
 % Dados da disciplina. Escolha uma das opções e a descomente:
 % TCC1:
@@ -87,10 +81,39 @@
 
 \begin{resumo}
 % TODO: se possível, escreva um resumo estruturado. Para TCC 1, o resumo estruturado teria os seguintes elementos:
-% \textbf{Contexto:} \\
-% \textbf{Objetivo:} \\
-% \textbf{Método:} \\
-% \textbf{Resultados esperados:} 
+\textbf{Contexto:} em disciplinas de algoritmos ou programação, é necessário encontrar
+e implementar uma solução para um problema. Entretanto, há a possibilidade de possuir
+diversas formas de solucionar o problema, com isso é possível que ocorra vários tipos
+de implementações para resolvê-lo. Após a solução ser implementado, uma dificuldade é
+a necessidade de fornecer \foreign{feedbacks} para cada aluno que solucionou o problema.
+Para agravar essa dificuldade, cursos massivos, abertos e \foreign{online} (MOOC) possuem
+uma grande quantidade de usuários que fazem um curso de programação dificultando a correção
+individual das submissões devido a quantidade de códigos-fontes submetidos.
+
+\textbf{Objetivo:} considerando todas essas variações de implementação, o objetivo é
+propor subsídios para a avaliação de programas submetidos em Python, utilizando técnicas
+de mineração e visualização de dados para podermos construir e apresentar os agrupamentos
+de códigos-fontes semelhantes.
+
+\textbf{Método:} para que seja possível coletar as características do estilo de escrita,
+modificaremos as ferramentas \texttt{Flake8} e \texttt{PEP8} para coletar as
+características em um arquivo no formato \texttt{CSV}. Criaremos a ferramenta
+ProgrammingView por intermédio de alterações da ScienceView para realizar a leitura do
+arquivo e, construir e apresentar os agrupamentos. A base de dados de submissões será
+criada com a implementação de voluntários para solucionar alguns problemas. Para avaliar
+a ferramenta, teremos dois grupos distintos para realizar as correções das implementações.
+Um grupo realizará as correções por meio da ProgrammingView, enquanto o outro grupo fará as
+correções manualmente. E verificaremos se o \foreign{feedback} está sendo construtivo
+ao aluno conforme seu \foreign{feedback} e da qualidade das próximas implementações.
+
+\textbf{Resultados esperados:} espera-se que com a utilização da ferramenta proposta possa
+potencializar a correção das submissões de modo que utilize menos tempo para corrigi-las.
+Como precisará verificar apenas uma implementação de cada agrupamento, aguardamos que
+as correções possam ser realizadas minuciosamente de modo a realizar um \foreign{feedback}
+mais construtivo para que o programador possa corrigir seus erros e submeter uma versão
+correta do programa novamente.
+
+
 % ou, para TCC 2:
 % \textbf{Contexto:} \\
 % \textbf{Objetivo:} \\
