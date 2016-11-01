@@ -60,7 +60,7 @@
 
 % Dados do TCC (precisa alterar)
 \author{Emerson Yudi Nakashima}  % Seu nome
-\title{Desenvolvimento de Subsídios para Avaliação de Programas em MOOC's com Emprego de Técnicas de Visualização} % Título do trabalho
+\title{Avaliação de Programas em MOOC com Emprego de Técnicas de Visualização} % Título do trabalho
 \titleen{} % Título traduzido para inglês
 \advisor{Prof. Dr. Marco Aurélio Graciotto Silva} % Nome do orientador. Lembre-se de prefixar com "Prof. Dr.", "Profª. Drª.", "Prof. Me." ou "Profª. Me."}
 \coadvisor{Profª. Drª. Aretha Barbosa Alencar} % Nome do coorientador, caso exista. Caso não exista, comente a linha.
@@ -81,38 +81,41 @@
 
 \begin{resumo}
 % TODO: se possível, escreva um resumo estruturado. Para TCC 1, o resumo estruturado teria os seguintes elementos:
-\textbf{Contexto:} em disciplinas de algoritmos ou programação, é necessário encontrar
+\textbf{Contexto:} Em disciplinas de algoritmos ou programação, é necessário encontrar
 e implementar uma solução para um problema. Entretanto, há a possibilidade de possuir
-diversas formas de solucionar o problema, com isso é possível que ocorra vários tipos
-de implementações para resolvê-lo. Após a solução ser implementado, uma dificuldade é
-a necessidade de fornecer \foreign{feedbacks} para cada aluno que solucionou o problema.
-Para agravar essa dificuldade, cursos massivos, abertos e \foreign{online} (MOOC) possuem
-uma grande quantidade de usuários que fazem um curso de programação dificultando a correção
-individual das submissões devido a quantidade de códigos-fontes submetidos.
+diversas formas de solucionar o problema e, consequentemente, formas de implementações.
+Após a solução ser implementada, uma dificuldade é a necessidade de avaliar cada aluno
+que solucionou o problema. Como consequência dessa avaliação, é necessário realizar um
+\foreign{feedback} para o aluno com relação a sua implementação. Para agravar essa
+dificuldade, cursos massivos, abertos e \foreign{online} (MOOC) possuem uma grande
+quantidade de usuários, dificultando, em tempo hábil e custos razoáveis deste
+trabalho, a correção individual das submissões devido a quantidade de códigos-fontes submetidos.
 
-\textbf{Objetivo:} considerando todas essas variações de implementação, o objetivo é
-propor subsídios para a avaliação de programas submetidos em Python, utilizando técnicas
-de mineração e visualização de dados para podermos construir e apresentar os agrupamentos
-de códigos-fontes semelhantes.
+\textbf{Objetivo:} O objetivo deste trabalho é propor subsídios para a avaliação de
+programas submetidos em Python, utilizando técnicas de mineração e visualização de
+dados para construir e apresentar agrupamentos de código-fonte semelhantes.
 
-\textbf{Método:} para que seja possível coletar as características do estilo de escrita,
-modificaremos as ferramentas \texttt{Flake8} e \texttt{PEP8} para coletar as
-características em um arquivo no formato \texttt{CSV}. Criaremos a ferramenta
-ProgrammingView por intermédio de alterações da ScienceView para realizar a leitura do
-arquivo e, construir e apresentar os agrupamentos. A base de dados de submissões será
-criada com a implementação de voluntários para solucionar alguns problemas. Para avaliar
-a ferramenta, teremos dois grupos distintos para realizar as correções das implementações.
-Um grupo realizará as correções por meio da ProgrammingView, enquanto o outro grupo fará as
-correções manualmente. E verificaremos se o \foreign{feedback} está sendo construtivo
-ao aluno conforme seu \foreign{feedback} e da qualidade das próximas implementações.
+\textbf{Método:} Em razão da possibilidade de extrair características pela análise
+estática, do estilo de escrita e dinâmica. A primeira etapa consiste na identificação
+das características que podem ser extraídas conforme o tipo de análise utilizado.
+Após a identificação, será necessário o desenvolvimento de ferramentas para coletar
+tais medidas de forma que possamos utilizá-las para realizar o agrupamento. Com isso,
+desenvolveremos uma ferramenta para minerar as informações disponíveis, realizar os
+agrupamentos e gerar sua visualização. Para testar a ferramenta, teremos duas bases
+de dados distintas de implementações. Uma base de dados existente com soluções de
+cinco problemas dissemelhantes e outra base de dados com códigos-fontes de alunos.
+A validação ocorrerá em duas etapas: mediante a qualidade das visualizações
+considerando as técnicas de mineração e visualização de dados; e verificaremos se
+o \foreign{feedback} está sendo construtivo ao aluno conforme seu \foreign{feedback}
+e da qualidade das próximas implementações.
 
-\textbf{Resultados esperados:} espera-se que com a utilização da ferramenta proposta possa
-potencializar a correção das submissões de modo que utilize menos tempo para corrigi-las.
-Como precisará verificar apenas uma implementação de cada agrupamento, aguardamos que
-as correções possam ser realizadas minuciosamente de modo a realizar um \foreign{feedback}
-mais construtivo para que o programador possa corrigir seus erros e submeter uma versão
-correta do programa novamente.
-
+\textbf{Resultados esperados:} Espera-se que com a utilização da ferramenta proposta
+possa potencializar a correção das submissões de modo que, principalmente, melhore
+a qualidade do \foreign{feedback} podendo levar menos tempo para corrigi-las ou o
+mesmo tempo que a correção tradicional. Como precisará verificar apenas uma
+implementação de cada agrupamento, aguardamos que as correções possam ser realizadas
+minuciosamente de modo a realizar um \foreign{feedback} mais construtivo para que o
+programador possa corrigir seus erros e submeter uma versão correta do programa novamente.
 
 % ou, para TCC 2:
 % \textbf{Contexto:} \\
@@ -122,7 +125,7 @@ correta do programa novamente.
 % \textbf{Conclusões:}
 
 % Palavras-chaves, separadas por ponto (tente não definir mais do que cinco)
-\palavraschaves{}
+\palavraschaves{MOOC. Programação. Agrupamentos. Mineração. Visualização}
 \end{resumo}
 
 
