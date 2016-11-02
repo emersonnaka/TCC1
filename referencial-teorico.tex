@@ -136,8 +136,8 @@
 			operandos, laços de repetição e laços de repetição aninhados, por exemplo.
 			
 			A análise dinâmica do código-fonte consiste na observação da execução do
-			programa, por meio do \foreign{trace} - uma espécie de histórico de execução
-			do programa - e de teste de \foreign{software}. Analisando esse histórico é
+			programa, por meio do \foreign{trace} -- uma espécie de histórico de execução
+			do programa -- e de teste de \foreign{software}. Analisando esse histórico é
 			possível verificar algumas características, como: em que momento foi realizado
 			uma atribuição, chamada de função e recursão, qual bloco de código foi
 			executado em uma declaração de condição, a quantidade de vezes que um laço
@@ -156,7 +156,22 @@
 			operando e operador, os métodos são separados por uma linha em branco e tamanho
 			da instrução, medido em caracteres.
 			
-			\textbf{INSERIR EXEMPLO DE ESTILO DE ESCRITA EM CÓDIGO PYTHON AQUI}
+			\begin{table}
+				\centering
+				\begin{tabular}{|c|c|}
+					\hline
+					Chamada de função & Instrução por linha \\ \hline
+					primo(7)          & a = 5 * 3  \\
+					primo( 7)         & primo(7)     \\
+					primo(7 )         &      \\
+					primo( 7 )        & a = 5 * 3; primo(7)    \\
+					\hline
+				\end{tabular}
+				\captionsetup{justification=centering}
+				\caption[Representação do estilo de escrita]{Representação do estilo
+				de escrita pode ocorrer com variações de espaços e mais que uma
+				instrução por linha, por exemplo.}
+			\end{table}
 			
 			Além da possibilidade de extrair os dados citados anteriormente. É possível
 			obter os dados de como foi realizado o processo técnico e social do desenvolvimento
@@ -174,14 +189,14 @@
 	\label{sec:TrabRel}
 	
 	    A fim de encontrar a semelhança entre os códigos, \citeonline{Yin:2015}
-	    utilizou a AST. Após a criação das árvores,
-	    é necessário o uso de métricas para verificar a similaridade entre as árvores.
-	    Desta forma, foi utilizada a Distância de Edição de Árvore (TED) – ao comparar
-	    duas árvores, verificam-se quais são as movimentações (inserção, movimentação
-	    e remoção) necessárias para que as árvores fiquem iguais. Assim, foi
-	    selecionado a TED normalizado que utiliza estrutura \foreign{top-down}:
-	    quanto mais próximo do nó raiz, maior sua importância. Sua escolha ocorreu
-	    pelo fato do TED normalizado possuir maior índice na qualidade de agrupamentos.
+	    utilizou a AST. Após a criação das árvores, é necessário o uso de métricas
+	    para verificar a similaridade entre as árvores. Desta forma, foi utilizada
+	    a Distância de Edição de Árvore (TED) – ao comparar duas árvores, verificam-se
+	    quais são as movimentações (inserção, movimentação e remoção) necessárias
+	    para que as árvores fiquem iguais. Assim, foi selecionado a TED normalizado
+	    que utiliza estrutura \foreign{top-down}: quanto mais próximo do nó raiz,
+	    maior sua importância. Sua escolha ocorreu pelo fato do TED normalizado
+	    possuir maior índice na qualidade de agrupamentos.
 	    
 	    Os autores desse artigo analisado utilizaram os algoritmos de agrupamento
 	    DBSCAN \cite{Ester1996} e OPTICS \cite{Ankerst1999} para agrupar os códigos
@@ -192,8 +207,6 @@
 	    visualizar os agrupamentos foi utilizado o t-SNE \cite{maaten2008} – técnica
 	    utilizada para reduzir dados de alta dimensionalidade para duas ou três
 	    dimensões preservando a estrutura local dos dados.
-%		de redução dimensional não linear que preserva a estrutura
-%	    local dos dados.
 	    
 	    \begin{figure}[ht]
 	        \centering
@@ -218,7 +231,14 @@
 	    a solução possui 21,3 linhas. Enquanto os pontos azuis não obtiveram
 	    similaridade suficiente para formar um agrupamento ou serem classificados
 	    em outro agrupamento. 
-	
+
+		A utilização da extração de características por meio da AST é interessante,
+		como também o uso da TED normalizada para verificar sua similaridade, devido
+		ao seu baixo custo computacional. Entretanto, como o autor testou seu
+		agrupamento somente com implementações para resolver um problema, não sabemos
+		se tal abordagem é eficiente quando houver implementações que buscam resolver
+		diversos problemas. Em razão da possibilidade dos códigos-fontes gerarem
+		árvores parecidas ainda quando solucionam problemas distintos.
 	    
 	    Em \citeonline{Glassman:2014}, foi proposto um agrupamento hierárquico de dois
 	    níveis. No nível mais alto ocorre o particionamento das soluções ao longo do
@@ -235,21 +255,29 @@
 	    funções de bibliotecas, declarações de atribuição, \foreign{loops}, condicional,
 	    número de variáveis e valores constantes, por exemplo.
 	    
-	    \citeonline{Glassman:2014} utiliza o algoritmo de agrupamento \foreign{K-means} para agrupar
-	    as implementações dos estudante. Foi utilizado diversos valores para $k$
+	    \citeonline{Glassman:2014} utiliza o algoritmo de agrupamento \foreign{K-means}
+	    para agrupar as implementações dos estudante. Foi utilizado diversos valores para $k$
 	    e a validação dos agrupamentos ocorreu por meio da comparação dos \foreign{clusters}
-	    criado pelo algoritmo de classificação com o que foi criado pelos
-	    \foreign{teaching assistants} (TA). Para os TAs foi entregue 50 códigos
-	    dos estudantes randomicamente e notou-se que eles ignoraram características
-	    de baixo nível.
+	    criado pelo algoritmo de classificação com o que foi criado pelos professores.
+	    Para os TAs foi entregue 50 códigos  dos estudantes randomicamente e notou-se
+	    que eles ignoraram características de baixo nível.
 	    
-	    Estes utilizaram a métrica Informação Mútua Ajustada (AMI) - cálculo
-	    probabilístico - para comparar os agrupamentos dos TA's com cada agrupamento
-	    gerado pelo \foreign{k-means}. Quando o valor de AMI é 0 (zero), quer dizer
-	    que os agrupamentos são independentes, entretanto, se for igual a 1, indica
-	    perfeita concordância entre os \foreign{clusters}. Quando $k$ tinha um
-	    valor maior ou igual a 15, os agrupamentos concordaram com
-	    o agrupamento de cada \foreign{teaching assistants}, conforme medição do AMI.
+	    Estes utilizaram a métrica Informação Mútua Ajustada (AMI, do inglês
+	    \foreign{Adjusted Mutual Information}), cálculo probabilístico, para comparar
+	    os agrupamentos dos TA's com cada agrupamento gerado pelo \foreign{k-means}.
+	    Quando o valor de AMI é 0 (zero), quer dizer que os agrupamentos são
+	    independentes, entretanto, se for igual a 1, indica perfeita concordância
+	    entre os \foreign{clusters}. Quando $k$ tinha um valor maior ou igual a 15,
+	    os agrupamentos concordaram com o agrupamento de cada professor, conforme
+	    medição do AMI.
+	    
+	    Apesar da grande quantidade de dados extraídos das implementações, não houve
+	    nenhum alusão sobre como essas características interfeririam na cálculo de
+	    similaridade utilizado. Contudo a abordagem de dividir as informações a serem
+	    coletadas em duas dimensões é relevante. Posto que as implementações com
+	    a mesma quantidade de laços de repetição, por exemplo, deveriam ser agrupadas
+	    facilitando a verificação se os alunos entenderam como fazer e utilizar
+	    tal instrução.
 	    
 	    Em \citeonline{Taherkhani:2012}, testou-se a ferramenta Aari para cinco tipos
 	    de métodos de ordenação: \foreign{bubble sort}, \foreign{insertion sort},
@@ -346,6 +374,14 @@
 	        \label{fig:clusterAutomatico}
 	    \end{figure}
 	    
+	    A ferramenta mostrou-se capaz de identificar a maioria dos métodos de ordenação
+	    que foram treinados previamente. Tal abordagem torna-se interessante quando
+	    há um plano de ensino com os problemas a serem resolvidos, possibilitando
+	    o treinamento da ferramenta. Entretanto, caso seja utilizado para classificar
+	    diversos problemas desconhecidos para o classificador, não há uma categorização
+	    adequada. Desta forma, inviabilizaria sua utilização em MOOC se fosse utilizado
+	    para classificar os problemas de todos os cursos de programação.
+	    
 	    \citeonline{Glassman:2015} apresentam o OverCode, ferramenta de visualização
 	    de informação no qual demonstra os \foreign{clusters} formados, as principais
 	    instruções utilizadas pelas implementações presentes em um determinado
@@ -376,20 +412,6 @@
 	    nome da variável que ocorreu em mais históricos de execução. Após todos esses
 	    passos, o agrupamento é realizado por meio de comparação de blocos de código
 	    idênticos.
-	    
-%	    Após o agrupamento dos códigos fontes, é realizado uma limpeza de código,
-%	    no qual é retirado todas as linhas em branco do código gerando o código limpo,
-%	    tornando-o legível, executável e descrito na ferramenta. Como um \foreign{cluster}
-%	    é um conjunto de várias soluções, pode ocorrer das soluções, mesmo semelhantes,
-%	    possuam variáveis diferentes. Por isso criou-se uma ferramente de reescrita
-%	    para poder renomear as variáveis de um algoritmo por meio da interface,
-%	    seguindo regras que foram encontradas durante os testes com os primeiros protótipos.
-%	    
-%	    A ferramenta OverCode também realiza a identificação de variáveis idênticas
-%	    que são encontradas a partir da análise das sequências de variáveis obtidas por meio
-%	    da análise da execução do programa (\foreign{trace}), com isso, se duas variáveis
-%	    com nomes diferente, possuem os mesmos valores durante o \foreign{trace}, elas são
-%	    consideradas variáveis idênticas.
 	    
 	    \begin{figure}[ht]
 	        \centering
@@ -423,6 +445,19 @@
 	    das implementações, visto que diminui consideravelmente a quantidade de
 	    submissões a serem corrigidos.
 	    
+	    \textbf{Professor, no final do OverCode possui um gráfico interessante relacionando
+	    	a quantidade de agrupamentos com o tamanho desses agrupamentos. Entretanto, se
+	    	eu utilizar a imagem, acredito que ficaria um pouco poluído essa página, devido
+	    	a figura da ferramenta. O gráfico está no repositório: OverCodeDistri.png. A
+	    	utilização do gráfico deixaria a minha análise mais fundamentada também.}
+	    
+	    A divisão das implementações pode ter aumentado consideravelmente o número de
+	    agrupamentos. Contudo, a análise dinâmica e os recursos realizados para que
+	    fosse montado a pilha mostrou-se eficiente. Todavia, poderia ter considerado
+	    toda a implementação e levado em consideração mais uma característica, o tamanho
+	    médio das instruções por linha. Devido a diversas possibilidades de realizar
+	    uma atribuição com alguma operação aritmética.
+	    
 	    \citeonline{Wei2015} apresentam uma ferramenta para auxiliar na correção das
 	    submissões dos MOOC's de forma a agrupar pedaços (\foreign{chuncks}) de códigos
 	    fontes semelhantes, agrupá-los conforme sua similaridade e alocar cada conjunto
@@ -453,8 +488,8 @@
 	    para escolher o menor subconjunto do estilo de escrita a fim de realizar as
 	    comparações por meio do coeficiente de similaridade de \foreign{Jaccard} \cite{jaccard1901}. E
 	    com a finalidade de identificar a dificuldade da implementação, foi utilizado
-	    a distância Euclidiana para comparar as características extraídas - quantidade
-	    de métodos invocados e laços de repetição aninhados - e o \foreign{K Nearest Neighbor}
+	    a distância Euclidiana para comparar as características extraídas -- quantidade
+	    de métodos invocados e laços de repetição aninhados -- e o \foreign{K Nearest Neighbor}
 	    (\texttt{k-NN}) para identificar o nível de dificuldade de revisão do
 	    \foreign{chunck}.
 	    
@@ -494,3 +529,16 @@
 		ou mais pedaços de código, dificultando a revisão da submissão e podendo tomar
 		um tempo maior para que fosse realizado um \foreign{feedback} preciso para o
 		estudante.
+		
+%		\begin{table}
+%			\begin{tabular}{|c|c|c|c|c|c|c|}
+%				\hline
+%				~ & Dados de entrada & Característica extraídas dos dados de entrada & Algoritmo para cálculo de distância ou similariedade & Algoritmo de clusterização / Classificador & Avaliação & Conclusões \\ \hline
+%				\citeonline{Yin:2015} & Implementações & AST & Distância de Edição de Árvore (TED) normalizada que utiliza estrutura top-down e pontuação silhueta & DBSCAN e OPTICS & Clusterização de algoritmos baseado nas soluções de um problema. Em cada cluster, identifica as diferenças nas implementações de uma abordagem particular & TED normalizado demonstra conjuntos mais estáveis e menos discrepantes \\ \hline
+%				\citeonline{Glassman:2014} & Implementações & Linguagem de alto nível: 12 características - posição de declarações condicionais em relação a instruções de \foreign{loop}, profunidade dos \foreign{loops} aninhados, números de nós AST, instruções de retorno, laços, comparações, etc. Linguagem de baixo nível: 48 características - operações aritméticas, comparações, \foreign{loops}, funções de bibliotecas, declarações, número de variáveis do programa, valores constantes, etc. & ~ & K-means & Utilizando a métrica AMI (\foreign{adjusted mutual information}), comparando os \foreign{cluters} dos feitos pelos professores, no qual 0 indica agrupamentos puramente independentes e 1, perfeita concordância entre os agrupamentos. & Para k maior ou igual a 15, encontrou-se alta concordância entre os \foreign{cluster} do K-means e do professor \\ \hline
+%				\citeonline{Taherkhani:2012} & Implementações & Características numéricas: NAS, LoC, MCC, N1, N2, n1, n2, N, n, Nov, NoL, NoNL, NoB. Características descritivas: recursivo, \foreign{tail recursive}, funções de variáveis, \foreign{array} auxiliar. Outras características: informações de \foreign{loop}/bloco, informações do contador de laço, informações de dependência. \foreign{Caracterísitcas} de algoritmos de ordenação: MWH, TEMP, In-place, OIID e IITO. & Vetor de características, calculada a partir das características extraídas das implementações & C4.5 (árvore de decisão) & Com os algoritmos da primeira rodada, obteve 71\% de precisão; da segunda rodada, 81\%. & Bom reconhecimento do algoritmo, se estiver conforme a teoria. Taxa de acerto considerável baseado em um possível erro do professor. Utilização semiautomática: o Aari corrige partes do trabalho no qual foi treinado e o professor, o restante \\ \hline
+%				\citeonline{Glassman:2015} & Implementações & Rastro do programa (Sequência de variáveis, variáveis comuns e renomeação de variáveis: colisão comum / comum; colisão de múltiplas instâncias; e colisão único/comum), blocos de código & Comparação de programas bloco a bloco (algoritmo definido no artigo) & Algoritmo definido no artigo (programas iguais na mesma pilha) & No primeiro teste, o \foreign{selection} e o \foreign{insertion sort} foram os mais implementados e, entre todas as implementações, a maioria foi categorizado como "Método próprio". Após a apresentação da matérias aos alunos, um segundo teste foi realizado, assim alguns alunos realizaram a mesma implementação, enquanto outros otimizaram suas implementações em base nos materiais e outros fizeram outros métodos de ordenação & A partir do OverCode e as pilhas com os algoritmos divididos pelas características extraídas, dá a possibilidade de retornar um \foreign{feedback} mais preciso para cada grupo e facilita a observação da solução do problema \\ \hline
+%				\citeonline{Wei2015} & Implementações & Normaliza o código e considera apenas o estilo de escrita do estudante & Coeficiente de similaridade de Jaccard & Algoritmo Winnowing & Classificação de \foreign{workload}: distância Euclidiana e k-NN & A classificação por pedaços de código aumentou a eficiência do classificador \\
+%				\hline
+%			\end{tabular}
+%		\end{table}
