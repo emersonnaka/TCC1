@@ -1,23 +1,23 @@
 \chapter{Referencial Teórico}
 \label{chap:Ref}
-	Neste capítulo será apresentado os conceitos utilizados na pesquisa, bem como
+	Neste capítulo serão apresentados os conceitos utilizados na pesquisa, bem como
 	os estudos que fundamentaram esse projeto. A Seção \ref{sec:Mooc} apresenta
 	o conceito de MOOC e as principais características da plataforma de ensino. A
 	Seção \ref{sec:FundTeor} descreve as definições de termos presentes no decorrer
-	da pesquisa. E a Seção \ref{sec:TrabRel} apresenta as pesquisas que fundamentaram
-	esse estudo juntamente com suas limitações.
+	da pesquisa. A Seção \ref{sec:TrabRel} apresenta as pesquisas relacionados a
+	este estudo juntamente com suas limitações.
 
 	\section{Massive Open Online Courses (MOOC)}
 	\label{sec:Mooc}
 		Após pesquisar o conceito de Curso Massivo, Aberto e \foreign{Online},
-		\citeonline{fassbinder2014} observa que não há uma definição comum na
+		\citeonline{fassbinder2014} observam que não há uma definição comum na
 		literatura. Entretanto, encontra três descrições distintas para o termo.
 		Enquanto \citeonline{sivamuni2013} afirma que o MOOC, em conformidade com
 		o dicionário Oxford, é um curso oferecido por meio da Internet, de forma
 		gratuita, para uma grande quantidade de alunos. \citeonline{subbian2013}
 		reitera que o MOOC disponibiliza curso gratuito, baseado na \foreign{web},
 		com registro livre de taxas monetárias e compartilhamento público de
-		currículo. E \citeonline{siemens2013} defende a tendência em inovação e
+		currículo. \citeonline{siemens2013} defende a tendência em inovação e
 		experimentação do uso da tecnologia para o ensino a distância e
 		\foreign{online} a fim de dar oportunidade de aprendizagem de forma massiva.
 		
@@ -258,18 +258,18 @@
 	        \includegraphics[scale=0.33]{imagem/clusterAutomatico.png}
 	        \captionsetup{justification=centering}
 	        \caption{Comparação das implementações dos alunos dos \foreign{clusters}
-	        	manual e automático do \foreign{Round} 2}
+	        	manual e automático da segunda etapa}
 	        \label{fig:clusterAutomatico}
 	    \end{figure}
 	    
-	    \citeonline{Glassman:2015} apresentam o OverCode (Figura \ref{fig:interfaceOverCode}),
-	    ferramenta de visualização de informação no qual demonstra os \foreign{clusters} formados,
-	    as principais instruções utilizadas pelas implementações presentes em um
-	    determinado agrupamento e as linhas de código de uma determinada função/método.
-	    A ferramenta é voltada para aqueles que realizarão a validação das submissões.
+	    \citeonline{Glassman:2015} apresentam o OverCode, ferramenta de visualização
+	    de informação no qual demonstra os \foreign{clusters} formados, as principais
+	    instruções utilizadas pelas implementações presentes em um determinado
+	    agrupamento e as linhas de código de uma determinada função/método. A
+	    ferramenta é voltada para aqueles que realizarão a validação das submissões.
 	    
 	    Para verificar a similaridade das submissões a fim de realizar o agrupamento,
-	    é necessário: formatar o código-fonte, executar casos de teste, extrair sequência
+	    é necessário: formatar o código-fonte, executar um caso de teste, extrair sequência
 	    de variáveis, identificar variáveis em comum, renomear variáveis comuns e únicas
 	    para, então, realizar o agrupamento. Formatar o código-fonte consiste na refatoração
 	    em cada implementação. Essa refatoração consiste na remoção dos espaços entre os
@@ -282,8 +282,7 @@
 	    para todas as implementações. A cada passo da execução, os nomes e valores de
 	    variáveis locais e globais, bem como o valor de retorno da função são gravados
 	    como se fosse um histórico de execução ou \foreign{trace}. A partir desse
-	    histórico, a ferramenta extrai a sequência de valores de todas as variáveis
-	    presentes no \foreign{trace}.
+	    histórico, a ferramenta extrai a sequência de valores de todas as variáveis.
 	    
 	    A partir do conhecimento da sequência de valores de cada variável, o OverCode
 	    identifica quais são as variáveis comuns. Tais variáveis são reconhecidas a
@@ -291,7 +290,8 @@
 	    As variáveis que só ocorrem uma vez no \foreign{trace} são as variáveis únicas.
 	    Após reconhecer as variáveis comuns e únicas, a ferramenta renomeia-as para o
 	    nome da variável que ocorreu em mais históricos de execução. Após todos esses
-	    passos, o agrupamento é realizado por meio de blocos de código idênticos.
+	    passos, o agrupamento é realizado por meio de comparação de blocos de código
+	    idênticos.
 	    
 %	    Após o agrupamento dos códigos fontes, é realizado uma limpeza de código,
 %	    no qual é retirado todas as linhas em branco do código gerando o código limpo,
@@ -311,48 +311,50 @@
 	        \centering
 	        \includegraphics[scale=0.4]{imagem/overCode.png}
 	        \captionsetup{justification=centering}
-	        \caption{Interface OverCode.}
+	        \caption{Interface da ferramenta OverCode.}
 	        \label{fig:interfaceOverCode}
 	    \end{figure}
 	    
-	    É utilizado o conceito de pilhas para representar os agrupamentos, desta forma,
-	    a comparação das pilhas menores com a pilha maior ocorre entre a primeira e a
+		Na Figura \ref{fig:interfaceOverCode} é possível notar a utilização das pilhas
+		(\foreign{stacks}) para representar os agrupamentos. A primeira coluna da
+		esquerda exibe dois painéis. O primeiro painel apresenta o número de
+		agrupamentos, representado pelas pilhas, e o número total de submissões,
+		enquanto o segundo painel, mostra a maior \foreign{stack}. A coluna central
+		apresenta a opção de busca, filtrando por uma determinada palavra no quadro
+		superior, e as pilhas remanescentes no quadro inferior. Enquanto a terceira
+		coluna apresenta a frequência com que as linhas de códigos estão presentes
+		nas soluções das pilhas.
+
+		A comparação das pilhas menores com a pilha maior ocorre entre a primeira e a
 	    segunda coluna dando ênfase nas linhas que estão implementadas diferentes. Com
 	    isso, é possível verificar como cada pilha foi montada e a característica daquela
 	    pilha quando comparada com a pilha maior. Como utiliza análise dinâmica para
 	    classificar as submissões, é possível verificar o \foreign{traceback} da
 	    variável que desejar ao longo de sua execução em um caso de teste a fim de
 	    auxiliar os usuários a entenderem a execução do algoritmo.
-	    
-	    Na Figura \ref{fig:interfaceOverCode} é possível notar a utilização das pilhas
-	    (\foreign{stacks}). A primeira coluna da esquerda exibe dois painéis. O
-	    primeiro painel apresenta o número de agrupamentos, representado pelas pilhas,
-	    e o número total de submissões, enquanto o segundo painel, mostra a maior
-	    \foreign{stack}. A coluna central apresenta a opção de busca, filtrando por
-	    uma determinada palavra no quadro superior, e as pilhas remanescentes no
-	    quadro inferior. Enquanto a terceira coluna apresenta a frequência com que as
-	    linhas de códigos estão presentes nas soluções.
-	    
+
 	    Por fim, os autores concluíram que a interface auxilia os assistentes de
 	    ensino a terem uma visão de alto nível dos alunos, podendo compreender os
 	    erros e fornecer um \foreign{feedback} mais relevante, devido ao agrupamento
 	    das implementações, visto que diminui consideravelmente a quantidade de
 	    submissões a serem corrigidos.
 	    
-	    \citeonline{Wei2015} apresenta uma ferramenta para auxiliar na correção das
+	    \citeonline{Wei2015} apresentam uma ferramenta para auxiliar na correção das
 	    submissões dos MOOC's de forma a agrupar pedaços (\foreign{chuncks}) de códigos
 	    fontes semelhantes, agrupá-los conforme sua similaridade e alocar cada conjunto
 	    de implementações ao estudante com conhecimento suficiente para revisá-los.
 	    
 	    Foi necessário realizar o particionamento do código para torná-lo legível
-	    e fácil de compreender, os pedaços foram extraídos das implementações como
-	    se fossem funções, entretanto, há uma dificuldade para verificar as submissões
+	    e fácil de compreender. Os pedaços foram extraídos das implementações como
+	    se fossem funções. Entretanto, há uma dificuldade para verificar as submissões
 	    quando ocorria uma chamada de função em uma outra função, dificultando a divisão
 	    em pedaços do código. Também foi necessário normalizar cada submissão a fim de
 	    encontrar o estilo de escrita, visto que até mesmo o nome da variável pode
 	    alterar o estilo de escrita.
 	    
-	    A ferramenta\cite{Wei2015} normaliza o código por meio de três regras:
+	    A ferramenta desenvolvida por \citeonline{Wei2015} normaliza o código por
+	    meio de três regras:
+	    
 	    \begin{enumerate}
 	    	\item Remoção de espaços, linhas em branco e comentários;
 	    	\item Exclusão de palavras reservadas da linguagem de programação,
@@ -360,14 +362,15 @@
 	    	\item E substituição dos identificadores de variáveis do usuário por um
 	    	símbolo especial.
 	    \end{enumerate}
-	    Com isso foi calculado um valor \foreign{hash} para cada \foreign{substring}
-	    do código a fim de verificar a similaridade do estilo de escrita \foreign{token}
-	    a \foreign{token} e utilizado o algoritmo de \texttt{winnowing} para escolher
-	    o menor subconjunto do estilo de escrita a fim de realizar as comparações
-	    por meio do coeficiente de similaridade de \foreign{Jaccard}. E com a finalidade
-	    de identificar a dificuldade da implementação, foi utilizado a distância
-	    Euclidiana para comparar as características extraídas - quantidade de métodos
-	    invocados e laços de repetição aninhados - e o \foreign{K Nearest Neighbor}
+	    
+	    Com isso foi calculado um valor \foreign{hash},representando cada \foreign{substring}
+	    de um código-fonte, a fim de verificar a similaridade do estilo de escrita \foreign{token}
+	    a \foreign{token} e utilizado o algoritmo de \texttt{winnowing} \cite{schleimer2003}
+	    para escolher o menor subconjunto do estilo de escrita a fim de realizar as
+	    comparações por meio do coeficiente de similaridade de \foreign{Jaccard} \cite{jaccard1901}. E
+	    com a finalidade de identificar a dificuldade da implementação, foi utilizado
+	    a distância Euclidiana para comparar as características extraídas - quantidade
+	    de métodos invocados e laços de repetição aninhados - e o \foreign{K Nearest Neighbor}
 	    (\texttt{k-NN}) para identificar o nível de dificuldade de revisão do
 	    \foreign{chunck}.
 	    
@@ -375,19 +378,10 @@
 			\centering
 			\includegraphics[width=0.7\linewidth]{imagem/clusteringPerformance}
 			\captionsetup{justification=centering}
-			\caption{Distribuição do agrupamentos.}
+			\caption{Distribuição dos agrupamentos.}
 			\label{fig:clusteringPerformance}
 		\end{figure}
 	    
-%		Conforme a Figura \ref{fig:clusteringPerformance} pode-se notar que a
-%		distribuição dos \foreign{chuncks} sem normalização de código é inadequado,
-%		visto que vários pedaços nas atribuições 2 e 4 estavam sozinhos, e o maior
-%		agrupamento possuía apenas 3 pedaços. Enquanto a tarefa 1 e 2 apresentou
-%		bons agrupamentos e o tamanho dos grupos era condizente com a quantidade de
-%		estudantes (200) quando $k$ era igual a 3.0. As tarefas 4 e 5 não foram
-%		satisfeitas devido ao total de pedaços em um grupo ser próximo de 20 e o
-%		restante dos códigos foram pequenos agrupamentos.
-		
 		A Figura \ref{fig:clusteringPerformance} apresenta a distribuição dos
 		agrupamentos em quatro problemas distintos. Para todos os gráficos, a
 		abcissa é referente ao tamanho dos pedaços, enquanto a ordenada representa
@@ -399,11 +393,20 @@
 		igual a 3.0. As tarefas 4 e 5 não foram satisfeitas devido ao total de pedaços
 		em um grupo ser próximo de 20 e o restante dos códigos formaram pequenos
 		agrupamentos.
-				
-%		É possível notar que tal abordagem não obteve sucesso, pois, independente da
-%		tarefa selecionada, nota-se que a maioria dos \foreign{clusters} formados
-%		possuíam apenas um pedaço de código. Com isso pode-se aumentar o tempo de
-%		correção das submissões, visto que uma implementação completa pode gerar um
-%		ou mais pedaços de código, dificultando a revisão da submissão e podendo tomar
-%		um tempo maior para que fosse realizado um \foreign{feedback} preciso para o
-%		estudante.
+		
+		Conforme a Figura \ref{fig:clusteringPerformance}, pode-se notar que a
+		distribuição dos \foreign{chuncks} sem normalização de código é inadequado,
+		visto que vários pedaços nas tarefas 2 e 4 estavam sozinhos, e o maior
+		agrupamento possuía apenas 3 pedaços. Enquanto a tarefa 1 e 2 apresentou
+		bons agrupamentos e o tamanho dos grupos era condizente com a quantidade de
+		estudantes (200) quando $k$ era igual a 3.0. As tarefas 4 e 5 não foram
+		satisfeitas devido ao total de pedaços em um grupo ser próximo de 20 e o
+		restante dos códigos foram pequenos agrupamentos.
+		
+		É possível notar que tal abordagem não obteve sucesso, pois, independente da
+		tarefa selecionada, nota-se que a maioria dos \foreign{clusters} formados
+		possuíam apenas um pedaço de código. Com isso pode-se aumentar o tempo de
+		correção das submissões, visto que uma implementação completa pode gerar um
+		ou mais pedaços de código, dificultando a revisão da submissão e podendo tomar
+		um tempo maior para que fosse realizado um \foreign{feedback} preciso para o
+		estudante.

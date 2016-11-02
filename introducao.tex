@@ -18,22 +18,32 @@
 	Development Environment}) e ensinam o funcionamento da linguagem sintaticamente.
 	Entretanto, esse tipo de ensino tem levado o estudante a fazer seu programa
 	(\foreign{software}) baseado na tentativa e erro, visto que buscam gerar o
-	algoritmo sem o total conhecimento lógico do problema \cite{edwards2003}. Isso funcionou como um incentivo para que surgissem outras abordagens de ensino, como a reflexão na ação (\foreign{Reflection in action}) e o desenvolvimento baseado em teste (TDD, do inglês \foreign{Test Driven Development}). Na primeira abordagem, a implementação do \foreign{software} ocorre somente após o entendimento apropriado do problema \cite{edwards2004}. Enquanto o TDD é um ciclo dividio em três etapa: a primeira etapa o programador inseri um teste que deve falhar no momento de sua execução; na segunda etapa é implementado a solução para que o caso de teste escrito anteriormente seja aceito; e a última etapa refere-se a refatoração (simplificar ou melhorar) o código recém implementado \cite{beck2003}.
+	algoritmo sem o total conhecimento lógico do problema \cite{edwards2003}. Isso
+	funcionou como um incentivo para que surgissem outras abordagens de ensino,
+	como a reflexão na ação (\foreign{Reflection in action}) e o desenvolvimento
+	baseado em teste (TDD, do inglês \foreign{Test Driven Development}). Na
+	primeira abordagem, a implementação do \foreign{software} ocorre somente
+	após o entendimento apropriado do problema \cite{edwards2004}. Enquanto o
+	TDD é um ciclo dividido em três etapa: a primeira etapa o programador inseri um
+	teste que deve falhar no momento de sua execução; na segunda etapa é implementado
+	a solução para que o caso de teste escrito anteriormente seja aceito; e a última
+	etapa refere-se a refatoração (simplificar ou melhorar) o código recém implementado \cite{beck2003}.
 	
 	% Problema de pesquisa
 	Tratando-se de uma ferramenta de ensino a nível mundial, deve-se considerar um
 	grande número de usuários. Com isso, torna-se necessário a utilização de mecanismos
 	de avaliação automática ou semiautomática \cite{schmidt2013producing}. Para alguns
-	tipos de atividade, a avaliação automática é bem simples. Por exemplo, as questões
-	de múltipla escolha \cite{alario2013analysing}. Implementações de programa computacionais
-	necessitam que seus algoritmos sejam corrigidos ao invés das saídas geradas pela sua
-	execução a fim de retornar o resultado da avaliação para que o usuário possa
-	implementá-lo novamente. Como há uma grande quantidade de submissões de trabalhos em
-	cursos de programação, visto que, a cada turma de um curso, existem atividades a
-	serem feitas e entregues por meio da plataforma de ensino. Desta forma, há uma grande
-	quantidade de projetos a serem corrigidos e, consequentemente, acarreta alguns
-	problemas como: avaliar todas as submissões, tempo e aumento de custo de correção por
-	parte do professor.
+	tipos de atividade, a avaliação automática é bem simples. Por exemplo, para verificar
+	as questões	de múltipla escolha é necessário somente comparar a alternativa selecionada
+	com o gabarito de questões \cite{alario2013analysing}. No entanto, implementações de
+	programa computacionais necessitam que seus algoritmos sejam corrigidos ao invés das
+	saídas geradas pela sua execução a fim de retornar o resultado da avaliação para que
+	o usuário possa implementá-lo novamente. Como há uma grande quantidade de submissões
+	de trabalhos em	cursos de programação, visto que, a cada turma de um curso, existem
+	atividades a serem feitas e entregues por meio da plataforma de ensino. Desta forma,
+	há uma grande quantidade de projetos a serem corrigidos e, consequentemente, acarreta
+	alguns problemas como: avaliar todas as submissões, tempo e aumento de custo de correção
+	por parte do professor.
 	
 	% Hipóteses
 	
@@ -47,12 +57,16 @@
 	por meio de \foreign{feedbacks} mais precisos e menor custo para o MOOC.
 	
 	% Objetivo
-	Considerando que muito projetos podem ser semelhantes, os professores e os professores podem
-	explorar e compreender as variações de implementações \cite{Yin:2015}, a fim de
+	Considerando que muito projetos podem ser semelhantes, os professores e os professores
+	podem explorar e compreender as variações de implementações \cite{Yin:2015}, a fim de
 	diminuir o tempo gasto para correção dos códigos-fontes submetidos, por meio de
 	agrupamentos (\foreign{clusters}). Por exemplo, tais agrupamentos podem ser
 	realizados por meio da similaridade dos códigos e agrupados com um algoritmo como
-	o \foreign{k-means}. Compreendendo as variações de implementação, \citeonline{Yin:2015},
+	o \foreign{k-means}. Compreendendo as variações de implementação, é possível extrair
+	caraterísticas por meio da análise estática \cite{Yin:2015,Glassman:2014,Taherkhani:2012},
+	análise dinâmica \cite{Glassman:2015} e análise do estilo de escrita \cite{Wei2015}.
+	
+	Compreendendo as variações de implementação, \citeonline{Yin:2015},
 	\citeonline{Glassman:2014} e \citeonline{Taherkhani:2012} extraem características
 	por meio da análise estática, \citeonline{Glassman:2015} utiliza a análise dinâmica,
 	enquanto \citeonline{Wei2015} extraem as características analisando o estilo de escrita.
