@@ -2,7 +2,8 @@
 \label{chap:Ref}
 	Neste capítulo serão apresentados os conceitos utilizados na pesquisa, bem como
 	os estudos que fundamentaram esse projeto. A Seção \ref{sec:Mooc} apresenta
-	o conceito de MOOC e as principais características da plataforma de ensino. A
+	o conceito de MOOC e as principais características da plataforma de ensino.
+	A Seção \ref{sec:MinVisual} descreverá  A
 	Seção \ref{sec:FundTeor} descreve as definições de termos presentes no decorrer
 	da pesquisa. A Seção \ref{sec:TrabRel} apresenta as pesquisas relacionados a
 	este estudo juntamente com suas limitações.
@@ -40,57 +41,132 @@
 	\section{Fundamentação Teórica}
 	\label{sec:FundTeor}
 		Nesta seção apresentaremos as definições de alguns termos utilizados
-		durante a pesquisa, como a diferença na área de Inteligência Artificial
-		sobre classificadores e agrupamento, bem como as possíveis características
-		que podem ser extraídas por meio da análise estática, do estilo de escrita
-		e da analise dinâmica de uma implementação.
+		durante a pesquisa: mineração e visualização de dados, projeção e a diferença
+		na área de Inteligência Artificial sobre classificadores e agrupamento.
+		
+		A mineração de dados é uma etapa do \foreign{Knowledge Discovery in Databases}
+		\cite{fayyad1996} que busca descobrir padrões em grandes conjuntos de dados
+		podendo utilizar métodos de inteligência artificial, estatísticos e sistemas
+		de banco de dados \cite{chakrabarti2006}. O objeto do processo de mineração
+		de dados consiste na extração de informações de um conjunto de dados e
+		transformá-lo em uma estrutura compreensível para uso posterior \cite{chakrabarti2006}.
+		Muitos métodos de mineração de dados são baseados em técnicas de treinamento
+		e teste de aprendizagem de máquina, reconhecimento de padrões e estatísticas,
+		como os algoritmos de classificação e agrupamentos \cite{fayyad1996}.
+		
+		\textbf{No artigo \cite{fayyad1996} há um fluxograma do KDD (Figura 1).
+		Quando fui pesquisar na internet sobre um fluxograma de mineração, apareceram
+		vários fluxogramas iguais! Não coloquei porque fiquei na dúvida. Posso utilizar
+		o fluxograma do KDD pra exemplificar a mineração de dados?}
+		
+		Após a mineração das informações, é necessário a utilização de ferramentas
+		para criar hipóteses sobre conjuntos de dados complexos -- grande conjunto
+		de dados ou de alta dimensionalidade -- para que os analistas possuam
+		capacidade de explorá-los e compreendê-los. A visualização de dados produz
+		modelos gráficos e representações visuais a fim de utilizar a capacidade
+		cognitiva do ser humano, por meio da percepção visual, para colaborar com
+		a exploração e obtenção de informações úteis presente nos dados \cite{de2003}.
+		
+		\textbf{O parágrafo acima foi inteiramente retirado da referência. Cito só
+			no final do parágrafo ou ao final de cada frase? No parágrafo abaixo
+			ocorre o mesmo problema de citação. De "Entretanto os modelos..."
+			até "tridimensional." é tudo do mesmo artigo.}
+		 
+		Para exibir visualizações geradas a partir da mineração de dados de
+		baixas dimensões, foi criado o mapeamento de dados para reconhecimento
+		visual, chamado de projeção \cite{friedman1974}. Entretanto os modelos gráficos
+		ou as representações visuais podem possuir alta dimensão devido ao grande
+		conjunto da base de dados e de características extraídas. Por consequência,
+		há uma dificuldade para que a visualização seja representada em um plano de
+		baixa dimensão. Para isso, criou-se uma técnica de projeção: projeção
+		multidimensional. Essa técnica realiza a diminuição $n-dimensional$, sendo
+		$n$ uma alta dimensão, para uma espaço unidimensional, bidimensional ou
+		tridimensional \cite{paulovich2008least}. Para criar essa visualização
+		deve-se selecionar o formato de como as características extraídas serão
+		armazenadas, como o vetor de características ou o modelo de tabela de dados
+		\cite{de2003}.
 		
 		Classificação é a tarefa de aprendizagem de uma função alvo que mapeia cada
-		conjunto de atributo a um dos rótulos de classe predefinidas \cite{Tan:2005:ch4}. A
-		fim de realizar essas classificações, são implementados classificadores com
-		diversas abordagens, como árvore de decisão, redes neurais e \foreign{support
-		vector machine}, por exemplo. Esses classificadores são mais utilizados para
-		predizer ou descrever um conjunto de dados com categorias binárias ou nominais.
-		Por exemplo, para classificar um animal como mamífero, réptil, peixe, anfíbio
-		ou pássaro, deve-se sumarizar dados como a temperatura do corpo, característica
-		da pele, se é uma criatura aquática, se possui patas e hiberna.
+		conjunto de atributo a um dos rótulos de classe predefinidas \cite{Tan:2005:ch4}.
+		Uma função alvo auxilia como uma ferramenta que possui informações para distinguir
+		os objetos de diferentes classes. A fim de realizar essas classificações, são
+		implementados classificadores com diversas abordagens, como árvore de decisão,
+		redes neurais e \foreign{support vector machine}, por exemplo. Esses
+		classificadores são mais utilizados para predizer ou descrever um conjunto
+		de dados com categorias binárias ou nominais. Por exemplo, para classificar
+		um animal como mamífero, réptil, peixe, anfíbio ou pássaro, deve-se sumarizar
+		dados como a temperatura do corpo, característica da pele, se é uma criatura
+		aquática, se possui patas e hiberna.
 		
-		Enquanto o objetivo dos agrupamentos são realizados baseados somente na informação
-		dos dados que descrevem o objeto e suas relações. Desta forma, os objetos dentro
-		de um grupo devem ser similares ou relacionados entre si e, diferentes ou não
-		relacionados entre objetos de grupos diferentes, ou seja, quanto maior a similaridade
-		dos objetos dentro de um grupo e mais diferentes são os agrupamentos, melhor ou mais
-		distinto os agrupamentos \cite{Tan:2005:ch8}. O K-means \cite{macqueen1967} e o
-		\foreign{Density-based Algorithm for Discovering Clusters} \cite{Ester1996} são
-		exemplos de algoritmos de agrupamento.
+		O que difere a classificação do agrupamento, é que esse é formado por meio da
+		comparação de informações entre os objetos, enquanto aquele é realizado por meio
+		da comparação das informações do objeto com os dados contidos na função alvo.
+		Desta forma, os objetos dentro de um grupo devem ser similares ou relacionados
+		entre si e, diferentes ou não relacionados entre objetos de grupos diferentes,
+		ou seja, quanto maior a similaridade dos objetos dentro de um grupo e mais
+		diferentes são os agrupamentos, melhor ou mais distinto os agrupamentos
+		\cite{Tan:2005:ch8}. O K-means \cite{macqueen1967} e o \foreign{Density-based
+		Algorithm for Discovering Clusters} \cite{Ester1996} são exemplos de algoritmos
+		de agrupamento.
+
+	\section{Mineração e Visualização de Programas}
+	\label{sec:MinVisual}
+		Para realizar a mineração de informações nos programas submetidos, é necessário
+		decidir como será extraído as características -- análise sintática, dinâmica e
+		do código de escrita -- e quais dados podem ser obtidos por meio da análise
+		escolhida (Subseção \ref{subSec:Caracteristicas}). Independente da dimensão
+		obtida por meio da quantidade de informações extraídas, é necessário escolher
+		como os dados obtidos serão armazenados para que seja possível realizar sua visualização.
 		
-		Para extrair as características das submissões há três formas de serem realizadas:
-		análise estática, do estilo de escrita e dinâmica. A análise estática ocorre por meio
-		da observação do código-fonte, considerando apenas sua implementação, ou seja, não
-		é necessário sua execução. Há diversas características que podem ser extraídas dessa
-		análise. Há abordagens que extraem somente a Árvore de Sintaxe Abstrata (AST) que pode
-		ser gerada durante a análise sintática do compilador para representar o código-fonte
-		em forma de árvore armazenando símbolos não-terminais nos nós filhos e símbolos
-		terminais nos nós folha. Esse tipo de árvore possui símbolos
-		não terminais como nós filhos e símbolos terminais como nós folhas. Enquanto outras
-		abordagens extraem características como: a quantidade de linhas e atribuições da
-		implementação, a complexidade ciclomática \cite{mccabe}, quantidade de variáveis, 
-		operadores, operandos, laços de repetição e laços de repetição aninhados, por exemplo.
-		
-		A análise dinâmica do código-fonte consiste na observação da execução do programa,
-		por meio do \foreign{trace} - uma espécie de histórico de execução do programa. Analisando
-		esse histórico é possível verificar algumas características, como: em que momento foi
-		realizado uma atribuição, chamada de função e recursão, qual bloco de código foi
-		executado em uma declaração de condição, a quantidade de vezes que um laço de repetição
-		foi executado e a saída no final da execução.
-		
-		E a análise do estilo de escrita, que será utilizada no desenvolvimento desse projeto,
-		é um tipo da análise estática da implementação, no qual, também é considerado o estilo de
-		escrita do programador. Além da possibilidade de coletar características da análise
-		estática citada anteriormente, como a quantidade de linhas de código e a complexidade
-		ciclomática, é possível coletar se: há mais que uma instrução e importação de bibliotecas
-		por linha, há espaços entre operando e operador, os métodos são separados por uma linha
-		em branco e tamanho da instrução, medido em caracteres.
+		\subsection{Características de Programas}
+		\label{subSec:Caracteristicas}
+
+			A análise estática ocorre por meio da observação do código-fonte, considerando
+			apenas sua implementação, ou seja, não é necessário sua execução. Há diversas
+			características que podem ser extraídas dessa análise. Há abordagens que extraem
+			somente a Árvore de Sintaxe Abstrata (AST) que pode ser gerada durante a análise
+			sintática do compilador para representar o código-fonte em forma de árvore
+			armazenando símbolos não-terminais nos nós filhos e símbolos terminais nos
+			nós folha. Esse tipo de árvore possui símbolos não terminais como nós filhos
+			e símbolos terminais como nós folhas. Enquanto outras abordagens extraem
+			características como: a quantidade de linhas e atribuições da implementação,
+			a complexidade ciclomática \cite{mccabe}, quantidade de variáveis, operadores,
+			operandos, laços de repetição e laços de repetição aninhados, por exemplo.
+			
+			A análise dinâmica do código-fonte consiste na observação da execução do
+			programa, por meio do \foreign{trace} - uma espécie de histórico de execução
+			do programa - e de teste de \foreign{software}. Analisando esse histórico é
+			possível verificar algumas características, como: em que momento foi realizado
+			uma atribuição, chamada de função e recursão, qual bloco de código foi
+			executado em uma declaração de condição, a quantidade de vezes que um laço
+			de repetição foi executado e a saída no final da execução. Já o teste de
+			software pode ser utilizado executando casos de teste em que verifica se a
+			produção final do programa era o esperado e esta informação, se o caso de
+			teste funcionou corretamente ou não, também pode ser uma característica do programa.
+			
+			E a análise do estilo de escrita, que será utilizada no desenvolvimento desse projeto,
+			é um tipo da análise estática. Entretanto, se difere no fato das implementações estarem
+			sintaticamente corretas. Nesse tipo de análise é considerado o estilo de escrita do
+			programador, abrindo a possibilidade de coletar dado estáticos, como a quantidade de
+			linhas de código e sua complexidade. Além da possibilidade de coletar
+			características da análise estática citada anteriormente, é possível coletar se:
+			há mais que uma instrução e importação de bibliotecas por linha, há espaços entre
+			operando e operador, os métodos são separados por uma linha em branco e tamanho
+			da instrução, medido em caracteres.
+			
+			\textbf{INSERIR EXEMPLO DE ESTILO DE ESCRITA EM CÓDIGO PYTHON AQUI}
+			
+			Além da possibilidade de extrair os dados citados anteriormente. É possível
+			obter os dados de como foi realizado o processo técnico e social do desenvolvimento
+			do programa. Para ambas abordagens, é necessário a utilização de um sistema de
+			controle de versão para que possa utilizar seus recursos. Um mecanismo para
+			obter informações é em relação ao momento, data e hora, em que o aluno realizou
+			um \foreign{commit} de uma versão da sua implementação. Outro método é verificar
+			se houve comunicações com outras pessoas durante o desenvolvimento do programa,
+			por meio da interação em \foreign{issues} ou solicitações de \foreign{pull requests}.
+			
+			\textbf{Eu não entendi a seguinte inserção nessa subseção que você solicitou:
+				"Problema (atividade de aprendizagem sendo elaborada)"}
 
 	\section{Trabalhos Relacionados}
 	\label{sec:TrabRel}
@@ -125,6 +201,11 @@
 	        \label{fig:t-SNE}
 	    \end{figure}
 	    
+	    \textbf{Professora, na primeira revisão você questionou o que a função
+	    	combine\_anagrams faz. Entretanto, revisei o artigo e não é realizado
+	    	nenhuma menção ao objetivo da função. Devo tirar o nome da função? E
+	    	a figura citada abaixo estava aqui! rs}
+	    
 	    Na Figura \ref{fig:t-SNE} é possível observar cinco grupos distintos
 	    criados a partir da comparação das TEDs normalizadas: roxo, verde, laranja,
 	    vermelho e azul. Cada ponto presente na visualização corresponde a uma
@@ -152,7 +233,7 @@
 	    funções de bibliotecas, declarações de atribuição, \foreign{loops}, condicional,
 	    número de variáveis e valores constantes, por exemplo.
 	    
-	    \citeonline{Glassman:2014} utiliza o classificador \foreign{K-means} para agrupar
+	    \citeonline{Glassman:2014} utiliza o algoritmo de agrupamento \foreign{K-means} para agrupar
 	    as implementações dos estudante. Foi utilizado diversos valores para $k$
 	    e a validação dos agrupamentos ocorreu por meio da comparação dos \foreign{clusters}
 	    criado pelo algoritmo de classificação com o que foi criado pelos
@@ -165,7 +246,7 @@
 	    gerado pelo \foreign{k-means}. Quando o valor de AMI é 0 (zero), quer dizer
 	    que os agrupamentos são independentes, entretanto, se for igual a 1, indica
 	    perfeita concordância entre os \foreign{clusters}. Quando $k$ tinha um
-	    valor maior ou igual a 15, os agrupamentos do classificador concordaram com
+	    valor maior ou igual a 15, os agrupamentos concordaram com
 	    o agrupamento de cada \foreign{teaching assistants}, conforme medição do AMI.
 	    
 	    Em \citeonline{Taherkhani:2012}, testou-se a ferramenta Aari para cinco tipos
@@ -196,20 +277,21 @@
 	    dois tipos de características: o laço externo incrementa e o laço interno
 	    decrementa; e quando o laço interno é inicializado com o valor do laço externo. 
 	    
-	    Além de extrair as características, o Aari, ferramenta de avaliação automática,
-	    também realiza testes da caixa branca. É por meio dessa ferramenta que os
-	    autores classificaram os algoritmos de ordenação realizados por um determinado
-	    grupo de alunos. Para verificar a precisão do Aari, foi realizado uma
-	    categorização manual. Inicialmente foi realizado um agrupamento manual dos
-		algoritmos de ordenação, diferenciando-os em duas etapas. A primeira rodada
-		é referente a implementação do algoritmo sem o ensino prévio dos métodos de
-		ordenação descritos anteriormente. Desta forma, foi pedido para que 112
-		alunos implementassem o método de ordenação que eles sabiam. O que difere
-		a primeira etapa da segunda é que, na segunda rodada, foi apresentado o
-		funcionamento de cada algoritmo previamente e, após a apresentação, eles
-		poderiam implementar qualquer outro algoritmo como também poderiam
-		implementar o mesmo da primeira etapa. Somente 80 alunos participaram
-		da segunda etapa. Esses alunos também tinham participado da primeira etapa. 
+	    Após extrair as características, cada algoritmo pode ser representado pelo seu
+	    vetor de características. O Aari, ferramenta de avaliação automática, utiliza
+		o classificador de árvore de decisão para reconhecer os algoritmos. É por meio
+		dessa abordagem que os autores classificaram os algoritmos de ordenação
+		realizados por um determinado grupo de alunos. Para verificar a precisão do
+		Aari, foi realizado uma categorização manual. Inicialmente foi realizado um
+		agrupamento manual dos algoritmos de ordenação, diferenciando-os em duas
+		etapas. A primeira rodada é referente a implementação do algoritmo sem o
+		ensino prévio dos métodos de ordenação descritos anteriormente. Desta
+		forma, foi pedido para que 112 alunos implementassem o método de ordenação
+		que eles sabiam. O que difere a primeira etapa da segunda é que, na segunda
+		rodada, foi apresentado o funcionamento de cada algoritmo previamente e,
+		após a apresentação, eles poderiam implementar qualquer outro algoritmo
+		como também programar o mesmo da primeira etapa. Somente 80 alunos participaram
+		da segunda rodada. Esses alunos também tinham participado da primeira etapa. 
 		
 		A Figura \ref{fig:clusterManual} apresenta o gráfico do agrupamento manual
 		realizado para verificar a precisão do Aari. O eixo $x$ é representado pelos
@@ -328,9 +410,9 @@
 		A comparação das pilhas menores com a pilha maior ocorre entre a primeira e a
 	    segunda coluna dando ênfase nas linhas que estão implementadas diferentes. Com
 	    isso, é possível verificar como cada pilha foi montada e a característica daquela
-	    pilha quando comparada com a pilha maior. Como utiliza análise dinâmica para
-	    classificar as submissões, é possível verificar o \foreign{traceback} da
-	    variável que desejar ao longo de sua execução em um caso de teste a fim de
+	    pilha quando comparada com a pilha maior. Como utiliza análise dinâmica, extraindo
+	    o histórico de execução, para agrupar as submissões, é possível verificar o \foreign{trace}
+	    da variável que desejar ao longo de sua execução em um caso de teste a fim de
 	    auxiliar os usuários a entenderem a execução do algoritmo.
 
 	    Por fim, os autores concluíram que a interface auxilia os assistentes de
