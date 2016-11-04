@@ -129,11 +129,21 @@
 			somente a Árvore de Sintaxe Abstrata (AST) que pode ser gerada durante a análise
 			sintática do compilador para representar o código-fonte em forma de árvore
 			armazenando símbolos não-terminais nos nós filhos e símbolos terminais nos
-			nós folha. Esse tipo de árvore possui símbolos não terminais como nós filhos
+			nós folha, como representa a Figura \ref{fig:AST} em uma declaração de condição.
+			Esse tipo de árvore possui símbolos não terminais como nós filhos
 			e símbolos terminais como nós folhas. Enquanto outras abordagens extraem
 			características como: a quantidade de linhas e atribuições da implementação,
 			a complexidade ciclomática \cite{mccabe}, quantidade de variáveis, operadores,
 			operandos, laços de repetição e laços de repetição aninhados, por exemplo.
+						
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=0.7\linewidth]{imagem/AST}
+				\captionsetup{justification=centering}
+				\caption[Representação de árvore de sintaxe abstrata]{Representação
+				de árvore de sintaxe abstrata. Fonte: \citeonline{louden2004}}
+				\label{fig:AST}
+			\end{figure}
 			
 			A análise dinâmica do código-fonte consiste na observação da execução do
 			programa, por meio do \foreign{trace} -- uma espécie de histórico de execução
