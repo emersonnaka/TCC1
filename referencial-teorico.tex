@@ -3,22 +3,24 @@
 	Neste capítulo serão apresentados os conceitos utilizados na pesquisa, bem como
 	os estudos que fundamentaram esse projeto. A Seção \ref{sec:Mooc} apresenta
 	o conceito de MOOC e as principais características da plataforma de ensino.
-	A Seção \ref{sec:MinVisual} descreverá  A
-	Seção \ref{sec:FundTeor} descreve as definições de termos presentes no decorrer
-	da pesquisa. A Seção \ref{sec:TrabRel} apresenta as pesquisas relacionados a
-	este estudo juntamente com suas limitações.
+	A Seção \ref{sec:FundTeor} descreve as definições de termos presentes no
+	decorrer da pesquisa: mineração, visualização, projeção, agrupamento e
+	classificador. A Seção \ref{sec:MinVisual} descreverá as características que
+	podem ser extraídas dado a escolha de um dos tipos de análise de código-fonte.
+	E a Seção \ref{sec:TrabRel} apresenta as pesquisas relacionados a este estudo
+	juntamente com suas limitações.
 
 	\section{Massive Open Online Courses (MOOC)}
 	\label{sec:Mooc}
 		Após pesquisar o conceito de Curso Massivo, Aberto e \foreign{Online},
 		\citeonline{fassbinder2014} observam que não há uma definição comum na
-		literatura. Entretanto, encontra três descrições distintas para o termo.
-		Enquanto \citeonline{sivamuni2013} afirma que o MOOC, em conformidade com
-		o dicionário Oxford, é um curso oferecido por meio da Internet, de forma
+		literatura. Entretanto, encontra-se três descrições distintas para o termo.
+		\citeonline{sivamuni2013} afirmam que o MOOC, em conformidade com o
+		dicionário Oxford, é um curso oferecido por meio da Internet, de forma
 		gratuita, para uma grande quantidade de alunos. \citeonline{subbian2013}
 		reitera que o MOOC disponibiliza curso gratuito, baseado na \foreign{web},
 		com registro livre de taxas monetárias e compartilhamento público de
-		currículo. \citeonline{siemens2013} defende a tendência em inovação e
+		currículo. Por fim, \citeonline{siemens2013} defende a tendência em inovação e
 		experimentação do uso da tecnologia para o ensino a distância e
 		\foreign{online} a fim de dar oportunidade de aprendizagem de forma massiva.
 		
@@ -31,18 +33,26 @@
 		160.000 estudantes inscritos \cite{rodriguez2012}.
 		
 		Entre os principais recursos da plataforma, como a integração com outras
-		aplicações (e-mails), o uso de questionário relacionados com os vídeos e a
-		inclusão de atividades para estimular e motivar os alunos \cite{fassbinder2014}.
-		Focaremos no desenvolvimento de recursos avançados de visualização dos dados
-		obtidos por meio das implementações submetidos em cursos de programação e
-		na realização de \foreign{feedback} para que o usuário possa verificar seu nível
-		de conhecimento.
+		aplicações, como a utilização de e-mails e fóruns, o uso de questionário
+		relacionados com os vídeos e a inclusão de atividades para estimular e
+		motivar os alunos \cite{fassbinder2014}. Focaremos no desenvolvimento de
+		recursos avançados de visualização dos dados obtidos por meio das
+		implementações submetidas em cursos de programação e na realização de
+		\foreign{feedback} para que o usuário possa verificar seu nível de conhecimento.
 
-	\section{Fundamentação Teórica}
+	\section{Mineração e Visualização de Dados}
 	\label{sec:FundTeor}
 		Nesta seção apresentaremos as definições de alguns termos utilizados
-		durante a pesquisa: mineração e visualização de dados, projeção e a diferença
-		na área de Inteligência Artificial sobre classificadores e agrupamento.
+		durante a pesquisa: mineração, a diferença na área de Inteligência
+		Artificial sobre classificadores e agrupamento, visualização de dados e projeção.
+
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.7\linewidth]{imagem/mineracaoDados}
+			\captionsetup{justification=centering}
+			\caption[Etapas da mineração de dados]{Etapas da mineração de dados \cite{rezende2003}}
+			\label{fig:mineracaoDados}
+		\end{figure}
 		
 		A mineração de dados é uma etapa do \foreign{Knowledge Discovery in Databases}
 		\cite{fayyad1996} que busca descobrir padrões em grandes conjuntos de dados
@@ -50,73 +60,72 @@
 		de banco de dados \cite{chakrabarti2006}. O objeto do processo de mineração
 		de dados consiste na extração de informações de um conjunto de dados e
 		transformá-lo em uma estrutura compreensível para uso posterior \cite{chakrabarti2006}.
-		Muitos métodos de mineração de dados são baseados em técnicas de treinamento
-		e teste de aprendizagem de máquina, reconhecimento de padrões e estatísticas,
-		como os algoritmos de classificação e agrupamentos \cite{fayyad1996}.
-		
-		\textbf{No artigo \cite{fayyad1996} há um fluxograma do KDD (Figura 1).
-		Quando fui pesquisar na internet sobre um fluxograma de mineração, apareceram
-		vários fluxogramas iguais! Não coloquei porque fiquei na dúvida. Posso utilizar
-		o fluxograma do KDD pra exemplificar a mineração de dados?}
-		
-		Após a mineração das informações, é necessário a utilização de ferramentas
-		para criar hipóteses sobre conjuntos de dados complexos -- grande conjunto
-		de dados ou de alta dimensionalidade -- para que os analistas possuam
-		capacidade de explorá-los e compreendê-los. A visualização de dados produz
-		modelos gráficos e representações visuais a fim de utilizar a capacidade
-		cognitiva do ser humano, por meio da percepção visual, para colaborar com
-		a exploração e obtenção de informações úteis presente nos dados \cite{de2003}.
-		
-		\textbf{O parágrafo acima foi inteiramente retirado da referência. Cito só
-			no final do parágrafo ou ao final de cada frase? No parágrafo abaixo
-			ocorre o mesmo problema de citação. De "Entretanto os modelos..."
-			até "tridimensional." é tudo do mesmo artigo.}
-		 
-		Para exibir visualizações geradas a partir da mineração de dados de
-		baixas dimensões, foi criado o mapeamento de dados para reconhecimento
-		visual, chamado de projeção \cite{friedman1974}. Entretanto os modelos gráficos
-		ou as representações visuais podem possuir alta dimensão devido ao grande
-		conjunto da base de dados e de características extraídas. Por consequência,
-		há uma dificuldade para que a visualização seja representada em um plano de
-		baixa dimensão. Para isso, criou-se uma técnica de projeção: projeção
-		multidimensional. Essa técnica realiza a diminuição $n-dimensional$, sendo
-		$n$ uma alta dimensão, para uma espaço unidimensional, bidimensional ou
-		tridimensional \cite{paulovich2008least}. Para criar essa visualização
-		deve-se selecionar o formato de como as características extraídas serão
-		armazenadas, como o vetor de características ou o modelo de tabela de dados
-		\cite{de2003}.
+		A Figura \ref{fig:mineracaoDados} apresenta os estágios da mineração de dados:
+		o Conhecimento do Domínio condiz com a identificação do problema para possuir
+		um conhecimento inicial e, definir as metas e os objetivos a setem atingidos
+		no processo de extração de conhecimento; a etapa Pré-processamento refere-se
+		a padronização e limpeza da extração de dados de fontes diversas e, a escolha
+		de um subconjunto representativo; a fase seguinte, Extração de Padrões, 
+		consiste na aplicação do algoritmo de mineração de dados escolhido; o estágio
+		Pós-processamento equivale a análise dos padrões obtidos anteriormente e
+		possibilita a extração de outros padrões; por fim, a Utilização do Conhecimento
+		é a utilização dos dados extraídos em algum sistema ou utilizado diretamente
+		pelo usuário. Muitos métodos de mineração de dados são baseados em técnicas de treinamento
+		e teste de aprendizagem de máquina e, reconhecimento de padrões e estatísticas,
+		como os algoritmos de classificação e agrupamentos, respectivamente \cite{fayyad1996}.
 		
 		Classificação é a tarefa de aprendizagem de uma função alvo que mapeia cada
-		conjunto de atributo a um dos rótulos de classe predefinidas \cite{Tan:2005:ch4}.
+		conjunto de atributos a um dos rótulos de classe predefinidas \cite{Tan:2005:ch4}.
 		Uma função alvo auxilia como uma ferramenta que possui informações para distinguir
 		os objetos de diferentes classes. A fim de realizar essas classificações, são
-		implementados classificadores com diversas abordagens, como árvore de decisão,
+		implementados classificadores com diversas abordagens, como árvores de decisão,
 		redes neurais e \foreign{support vector machine}, por exemplo. Esses
 		classificadores são mais utilizados para predizer ou descrever um conjunto
-		de dados com categorias binárias ou nominais. Por exemplo, para classificar
-		um animal como mamífero, réptil, peixe, anfíbio ou pássaro, deve-se sumarizar
-		dados como a temperatura do corpo, característica da pele, se é uma criatura
-		aquática, se possui patas e hiberna.
+		de dados com categorias binárias ou nominais \cite{Tan:2005:ch4}. Por exemplo,
+		para classificar um animal como mamífero, réptil, peixe, anfíbio ou pássaro,
+		deve-se sumarizar dados como a temperatura do corpo, característica da pele,
+		se é uma criatura aquática, se possui patas e hiberna.
 		
 		O que difere a classificação do agrupamento, é que esse é formado por meio da
-		comparação de informações entre os objetos, enquanto aquele é realizado por meio
-		da comparação das informações do objeto com os dados contidos na função alvo.
-		Desta forma, os objetos dentro de um grupo devem ser similares ou relacionados
-		entre si e, diferentes ou não relacionados entre objetos de grupos diferentes,
-		ou seja, quanto maior a similaridade dos objetos dentro de um grupo e mais
-		diferentes são os agrupamentos, melhor ou mais distinto os agrupamentos
-		\cite{Tan:2005:ch8}. O K-means \cite{macqueen1967} e o \foreign{Density-based
-		Algorithm for Discovering Clusters} \cite{Ester1996} são exemplos de algoritmos
-		de agrupamento.
+		comparação de informações entre os objetos e não existem rótulos pré-definidos,
+		enquanto aquele é realizado por meio da comparação das informações do objeto
+		com os dados contidos na função alvo. Desta forma, os objetos dentro de um grupo
+		devem ser similares ou relacionados entre si e, diferentes ou não relacionados
+		entre objetos de grupos diferentes, ou seja, quanto maior a similaridade dos
+		objetos dentro de um grupo e mais diferentes são os agrupamentos, melhor ou
+		mais distinto os agrupamentos \cite{Tan:2005:ch8}. O K-means \cite{macqueen1967}
+		e o \foreign{Density-based Algorithm for Discovering Clusters} \cite{Ester1996}
+		são exemplos de algoritmos de agrupamento.
+
+		Após a mineração dos dados, é desejável a utilização de ferramentas para
+		auxiliar na criação de hipóteses sobre conjuntos de dados complexos -- grande
+		conjunto de dados ou de alta dimensionalidade -- para que os analistas possuam
+		capacidade de explorá-los e compreendê-los \cite{de2003}. A visualização de dados
+		produz modelos gráficos e representações visuais a fim de utilizar a capacidade
+		cognitiva do ser humano, por meio da percepção visual, para colaborar com
+		a exploração e obtenção de informações úteis presente nos dados \cite{de2003,keim2002}.
+		Ademais, a visualização de dados é intuitiva, permitindo explorar os dados
+		mais rápido e fornecendo melhores resultados na maioria das vezes \cite{keim2002}.
+		
+		Entretanto, não é possível gerar visualizações sobre conjuntos de dados
+		complexos. Assim sendo, é necessário a utilização de técnicas de projeção que
+		criam o mapeamento de dados para reconhecimento visual \cite{friedman1974} e,
+		com isso, produzir a visualização. Devido a alta dimensionalidade dos dados,
+		é necessário a utilização de projeções multidimensionais. Essa técnica realiza
+		a diminuição $n-dimensional$, sendo $n$ uma alta dimensão, para uma espaço
+		unidimensional, bidimensional ou tridimensional \cite{paulovich2008least}.
+		Para criar essa visualização deve-se selecionar o formato de como as
+		características extraídas serão armazenadas, como o vetor de características
+		ou o modelo de tabela de dados \cite{de2003}.
 
 	\section{Mineração e Visualização de Programas}
 	\label{sec:MinVisual}
 		Para realizar a mineração de informações nos programas submetidos, é necessário
-		decidir como será extraído as características -- análise sintática, dinâmica e
+		decidir como serão extraídos as características -- análise sintática, dinâmica e
 		do código de escrita -- e quais dados podem ser obtidos por meio da análise
 		escolhida (Subseção \ref{subSec:Caracteristicas}). Independente da dimensão
 		obtida por meio da quantidade de informações extraídas, é necessário escolher
-		como os dados obtidos serão armazenados para que seja possível realizar sua visualização.
+		como os dados obtidos serão representados para que seja possível realizar sua visualização.
 		
 		\subsection{Características de Programas}
 		\label{subSec:Caracteristicas}
@@ -141,7 +150,7 @@
 				\includegraphics[width=0.7\linewidth]{imagem/AST}
 				\captionsetup{justification=centering}
 				\caption[Representação de árvore de sintaxe abstrata]{Representação
-				de árvore de sintaxe abstrata. Fonte: \citeonline{louden2004}}
+				de árvore de sintaxe abstrata \cite{louden2004}.}
 				\label{fig:AST}
 			\end{figure}
 			
@@ -152,8 +161,8 @@
 			uma atribuição, chamada de função e recursão, qual bloco de código foi
 			executado em uma declaração de condição, a quantidade de vezes que um laço
 			de repetição foi executado e a saída no final da execução. Já o teste de
-			software pode ser utilizado executando casos de teste em que verifica se a
-			produção final do programa era o esperado e esta informação, se o caso de
+			software pode ser utilizado executando casos de teste nos quais é verificado
+			se produção final do programa era o esperado e esta informação, se o caso de
 			teste funcionou corretamente ou não, também pode ser uma característica do programa.
 			
 			E a análise do estilo de escrita, que será utilizada no desenvolvimento desse projeto,
@@ -164,7 +173,10 @@
 			características da análise estática citada anteriormente, é possível coletar se:
 			há mais que uma instrução e importação de bibliotecas por linha, há espaços entre
 			operando e operador, os métodos são separados por uma linha em branco e tamanho
-			da instrução, medido em caracteres.
+			da instrução, medido em caracteres. A Tabela \ref{tab:exemploEstEsc} exemplifica
+			possíveis características de serem extraídas em uma chamada de função, na qual é
+			possível inserir ou não um espaço entre o parâmetro e os \foreign{tokens} abrir
+			e fechar parêntese, como também a utilização de uma ou mais instruções por linha.
 			
 			\begin{table}
 				\centering
@@ -179,14 +191,14 @@
 				\end{tabular}
 				\captionsetup{justification=centering}
 				\caption[Representação do estilo de escrita]{Representação do estilo
-				de escrita pode ocorrer com variações de espaços e mais que uma
-				instrução por linha, por exemplo.}
+				de escrita em uma chamada de função e instrução por linha.}
+				\label{tab:exemploEstEsc}
 			\end{table}
 			
 			Além da possibilidade de extrair os dados citados anteriormente. É possível
 			obter os dados de como foi realizado o processo técnico e social do desenvolvimento
 			do programa. Para ambas abordagens, é necessário a utilização de um sistema de
-			controle de versão para que possa utilizar seus recursos. Um mecanismo para
+			controle de versão para que se possa utilizar seus recursos. Um mecanismo para
 			obter informações é em relação ao momento, data e hora, em que o aluno realizou
 			um \foreign{commit} de uma versão da sua implementação. Outro método é verificar
 			se houve comunicações com outras pessoas durante o desenvolvimento do programa,
@@ -203,15 +215,15 @@
 	    para verificar a similaridade entre as árvores. Desta forma, foi utilizada
 	    a Distância de Edição de Árvore (TED) – ao comparar duas árvores, verificam-se
 	    quais são as movimentações (inserção, movimentação e remoção) necessárias
-	    para que as árvores fiquem iguais. Assim, foi selecionado a TED normalizado
+	    para que as árvores fiquem iguais. Assim, foi selecionada a TED normalizada
 	    que utiliza estrutura \foreign{top-down}: quanto mais próximo do nó raiz,
-	    maior sua importância. Sua escolha ocorreu pelo fato do TED normalizado
+	    maior sua importância. Sua escolha ocorreu pelo fato da TED normalizada
 	    possuir maior índice na qualidade de agrupamentos.
 	    
-	    Os autores desse artigo analisado utilizaram os algoritmos de agrupamento
+	    Os autores desse artigo utilizaram os algoritmos de agrupamento
 	    DBSCAN \cite{Ester1996} e OPTICS \cite{Ankerst1999} para agrupar os códigos
-	    semelhantes, visto que esses algoritmos de agrupamento obtiveram a maior
-	    pontuação de silhueta que verifica a similaridade entre pares dentro do
+	    semelhantes. Tais algoritmos foram selecionados devido a maior pontuação
+	    de silhueta. Essa pontuação verifica a similaridade entre pares dentro do
 	    agrupamento e entre os agrupamentos. Quanto maior sua pontuação, melhor a
 	    qualidade do \foreign{cluster}. Conforme a Figura \ref{fig:t-SNE}, para
 	    visualizar os agrupamentos foi utilizado o t-SNE \cite{maaten2008} – técnica
@@ -222,7 +234,7 @@
 	        \centering
 	        \includegraphics[scale=0.5]{imagem/visualizacao-tSNE.png}
 	        \captionsetup{justification=centering}
-	        \caption{Visualização t-SNE.}
+	        \caption[Visualização t-SNE]{Visualização t-SNE \cite{Yin:2015}}
 	        \label{fig:t-SNE}
 	    \end{figure}
 	    
@@ -232,49 +244,50 @@
 	    	a figura citada abaixo estava aqui! rs}
 	    
 	    Na Figura \ref{fig:t-SNE} é possível observar cinco grupos distintos
-	    criados a partir da comparação das TEDs normalizadas: roxo, verde, laranja,
-	    vermelho e azul. Cada ponto presente na visualização corresponde a uma
+	    criados a partir da comparação das TEDs normalizadas destacados em cores
+	    diferentes. Cada ponto presente na visualização corresponde a uma
 	    implementação. Todas as implementações possuem a função \foreign{combine\_anagrams}
 	    que possui a variável \foreign{words} como parâmetro: no grupo vermelho,
 	    essa função possui 3,7 linhas; no agrupamento roxo, 10,9 linhas; no
 	    grupo laranja, a função possui 12,5 linhas; e no agrupamento verde,
 	    a solução possui 21,3 linhas. Enquanto os pontos azuis não obtiveram
 	    similaridade suficiente para formar um agrupamento ou serem classificados
-	    em outro agrupamento. 
+	    em outro agrupamento, ou seja, \foreign{outliers}. 
 
-		A utilização da extração de características por meio da AST é interessante,
-		como também o uso da TED normalizada para verificar sua similaridade, devido
-		ao seu baixo custo computacional. Entretanto, como o autor testou seu
-		agrupamento somente com implementações para resolver um problema, não sabemos
-		se tal abordagem é eficiente quando houver implementações que buscam resolver
+		A extração de características por meio da AST é interessante, como também
+		o uso da TED normalizada para verificar sua similaridade, devido ao seu
+		baixo custo computacional. Entretanto, como o autor testou seu agrupamento
+		somente com implementações para resolver um único problema, não sabemos se
+		tal abordagem é eficiente quando houver implementações que buscam resolver
 		diversos problemas. Em razão da possibilidade dos códigos-fontes gerarem
 		árvores parecidas ainda quando solucionam problemas distintos.
 	    
 	    Em \citeonline{Glassman:2014}, foi proposto um agrupamento hierárquico de dois
 	    níveis. No nível mais alto ocorre o particionamento das soluções ao longo do
-	    plano de separação, considerando apenas características abstratas, como:
-	    posição da declaração de condicional em relação a declarações de laço de
-	    repetição (antes, dentro ou depois), profundidade de um laço de repetição
+	    plano de separação, considerando apenas características abstratas, como, por
+	    exemplo: posição da declaração de condicional em relação a declarações de laço
+	    de repetição (antes, dentro ou depois), profundidade de um laço de repetição
 	    (\foreign{loop}) aninhado, números de nós AST e declarações de retorno,
 	    \foreign{loops} e comparações, por exemplo.
 	    
-	    Dentro de cada agrupamento de alto nível, tem um subagrupamento, destinado a
-	    capturar a dimensão generalizada, construções de linguagem de baixo nível e
-	    bibliotecas utilizadas. Os agrupamentos internos são formados por meio de 48
-	    características concretas: operações aritméticas e lógicas, laços de repetição,
-	    funções de bibliotecas, declarações de atribuição, \foreign{loops}, condicional,
-	    número de variáveis e valores constantes, por exemplo.
+	    Dentro de cada agrupamento de alto nível, existem subagrupamentos internos,
+	    destinado a capturar a dimensão generalizada, construções de linguagem de
+	    baixo nível e bibliotecas utilizadas. Os agrupamentos internos são formados
+	    por meio de 48 características concretas: operações aritméticas e lógicas,
+	    laços de repetição, funções de bibliotecas, declarações de atribuição,
+	    \foreign{loops}, condicional, número de variáveis e valores constantes,
+	    por exemplo.
 	    
-	    \citeonline{Glassman:2014} utiliza o algoritmo de agrupamento \foreign{K-means}
-	    para agrupar as implementações dos estudante. Foi utilizado diversos valores para $k$
-	    e a validação dos agrupamentos ocorreu por meio da comparação dos \foreign{clusters}
-	    criado pelo algoritmo de classificação com o que foi criado pelos professores.
-	    Para os TAs foi entregue 50 códigos  dos estudantes randomicamente e notou-se
-	    que eles ignoraram características de baixo nível.
+	    \citeonline{Glassman:2014} utilizam o algoritmo de agrupamento \foreign{K-means}
+	    para agrupar as implementações dos estudante. Foram utilizados diversos valores
+	    para $k$ e a validação dos agrupamentos ocorreu por meio da comparação dos
+	    \foreign{clusters} criado pelo algoritmo de classificação com o que foi criado
+	    pelos professores. Para os professores foram entregues 50 códigos dos estudantes
+	    randomicamente distribuídos e notou-se que eles ignoraram características de baixo nível.
 	    
 	    Estes utilizaram a métrica Informação Mútua Ajustada (AMI, do inglês
 	    \foreign{Adjusted Mutual Information}), cálculo probabilístico, para comparar
-	    os agrupamentos dos TA's com cada agrupamento gerado pelo \foreign{k-means}.
+	    os agrupamentos dos professores com cada agrupamento gerado pelo \foreign{k-means}.
 	    Quando o valor de AMI é 0 (zero), quer dizer que os agrupamentos são
 	    independentes, entretanto, se for igual a 1, indica perfeita concordância
 	    entre os \foreign{clusters}. Quando $k$ tinha um valor maior ou igual a 15,
@@ -283,7 +296,7 @@
 	    
 	    Apesar da grande quantidade de dados extraídos das implementações, não houve
 	    nenhum alusão sobre como essas características interfeririam na cálculo de
-	    similaridade utilizado. Contudo a abordagem de dividir as informações a serem
+	    similaridade utilizada. Contudo a abordagem de dividir as informações a serem
 	    coletadas em duas dimensões é relevante. Posto que as implementações com
 	    a mesma quantidade de laços de repetição, por exemplo, deveriam ser agrupadas
 	    facilitando a verificação se os alunos entenderam como fazer e utilizar
@@ -293,8 +306,8 @@
 	    de métodos de ordenação: \foreign{bubble sort}, \foreign{insertion sort},
 	    \foreign{selection sort}, \foreign{mergesort} e \foreign{quicksort}. Os autores
 		separaram as características em quatro categorias: características numéricas,
-		características descritivas, outras características e características de
-		algoritmos de ordenação.
+		características descritivas, características de algoritmos de ordenação e
+		outras características.
 	    
 	    A categoria de características numéricas extrai tudo que pode ser medido
 	    como inteiro e possui o seguinte conjunto de características: número de
@@ -306,7 +319,7 @@
 	    
 	    A categoria de características descritivas possui: se um algoritmo é
 	    recursivo, se é uma recursão em cauda, regras de variáveis e \foreign{arrays}
-	    auxiliares. Essas características podem ser identificados como booleano,
+	    auxiliares. Essas características podem ser identificadas como booleano,
 	    indicando ausência ou existência das características correspondentes. Enquanto
 	    outras características possui informações sobre blocos e laços de repetição,
 	    informação do contador do \foreign{loop} e informações de dependência.
@@ -319,7 +332,7 @@
 	    
 	    Após extrair as características, cada algoritmo pode ser representado pelo seu
 	    vetor de características. O Aari, ferramenta de avaliação automática, utiliza
-		o classificador de árvore de decisão para reconhecer os algoritmos. É por meio
+		a técnica de árvore de decisão para classificar os algoritmos. É por meio
 		dessa abordagem que os autores classificaram os algoritmos de ordenação
 		realizados por um determinado grupo de alunos. Para verificar a precisão do
 		Aari, foi realizado uma categorização manual. Inicialmente foi realizado um
@@ -327,35 +340,37 @@
 		etapas. A primeira rodada é referente a implementação do algoritmo sem o
 		ensino prévio dos métodos de ordenação descritos anteriormente. Desta
 		forma, foi pedido para que 112 alunos implementassem o método de ordenação
-		que eles sabiam. O que difere a primeira etapa da segunda é que, na segunda
-		rodada, foi apresentado o funcionamento de cada algoritmo previamente e,
-		após a apresentação, eles poderiam implementar qualquer outro algoritmo
-		como também programar o mesmo da primeira etapa. Somente 80 alunos participaram
-		da segunda rodada. Esses alunos também tinham participado da primeira etapa. 
+		que eles sabiam. Enquanto, na segunda rodada, foi apresentado o funcionamento
+		de cada algoritmo previamente e, após a apresentação, eles poderiam implementar
+		qualquer outro algoritmo como também programar o mesmo da primeira etapa.
+		Somente 80 alunos participaram da segunda rodada. Esses alunos também tinham
+		participado da primeira etapa.
 		
 		A Figura \ref{fig:clusterManual} apresenta o gráfico do agrupamento manual
 		realizado para verificar a precisão do Aari. O eixo $x$ é representado pelos
 		algoritmos de ordenação: \foreign{bubble sort}, \foreign{insertion sort},
 		\foreign{selection sort}, \foreign{merge sort} e \foreign{quick sort}, além
-		da \foreign{Inneficiente variations}, consequência de modificações realizadas
-		pelos alunos na estrutura de qualquer algoritmo de ordenação e, \foreign{Others}
-		foi criada a partir das implementações de outros métodos de ordenação: 
-		\foreign{shell sort} e \foreign{heapsort}. O eixo $y$ indica a quantidade de implementações
-		reconhecidas. Para cada algoritmo de ordenação há duas colunas: a coluna da
-		esquerda representa as soluções computacionais da primeira etapa, enquanto a
-		coluna da direita demonstra as implementações da segunda rodada.É  possível notar,
-		após a apresentação dos algoritmos de ordenação na etapa 2, que: poucas
-		implementações foram classificadas como \foreign{Inneficiente variations}; menos
-		estudantes optaram em implementar o \foreign{bubble sort}, o \foreign{selection
-		sort} e \foreign{Others}; e houve uma crescente na implementação do \foreign{merge
-		sort} e do \foreign{quick sort}.
+		da \foreign{Inneficiente variations}. Essa última representação é consequência
+		de modificações realizadas pelos alunos na estrutura de qualquer algoritmo de
+		ordenação e, \foreign{Others} foi criada a partir das implementações de outros
+		métodos de ordenação: \foreign{shell sort} e \foreign{heapsort}. O eixo $y$
+		indica a quantidade de implementações reconhecidas. Para cada algoritmo de
+		ordenação há duas colunas: a coluna da esquerda representa as soluções
+		computacionais da primeira etapa, enquanto a coluna da direita demonstra as
+		implementações da segunda rodada. É possível notar, após a apresentação dos
+		algoritmos de ordenação na etapa 2, que: poucas implementações foram
+		classificadas como \foreign{Inneficiente variations}; menos estudantes optaram
+		em implementar o \foreign{bubble sort}, o \foreign{selection sort} e
+		\foreign{Others}; e houve mais implementações do \foreign{merge sort} e do
+		\foreign{quick sort}.
 	    
 	    \begin{figure}[h]
 	        \centering
 	        \includegraphics[scale=0.4]{imagem/clusterManual.png}
 	        \captionsetup{justification=centering}
-	        \caption{Agrupamento manual das implementações dos estudos estudantes na
-	        	primeira e segunda etapa}
+	        \caption[Agrupamento manual das implementações dos estudos estudantes na
+	        primeira e segunda etapa]{Agrupamento manual das implementações dos estudos estudantes na
+	        primeira e segunda etapa \cite{Taherkhani:2012}.}
 	        \label{fig:clusterManual}
 	    \end{figure}
 	    
@@ -363,7 +378,7 @@
 	    \citeonline{Taherkhani:2012} realizou o reconhecimento automático das
 	    implementações por meio da ferramenta Aari. Inicialmente a ferramenta foi
 	    treinada para reconhecer os algoritmos de ordenação citados anteriormente.
-	    A Figura \ref{fig:clusterAutomatico} apresenta o gráfico para comparar cada
+	    A Figura \ref{fig:clusterAutomatico} apresenta um gráfico para comparar cada
 	    agrupamento manual realizado anteriormente com o reconhecimento automático
 	    da ferramenta. Possui as mesmas propriedades da Figura \ref{fig:clusterManual}
 	    com exceção das colunas. A coluna da esquerda referencia o agrupamento manual
@@ -379,27 +394,28 @@
 	        \centering
 	        \includegraphics[scale=0.33]{imagem/clusterAutomatico.png}
 	        \captionsetup{justification=centering}
-	        \caption{Comparação das implementações dos alunos dos \foreign{clusters}
-	        	manual e automático da segunda etapa}
+	        \caption[Comparação das implementações dos alunos dos \foreign{clusters}
+	        manual e automático da segunda etapa]{Comparação das implementações dos
+	        alunos dos \foreign{clusters} manual e automático da segunda etapa \cite{Taherkhani:2012}.}
 	        \label{fig:clusterAutomatico}
 	    \end{figure}
 	    
 	    A ferramenta mostrou-se capaz de identificar a maioria dos métodos de ordenação
-	    que foram treinados previamente. Tal abordagem torna-se interessante quando
-	    há um plano de ensino com os problemas a serem resolvidos, possibilitando
+	    para quais foi treinada previamente. Tal abordagem torna-se interessante quando
+	    há um plano de ensino detalhando os problemas a serem resolvidos, possibilitando
 	    o treinamento da ferramenta. Entretanto, caso seja utilizado para classificar
 	    diversos problemas desconhecidos para o classificador, não há uma categorização
-	    adequada. Desta forma, inviabilizaria sua utilização em MOOC se fosse utilizado
-	    para classificar os problemas de todos os cursos de programação.
+	    prévia adequada. Desta forma, inviabilizaria sua utilização em MOOCs se fosse
+	    utilizado para classificar os problemas de todos os cursos de programação.
 	    
 	    \citeonline{Glassman:2015} apresentam o OverCode, ferramenta de visualização
-	    de informação no qual demonstra os \foreign{clusters} formados, as principais
+	    de informação que mostra os \foreign{clusters} formados, as principais
 	    instruções utilizadas pelas implementações presentes em um determinado
 	    agrupamento e as linhas de código de uma determinada função/método. A
-	    ferramenta é voltada para aqueles que realizarão a validação das submissões.
+	    ferramenta é voltada para aqueles que realizarão a correção das submissões.
 	    
 	    Para verificar a similaridade das submissões a fim de realizar o agrupamento,
-	    é necessário: formatar o código-fonte, executar um caso de teste, extrair sequência
+	    é necessário: formatar o código-fonte, executar um caso de teste, extrair a sequência
 	    de variáveis, identificar variáveis em comum, renomear variáveis comuns e únicas
 	    para, então, realizar o agrupamento. Formatar o código-fonte consiste na refatoração
 	    em cada implementação. Essa refatoração consiste na remoção dos espaços entre os
@@ -427,7 +443,7 @@
 	        \centering
 	        \includegraphics[scale=0.4]{imagem/overCode.png}
 	        \captionsetup{justification=centering}
-	        \caption{Interface da ferramenta OverCode.}
+	        \caption[Interface da ferramenta OverCode.]{Interface da ferramenta OverCode \cite{Glassman:2015}.}
 	        \label{fig:interfaceOverCode}
 	    \end{figure}
 	    
@@ -445,15 +461,15 @@
 	    segunda coluna dando ênfase nas linhas que estão implementadas diferentes. Com
 	    isso, é possível verificar como cada pilha foi montada e a característica daquela
 	    pilha quando comparada com a pilha maior. Como utiliza análise dinâmica, extraindo
-	    o histórico de execução, para agrupar as submissões, é possível verificar o \foreign{trace}
-	    da variável que desejar ao longo de sua execução em um caso de teste a fim de
-	    auxiliar os usuários a entenderem a execução do algoritmo.
+	    o histórico de execução para agrupar as submissões, é possível verificar o \foreign{trace}
+	    de uma variável ao longo de sua execução em um caso de teste a fim de auxiliar os
+	    usuários a entenderem a execução do algoritmo.
 
-	    Por fim, os autores concluíram que a interface auxilia os assistentes de
-	    ensino a terem uma visão de alto nível dos alunos, podendo compreender os
+	    Por fim, os autores concluíram que a interface auxilia os professores a terem
+	    uma visão de alto nível das soluções (implementações). Podendo compreender os
 	    erros e fornecer um \foreign{feedback} mais relevante, devido ao agrupamento
-	    das implementações, visto que diminui consideravelmente a quantidade de
-	    submissões a serem corrigidos.
+	    das implementações. O que diminui consideravelmente a quantidade de submissões
+	    a serem efetivamente corrigidas.
 	    
 	    \textbf{Professor, no final do OverCode possui um gráfico interessante relacionando
 	    	a quantidade de agrupamentos com o tamanho desses agrupamentos. Entretanto, se
@@ -463,10 +479,10 @@
 	    
 	    A divisão das implementações pode ter aumentado consideravelmente o número de
 	    agrupamentos. Contudo, a análise dinâmica e os recursos realizados para que
-	    fosse montado a pilha mostrou-se eficiente. Todavia, poderia ter considerado
-	    toda a implementação e levado em consideração mais uma característica, o tamanho
-	    médio das instruções por linha. Devido a diversas possibilidades de realizar
-	    uma atribuição com alguma operação aritmética.
+	    fosse montado a pilha mostrou-se eficiente. Todavia, toda a implementação
+	    poderia ter sido considerada e levado em consideração mais de uma característica
+	    e o tamanho médio das instruções por linha. Devido a diversas possibilidades de
+	    realizar uma atribuição com alguma operação aritmética.
 	    
 	    \citeonline{Wei2015} apresentam uma ferramenta para auxiliar na correção das
 	    submissões dos MOOC's de forma a agrupar pedaços (\foreign{chuncks}) de códigos
@@ -507,7 +523,7 @@
 			\centering
 			\includegraphics[width=0.7\linewidth]{imagem/clusteringPerformance}
 			\captionsetup{justification=centering}
-			\caption{Distribuição dos agrupamentos.}
+			\caption[Distribuição dos agrupamentos.]{Distribuição dos agrupamentos \cite{Wei2015}.}
 			\label{fig:clusteringPerformance}
 		\end{figure}
 	    
@@ -553,6 +569,7 @@
 					\citeonline{Glassman:2015} & Implementações & \begin{tabular}[c]{@{}c@{}}Rastro do programa (Sequência\\ de variáveis, variáveis comuns e\\ renomeação de variáveis:\\ colisão comum / comum;\\ colisão de múltiplas\\ instâncias; e colisão\\ único/comum), blocos\\ de código.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Comparação de\\ programas bloco a bloco\\ (algoritmo definido no\\ artigo)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Comparação entre conjuntos\\ de linhas de código\end{tabular} & \begin{tabular}[c]{@{}c@{}}Grande quantidade\\ de pilhas com poucos blocos de\\ código-fonte e poucas pilhas\\ com grande quantidade de\\ blocos implementados\end{tabular} & \begin{tabular}[c]{@{}c@{}}A partir do OverCode e\\ as pilhas com os\\ algoritmos divididos pelas\\ características\\ extraídas, dá a\\ possibilidade de\\ retornar um \foreign{feedback}\\ mais preciso para\\ cada grupo e facilita\\ a observação da\\ solução do problema.\end{tabular} \\ \hline
 					\citeonline{Wei2015} & Implementações & \begin{tabular}[c]{@{}c@{}}Normaliza o código e\\ considera apenas o\\ estilo de escrita do\\ estudante\end{tabular} & \begin{tabular}[c]{@{}c@{}}Coeficiente de\\ similaridade de\\ Jaccard\end{tabular} & Algoritmo \foreign{Winnowing} & \begin{tabular}[c]{@{}c@{}}Classificação de\\ \foreign{workload}: distância\\ Euclidiana e k-NN\end{tabular} & \begin{tabular}[c]{@{}c@{}}A classificação por\\ pedaços de código\\ aumentou a\\ eficiência do\\ classificador.\end{tabular} \\ \hline
 				\end{tabular}
+				\captionsetup{justification=centering}
 				\caption{Principais informações dos trabalhos relacionados}
 				\label{my-label}
 			\end{table}
