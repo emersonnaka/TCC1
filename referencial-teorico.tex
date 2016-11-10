@@ -60,7 +60,7 @@
 		de banco de dados \cite{chakrabarti2006}. O objeto do processo de mineração
 		de dados consiste na extração de informações de um conjunto de dados e
 		transformá-lo em uma estrutura compreensível para uso posterior \cite{chakrabarti2006}.
-		A Figura \ref{fig:mineracaoDados} apresenta os estágios da mineração de dados:
+		A \cref{fig:mineracaoDados} apresenta os estágios da mineração de dados:
 		o Conhecimento do Domínio condiz com a identificação do problema para possuir
 		um conhecimento inicial e, definir as metas e os objetivos a setem atingidos
 		no processo de extração de conhecimento; a etapa Pré-processamento refere-se
@@ -138,7 +138,7 @@
 			somente a Árvore de Sintaxe Abstrata (AST) que pode ser gerada durante a análise
 			sintática do compilador para representar o código-fonte em forma de árvore
 			armazenando símbolos não-terminais nos nós filhos e símbolos terminais nos
-			nós folha, como representa a Figura \ref{fig:AST} em uma declaração de condição.
+			nós folha, como representa a \cref{fig:AST} em uma declaração de condição.
 			Esse tipo de árvore possui símbolos não terminais como nós filhos
 			e símbolos terminais como nós folhas. Enquanto outras abordagens extraem
 			características como: a quantidade de linhas e atribuições da implementação,
@@ -225,7 +225,7 @@
 	    semelhantes. Tais algoritmos foram selecionados devido a maior pontuação
 	    de silhueta. Essa pontuação verifica a similaridade entre pares dentro do
 	    agrupamento e entre os agrupamentos. Quanto maior sua pontuação, melhor a
-	    qualidade do \foreign{cluster}. Conforme a Figura \ref{fig:t-SNE}, para
+	    qualidade do \foreign{cluster}. Conforme a \cref{fig:t-SNE}, para
 	    visualizar os agrupamentos foi utilizado o t-SNE \cite{maaten2008} – técnica
 	    utilizada para reduzir dados de alta dimensionalidade para duas ou três
 	    dimensões preservando a estrutura local dos dados.
@@ -243,7 +243,7 @@
 	    	nenhuma menção ao objetivo da função. Devo tirar o nome da função? E
 	    	a figura citada abaixo estava aqui! rs}
 	    
-	    Na Figura \ref{fig:t-SNE} é possível observar cinco grupos distintos
+	    Na \cref{fig:t-SNE} é possível observar cinco grupos distintos
 	    criados a partir da comparação das TEDs normalizadas destacados em cores
 	    diferentes. Cada ponto presente na visualização corresponde a uma
 	    implementação. Todas as implementações possuem a função \foreign{combine\_anagrams}
@@ -346,7 +346,7 @@
 		Somente 80 alunos participaram da segunda rodada. Esses alunos também tinham
 		participado da primeira etapa.
 		
-		A Figura \ref{fig:clusterManual} apresenta o gráfico do agrupamento manual
+		A \cref{fig:clusterManual} apresenta o gráfico do agrupamento manual
 		realizado para verificar a precisão do Aari. O eixo $x$ é representado pelos
 		algoritmos de ordenação: \foreign{bubble sort}, \foreign{insertion sort},
 		\foreign{selection sort}, \foreign{merge sort} e \foreign{quick sort}, além
@@ -378,9 +378,9 @@
 	    \citeonline{Taherkhani:2012} realizou o reconhecimento automático das
 	    implementações por meio da ferramenta Aari. Inicialmente a ferramenta foi
 	    treinada para reconhecer os algoritmos de ordenação citados anteriormente.
-	    A Figura \ref{fig:clusterAutomatico} apresenta um gráfico para comparar cada
+	    A \cref{fig:clusterAutomatico} apresenta um gráfico para comparar cada
 	    agrupamento manual realizado anteriormente com o reconhecimento automático
-	    da ferramenta. Possui as mesmas propriedades da Figura \ref{fig:clusterManual}
+	    da ferramenta. Possui as mesmas propriedades da \cref{fig:clusterManual}
 	    com exceção das colunas. A coluna da esquerda referencia o agrupamento manual
 	    de cada algoritmo de ordenação da segunda etapa e a coluna da direita apresenta
 	    os algoritmos reconhecidos corretamente pelo Aari. Nota-se que todas as
@@ -447,7 +447,7 @@
 	        \label{fig:interfaceOverCode}
 	    \end{figure}
 	    
-		Na Figura \ref{fig:interfaceOverCode} é possível notar a utilização das pilhas
+		Na \cref{fig:interfaceOverCode} é possível notar a utilização das pilhas
 		(\foreign{stacks}) para representar os agrupamentos. A primeira coluna da
 		esquerda exibe dois painéis. O primeiro painel apresenta o número de
 		agrupamentos, representado pelas pilhas, e o número total de submissões,
@@ -464,18 +464,19 @@
 	    o histórico de execução para agrupar as submissões, é possível verificar o \foreign{trace}
 	    de uma variável ao longo de sua execução em um caso de teste a fim de auxiliar os
 	    usuários a entenderem a execução do algoritmo.
+	    
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.7\linewidth]{imagem/OverCodeDistri}
+			\caption[Representação do tamanho dos agrupamentos (pilhas) para cada problema]{Representação do tamanho dos agrupamentos (pilhas) para cada problema \cite{Glassman:2015}}
+			\label{fig:OverCodeDistri}
+		\end{figure}
 
 	    Por fim, os autores concluíram que a interface auxilia os professores a terem
 	    uma visão de alto nível das soluções (implementações). Podendo compreender os
 	    erros e fornecer um \foreign{feedback} mais relevante, devido ao agrupamento
 	    das implementações. O que diminui consideravelmente a quantidade de submissões
 	    a serem efetivamente corrigidas.
-	    
-	    \textbf{Professor, no final do OverCode possui um gráfico interessante relacionando
-	    	a quantidade de agrupamentos com o tamanho desses agrupamentos. Entretanto, se
-	    	eu utilizar a imagem, acredito que ficaria um pouco poluído essa página, devido
-	    	a figura da ferramenta. O gráfico está no repositório: OverCodeDistri.png. A
-	    	utilização do gráfico deixaria a minha análise mais fundamentada também.}
 	    
 	    A divisão das implementações pode ter aumentado consideravelmente o número de
 	    agrupamentos. Contudo, a análise dinâmica e os recursos realizados para que
@@ -527,7 +528,7 @@
 			\label{fig:clusteringPerformance}
 		\end{figure}
 	    
-		A Figura \ref{fig:clusteringPerformance} apresenta a distribuição dos
+		A \cref{fig:clusteringPerformance} apresenta a distribuição dos
 		agrupamentos em quatro problemas distintos. Para todos os gráficos, a
 		abcissa é referente ao tamanho dos pedaços, enquanto a ordenada representa
 		o número de agrupamentos. É possível notar três tipos de agrupamento. A barra
@@ -539,7 +540,7 @@
 		em um grupo ser próximo de 20 e o restante dos códigos formaram pequenos
 		agrupamentos.
 		
-		Conforme a Figura \ref{fig:clusteringPerformance}, pode-se notar que a
+		Conforme a \cref{fig:clusteringPerformance}, pode-se notar que a
 		distribuição dos \foreign{chuncks} sem normalização de código é inadequado,
 		visto que vários pedaços nas tarefas 2 e 4 estavam sozinhos, e o maior
 		agrupamento possuía apenas 3 pedaços. Enquanto a tarefa 1 e 2 apresentou
@@ -557,20 +558,89 @@
 		estudante.
 		
 		\begin{landscape}
-			\begin{table}[]
+			\begin{table}[h]
 				\tiny
-				\centering
-				\begin{tabular}{|c|c|c|c|c|c|c|}
+				\begin{tabularx}{\linewidth}{ |X|X|X|X|X|X|X| }
+					\hline % Primeira linha
+					Artigos
+					& Dados de entrada
+					& Característica extraídas dos dados de entrada
+					& Algoritmo para cálculo de distância ou similaridade
+					& Algoritmo de clusterização / Classificador
+					& Avaliação
+					& Conclusões \\
+					\hline % Segunda Linha
+					\citeonline{Yin:2015}
+					& Implementações
+					& Árvore de sintaxe abstrata
+					& Distância de Edição de TED normalizada que utiliza estrutura
+					\foreign{top-down} e pontuação silhueta
+					& DBSCAN e OPTICS
+					& Clusterização de algoritmos baseado nas soluções de um problema.
+					Em cada \foreign{cluster}, identifica as diferenças nas
+					implementações de uma abordagem particular
+					& TED normalizado demonstra conjuntos mais estáveis e menos discrepantes \\
+					\hline % Terceira linha
+					\citeonline{Glassman:2014}
+					& Implementações
+					& Linguagem de alto nível: 12 características - posição de declarações
+					condicionais em relação a instruções de \foreign{loop}, profundidade
+					dos \foreign{loops} aninhados, números de nós AST, instruções de
+					retorno, laços, comparações, etc. Linguagem de baixo nível: 48
+					características - operações aritméticas, comparações, \foreign{loops},
+					funções de bibliotecas, declarações, número de variáveis do programa,
+					valores constantes, etc.
+					& Informação Mútua Ajustada
+					& K-means
+					& Utilizando a métrica AMI comparando os \foreign{cluters} dos feitos
+					pelos professores, no qual 0 indica agrupamentos puramente independentes
+					e 1, perfeita concordância entre os agrupamentos.
+					& Para k maior ou igual a 15, encontrou-se alta concordância entre os
+					\foreign{cluster} do k-means e do professor \\
+					\hline % Quarta linha
+					\citeonline{Taherkhani:2012}
+					& Implementações
+					& Características numéricas: NAS, LoC, MCC, N1, N2, n1, n2, N, n, Nov,
+					NoL, NoNL, NoB. Características descritivas: recursivo, \foreign{tail
+						recursive}, funções de variáveis, \foreign{array} auxiliar. Outras
+					características: informações de \foreign{loop}/bloco, informações do
+					contador de laço, informações de dependência. Características de algoritmos
+					de ordenação: MWH, TEMP, In-place, OIID e IITO.
+					& Vetor de características,calculada a partir das características extraídas
+					das implementações
+					& C4.5 (árvore de decisão)
+					& Com os algoritmos da primeira rodada, obteve 71\% de precisão; da
+					segunda rodada, 81\%.
+					& Bom reconhecimento do algoritmo, se estiver conforme a teoria. Taxa de
+					acerto considerável baseado em um possível erro do professor. Utilização
+					semiautomática: o Aari corrige partes do trabalho no qual foi treinado e
+					o professor, o restante \\
+					\hline % Quinta linha
+					\citeonline{Glassman:2015}
+					& Implementações
+					& Rastro do programa (Sequência de variáveis, variáveis comuns e
+					renomeação de variáveis: colisão comum / comum; colisão de múltiplas
+					instâncias; e colisão único/comum), blocos de código.
+					& Comparação de programas bloco a bloco (algoritmo definido no artigo)
+					& Comparação entre conjuntos de linhas de código
+					& Grande quantidade de pilhas com poucos blocos de código-fonte e poucas
+					pilhas com grande quantidade de blocos implementados
+					& A partir do OverCode e as pilhas com os algoritmos divididos pelas
+					características extraídas, dá a possibilidade de retornar um
+					\foreign{feedback} mais preciso para cada grupo e facilita a observação
+					da solução do problema. \\
+					\hline % Sexta linha
+					\citeonline{Wei2015}
+					& Implementações
+					& Normaliza o código e considera apenas o estilo de escrita do estudante
+					& Coeficiente de similaridade de Jaccard
+					& Algoritmo \foreign{Winnowing}
+					& Classificação de \foreign{workload}: distância Euclidiana e k-NN
+					& A classificação por pedaços de código aumentou a eficiência do classificador. \\
 					\hline
-					Artigos & Dados de entrada & \begin{tabular}[c]{@{}c@{}}Característica extraídas dos\\ dados de entrada\end{tabular} & \begin{tabular}[c]{@{}c@{}}Algoritmo para cálculo de\\ distância ou similaridade\end{tabular} & \begin{tabular}[c]{@{}c@{}}Algoritmo de\\ clusterização / Classificador\end{tabular} & Avaliação & Conclusões \\ \hline
-					\citeonline{Yin:2015} & Implementações & Árvore de sintaxe abstrata & \begin{tabular}[c]{@{}c@{}}Distância de Edição de\\ TED normalizada\\ que utiliza estrutura\\ \foreign{top-down} e pontuação\\ silhueta\end{tabular} & DBSCAN e OPTICS & \begin{tabular}[c]{@{}c@{}}Clusterização de\\ algoritmos baseado nas\\ soluções de um\\ problema. Em cada\\ \foreign{cluster}, identifica as\\ diferenças nas\\ implementações de\\ uma abordagem\\ particular\end{tabular} & \begin{tabular}[c]{@{}c@{}}TED normalizado\\ demonstra conjuntos\\ mais estáveis e menos\\ discrepantes\end{tabular} \\ \hline
-					\citeonline{Glassman:2014} & Implementações & \begin{tabular}[c]{@{}c@{}}Linguagem de alto nível: 12\\ características - posição de\\ declarações condicionais em\\ relação a instruções de \foreign{loop},\\ profundidade dos \foreign{loops} aninhados,\\ números de nós AST, instruções de\\ retorno, laços, comparações, etc.\\ Linguagem de baixo nível: 48\\ características - operações\\ aritméticas, comparações,\\ \foreign{loops}, funções de bibliotecas,\\ declarações, número de\\ variáveis do\\ programa, valores constantes, etc.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Informação Mútua\\ Ajustada\end{tabular} & K-means & \begin{tabular}[c]{@{}c@{}}Utilizando a métrica AMI\\ comparando os \foreign{cluters}\\ dos feitos pelos professores, no\\ qual 0 indica\\ agrupamentos\\ puramente\\ independentes e 1,\\ perfeita\\ concordância\\ entre os\\ agrupamentos.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Para k maior ou igual a\\ 15, encontrou-se alta\\ concordância entre os\\ \foreign{cluster} do k-means e do\\ professor\end{tabular} \\ \hline
-					\citeonline{Taherkhani:2012} & Implementações & \begin{tabular}[c]{@{}c@{}}Características numéricas: NAS,\\ LoC, MCC, N1, N2, n1, n2, N, n,\\ Nov, NoL, NoNL, NoB.\\ Características descritivas:\\ recursivo, \foreign{tail recursive}, funções\\ de variáveis, \foreign{array} auxiliar.\\ Outras características:\\ informações de \foreign{loop}/bloco,\\ informações do contador de\\ laço, informações de\\ dependência. Características\\ de algoritmos de\\ ordenação: MWH,\\ TEMP, In-place, OIID e\\ IITO.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Vetor de características,\\ calculada a partir das\\ características\\ extraídas das\\ implementações\end{tabular} & C4.5 (árvore de decisão) & \begin{tabular}[c]{@{}c@{}}Com os algoritmos da\\ primeira rodada,\\ obteve 71\% de\\ precisão; da\\ segunda rodada,\\ 81\%.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Bom reconhecimento do\\ algoritmo, se estiver\\ conforme a teoria. Taxa\\ de acerto considerável\\ baseado em um possível\\ erro do professor.\\ Utilização\\ semiautomática: o Aari\\ corrige partes do\\ trabalho no qual foi\\ treinado e o professor, o\\ restante\end{tabular} \\ \hline
-					\citeonline{Glassman:2015} & Implementações & \begin{tabular}[c]{@{}c@{}}Rastro do programa (Sequência\\ de variáveis, variáveis comuns e\\ renomeação de variáveis:\\ colisão comum / comum;\\ colisão de múltiplas\\ instâncias; e colisão\\ único/comum), blocos\\ de código.\end{tabular} & \begin{tabular}[c]{@{}c@{}}Comparação de\\ programas bloco a bloco\\ (algoritmo definido no\\ artigo)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Comparação entre conjuntos\\ de linhas de código\end{tabular} & \begin{tabular}[c]{@{}c@{}}Grande quantidade\\ de pilhas com poucos blocos de\\ código-fonte e poucas pilhas\\ com grande quantidade de\\ blocos implementados\end{tabular} & \begin{tabular}[c]{@{}c@{}}A partir do OverCode e\\ as pilhas com os\\ algoritmos divididos pelas\\ características\\ extraídas, dá a\\ possibilidade de\\ retornar um \foreign{feedback}\\ mais preciso para\\ cada grupo e facilita\\ a observação da\\ solução do problema.\end{tabular} \\ \hline
-					\citeonline{Wei2015} & Implementações & \begin{tabular}[c]{@{}c@{}}Normaliza o código e\\ considera apenas o\\ estilo de escrita do\\ estudante\end{tabular} & \begin{tabular}[c]{@{}c@{}}Coeficiente de\\ similaridade de\\ Jaccard\end{tabular} & Algoritmo \foreign{Winnowing} & \begin{tabular}[c]{@{}c@{}}Classificação de\\ \foreign{workload}: distância\\ Euclidiana e k-NN\end{tabular} & \begin{tabular}[c]{@{}c@{}}A classificação por\\ pedaços de código\\ aumentou a\\ eficiência do\\ classificador.\end{tabular} \\ \hline
-				\end{tabular}
+				\end{tabularx}
 				\captionsetup{justification=centering}
 				\caption{Principais informações dos trabalhos relacionados}
-				\label{my-label}
+				\label{tab:caracPrinc}
 			\end{table}
 		\end{landscape}
