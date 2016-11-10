@@ -1,13 +1,13 @@
 \chapter{Referencial Teórico}
 \label{chap:Ref}
 	Neste capítulo serão apresentados os conceitos utilizados na pesquisa, bem como
-	os estudos que fundamentaram esse projeto. A Seção \ref{sec:Mooc} apresenta
+	os estudos que fundamentaram esse projeto. A \cref{sec:Mooc} apresenta
 	o conceito de MOOC e as principais características da plataforma de ensino.
-	A Seção \ref{sec:FundTeor} descreve as definições de termos presentes no
+	A \cref{sec:FundTeor} descreve as definições de termos presentes no
 	decorrer da pesquisa: mineração, visualização, projeção, agrupamento e
-	classificador. A Seção \ref{sec:MinVisual} descreverá as características que
+	classificador. A \cref{sec:MinVisual} descreverá as características que
 	podem ser extraídas dado a escolha de um dos tipos de análise de código-fonte.
-	E a Seção \ref{sec:TrabRel} apresenta as pesquisas relacionados a este estudo
+	E a \cref{sec:TrabRel} apresenta as pesquisas relacionados a este estudo
 	juntamente com suas limitações.
 
 	\section{Massive Open Online Courses (MOOC)}
@@ -50,7 +50,7 @@
 			\centering
 			\includegraphics[width=0.7\linewidth]{imagem/mineracaoDados}
 			\captionsetup{justification=centering}
-			\caption[Etapas da mineração de dados]{Etapas da mineração de dados \cite{rezende2003}}
+			\caption{Etapas da mineração de dados \cite{rezende2003}}
 			\label{fig:mineracaoDados}
 		\end{figure}
 		
@@ -123,7 +123,7 @@
 		Para realizar a mineração de informações nos programas submetidos, é necessário
 		decidir como serão extraídos as características -- análise sintática, dinâmica e
 		do código de escrita -- e quais dados podem ser obtidos por meio da análise
-		escolhida (Subseção \ref{subSec:Caracteristicas}). Independente da dimensão
+		escolhida (\cref{subSec:Caracteristicas}). Independente da dimensão
 		obtida por meio da quantidade de informações extraídas, é necessário escolher
 		como os dados obtidos serão representados para que seja possível realizar sua visualização.
 		
@@ -149,8 +149,7 @@
 				\centering
 				\includegraphics[width=0.7\linewidth]{imagem/AST}
 				\captionsetup{justification=centering}
-				\caption[Representação de árvore de sintaxe abstrata]{Representação
-				de árvore de sintaxe abstrata \cite{louden2004}.}
+				\caption{Representação de árvore de sintaxe abstrata \cite{louden2004}.}
 				\label{fig:AST}
 			\end{figure}
 			
@@ -173,7 +172,7 @@
 			características da análise estática citada anteriormente, é possível coletar se:
 			há mais que uma instrução e importação de bibliotecas por linha, há espaços entre
 			operando e operador, os métodos são separados por uma linha em branco e tamanho
-			da instrução, medido em caracteres. A Tabela \ref{tab:exemploEstEsc} exemplifica
+			da instrução, medido em caracteres. A \cref{tab:exemploEstEsc} exemplifica
 			possíveis características de serem extraídas em uma chamada de função, na qual é
 			possível inserir ou não um espaço entre o parâmetro e os \foreign{tokens} abrir
 			e fechar parêntese, como também a utilização de uma ou mais instruções por linha.
@@ -234,7 +233,7 @@
 	        \centering
 	        \includegraphics[scale=0.5]{imagem/visualizacao-tSNE.png}
 	        \captionsetup{justification=centering}
-	        \caption[Visualização t-SNE]{Visualização t-SNE \cite{Yin:2015}}
+	        \caption{Visualização t-SNE \cite{Yin:2015}}
 	        \label{fig:t-SNE}
 	    \end{figure}
 	    
@@ -368,8 +367,7 @@
 	        \centering
 	        \includegraphics[scale=0.4]{imagem/clusterManual.png}
 	        \captionsetup{justification=centering}
-	        \caption[Agrupamento manual das implementações dos estudos estudantes na
-	        primeira e segunda etapa]{Agrupamento manual das implementações dos estudos estudantes na
+	        \caption{Agrupamento manual das implementações dos estudos estudantes na
 	        primeira e segunda etapa \cite{Taherkhani:2012}.}
 	        \label{fig:clusterManual}
 	    \end{figure}
@@ -394,9 +392,8 @@
 	        \centering
 	        \includegraphics[scale=0.33]{imagem/clusterAutomatico.png}
 	        \captionsetup{justification=centering}
-	        \caption[Comparação das implementações dos alunos dos \foreign{clusters}
-	        manual e automático da segunda etapa]{Comparação das implementações dos
-	        alunos dos \foreign{clusters} manual e automático da segunda etapa \cite{Taherkhani:2012}.}
+	        \caption{Comparação das implementações dos alunos dos \foreign{clusters}
+	        manual e automático da segunda etapa \cite{Taherkhani:2012}.}
 	        \label{fig:clusterAutomatico}
 	    \end{figure}
 	    
@@ -443,7 +440,7 @@
 	        \centering
 	        \includegraphics[scale=0.4]{imagem/overCode.png}
 	        \captionsetup{justification=centering}
-	        \caption[Interface da ferramenta OverCode.]{Interface da ferramenta OverCode \cite{Glassman:2015}.}
+	        \caption{Interface da ferramenta OverCode \cite{Glassman:2015}.}
 	        \label{fig:interfaceOverCode}
 	    \end{figure}
 	    
@@ -467,10 +464,24 @@
 	    
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=0.7\linewidth]{imagem/OverCodeDistri}
-			\caption[Representação do tamanho dos agrupamentos (pilhas) para cada problema]{Representação do tamanho dos agrupamentos (pilhas) para cada problema \cite{Glassman:2015}}
+			\includegraphics[width=1\linewidth]{imagem/OverCodeDistri}
+			\caption{Representação do tamanho dos agrupamentos (pilhas) para cada problema
+				\cite{Glassman:2015}}
 			\label{fig:OverCodeDistri}
 		\end{figure}
+
+		A \cref{fig:OverCodeDistri} apresenta o agrupamento, representado pela quantidade de
+		pilhas no eixo $y$ e o total de submissões em uma pilha no eixo $x$,  em relação a
+		três problemas resolvidos em Python: o problema \texttt{iterPower} refere-se a
+		implementação de uma função, que possui a base e o expoente como parâmetros, para
+		calcular o exponencial com sucessivas multiplicações; o problema \texttt{hangman}
+		possui um vetor de caracteres (\foreign{string}) e uma lista de caractere como
+		parâmetros, na qual deve retornas todos os caracteres da \foreign{string} que não
+		estão presentes na lista de caracteres; por fim, o problema \texttt{compDeriv}
+		calcula a derivada de um polinomial, no qual os coeficientes estão presentes em
+		uma lista. Esses problemas obtiveram 3875, 1118 e 1433 soluções corretas submetidas,
+		respectivamente. Na devida ordem, a maior pilha de cada problema são constituídas
+		de 1534, 97 e 22 implementações e 684, 452 e 959 pilhas com apenas uma solução.
 
 	    Por fim, os autores concluíram que a interface auxilia os professores a terem
 	    uma visão de alto nível das soluções (implementações). Podendo compreender os
@@ -478,12 +489,16 @@
 	    das implementações. O que diminui consideravelmente a quantidade de submissões
 	    a serem efetivamente corrigidas.
 	    
-	    A divisão das implementações pode ter aumentado consideravelmente o número de
-	    agrupamentos. Contudo, a análise dinâmica e os recursos realizados para que
-	    fosse montado a pilha mostrou-se eficiente. Todavia, toda a implementação
-	    poderia ter sido considerada e levado em consideração mais de uma característica
-	    e o tamanho médio das instruções por linha. Devido a diversas possibilidades de
-	    realizar uma atribuição com alguma operação aritmética.
+		A análise dinâmica e os recursos realizados para que fosse montado a pilha
+		mostrou-se eficiente, principalmente para o problema \texttt{iterPower}, no
+		qual sua maior pilha obteve quase 40\% das implementações corretas. Com isso,
+		torna-se evidente o quanto a ferramenta pode auxiliar os professores a realizar
+		as correções dos códigos-fontes. A etapa de padronização do código realizado
+		durante a análise \foreign{pipeline}, no qual verifica-se as variáveis comuns
+		e renomeia-as, contribui com a comparação bloco a bloco, devido a partes do bloco,
+		onde ocorrem a utilização dessas variáveis, serem parecidas. Poderia ter sido
+		verificado todos os problemas implementados em apenas um código-fonte para
+		verificar qual seria o resultado dos agrupamentos e compará-los.
 	    
 	    \citeonline{Wei2015} apresentam uma ferramenta para auxiliar na correção das
 	    submissões dos MOOC's de forma a agrupar pedaços (\foreign{chuncks}) de códigos
@@ -524,7 +539,7 @@
 			\centering
 			\includegraphics[width=0.7\linewidth]{imagem/clusteringPerformance}
 			\captionsetup{justification=centering}
-			\caption[Distribuição dos agrupamentos.]{Distribuição dos agrupamentos \cite{Wei2015}.}
+			\caption{Distribuição dos agrupamentos \cite{Wei2015}.}
 			\label{fig:clusteringPerformance}
 		\end{figure}
 	    
@@ -534,28 +549,32 @@
 		o número de agrupamentos. É possível notar três tipos de agrupamento. A barra
 		horizontal azul representa o agrupamento sem normalização. enquanto as barras
 		verde e vermelho possuem o valor de $k$ diferente, entretanto, ambas estão
-		normalizadas. Enquanto a tarefa 1 e 2 apresentou bons agrupamentos e o tamanho
-		dos grupos era condizente com a quantidade de estudantes (200) quando $k$ era
-		igual a 3.0. As tarefas 4 e 5 não foram satisfeitas devido ao total de pedaços
-		em um grupo ser próximo de 20 e o restante dos códigos formaram pequenos
-		agrupamentos.
+		normalizadas. Há uma diferença entre as tarefas 1 e 2 e, as tarefas 4 e 5:
+		os dois primeiros só possuem apenas uma função para resolver um pequeno problema,
+		Contudo, as demais tarefas possuem implementações com várias funções. Enquanto
+		as tarefas 1 e 2 apresentaram bons agrupamentos e o tamanho dos grupos era
+		condizente com a quantidade de estudantes (200) quando $k$ era igual a 3.0.
+		As tarefas 4 e 5 não foram satisfeitas devido ao total de pedaços em um grupo
+		ser próximo de 20 e o restante dos códigos formaram pequenos agrupamentos.
 		
 		Conforme a \cref{fig:clusteringPerformance}, pode-se notar que a
 		distribuição dos \foreign{chuncks} sem normalização de código é inadequado,
-		visto que vários pedaços nas tarefas 2 e 4 estavam sozinhos, e o maior
-		agrupamento possuía apenas 3 pedaços. Enquanto a tarefa 1 e 2 apresentou
-		bons agrupamentos e o tamanho dos grupos era condizente com a quantidade de
-		estudantes (200) quando $k$ era igual a 3.0. As tarefas 4 e 5 não foram
-		satisfeitas devido ao total de pedaços em um grupo ser próximo de 20 e o
-		restante dos códigos foram pequenos agrupamentos.
+		visto que vários pedaços em todas as tarefas estavam sozinhos, e o maior
+		agrupamento possuía entre 6 a 10 funções. Enquanto a tarefa 1 e 2 apresentou
+		bons agrupamentos, nos quais possuíam mais de 40 implementações em um mesmo
+		grupo quando $k$ era igual a 3.0. As tarefas 4 e 5 não foram satisfeitas devido
+		a cada código-fonte conter várias funções, principalmente quando não normalizados.
 		
-		É possível notar que tal abordagem não obteve sucesso, pois, independente da
-		tarefa selecionada, nota-se que a maioria dos \foreign{clusters} formados
-		possuíam apenas um pedaço de código. Com isso pode-se aumentar o tempo de
-		correção das submissões, visto que uma implementação completa pode gerar um
-		ou mais pedaços de código, dificultando a revisão da submissão e podendo tomar
-		um tempo maior para que fosse realizado um \foreign{feedback} preciso para o
-		estudante.
+		É possível notar que a abordagem dos códigos-fontes compostas de diversas
+		funções (tarefas 4 e 5) não obteve sucesso, pois, independente da tarefa
+		selecionada, nota-se que a maioria dos \foreign{clusters} formados possuíam
+		apenas um código-fonte. Entretanto, a submissão de implementações contendo
+		apenas uma função (tarefas 1 e 2) para resolver o problema torna-se interessante,
+		devido a realização de alguns agrupamentos com mais de 40 implementações
+		semelhantes. Em um ambiente controlado, no qual todos os alunos irão submeter
+		diversas soluções com somente uma função, é interessante a utilização da
+		ferramenta. Caso contrário, seu uso não interferirá significativamente no
+		auxilio a correções de códigos-fontes. 
 		
 		\begin{landscape}
 			\begin{table}[h]
@@ -602,7 +621,7 @@
 					& Implementações
 					& Características numéricas: NAS, LoC, MCC, N1, N2, n1, n2, N, n, Nov,
 					NoL, NoNL, NoB. Características descritivas: recursivo, \foreign{tail
-						recursive}, funções de variáveis, \foreign{array} auxiliar. Outras
+					recursive}, funções de variáveis, \foreign{array} auxiliar. Outras
 					características: informações de \foreign{loop}/bloco, informações do
 					contador de laço, informações de dependência. Características de algoritmos
 					de ordenação: MWH, TEMP, In-place, OIID e IITO.
@@ -621,7 +640,7 @@
 					& Rastro do programa (Sequência de variáveis, variáveis comuns e
 					renomeação de variáveis: colisão comum / comum; colisão de múltiplas
 					instâncias; e colisão único/comum), blocos de código.
-					& Comparação de programas bloco a bloco (algoritmo definido no artigo)
+					& Análise \foreign{pipeline}
 					& Comparação entre conjuntos de linhas de código
 					& Grande quantidade de pilhas com poucos blocos de código-fonte e poucas
 					pilhas com grande quantidade de blocos implementados
@@ -636,7 +655,7 @@
 					& Coeficiente de similaridade de Jaccard
 					& Algoritmo \foreign{Winnowing}
 					& Classificação de \foreign{workload}: distância Euclidiana e k-NN
-					& A classificação por pedaços de código aumentou a eficiência do classificador. \\
+					& A agrupamento por pedaços de código aumentou sua eficiência. \\
 					\hline
 				\end{tabularx}
 				\captionsetup{justification=centering}
@@ -644,3 +663,8 @@
 				\label{tab:caracPrinc}
 			\end{table}
 		\end{landscape}
+		
+		A \cref{tab:caracPrinc} apresenta as principais características de cada trabalho
+		relacionado importantes para o desenvolvimento desse projeto. Possibilitando a
+		comparação dos tipos de análises utilizados, quais características foram
+		extraídas a partir dessas análises e qual abordagem obteve melhor desempenho. 
