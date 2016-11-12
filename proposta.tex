@@ -1,2 +1,65 @@
 \chapter{Proposta}
 \label{chap:Proposta}
+
+	\section{Método}
+	Após a revisão da literatura, verificamos que o projeto é baseado em algumas etapas.
+	Conforme a \cref{fig:fluxogramaProposta}, é necessário escolher qual linguagem de programação
+	será utilizado. Em seguida deve-se verificar quais características podem ser extraídas
+	das implementações submetidas utilizando a linguagem especificada. Em seguida, é
+	necessário construir a base de dados por meio da submissão de implementações. Realizar
+	a extração de características. Minerar os dados extraídos das submissões e verificar a
+	similaridade entre as implementações. Por fim, realizar a projeção e visualizar os
+	agrupamentos.
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagem/fluxogramaProposta}
+		\captionsetup{justification=centering}
+		\caption{Fluxograma das etapas necessárias para a realização do projeto}
+		\label{fig:fluxogramaProposta}
+	\end{figure}
+
+	A \textbf{linguagem de programação} refere-se a definição de qual linguagem será
+	utilizada para o desenvolvimento do projeto. Por exemplo: \texttt{C}, \texttt{Java}
+	ou \texttt{Python}. Deve ser escolhida conforme a demanda da sua utilização, pela
+	disponibilidade de cursos de programação ofertado em MOOCs ou pelo conhecimento de
+	ferramentas que possam verificar características dessa linguagem, como o
+	\texttt{cpplint} para a linguagem \texttt{C}, \texttt{Checkstyle} para
+	\texttt{Java} e \texttt{PEP8} para \texttt{Python}.
+
+	A etapa seguinte \textbf{definir características a serem extraídas} será realizado
+	com base nos trabalhos relacionados (\cref{sec:TrabRel}). Verificamos que, é
+	possível utilizar características originadas de um tipo de análise (estática,
+	dinâmica e do estilo de escrita), bem como associar características de análises
+	distintas para obter um melhor resultado.
+	
+	O estágio \textbf{códigos-fontes} refere-se a construção da base de dados que será
+	utilizada no experimento. Tal base tem que possuir uma quantidade considerável de
+	submissões de códigos-fontes, devido a quantidade de usuários que utilizam o MOOC,
+	para que seja possível avaliar o desenvolvimento do projeto com uma quantidade
+	condizente com o número de usuários.
+	
+	A \textbf{extração de características} é a fase na qual escolhe-se uma ferramenta
+	disponibilizada livremente pela Internet que forneça os dados necessários, visto
+	que não desejamos criar uma ferramenta para esse fim.
+
+	Enquanto a etapa \textbf{mineração de dados e agrupamento} é responsável pela
+	adaptação das ferramentas selecionadas anteriormente para que seja possível obter
+	as características e salvá-la em algum tipo de arquivo, como o formato \texttt{XML}
+	e o \texttt{CSV}, por exemplo. Em seguida, é necessário a escolha de técnicas que
+	seja possível verificar a similaridade dos códigos-fontes a fim de produzir os
+	agrupamentos.
+	
+	Por fim, \textbf{projeção e visualização} refere-se ao emprego de técnicas de
+	projeção para que seja possível diminuir a quantidade de dimensões. Uma dimensão
+	é ferente a uma característica extraída da implementação, portanto a quantidade
+	de dimensões é igual a quantidade de características extraídas. Com isso, é
+	necessário selecionar uma técnica para diminuir um espaço $n-dimensional$ para
+	tridimensional a fim de realizar a visualização dos agrupamentos.
+	
+	No caso dos características extraídas não forem relevantes para a formação de
+	agrupamentos ou a visualização não produzir modelos gráficos significativos por
+	meio dos mapeamento de dados realizados pela técnica de projeção, será necessário
+	voltar a segunda etapa para definir outras características a serem extraídas.
+
+	\section{Cronograma}
