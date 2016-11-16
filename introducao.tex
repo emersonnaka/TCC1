@@ -2,59 +2,51 @@
 
 	MOOC - \foreign{Massive Open Online Course} - é uma plataforma de ensino online
 	com cursos massivos e abertos que visa oferecer os mais diversos cursos a nível
-	global.	Para realizar um curso ofertado pelo MOOC, é necessário	apenas a conexão
-	com a Internet e o cadastro na plataforma que é realizado gratuitamente. Foi
-	popularizado em 2011 quando grandes universidades, como o Instituto de Tecnologia
-	de Massachusetts, a Universidade de Harvard e a Universidade de Stanford tiveram
-	a iniciativa mediados pelos provedores Cousera, edX e Udacity \cite{Mehlenbacher:2012}.
-	Além de permitir explorar novos modelos de negócio \cite{dellarocas2013money},
-	possibilita englobar mais alunos a custos menores e com a qualidade desejada
-	\cite{schmidt2013producing}.
+	global. Para realizar um curso ofertado pelo MOOC, é necessário apenas a conexão
+	com a Internet e o cadastro na plataforma, geralmente gratuito. Foi popularizado
+	em 2011 quando grandes universidades, como o Instituto de Tecnologia de
+	Massachusetts, a Universidade de Harvard e a Universidade de Stanford tiveram
+	a iniciativa mediados pelos provedores Cousera, edX e Udacity, respectivamente
+	\cite{Mehlenbacher:2012}. Além de permitir explorar novos modelos de negócio
+	\cite{dellarocas2013money}, possibilita englobar mais alunos a custos menores
+	e com boa qualidade \cite{schmidt2013producing}.
 	
-	Em cursos de introdução a programação, seja no MOOC ou presencial, é selecionado
-	uma linguagem de programação para desenvolvimento e, pode ocorrer uma introdução
-	a algoritmo. Alguns desses cursos orientam a utilização de ferramentas, como o
-	ambiente integrado de desenvolvimento (IDE, do inglês \foreign{Integrated
+	Em cursos de introdução a programação, seja MOOC ou presencial, há uma introdução
+	sobre algoritmo seguido da seleção de uma linguagem de programação para
+	desenvolvimento. Alguns desses cursos orientam a utilização de ferramentas, como
+	o ambiente integrado de desenvolvimento (IDE, do inglês \foreign{Integrated
 	Development Environment}) e ensinam o funcionamento da linguagem sintaticamente.
-	Entretanto, esse tipo de ensino tem levado o estudante a fazer seu programa
-	(\foreign{software}) baseado na tentativa e erro, visto que buscam gerar o
-	algoritmo sem o total conhecimento lógico do problema \cite{edwards2003}. Isso
-	funcionou como um incentivo para que surgissem outras abordagens de ensino,
-	como a reflexão na ação (\foreign{Reflection in action}) e o desenvolvimento
-	baseado em teste (TDD, do inglês \foreign{Test Driven Development}). Na
-	primeira abordagem, a implementação do \foreign{software} ocorre somente
-	após o entendimento apropriado do problema \cite{edwards2004}. Enquanto o
-	TDD é um ciclo dividido em três etapa: a primeira etapa o programador inseri um
-	teste que deve falhar no momento de sua execução; na segunda etapa é implementado
-	a solução para que o caso de teste escrito anteriormente seja aceito; e a última
-	etapa refere-se a refatoração (simplificar ou melhorar) o código recém implementado \cite{beck2003}.
+	Entretanto, esse tipo de ensino tem levado o estudante a fazer seu programa baseado
+	na tentativa e erro, visto que buscam gerar o algoritmo sem o total conhecimento
+	lógico do problema \cite{edwards2003}. Isso funcionou como um incentivo para que
+	surgissem outras abordagens de ensino, como a reflexão na ação (\foreign{Reflection
+	in action}) e o desenvolvimento baseado em teste (TDD, do inglês \foreign{Test
+	Driven Development}) \cite{camara_graciottoSilva2016}. Na primeira abordagem, a
+	implementação do \foreign{software} ocorre somente após o entendimento apropriado
+	do problema \cite{edwards2004}. No TDD, cumpre-se um ciclo dividido em três etapas:
+	na primeira etapa o programador insere um teste que deve falhar no momento de sua
+	execução; na segunda etapa é implementado a solução para que o caso de teste
+	escrito anteriormente seja aceito; e a última etapa refere-se a refatoração
+	(simplificar ou melhorar) o código recém implementado \cite{beck2003}.
 	
 	% Problema de pesquisa
-	Tratando-se de uma ferramenta de ensino a nível mundial, deve-se considerar um
-	grande número de usuários. Com isso, torna-se necessário a utilização de mecanismos
-	de avaliação automática ou semiautomática \cite{schmidt2013producing}. Para alguns
-	tipos de atividade, a avaliação automática é bem simples. Por exemplo, para verificar
-	as questões	de múltipla escolha é necessário somente comparar a alternativa selecionada
-	com o gabarito de questões \cite{alario2013analysing}. No entanto, implementações de
-	programas computacionais necessitam que seus algoritmos sejam corrigidos ao invés das
-	saídas geradas pela sua execução a fim de retornar o resultado da avaliação para que
-	o usuário possa implementá-lo novamente. Como há uma grande quantidade de submissões
-	de trabalhos em	cursos de programação, visto que, a cada turma de um curso, existem
-	atividades a serem feitas e entregues por meio da plataforma de ensino. Há uma grande
-	quantidade de projetos a serem corrigidos e, consequentemente, acarreta alguns
-	problemas como: avaliar todas as submissões, tempo e aumento de custo de correção
-	por parte do professor.
+	Principalmente em MOOC de ensino de programação, tratando-se de uma ferramenta de
+	ensino a nível mundial, deve-se considerar um grande número de usuários. Com isso,
+	torna-se necessário a utilização de mecanismos de avaliação automática ou
+	semiautomática \cite{schmidt2013producing}. Para alguns tipos de atividade, a
+	avaliação automática é bem simples. Por exemplo, para verificar as soluções
+	referentes às questões de múltipla escolha é necessário somente comparar a
+	alternativa selecionada com o gabarito de questões \cite{alario2013analysing}. No
+	entanto, implementações de programas computacionais necessitam que seus algoritmos
+	sejam analisados quanto às saídas geradas pela sua execução, projeto do algoritmo,
+	facilidade de compreensão, dentro outros requisitos, a fim de retornar o resultado
+	da avaliação. Como há uma grande quantidade de submissões de trabalhos em cursos
+	de programação, consequentemente acarreta alguns problemas como: avaliar todas as
+	submissões, tempo e aumento de custo de correção por parte do professor.
 	
 	% Hipóteses
 	
 	% Justificativa
-	Corrigir cada submissão individualmente, além de cansar o professor, gera um custo maior
-	para a organização responsável pelo MOOC, visto que, quanto maior o tempo gasto
-	para correção das implementações, maior será o valor pago ao profissional. Com
-	isso, o agrupamento das submissões semelhantes infere na correção de poucos
-	projetos, já que todos os outros códigos que estão no agrupamento serão
-	parecidos, podendo melhorar a qualidade de vida do professor, a eficiência da correção
-	por meio de \foreign{feedbacks} mais precisos e menor custo para o MOOC.
 	
 	% Objetivo
 	Considerando que muito projetos podem ser semelhantes, os professores podem explorar
@@ -65,75 +57,78 @@
 	Compreendendo as variações de implementação, é possível extrair caraterísticas por
 	meio da análise estática \cite{Yin:2015,Glassman:2014,Taherkhani:2012}, análise
 	dinâmica \cite{Glassman:2015} e análise do estilo de escrita \cite{Wei2015}.
+	Com	isso, o agrupamento das submissões semelhantes infere na correção de poucos
+	projetos, já que todos os outros códigos que estão no agrupamento serão
+	parecidos, podendo melhorar a qualidade de vida do professor, a eficiência da correção
+	por meio de \foreign{feedbacks} mais precisos e menor custo para o MOOC.
 
-	\citeonline{Yin:2015} extraem uma árvore de sintaxe abstrata de cada implementação
-	e verifica a similaridade par a par por meio da distância de edição de árvore. Tal
-	abordagem pode agrupar algoritmos corretos e incorretos, por exemplo: pode ocorrer
-	erro lógico e uma ou mais instruções estarem invertidas, o cálculo de similaridade
-	pode apontar que as implementações são semelhantes e agrupar códigos-fontes corretos
-	com incorretos. Entretanto, essa abordagem possui baixo custo computacional e
-	interessante para possibilidade de adaptação para verificar erros lógicos.
-	
-	\citeonline{Glassman:2014} extraem 60 características de submissões implementadas
-	em Python separadas em duas dimensões: alto nível e baixo nível. Realiza o agrupamento
-	utilizando as características de alto nível e, internamente desses agrupamentos,
-	executa o \foreign{k-means} novamente para as características de baixo nível. Apesar
-	de separar características de alto e baixo nível. Essa abordagem não considera as
-	chamadas de função e recursões, com isso o algoritmo, caso utilize essas instruções,
-	pode não ser classificado. Entretanto, o agrupamento em dois níveis é interessante
-	devido a possibilidade de obter agrupamentos com erros semelhantes apenas das
-	características de nível alto e, após a realização do segundo agrupamento, das
-	características de nível baixo, permitindo a realização do \foreign{feedback} em
-	duas etapas.
-	
-	\citeonline{Taherkhani:2012} apresentam a ferramenta Aari para classificar e reconhecer
-	algoritmos de ordenação. Para isso, extrai diversas características: numéricas,
-	descritivas, outras e de algoritmos de ordenação. Entretanto, é necessário que
-	treine a ferramenta para reconhecer os algoritmos desejados, caso contrário, o
-	classificador não estará apto e ocorrerá diversos erros de classificação. Sua
-	abordagem é interessante pelo fato de extrair características referente a recursão.
-	
-	\citeonline{Glassman:2015} apresentam a ferramenta OverCode que extrai características
-	por meio do histórico de execução da análise dinâmica. A similaridade das submissões
-	é realizada por meio da comparação entre blocos do programa. A partir disso é utilizado
-	o conceito de pilha para apresentar o agrupamentos das implementações semelhantes e,
-	ao clicar em um agrupamento, é possível verificar as linhas de código que formara
-	aquele agrupamento. Essa abordagem proporcionou o desenvolvimento de vários recursos
-	na ferramenta, como reescrever as variáveis que possuem a mesma atribuição, e mostrou
-	que a combinação de blocos de código e análise dinâmica pode produzir bons agrupamentos.
-	
-	\citeonline{Wei2015} realizam a extração de características por meio da normalização
-	do código-fonte e da análise do estilo de escrita. Para isso, separou cada implementação
-	em pedaços de código, condizentes a uma função, para verificar a similaridade entre eles.
-	Com isso, o instrutor corrigiria pedaços do código ao invés de corrigir todo o algoritmo.
-	O autor encontra a menor substring do bloco a partir de comparações \foreign{token} a
-	\foreign{token} para verificar a similaridade. Limitou-se a utilizar os pedaços de
-	código, sendo que poderia ter comparado com os agrupamentos considerando toda a
-	implementação. Entretanto, sua normalização foi interessante e a pouca quantidade de
-	características extraídas pode ter sido primordial para formar os agrupamentos.
+%	\citeonline{Yin:2015} extraem uma árvore de sintaxe abstrata de cada implementação
+%	e verifica a similaridade par a par por meio da distância de edição de árvore. Tal
+%	abordagem pode agrupar algoritmos corretos e incorretos, por exemplo: pode ocorrer
+%	erro lógico e uma ou mais instruções estarem invertidas, o cálculo de similaridade
+%	pode apontar que as implementações são semelhantes e agrupar códigos-fontes corretos
+%	com incorretos. Entretanto, essa abordagem possui baixo custo computacional e
+%	interessante para possibilidade de adaptação para verificar erros lógicos.
+%	
+%	\citeonline{Glassman:2014} extraem 60 características de submissões implementadas
+%	em Python separadas em duas dimensões: alto nível e baixo nível. Realiza o agrupamento
+%	utilizando as características de alto nível e, internamente desses agrupamentos,
+%	executa o \foreign{k-means} novamente para as características de baixo nível. Apesar
+%	de separar características de alto e baixo nível. Essa abordagem não considera as
+%	chamadas de função e recursões, com isso o algoritmo, caso utilize essas instruções,
+%	pode não ser classificado. Entretanto, o agrupamento em dois níveis é interessante
+%	devido a possibilidade de obter agrupamentos com erros semelhantes apenas das
+%	características de nível alto e, após a realização do segundo agrupamento, das
+%	características de nível baixo, permitindo a realização do \foreign{feedback} em
+%	duas etapas.
+%	
+%	\citeonline{Taherkhani:2012} apresentam a ferramenta Aari para classificar e reconhecer
+%	algoritmos de ordenação. Para isso, extrai diversas características: numéricas,
+%	descritivas, outras e de algoritmos de ordenação. Entretanto, é necessário que
+%	treine a ferramenta para reconhecer os algoritmos desejados, caso contrário, o
+%	classificador não estará apto e ocorrerá diversos erros de classificação. Sua
+%	abordagem é interessante pelo fato de extrair características referente a recursão.
+%	
+%	\citeonline{Glassman:2015} apresentam a ferramenta OverCode que extrai características
+%	por meio do histórico de execução da análise dinâmica. A similaridade das submissões
+%	é realizada por meio da comparação entre blocos do programa. A partir disso é utilizado
+%	o conceito de pilha para apresentar o agrupamentos das implementações semelhantes e,
+%	ao clicar em um agrupamento, é possível verificar as linhas de código que formara
+%	aquele agrupamento. Essa abordagem proporcionou o desenvolvimento de vários recursos
+%	na ferramenta, como reescrever as variáveis que possuem a mesma atribuição, e mostrou
+%	que a combinação de blocos de código e análise dinâmica pode produzir bons agrupamentos.
+%	
+%	\citeonline{Wei2015} realizam a extração de características por meio da normalização
+%	do código-fonte e da análise do estilo de escrita. Para isso, separou cada implementação
+%	em pedaços de código, condizentes a uma função, para verificar a similaridade entre eles.
+%	Com isso, o instrutor corrigiria pedaços do código ao invés de corrigir todo o algoritmo.
+%	O autor encontra a menor substring do bloco a partir de comparações \foreign{token} a
+%	\foreign{token} para verificar a similaridade. Limitou-se a utilizar os pedaços de
+%	código, sendo que poderia ter comparado com os agrupamentos considerando toda a
+%	implementação. Entretanto, sua normalização foi interessante e a pouca quantidade de
+%	características extraídas pode ter sido primordial para formar os agrupamentos.
 	
 	Considerando este cenário, o objetivo deste trabalho é propor subsídios para a
 	avaliação de programas submetidos em MOOC, utilizando técnicas de mineração e visualização
 	de dados com a finalidade de diminuir o tempo gasto na correção de todos os códigos
 	fontes e  fornecer \foreign{feedbacks} construtivos de modo que o usuário consiga
-	corrigir seus erros e submeta novamente seu algoritmo. Especificamente, serão
-	considerados cursos introdutórios de Computação com a linguagem Python. Como
-	metas, estabeleceu-se o desenvolvimento de uma ferramenta para recuperação de
-	dados a partir de códigos fonte em Python e da alteração de uma ferramenta para
-	mineração e visualização de dados~\cite{Alencar}. Com o auxílio dessas ferramentas,
-	serão investigadas as características e técnicas para mineração e visualização
-	dos programas submetidos, avaliando-se como contribuir para	a correção dos trabalhos
-	submetidos, o tempo em que foi necessário para que os professores corrigissem todas
-	as submissões, a qualidade dos agrupamentos realizados pelo sistema e, principalmente,
-	a qualidade do \foreign{feedback}.
+	corrigir seus erros e submeta novamente seu algoritmo. Como metas, estabeleceu-se
+	o desenvolvimento de uma ferramenta para recuperação de dados a partir de
+	códigos-fontes e da alteração de uma ferramenta para mineração e visualização de
+	dados~\cite{Alencar}. Com o auxílio dessas ferramentas, serão investigadas as
+	características e técnicas para mineração e visualização dos programas submetidos,
+	avaliando-se como contribuir para a correção dos trabalhos submetidos, o tempo em
+	que foi necessário para que os professores corrigissem todas as submissões, a
+	qualidade dos agrupamentos realizados pelo sistema e, principalmente, a
+	qualidade do \foreign{feedback}.
 	
-	O trabalho de conclusão de curso é organizado da seguinte forma: o Capítulo
-	\ref{chap:Ref} apresenta o referencial teórico, divido pela Seção \ref{sec:Mooc}
-	que apresenta algumas definições de MOOC e suas características, a Seção \ref{sec:FundTeor}
-	aponta alguns termos técnicos utilizados e suas definições, a Seção \ref{sec:MinVisual}
-	cita as formas que podem ser realizados a extração de características e quais os
-	possíveis dados a serem coletados conforme o tipo de análise utilizado e a Seção
-	\ref{sec:TrabRel} descreve os trabalhos relacionados que fundamentaram o projeto.
-	O Capítulo \ref{chap:Proposta} apresenta a metodologia de pesquisa para obter os
-	resultados, seguido do Capítulo \ref{chap:Result} que possui os resultados
-	preliminares.
+	O restante desta proposta de trabalho de conclusão de curso é organizado da seguinte
+	forma. O \cref{chap:Ref} apresenta o referencial teórico, divido em 4 seções: a
+	\cref{sec:Mooc} apresenta algumas definições de MOOC e suas características; a
+	\cref{sec:FundTeor} trata dos principais conceitos referentes à mineração e
+	visualização de dados utilizados neste trabalho; a \cref{sec:MinVisual} cita as
+	formas que podem ser realizados a extração de características e quais os possíveis
+	dados a serem coletados conforme o tipo de análise utilizado; e a \cref{sec:TrabRel}
+	descreve os trabalhos relacionados que fundamentaram o projeto. O \cref{chap:Proposta}
+	apresenta a método de pesquisa para obter os resultados, seguido do \cref{chap:Result}
+	que possui os resultados preliminares.

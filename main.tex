@@ -81,41 +81,38 @@
 
 \begin{resumo}
 % TODO: se possível, escreva um resumo estruturado. Para TCC 1, o resumo estruturado teria os seguintes elementos:
-\textbf{Contexto:} Em disciplinas de algoritmos ou programação, é necessário encontrar
+\textbf{Contexto:} Em disciplinas de algoritmos ou programação, é necessário criar
 e implementar uma solução para um problema. Entretanto, há a possibilidade de possuir
 diversas formas de solucionar o problema e, consequentemente, formas de implementações.
-Após a solução ser implementada, uma dificuldade é a necessidade de avaliar cada aluno
-que solucionou o problema. Como consequência dessa avaliação, é necessário realizar um
-\foreign{feedback} para o aluno com relação a sua implementação. Para agravar essa
+Desta forma, a quantidade de implementações possíveis é vasta, dificultando a avaliação
+delas pelo professor quanto ao custo, tempo e qualidade. Além disso, é necessário realizar
+um \foreign{feedback} para o aluno com relação a sua implementação. Para agravar essa
 dificuldade, cursos massivos, abertos e \foreign{online} (MOOC) possuem uma grande
-quantidade de usuários, dificultando, em tempo hábil e custos razoáveis deste
-trabalho, a correção individual das submissões devido a quantidade de códigos-fontes submetidos.
+quantidade de usuários, agravando este problema e inviabilizando a correção individual
+das submissões.
 
 \textbf{Objetivo:} O objetivo deste trabalho é propor subsídios para a avaliação de
-programas submetidos em Python, utilizando técnicas de mineração e visualização de
-dados para construir e apresentar agrupamentos de código-fonte semelhantes.
+programas submetidos em disciplinas introdutórias à computação, utilizando técnicas
+de mineração e visualização de dados para construir e apresentar agrupamentos de
+código-fonte semelhantes.
 
-\textbf{Método:} Em razão da possibilidade de extrair características pela análise
-estática, do estilo de escrita e dinâmica. A primeira etapa consiste na identificação
-das características que podem ser extraídas conforme o tipo de análise utilizado.
-Após a identificação, será necessário o desenvolvimento de ferramentas para coletar
-tais medidas de forma que possamos utilizá-las para realizar o agrupamento. Com isso,
-desenvolveremos uma ferramenta para minerar as informações disponíveis, realizar os
-agrupamentos e gerar sua visualização. Para testar a ferramenta, teremos duas bases
-de dados distintas de implementações. Uma base de dados existente com soluções de
-cinco problemas dissemelhantes e outra base de dados com códigos-fontes de alunos.
-A validação ocorrerá em duas etapas: mediante a qualidade das visualizações
-considerando as técnicas de mineração e visualização de dados; e verificaremos se
-o \foreign{feedback} está sendo construtivo ao aluno conforme seu \foreign{feedback}
-e da qualidade das próximas implementações.
+\textbf{Método:} A primeira etapa consistirá na identificação das características que
+podem ser extraídas conforme o tipo de análise utilizado: características estática, do
+estilo de escrita e dinâmica. Após a identificação, será necessário o desenvolvimento
+de ferramentas para coletar tais medidas de forma que possamos utilizá-las para realizar
+o agrupamento. Com isso, desenvolveremos uma ferramenta para minerar as informações
+disponíveis, realizando os agrupamentos e gerando visualização dos programas submetidos.
+Para testar a ferramenta, teremos duas bases de dados distintas de implementações. Uma
+base de dados existente com soluções de cinco problemas distintos e outra base de dados
+com códigos-fontes de alunos. A validação ocorrerá em duas etapas: mediante a qualidade
+das visualizações considerando as técnicas de mineração e visualização de dados; e
+verificando se o \foreign{feedback} está sendo construtivo ao aluno conforme seu
+\foreign{feedback} e da qualidade das próximas implementações.
 
-\textbf{Resultados esperados:} Espera-se que com a utilização da ferramenta proposta
-possa potencializar a correção das submissões de modo que, principalmente, melhore
-a qualidade do \foreign{feedback} podendo levar menos tempo para corrigi-las ou o
-mesmo tempo que a correção tradicional. Como precisará verificar apenas uma
-implementação de cada agrupamento, aguardamos que as correções possam ser realizadas
-minuciosamente de modo a realizar um \foreign{feedback} mais construtivo para que o
-programador possa corrigir seus erros e submeter uma versão correta do programa novamente.
+\textbf{Resultados esperados:} Espera-se que, com a utilização dos subsídios logrados
+neste trabalho, potencializar a correção das submissões de modo que, principalmente,
+melhore a qualidade do \foreign{feedback} podendo levar menos tempo para corrigi-las
+ou o mesmo tempo que a correção tradicional.
 
 % ou, para TCC 2:
 % \textbf{Contexto:} \\
