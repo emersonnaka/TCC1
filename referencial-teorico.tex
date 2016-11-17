@@ -489,14 +489,14 @@
 		Na \cref{fig:interfaceOverCode}, que exibe a interface da ferramenta proposta,
 		o OverCode, é possível notar a utilização do conjunto de programas para
 		representar os agrupamentos. A primeira coluna da esquerda exibe dois painéis.
-		O primeiro painel apresenta o número de agrupamentos, representado pelas pilhas,
+		O primeiro painel apresenta o número de agrupamentos, representado pelas conjunto de programas,
 		e o número total de submissões, enquanto o segundo painel, mostra o maior
 		conjunto de programas. A coluna central apresenta a opção de busca, filtrando
-		por uma determinada palavra no quadro superior, e as pilhas remanescentes no
+		por uma determinada palavra no quadro superior, e as conjunto de programas remanescentes no
 		quadro inferior. A terceira coluna apresenta a frequência com que as linhas
 		de códigos estão presentes nas soluções dos agrupamentos.
 
-		A comparação dos conjuntos de programas menores com a pilha maior ocorre entre
+		A comparação dos conjuntos de programas menores com a conjunto de programa maior ocorre entre
 		a primeira e a segunda coluna dando ênfase nas linhas que estão implementadas
 		diferentes. Com isso, é possível verificar como cada conjunto foi montada e a
 		característica daquele agrupamento quando comparada com o conjunto maior. Como
@@ -508,14 +508,14 @@
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=1\linewidth]{imagem/OverCodeDistri}
-			\caption[Representação do tamanho dos agrupamentos (pilhas) para cada problema]
-			{Representação do tamanho dos agrupamentos (pilhas) para cada problema
+			\caption[Representação do tamanho dos agrupamentos (conjunto de programas) para cada problema]
+			{Representação do tamanho dos agrupamentos (conjunto de programas) para cada problema
 				\cite{Glassman:2015}}
 			\label{fig:OverCodeDistri}
 		\end{figure}
 
 		A \cref{fig:OverCodeDistri} apresenta o agrupamento, representado pela quantidade de
-		pilhas no eixo $y$ e o total de submissões em uma pilha no eixo $x$,  em relação a
+		conjunto de programas no eixo $y$ e o total de submissões em uma conjunto de programa no eixo $x$,  em relação a
 		três problemas resolvidos em Python: o problema \texttt{iterPower} refere-se a
 		implementação de uma função, que possui a base e o expoente como parâmetros, para
 		calcular o exponencial com sucessivas multiplicações; o problema \texttt{hangman}
@@ -524,8 +524,8 @@
 		estão presentes na lista de caracteres; por fim, o problema \texttt{compDeriv}
 		calcula a derivada de um polinomial, no qual os coeficientes estão presentes em
 		uma lista. Esses problemas obtiveram 3875, 1118 e 1433 soluções corretas submetidas,
-		respectivamente. Na devida ordem, a maior pilha de cada problema são constituídas
-		de 1534, 97 e 22 implementações e 684, 452 e 959 pilhas com apenas uma solução.
+		respectivamente. Na devida ordem, a maior conjunto de programa de cada problema são constituídas
+		de 1534, 97 e 22 implementações e 684, 452 e 959 conjunto de programas com apenas uma solução.
 
 		Por fim, os autores concluíram que a interface auxilia os professores a terem
 		uma visão de alto nível das soluções (implementações), podendo compreender os
@@ -533,9 +533,9 @@
 		das implementações. Isso diminui consideravelmente a quantidade de submissões
 		a serem efetivamente corrigidas.
 		
-		A análise dinâmica e os recursos realizados para que fosse montado a pilha
+		A análise dinâmica e os recursos realizados para que fosse montado a conjunto de programa
 		mostrou-se eficiente, principalmente para o problema \texttt{iterPower}, no
-		qual sua maior pilha obteve quase 40\% das implementações corretas. Com isso,
+		qual sua maior conjunto de programa obteve quase 40\% das implementações corretas. Com isso,
 		torna-se evidente o quanto a ferramenta pode auxiliar os professores a realizar
 		as correções dos códigos-fontes. A etapa de padronização do código realizado
 		durante a análise, no qual verifica-se as variáveis comuns e renomeia-as,
@@ -672,9 +672,9 @@
 					instâncias; e colisão único/comum), blocos de código.
 					& Diferença entre o tamanho dos conjuntos de linhas
 					& Comparação entre conjuntos de linhas de código
-					& Grande quantidade de pilhas com poucos blocos de código-fonte e poucas
-					pilhas com grande quantidade de blocos implementados
-					& A partir do OverCode e as pilhas com os algoritmos divididos pelas
+					& Grande quantidade de conjunto de programas com poucos blocos de código-fonte e poucas
+					conjunto de programas com grande quantidade de blocos implementados
+					& A partir do OverCode e as conjunto de programas com os algoritmos divididos pelas
 					características extraídas, dá a possibilidade de retornar um
 					\foreign{feedback} mais preciso para cada grupo e facilita a observação
 					da solução do problema. \\
