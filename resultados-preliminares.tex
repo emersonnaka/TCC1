@@ -99,6 +99,45 @@
 	ou seja, seu cálculo é realizado com base na utilização de \texttt{if/else} e laços
 	de repetição.
 	
+	Para extrair as características das implementações, foi necessário a modificação
+	das ferramentas \texttt{PEP8} e \texttt{Flake8}. No \texttt{PEP8}, alteramos o
+	método \texttt{check\_files()} que é chamado apenas uma vez e é responsável por
+	verificar cada código-fonte especificado no momento da execução por linha de
+	comando. Tal modificação consiste na criação do arquivo no formato \texttt{CSV}
+	com o cabeçalho: nome do arquivo, total de linhas do código-fonte, quantidade
+	de erros do estilo de escrita e cada erro do \texttt{PEP8}.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagem/flake8}
+		\caption{Representação das características analisadas pelo \texttt{Flake8}}
+		\label{fig:flake8}
+	\end{figure}
+	
+	A \cref{fig:flake8} apresenta o formato da impressão de cada característica do
+	\texttt{Flake8}. Notamos que era possível obter as características no momento em
+	que fosse realizado cada \texttt{print} dos dados, visto que, todas as linhas
+	possuem o tipo do erro, E302 ou a complexidade ciclomática C901, por exemplo.
+	Desta forma, alteramos o método \texttt{get\_file\_result()} da classe
+	\texttt{reporter} do \texttt{Flake8}. Criamos um dicionário contendo todos os
+	erros do \texttt{PEP8} e do \texttt{mccabe} como chave. A cada impressão
+	verificamos qual é o tipo do erro e incrementamos o valor dessa chave.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagem/arquivoCSV}
+		\caption{Arquivo no formato \texttt{CSV} gerado após as adaptações inseridas nas ferramentas \texttt{Flake8} e \texttt{PEP8}}
+		\label{fig:arquivoCSV}
+	\end{figure}
+	
+	A \cref{fig:arquivoCSV} apresenta o arquivo gerado pelas ferramentas após a
+	execução das análises de cada código-fonte presente no caminho \texttt{base-de-dados/}.
+	As três primeiras colunas são: o nome do arquivo, a quantidade de linhas implementadas
+	e o total de erros do estilo de escrita PEP 8 \cite{van2001pep}, respectivamente. As
+	demais colunas são referentes a cada erro do \texttt{PEP8} \cite{pep8} com a última
+	coluna representando a complexidade ciclomática calculada pela ferramenta
+	\texttt{McCabe} \cite{mccabe}.
+
 	% Mineração e similaridade
 	Com a finalidade de encontrar relações entre as características extraídas, em
 	conformidade com a etapa Extração de Padrões (\cref{fig:mineracaoDados}).
@@ -108,7 +147,8 @@
 	ocorrência da grande quantidade de 0 (zeros) ocorre pela busca dos programadores
 	em implementar suas soluções computacionais corretamente. Além disso, faz com que
 	implementações para problemas distintos não sejam consideram semelhantes devido a
-	quantidade de 0 (zeros).
+	quantidade de 0 (zeros). A grande quantidade de 0 (zeros) pode ser observada na
+	\cref{fig:arquivoCSV}.
 	
 	% Visualização e projeção
 	Para possibilitar a visualização dos agrupamentos utilizaremos a \texttt{ScienceView}
@@ -121,6 +161,29 @@
 	por semana ou meses, por exemplo. Desta forma, poderemos obter sequências temporais
 	de mapas baseado na similaridade das implementações de um único aluno.
 	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagem/projecaoFinal}
+		\caption{Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView}}
+		\label{fig:projecaoFinal}
+	\end{figure}
+	
+	A \cref{fig:projecaoFinal} apresenta a visualização dos agrupamentos das 152
+	implementações contidas na base de dados. Isso foi possível após a adaptação da
+	ferramenta para leitura de arquivos no formato \texttt{CSV}. Cada ponto da
+	visualização é referente a um código-fonte. Ao clicar em um dos pontos, a
+	\cref{fig:scienceViewCodigoFonte} mostra a exibição da sua implementação e
+	as características extraídas das ferramentas para aquele código-fonte. Também
+	é possível ordenar a coluna de características \foreign{Quantity} em ordem
+	decrescente para visualizar as características que mais ocorreram. 
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{imagem/scienceViewCodigoFonte}
+		\caption{Representação parcial da janela de uma implementação}
+		\label{fig:scienceViewCodigoFonte}
+	\end{figure}
+
 	\section{Trabalhos futuros}
 	
 		O atual banco de dados de implementações, formado por 152 códigos-fontes que
