@@ -1,15 +1,18 @@
 \chapter{Resultados Preliminares}
 \label{chap:Result}
 
-	Na primeira etapa da \cref{fig:fluxogramaProposta}, foi definido que a linguagem
-	de programação a ser utilizada será Python. Devido ao conhecimento prévio de
-	ferramentas que possam auxiliar na verificação e extração de características,
+	Neste capítulo será apresentado os resultados obtidos durante o desenvolvimento
+	deste estudo.
+
+	Na primeira etapa da \cref{fig:fluxogramaProposta}, foi definido a utilização
+	da linguagem de programação Python. A escolha foi devido ao conhecimento prévio
+	de ferramentas que possam auxiliar na verificação e extração de características,
 	bem como a disponibilidade de cursos sobre introdução a programação, utilizando
 	Python, em diversos MOOCs.
 	
 	Considerando a combinação de características originadas de tipos de análises
-	distintas, utilizaremos uma combinação de aspectos provenientes da análise
-	sintática e do estilo de escrita. A escolha da análise estática se dá a
+	distintas, utilizamos uma combinação de aspectos provenientes da análise
+	sintática e do estilo de escrita. A escolha da análise estática se dá pela
 	possibilidade de implementações para solucionar o mesmo problema possuírem
 	o mesmo tamanho. Enquanto a organização do código, realizado pelo programador,
 	pode impactar no entendimento da solução do problema, por isso a escolha da
@@ -19,80 +22,78 @@
 	
 	A etapa \textbf{códigos-fontes} refere-se a construção da base de dados que será
 	utilizada no experimento. Inicialmente, possuímos uma pequena base de dados
-	constituída de 152 implementações que solucionam 5 problemas distintos. Entretanto,
-	esse conjunto de soluções é considerado pequeno e pode enviesar nosso projeto.
-	Para isso, construiremos outro banco de dados de implementações por meio de
-	submissões de voluntários, visando possuir um conjuntos de códigos-fontes vasto
-	para a pesquisa. 
+	constituída de 152 implementações que solucionam 5 problemas distintos.
 	
 	% Quais as características extraídas
 	%	Pep8 e McCabe
-	No estágio \textbf{extração de características} obteremos as informações necessárias
+	No estágio \textbf{extração de características} obtivemos as informações necessárias
 	por meio da análise estática e do estilo de escrita com o auxílio das ferramentas
 	\texttt{PEP8} \cite{pep8} e \texttt{McCabe} \cite{mccabe} que funcionam como \foreign{plugins} para o
-	\texttt{Flake8}. Extrairemos da análise estática somente a quantidade de linhas
+	\texttt{Flake8}. Extraimos da análise estática somente a quantidade de linhas
 	do código-fonte e a complexidade ciclomática de cada \foreign{plugin},
 	respectivamente. Contudo, o foco do \texttt{PEP8} é verificar se o estilo de
 	escrita PEP 8 \cite{van2001pep} está sendo praticado corretamente. Por esse
-	motivo, vamos extrair as características relacionadas a: indentação; espaços em
-	branco; linhas em branco; declaração de importação de bibliotecas; tamanho da
-	linha; quantidade de instruções por linha e formas de instrução;
-	por fim, verificação de sintaxe e geração de \foreign{tokens}.
+	motivo, extraímos as características relacionadas a: indentação (\cref{tab:pep8E100});
+	espaços em branco (\cref{tab:pep8E200}); linhas em branco (\cref{tab:pep8E300});
+	declaração de importação de bibliotecas (\cref{tab:pep8E400}); tamanho da linha
+	(\cref{tab:pep8E500}); quantidade de instruções por linha e formas de instrução
+	(\cref{tab:pep8E700}); por fim, verificação de sintaxe e geração de \foreign{tokens}
+	(\cref{tab:pep8E900}).
 	
-	A indentação possui as seguintes características: tabulações e espaços misturados;
-	o nível não possui indentação, mas foi encontrado espaços em branco ou uma indentação,
-	ambas podendo ser seguida de um comentário; o nível possui uma indentação, entretanto,
-	esse não foi encontrado ou foi encontrado seguido de um comentário; há espaços, contudo
-	é menor que uma tabulação de 4 espaços, definido como padrão no \texttt{PEP8}; e em
-	instruções de múltiplas linhas verifica se as linhas seguintes estão indentadas com
-	a primeira linha da instrução.
+%	A indentação possui as seguintes características: tabulações e espaços misturados;
+%	o nível não possui indentação, mas foi encontrado espaços em branco ou uma indentação,
+%	ambas podendo ser seguida de um comentário; o nível possui uma indentação, entretanto,
+%	esse não foi encontrado ou foi encontrado seguido de um comentário; há espaços, contudo
+%	é menor que uma tabulação de 4 espaços, definido como padrão no \texttt{PEP8}; e em
+%	instruções de múltiplas linhas verifica se as linhas seguintes estão indentadas com
+%	a primeira linha da instrução.
+%	
+%	Os espaços em branco são analisados em chamadas de função, atribuições, operações
+%	lógicas e aritméticas, entre palavras reservadas e comentário. Em chamadas de
+%	funções constata a presença ou falta de espaço em branco depois dos \foreign{tokens}
+%	\texttt{(}, \texttt{\{} e \texttt{[} ou antes dos \foreign{tokens} \texttt{)},
+%	\texttt{\}}, \texttt{]}, como também antes de \texttt{(} e \texttt{[} no caso de
+%	querer acessar um índice de uma lista, por exemplo. Nas atribuições compreende se
+%	não há espaço em branco entre o operador de atribuição, enquanto nas operações
+%	lógicas e aritméticas constata se não há espaço entre seus operadores.
+%	
+%	% linhas em branco entre métodos e, entre declaração da classe e um método da classe
+%	A verificação de linhas em brancos é utilizada para observar como um método está
+%	separado de outro método, bem como da declaração da classe. Os métodos devem estar
+%	separados por duas linhas em branco, enquanto a declaração da classe e o primeiro
+%	método deve estar separado por apenas uma linha em branco. Caso essas duas
+%	características não sejam cumpridas, além de possuir várias linhas em branco,
+%	o analisador gera um erro.
+%	
+%	% importação de bibliotecas
+%	A quantidade de bibliotecas que estão sendo importadas também é observado. O
+%	\texttt{PEP8} considera importar apenas uma biblioteca por linha. Portanto,
+%	o \foreign{plugin}, irá detectar a importação de duas ou mais bibliotecas na
+%	mesma linha.
+%	
+%	% tamanho da linha
+%	O analisador também verifica o tamanho, em caracteres, de uma linha. Uma mensagem
+%	de erro ocorre quando a linha possuir 80 caracteres ou mais. Além disso, é
+%	contraindicado utilizar uma barra invertida seguido de uma nova linha quando estiver
+%	entre colchetes ou parenteses.
+%	
+%	% quantidade de instruções por linha e formas de instrução
+%	A quantidade de instruções por linha menciona as instruções que podem ser separadas
+%	por \texttt{:} (dois-pontos) ou \texttt{;} (ponto e vírgula). O primeiro caso pode
+%	ocorrer em uma declaração de condicional e sua primeira instrução. Enquanto, o segundo
+%	caso, ocorre entre duas instruções. Por fim, as formas de instruções verifica: se uma
+%	instrução é terminada com \texttt{;}; utilização de operadores lógicos para comparar
+%	valores únicos (\foreign{singletons}), ao invés de utilizar \texttt{is} ou \texttt{is not};
+%	a utilização de \texttt{not in} para verificar se uma variável está contida em outra e
+%	\texttt{is not} para comparar objetos; por fim, a comparação de tipos é realizado pelo
+%	\texttt{isinstance()}.
+%	
+%	% verificação de sintaxe e geração de tokens
+%	Por fim, o \texttt{PEP8} também verifica se a sintaxe do código-fonte é valida.
+%	\textbf{Falta falar sobre o erro E902, mas não entendi a definição no PEP8:
+%		"Tokenize the file, run physical line checks and yield tokens."}
 	
-	Os espaços em branco são analisados em chamadas de função, atribuições, operações
-	lógicas e aritméticas, entre palavras reservadas e comentário. Em chamadas de
-	funções constata a presença ou falta de espaço em branco depois dos \foreign{tokens}
-	\texttt{(}, \texttt{\{} e \texttt{[} ou antes dos \foreign{tokens} \texttt{)},
-	\texttt{\}}, \texttt{]}, como também antes de \texttt{(} e \texttt{[} no caso de
-	querer acessar um índice de uma lista, por exemplo. Nas atribuições compreende se
-	não há espaço em branco entre o operador de atribuição, enquanto nas operações
-	lógicas e aritméticas constata se não há espaço entre seus operadores.
-	
-	% linhas em branco entre métodos e, entre declaração da classe e um método da classe
-	A verificação de linhas em brancos é utilizada para observar como um método está
-	separado de outro método, bem como da declaração da classe. Os métodos devem estar
-	separados por duas linhas em branco, enquanto a declaração da classe e o primeiro
-	método deve estar separado por apenas uma linha em branco. Caso essas duas
-	características não sejam cumpridas, além de possuir várias linhas em branco,
-	o analisador gera um erro.
-	
-	% importação de bibliotecas
-	A quantidade de bibliotecas que estão sendo importadas também é observado. O
-	\texttt{PEP8} considera importar apenas uma biblioteca por linha. Portanto,
-	o \foreign{plugin}, irá detectar a importação de duas ou mais bibliotecas na
-	mesma linha.
-	
-	% tamanho da linha
-	O analisador também verifica o tamanho, em caracteres, de uma linha. Uma mensagem
-	de erro ocorre quando a linha possuir 80 caracteres ou mais. Além disso, é
-	contraindicado utilizar uma barra invertida seguido de uma nova linha quando estiver
-	entre colchetes ou parenteses.
-	
-	% quantidade de instruções por linha e formas de instrução
-	A quantidade de instruções por linha menciona as instruções que podem ser separadas
-	por \texttt{:} (dois-pontos) ou \texttt{;} (ponto e vírgula). O primeiro caso pode
-	ocorrer em uma declaração de condicional e sua primeira instrução. Enquanto, o segundo
-	caso, ocorre entre duas instruções. Por fim, as formas de instruções verifica: se uma
-	instrução é terminada com \texttt{;}; utilização de operadores lógicos para comparar
-	valores únicos (\foreign{singletons}), ao invés de utilizar \texttt{is} ou \texttt{is not};
-	a utilização de \texttt{not in} para verificar se uma variável está contida em outra e
-	\texttt{is not} para comparar objetos; por fim, a comparação de tipos é realizado pelo
-	\texttt{isinstance()}.
-	
-	% verificação de sintaxe e geração de tokens
-	Por fim, o \texttt{PEP8} também verifica se a sintaxe do código-fonte é valida.
-	\textbf{Falta falar sobre o erro E902, mas não entendi a definição no PEP8:
-		"Tokenize the file, run physical line checks and yield tokens."}
-	
-	A ferramenta \texttt{mccabe} \cite{mccabe2013} fornecerá informações sobre a
+	A ferramenta \texttt{mccabe} \cite{mccabe2013} fornece informações sobre a
 	complexidade ciclomática \cite{mccabe} de cada função ou método implementado.
 	Essa complexidade é referente às estruturas de decisões implementadas \cite{mccabe},
 	ou seja, seu cálculo é realizado com base na utilização de \texttt{if/else} e laços
@@ -100,26 +101,30 @@
 	
 	% Mineração e similaridade
 	Com a finalidade de encontrar relações entre as características extraídas, em
-	conformidade com a etapa Extração de Padrões (\ref{fig:mineracaoDados}).
-	Utilizaremos uma técnica de similaridade que não realiza comparações entre 0
-	(zeros), a similaridade do cosseno. Sua escolha ocorreu pelo fato de obtermos
+	conformidade com a etapa Extração de Padrões (\cref{fig:mineracaoDados}).
+	Utilizamos a técnica de similaridade do cosseno. Sua escolha ocorreu pelo fato de obtermos
 	uma matriz esparsa -- possui grande quantidade de 0 (zeros) -- ao realizar o
-	Pré-Processamento (\ref{fig:mineracaoDados}) das características extraídas. A
+	Pré-Processamento (\cref{fig:mineracaoDados}) das características extraídas. A
 	ocorrência da grande quantidade de 0 (zeros) ocorre pela busca dos programadores
 	em implementar suas soluções computacionais corretamente. Além disso, faz com que
 	implementações para problemas distintos não sejam consideram semelhantes devido a
 	quantidade de 0 (zeros).
 	
 	% Visualização e projeção
-	Para possibilitar a visualização dos agrupamentos utilizaremos a \texttt{ProgrammingView},
-	uma adaptação da \texttt{ScienceView} \cite{Alencar} que utiliza o algoritmo de
-	agrupamento DBSCAN \cite{Ester1996} e a técnica de projeção multidimensional dinâmica
-	\foreign{Time-based Least Square Projection} (T-LSP). Até o momento, realizamos a
-	adaptação para leitura do arquivo no formato \texttt{CSV}. A T-LSP produz uma sequência
-	temporal de mapas conforme a similaridade dos dados. Com isso, poderemos verificar se
-	o aluno está progredindo no curso, visto que a técnica de projeção permitirá visualizar
-	projeções relativas a implementações por semana ou meses, por exemplo. Desta forma, poderemos
-	obter sequências temporais de mapas baseado na similaridade das implementações de um único
-	aluno.
+	Para possibilitar a visualização dos agrupamentos utilizaremos a \texttt{ScienceView}
+	\cite{Alencar-etal:2012} que utiliza o algoritmo de agrupamento DBSCAN \cite{Ester1996}
+	e a técnica de projeção multidimensional dinâmica \foreign{Time-based Least Square Projection}
+	(T-LSP). Até o momento, realizamos a adaptação para leitura do arquivo no formato
+	\texttt{CSV}. A T-LSP produz uma sequência temporal de mapas conforme a similaridade
+	dos dados. Com isso, poderemos verificar se o aluno está progredindo no curso, visto
+	que a técnica de projeção permitirá visualizar projeções relativas a implementações
+	por semana ou meses, por exemplo. Desta forma, poderemos obter sequências temporais
+	de mapas baseado na similaridade das implementações de um único aluno.
 	
+	\section{Trabalhos futuros}
 	
+		O atual banco de dados de implementações, formado por 152 códigos-fontes que
+		solucionam 5 problemas distintos é considerado pequeno e pode enviesar o
+		projeto. Para isso, construiremos outro banco de dados de implementações
+		por meio de submissões de voluntários, visando possuir um conjunto de
+		implementações vasto para a pesquisa.
