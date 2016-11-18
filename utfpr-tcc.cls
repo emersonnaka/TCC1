@@ -689,14 +689,14 @@
 \captionsetup{labelformat=default}
 \captionsetup{labelsep=period}
 \captionsetup{justification=justified}
-\captionsetup{singlelinecheck=false}
+\captionsetup{singlelinecheck=true}
 \captionsetup{labelfont=bf}
 \captionsetup{parskip=4pt}
 \captionsetup{margin=\floatmargin}
 \captionsetup[table]{position=top}
 \captionsetup{font={singlespacing,small}}
 \setlength{\abovecaptionskip}{4pt}
-
+\captionsetup[subfloat]{justification=centering}
 
 
 
@@ -915,7 +915,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % References
 
-\RequirePackage[alf,abnt-full-initials=yes,abnt-missing-year=sd,abnt-doi=doi]{abntex2cite}
+\RequirePackage[alf,abnt-full-initials=yes,abnt-missing-year=sd,abnt-doi=doi,abnt-etal-cite=2]{abntex2cite}
 
 % Do no use uppercase for \bibname.
 \renewenvironment{thebibliography}[1]{
