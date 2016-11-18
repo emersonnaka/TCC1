@@ -133,10 +133,10 @@
 		\subsection{Características de Programas}
 		\label{subSec:Caracteristicas}
 
-			A extração de características por meio das implementações podem ocorrer das
+			A extração de características por meio das implementações pode ocorrer das
 			seguintes formas: análise estática, análise do estilo de escrita e análise dinâmica.
 			A análise estática ocorre por meio da observação do código-fonte, considerando
-			apenas sua implementação, ou seja, não é necessário sua execução. Há diversas
+			apenas sua implementação, ou seja, não é necessária sua execução. Há diversas
 			características que podem ser extraídas dessa análise. Há abordagens que extraem
 			somente a Árvore de Sintaxe Abstrata (AST) que pode ser gerada durante a análise
 			sintática do compilador para representar o código-fonte em forma de árvore
@@ -280,7 +280,7 @@
 		árvores parecidas ainda quando solucionam problemas distintos.
 		
 		Em \citeonline{Glassman:2014}, foi proposto um agrupamento hierárquico de dois
-		níveis. No nível mais alto ocorre o agrupamento das soluções, utilizando  o
+		níveis. No nível mais alto ocorre o agrupamento das soluções, utilizando o
 		\foreign{K-means} com diversos valores para $k$, ao longo do plano de separação,
 		considerando apenas características abstratas, como, por exemplo: posição da
 		declaração de condicional em relação a declarações de laço de repetição (antes,
@@ -461,7 +461,7 @@
 		identifica quais são as variáveis comuns. Tais variáveis são reconhecidas a
 		partir das suas sequências idênticas dado dois ou mais históricos de execução.
 		As variáveis que só ocorrem uma vez no \foreign{trace} são as variáveis únicas.
-		Após reconhecer as variáveis comuns e únicas, a ferramenta renomeia-as para o
+		Após reconhecer as variáveis comuns e únicas, a ferramenta as renomeia para o
 		nome da variável que ocorreu em mais históricos de execução.
 		
 		Após todos esses passos, a normalização do código-fonte realizada em todas as
@@ -481,7 +481,7 @@
 		Na \cref{fig:interfaceOverCode}, que exibe a interface da ferramenta proposta,
 		o OverCode, é possível notar a utilização do conjunto de programas para
 		representar os agrupamentos. A primeira coluna da esquerda exibe dois painéis.
-		O primeiro painel apresenta o número de agrupamentos, representado pelas conjunto de programas,
+		O primeiro painel apresenta o número de agrupamentos, representado pelos conjuntos de programas,
 		e o número total de submissões, enquanto o segundo painel, mostra o maior
 		conjunto de programas. A coluna central apresenta a opção de busca, filtrando
 		por uma determinada palavra no quadro superior, e as conjunto de programas remanescentes no
@@ -517,7 +517,7 @@
 		calcula a derivada de um polinomial, no qual os coeficientes estão presentes em
 		uma lista. Esses problemas obtiveram 3875, 1118 e 1433 soluções corretas submetidas,
 		respectivamente. Na devida ordem, a maior conjunto de programa de cada problema são constituídas
-		de 1534, 97 e 22 implementações e 684, 452 e 959 conjunto de programas com apenas uma solução.
+		de 1534, 97 e 22 implementações e 684, 452 e 959 conjuntos de programas com apenas uma solução.
 
 		Por fim, os autores concluíram que a interface auxilia os professores a terem
 		uma visão de alto nível das soluções (implementações), podendo compreender os
@@ -575,7 +575,7 @@
 		agrupamentos em quatro problemas distintos. Para todos os gráficos, a
 		abcissa é referente ao tamanho dos pedaços, enquanto a ordenada representa
 		o número de agrupamentos. É possível notar três tipos de agrupamento. A barra
-		horizontal azul representa o agrupamento sem normalização. enquanto as barras
+		horizontal azul representa o agrupamento sem normalização. Enquanto as barras
 		verde e vermelho possuem o valor de $k$ diferente, entretanto ambas estão
 		normalizadas. As tarefas 1 e 2 possuem apenas uma função para resolver um
 		pequeno problema e apresentou bons agrupamentos, nos quais possuíam mais
@@ -591,11 +591,11 @@
 		selecionada, nota-se que a maioria dos \foreign{clusters} formados possuíam
 		apenas um código-fonte. Entretanto, a submissão de implementações contendo
 		apenas uma função (tarefas 1 e 2) para resolver o problema torna-se interessante,
-		devido a realização de alguns agrupamentos com mais de 40 implementações
+		devido à realização de alguns agrupamentos com mais de 40 implementações
 		semelhantes. Em um ambiente controlado, no qual todos os alunos irão submeter
 		diversas soluções com somente uma função, é interessante a utilização da
 		ferramenta. Caso contrário, seu uso não interferirá significativamente no
-		auxilio a correções de códigos-fontes. 
+		auxílio a correções de códigos-fontes. 
 		
 		\begin{landscape}
 			\begin{table}[h]
