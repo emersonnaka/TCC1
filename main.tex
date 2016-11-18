@@ -17,6 +17,7 @@
 \usepackage{xcolor}
 \usepackage{indentfirst}
 \usepackage{lscape}
+\usepackage{appendix}
 
 % Elementos geralmente utilizados na tabela do cronograma
 \newcommand{\fullcell}{\multicolumn{1}{>{\columncolor[gray]{0.5}}c}{}}
@@ -156,7 +157,10 @@ ou o mesmo tempo que a correção tradicional.
 \include{resultados-preliminares}
 
 \bibliographystyle{abntex2-alf}
-\bibliography{root} % geração automática das referências a partir do arquivo main.bib
+\bibliography{main} % geração automática das referências a partir do arquivo main.bib
 
 \backmatter
+\appendix
+\include{pep8Erros}
+
 \end{document}

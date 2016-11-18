@@ -422,7 +422,7 @@
 }
 
 % Pretty chapter start at backmatter
-\newpagestyle{backmatter}{
+\newpagestyle{backmatter}[\small\sffamily]{
 	\sethead{}{}{\thepage}
 	\setfoot{}{}{}
 }
@@ -448,7 +448,6 @@
 
 \renewcommand\backmatter{%
 	\cleardoublepage
-	\@mainmatterfalse
 	\pagestyle{backmatter}
 	\pagenumbering{arabic}
 	\titlespacing{\chapter}{0pt}{0em}{2em}[0pt]
@@ -689,14 +688,14 @@
 \captionsetup{labelformat=default}
 \captionsetup{labelsep=period}
 \captionsetup{justification=justified}
-\captionsetup{singlelinecheck=false}
+\captionsetup{singlelinecheck=true}
 \captionsetup{labelfont=bf}
 \captionsetup{parskip=4pt}
 \captionsetup{margin=\floatmargin}
 \captionsetup[table]{position=top}
 \captionsetup{font={singlespacing,small}}
 \setlength{\abovecaptionskip}{4pt}
-
+\captionsetup[subfloat]{justification=centering}
 
 
 
@@ -906,16 +905,16 @@
 \let\origappendix=\appendix
 \renewcommand\appendix{
 	\origappendix
-	\cleardoublepage
-	\addappheadtotoc
-	\appendixpage
+ 	\cleardoublepage
+ 	\addappheadtotoc
+ 	\appendixpage
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % References
 
-\RequirePackage[alf,abnt-full-initials=yes,abnt-missing-year=sd,abnt-doi=doi]{abntex2cite}
+\RequirePackage[alf,abnt-full-initials=yes,abnt-missing-year=sd,abnt-doi=doi,abnt-etal-cite=2]{abntex2cite}
 
 % Do no use uppercase for \bibname.
 \renewenvironment{thebibliography}[1]{

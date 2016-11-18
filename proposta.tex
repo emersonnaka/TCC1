@@ -8,16 +8,15 @@
 	Após a revisão da literatura, verificamos que o projeto é baseado em algumas etapas.
 	Conforme a \cref{fig:fluxogramaProposta}, é necessário escolher qual linguagem de programação
 	será utilizado. Em seguida deve-se verificar quais características podem ser extraídas
-	das implementações submetidas utilizando a linguagem especificada. Em seguida, é
-	necessário construir a base de dados por meio da submissão de implementações. Realizar
-	a extração de características. Minerar os dados extraídos das submissões e verificar a
+	das implementações submetidas utilizando a linguagem especificada. Posteriormente, é
+	necessário construir a base de dados por meio da submissão de implementações, realizar
+	a extração de características, minerar os dados extraídos das submissões e verificar a
 	similaridade entre as implementações. Por fim, realizar a projeção e visualizar os
 	agrupamentos.
 
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.7\linewidth]{imagem/fluxogramaProposta}
-		\captionsetup{justification=centering}
 		\caption{Fluxograma das etapas necessárias para a realização do projeto}
 		\label{fig:fluxogramaProposta}
 	\end{figure}
@@ -31,12 +30,12 @@
 	\texttt{Java} e \texttt{PEP8} para \texttt{Python}.
 
 	A etapa seguinte \textbf{definir características a serem extraídas} será realizado
-	com base nos trabalhos relacionados (\cref{sec:TrabRel}). Verificamos que, é
+	com base nos trabalhos relacionados (\cref{sec:TrabRel}). Verificamos que é
 	possível utilizar características originadas de um tipo de análise (estática,
 	dinâmica e do estilo de escrita), bem como associar características de análises
 	distintas para obter um melhor resultado.
 	
-	O estágio \textbf{códigos-fontes} refere-se a construção da base de dados que será
+	O estágio \textbf{códigos-fontes} refere-se à construção da base de dados que será
 	utilizada no experimento. Tal base tem que possuir uma quantidade considerável de
 	submissões de códigos-fontes, devido a quantidade de usuários que utilizam o MOOC,
 	para que seja possível avaliar o desenvolvimento do projeto com uma quantidade
@@ -44,26 +43,57 @@
 	
 	A \textbf{extração de características} é a fase na qual escolhe-se uma ferramenta
 	disponibilizada livremente pela Internet que forneça os dados necessários, visto
-	que não desejamos criar uma ferramenta para esse fim.
-
-	Enquanto a etapa \textbf{mineração de dados e agrupamento} é responsável pela
+	que não desejamos criar uma ferramenta para esse fim. Tal estágio é responsável pela
 	adaptação das ferramentas selecionadas anteriormente para que seja possível obter
 	as características e salvá-la em algum tipo de arquivo, como o formato \texttt{XML}
-	e o \texttt{CSV}, por exemplo. Em seguida, é necessário a escolha de técnicas que
-	seja possível verificar a similaridade dos códigos-fontes a fim de produzir os
-	agrupamentos.
+	e o \texttt{CSV}, por exemplo.
+
+	Na etapa \textbf{mineração de dados e agrupamento} analisa-se os dados obtidos a
+	fim de verificar um padrão das características obtidas. Isso permite a utilização
+	de técnicas para verificar a similaridade a similaridade dos códigos-fontes a fim
+	de produzir os agrupamentos.
 	
 	Por fim, \textbf{projeção e visualização} refere-se ao emprego de técnicas de
 	projeção para que seja possível diminuir a quantidade de dimensões. Uma dimensão
-	é ferente a uma característica extraída da implementação, portanto a quantidade
+	é referente a uma característica extraída da implementação, portanto a quantidade
 	de dimensões é igual a quantidade de características extraídas. Com isso, é
 	necessário selecionar uma técnica para diminuir um espaço $n-dimensional$ para
-	tridimensional a fim de realizar a visualização dos agrupamentos.
+	duas ou três dimensões a fim de realizar a visualização dos agrupamentos.
 	
-	No caso dos características extraídas não forem relevantes para a formação de
+	No caso das características extraídas não forem relevantes para a formação de
 	agrupamentos ou a visualização não produzir modelos gráficos significativos por
 	meio dos mapeamento de dados realizados pela técnica de projeção, será necessário
 	voltar a segunda etapa para definir outras características a serem extraídas.
+	
+	Nosso objetivo, por meio dessas etapas, consiste no desenvolvimento de subsídios
+	de avaliação, utilizando técnicas de visualização para auxiliar os professores a
+	corrigirem todas as submissões, considerando o tempo e a qualidade do \foreign{feedback},
+	principalmente. Por isso, teremos duas questões de pesquisa (QP):
+	
+	\begin{itemize}
+		\item \textbf{QP$_1$}: a utilização de subsídios de avaliação reduz o tempo
+		de correção de todas as submissões?
+		\item \textbf{QP$_2$}: a utilização de subsídios de avaliação melhora o \foreign{feedback}?
+	\end{itemize}
+	
+	O subsídio de avaliação será uma adaptação da \texttt{ScienceView} \cite{Alencar-etal:2012}
+	que, originalmente, verifica a similaridade de documentos com o decorrer do tempo,
+	utilizando técnicas de mineração, projeção e visualização. Com isso, teremos as
+	seguintes hipóteses (HP) em relação a utilização da proposta deste estudo:
+	
+	\begin{itemize}
+		\item \textbf{HP$_1$}: melhora o \foreign{feedback} e reduz o tempo;
+		\item \textbf{HP$_2$}: melhora o \foreign{feedback} e não reduz o tempo;
+		\item \textbf{HP$_2$}: diminui o tempo de correção, mas mantém o nível do
+		\foreign{feedback}.
+	\end{itemize}
+	
+	Para validar o tempo gasto e a qualidade dos \texttt{feedbacks} para todas as correções,
+	será criado dois grupos de professores. Um grupo utilizará a \texttt{ScienceView} para
+	realizar a avaliação das implementações. Enquanto o outro grupo avaliará as submissões
+	manualmente. Além disso, a qualidade dos \foreign{feedbacks}, será avaliado através da opinião
+	de cada aluno sobre o \foreign{feedback} que recebeu e também será avaliado por meio
+	de submissões futuras, visto que a ferramenta realiza várias projeções ao longo	do tempo.
 
 	\section{Cronograma}
 	
@@ -74,13 +104,13 @@
 		\begin{tabular}{|l|c|c|c|c|c|c|}
 			\hline
 			& Janeiro & Fevereiro & Março & Abril & Maio & Junho \\ \hline
-			Implementação da \texttt{ProgrammingView} 		& \y  & \y  & \y  & \y  &     &     \\ \hline
-			Construção da base de dados      		        &     & \y  & \y  & \y  &     &     \\ \hline
-			Extração de caraterísticas         		        &     &     &     &     & \y  &     \\ \hline
-			Validação dos agrupamentos      		        &     &     &     &     & \y  & \y  \\ \hline
-			Validação dos \foreign{feedbacks}               &     &     &     &     & \y  & \y  \\ \hline
+			Implementação da \texttt{ProgrammingView} 		& \y  & \y  & \y  &     &     &     \\ \hline
+			Construção da base de dados      		        &     & \y  & \y  &     &     &     \\ \hline
+			Extração de caraterísticas         		        &     &     & \y  & \y  &     &     \\ \hline
+			Validação dos agrupamentos      		        &     &     &     & \y  & \y  & \y  \\ \hline
+			Validação dos \foreign{feedbacks}               &     &     &     & \y  & \y  & \y  \\ \hline
+			Publicação dos resultados                       &     &     & \y  & \y  & \y  & \y  \\ \hline
 		\end{tabular}
-		\captionsetup{justification=centering}
 		\caption{Cronograma}
 		\label{tab:cronograma}
 	\end{table}
