@@ -422,7 +422,7 @@
 }
 
 % Pretty chapter start at backmatter
-\newpagestyle{backmatter}{
+\newpagestyle{backmatter}[\small\sffamily]{
 	\sethead{}{}{\thepage}
 	\setfoot{}{}{}
 }
@@ -448,7 +448,6 @@
 
 \renewcommand\backmatter{%
 	\cleardoublepage
-	\@mainmatterfalse
 	\pagestyle{backmatter}
 	\pagenumbering{arabic}
 	\titlespacing{\chapter}{0pt}{0em}{2em}[0pt]
@@ -906,9 +905,9 @@
 \let\origappendix=\appendix
 \renewcommand\appendix{
 	\origappendix
-	\cleardoublepage
-	\addappheadtotoc
-	\appendixpage
+ 	\cleardoublepage
+ 	\addappheadtotoc
+ 	\appendixpage
 }
 
 
