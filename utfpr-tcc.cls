@@ -803,15 +803,34 @@
 % \hbadness 1414
 % \raggedbottom
 
-% Don't bother to report overfull boxes if over-edge is < 1pc
+% Do not bother to report overfull boxes if over-edge is < 1pc
 \vfuzz 1pc
 \hfuzz 1pc
 
-% Not actually required, but it makes latex2rtf happy :)
-%\RequirePackage{ifthen}
-%\@ifpackageloaded{acronym}
-%       {}
-%       {\RequirePackage[printonlyused, withpage]{acronym}}
+% Lista de acronimos
+\RequirePackage[printonlyused, withpage]{acronym}
+
+% Redefinicao do ambiente utilizado pela lista de acronimos, corrigindo o espacamento
+% entre os itens.
+\renewenvironment{AC@deflist}[1]{
+        \raggedright
+        \begin{list}{}{
+%               \Nospacing
+                \settowidth{\labelwidth}{\textbf{\textsf{#1}}}
+                \setlength{\leftmargin}{\labelwidth}
+                \addtolength{\leftmargin}{\labelsep}
+                \renewcommand{\makelabel}{\aclabelfont}
+        }
+}{
+        \end{list}
+}
+
+\newcommand{\listofacronyms}[1]{
+        \cleardoublepage{}
+        \chapter*{\listofacronymsname}
+        \input{#1}
+        \acresetall{}
+}
 
 
 

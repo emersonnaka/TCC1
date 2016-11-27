@@ -24,6 +24,7 @@ pdf:
 	-bibtex -min-crossrefs=60 $(ROOT)
 #	iconv --from-code=ISO-8859-1 --to-code=UTF-8 $(ROOT).bbl > $(ROOT).bbl.new
 #	mv $(ROOT).bbl.new $(ROOT).bbl
+	-makeindex -c -s makeidx.ist -o $(ROOT).ind  $(ROOT).idx
 	pdflatex $(PDFLATEX_ARGS) $(ROOT)
 	pdflatex $(PDFLATEX_ARGS) $(ROOT)
 	pdflatex $(PDFLATEX_ARGS) $(ROOT)
