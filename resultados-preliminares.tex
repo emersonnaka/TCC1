@@ -2,7 +2,7 @@
 \label{chap:Result}
 
 	Neste capítulo será apresentado os resultados obtidos durante o desenvolvimento
-	deste estudo conforme a \cref{fig:fluxogramaProposta}.
+	deste estudo conforme a \cref{fig:fluxogramaProposta}. % TODO: mencionar que este capítulo é uma instância do método apresentado no capítulo anterior, considerando as fases XYZ. Explique em uma linha o que foi feito para cada fase.
 
 	\section{Definir linguagem de programação}
 		Foi definido a utilização da linguagem de programação Python. A escolha foi
@@ -12,7 +12,7 @@
 
 	\section{Definir características a serem extraídas}
 		Considerando a combinação de características originadas de tipos de análises
-		distintas, utilizamos uma combinação de aspectos provenientes da análise
+		distintas, utilizamos uma combinação de aspectos provenientes da análise  % TODO: a banca apresentou dúvidas o que seriam tais características. Isso é sinal de que precisamos melhor a descrição do capítulo 2. Além disso, parte das informações apresentads na seção "Extração de características" deve vir pra cá (não é necessário colocar partes sobre ferramenta utilizada, mas precisamos informar que foram selecionadas as características de quantidades de linhas de código, complexidade ciclomática e quantidade de violações de regras de estilo de escrita definida pelo PEP8).
 		sintática e do estilo de escrita. A escolha da análise estática se dá pela
 		possibilidade de implementações para solucionar o mesmo problema possuírem
 		o mesmo tamanho. Enquanto a organização do código, realizado pelo programador,
@@ -27,10 +27,10 @@
 		que solucionam 5 problemas distintos.
 		
 	\section{Extração de características}
-		Obtivemos as informações necessárias por meio da análise estática e do estilo de
+		Obtivemos as informações necessárias por meio da análise estática e do estilo de   % TODO: mover parte deste texto para a seção de definição de características extraídas. 
 		escrita com o auxílio das ferramentas \texttt{PEP8} \cite{pep8} e \texttt{McCabe}
 		\cite{mccabe} que funcionam como \foreign{plugins} para o \texttt{Flake8}.
-		Extraimos da análise estática somente a quantidade de linhas do código-fonte e a
+		Extraímos da análise estática somente a quantidade de linhas do código-fonte e a % TODO: esta frase ficou estranha, dado que estilo de escrita está dentro de análise estática. 
 		complexidade ciclomática de cada \foreign{plugin}, respectivamente. Contudo, o
 		foco do \texttt{PEP8} é verificar se o estilo de escrita PEP 8 \cite{van2001pep}
 		está sendo praticado corretamente. Por esse motivo, extraímos as características
@@ -163,7 +163,7 @@
 		
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=1\linewidth]{imagem/projecaoFinal}
+			\includegraphics[width=1\linewidth]{imagem/projecaoFinal} % TODO: substituir, futuramente, pela figura da ferramenta corrigida.
 			\caption[Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView}]
 			{Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView} \cite{Alencar-etal:2012}}
 			\label{fig:projecaoFinal}
