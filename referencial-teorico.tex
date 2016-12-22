@@ -34,14 +34,19 @@
 		e gratuitamente, pela Universidade de Stanford em 2011, no qual houveram
 		160.000 estudantes inscritos \cite{rodriguez2012}.
 		
-		Os principais recursos das plataformas utilizados para MOOC são a integração com outras
-		aplicações, como a utilização de e-mails e fóruns, o uso de questionário
-		relacionados com os vídeos e a inclusão de atividades para estimular e
-		motivar os alunos \cite{fassbinder2014}. % TODO: acrescentar algo  quanto a integração, voltado a integração de aplicação para auxiliar na avaliação de tarefas. Citar trabalhos/pesquisas sobre a integração desse tipo de instrumentos/aplicações em MOOC (tanto os que citamos na seção de mineração e visualização e que usam dados de MOOC quanto outros de avaliação como um todo). Daí sim siga com o texto que "Focaremos no desenvolvimento...".
-		 Focaremos no desenvolvimento de 
-		recursos avançados de visualização dos dados obtidos por meio das
-		implementações submetidas em cursos de programação e na realização de
-		\foreign{feedback} para que o usuário possa verificar seu nível de conhecimento.
+		Os principais recursos das plataformas utilizados para MOOC são a integração
+		com outras aplicações, como a utilização de e-mails e fóruns, o uso de questionário
+		relacionados com os vídeos e a inclusão de atividades para estimular e motivar
+		os alunos \cite{fassbinder2014}. Os fóruns de discussão auxiliam os usuários
+		a aprenderem sobre o problema abordado \citeonline{schmidt2013producing}.
+		Em adição, também é possível utilizar recursos para avaliar alguns tipos de
+		teste, como as questões de múltipla escolha, na qual verifica-se a alternativa
+		selecionada com a presente no gabarito de questões \citeonline{alario2013analysing}.
+		% TODO: acrescentar algo  quanto a integração, voltado a integração de aplicação para auxiliar na avaliação de tarefas. Citar trabalhos/pesquisas sobre a integração desse tipo de instrumentos/aplicações em MOOC (tanto os que citamos na seção de mineração e visualização e que usam dados de MOOC quanto outros de avaliação como um todo). Daí sim siga com o texto que "Focaremos no desenvolvimento...".
+		Focaremos no desenvolvimento de recursos avançados de visualização dos dados
+		obtidos por meio das implementações submetidas em cursos de programação e na
+		realização de \foreign{feedback} para que o usuário possa verificar seu
+		nível de conhecimento.
 
 	\section{Mineração e Visualização de Dados}
 	\label{sec:FundTeor}
@@ -72,7 +77,7 @@
 		Pós-processamento equivale a análise dos padrões obtidos anteriormente e
 		possibilita a extração de outros padrões; por fim, a Utilização do Conhecimento
 		é a utilização dos dados extraídos em algum sistema ou utilizado diretamente
-		pelo usuário.
+		pelo usuário. Observe que esse sistema pode-se realimentar.
 		
 		Muitos métodos de mineração de dados são baseados em técnicas de treinamento
 		e teste de aprendizagem de máquina e, reconhecimento de padrões e estatísticas,
@@ -93,13 +98,13 @@
 		O que difere a classificação do agrupamento é que esse é formado por meio da
 		comparação de informações entre os objetos e não existem rótulos pré-definidos,
 		enquanto aquele é realizado por meio da comparação das informações do objeto
-		com os dados contidos na função alvo. Desta forma, os objetos dentro de um grupo
-		devem ser similares ou relacionados entre si e diferentes ou não relacionados
-		entre objetos de grupos diferentes, ou seja, quanto maior a similaridade dos
-		objetos dentro de um grupo e mais diferentes são os agrupamentos, melhor ou
-		mais distinto os agrupamentos \cite{Tan:2005:ch8}. O K-means \cite{macqueen1967}
-		e o \foreign{Density-based Algorithm for Discovering Clusters} \cite{Ester1996}
-		são exemplos de algoritmos de agrupamento.
+		com os dados contidos em cada classe predefinida da função alvo. Desta forma,
+		os objetos dentro de um grupo devem ser similares ou relacionados entre si e
+		diferentes ou não relacionados entre objetos de grupos diferentes, ou seja,
+		quanto maior a similaridade dos objetos dentro de um grupo e mais diferentes
+		são os agrupamentos, melhor ou mais distinto os agrupamentos \cite{Tan:2005:ch8}.
+		O K-means \cite{macqueen1967} e o \foreign{Density-based Algorithm for Discovering Clusters}
+		(DBSCAN) \cite{Ester1996} são exemplos de algoritmos de agrupamento.
 
 		Após a mineração dos dados, é desejável a utilização de ferramentas para
 		auxiliar na criação de hipóteses sobre conjuntos de dados complexos -- grande
@@ -117,10 +122,12 @@
 		com isso, produzir a visualização. Devido a alta dimensionalidade dos dados,
 		é necessário a utilização de projeções multidimensionais. Essa técnica realiza
 		a diminuição n-dimensional, sendo $n$ uma alta dimensão, para uma espaço
-		unidimensional, bidimensional ou tridimensional \cite{paulovich2008least}.
-		Para criar essa visualização deve-se selecionar o formato de como as
-		características extraídas serão armazenadas, como o vetor de características
-		ou o modelo de tabela de dados \cite{de2003}.
+		unidimensional, bidimensional ou tridimensional \cite{paulovich2008least},
+		sempre buscando a menor perca de informação possível, como a relação de
+		similaridade do espaço n-dimensional no espaço unidimensional, bidimensional
+		ou tridimensional. Para criar essa visualização deve-se selecionar o formato
+		de como as características extraídas serão armazenadas, como o vetor de
+		características ou o modelo de tabela de dados \cite{de2003}.
 
 	\section{Mineração e Visualização de Programas}
 	\label{sec:MinVisual}
@@ -133,6 +140,24 @@
 		
 		\subsection{Características de Programas}
 		\label{subSec:Caracteristicas}
+		
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=0.7\linewidth]{imagem/fluxoProgramacao}
+				\caption{Representação da implementação de um problema}
+				\label{fig:fluxoProgramacao}
+			\end{figure}
+			
+			Um programa de computador é um conjunto de instruções computacionais que visa
+			solucionar um problema. A \cref{fig:fluxoProgramacao} apresenta os passos
+			necessários para que um programa exista. O primeiro passo consiste na
+			identificação do problema a ser solucionado. Por exemplo, um fila indiana
+			criada aleatoriamente, no qual não é possível visualizar todos os participantes
+			presentes nessa fila. Em seguida, deve-se elaborar um algoritmo para que seja
+			possível resolver esse problema. O algoritmo é constituído por uma sequência
+			de passos que resolva algum problema, condizendo com o que deve ser feito.
+			Por fim, realiza-se a implementação do algoritmo, definindo como as instruções
+			devem ser executadas.
 
 			A extração de características por meio das implementações pode ocorrer das
 			seguintes formas: análise estática, análise do estilo de escrita e análise dinâmica.
@@ -213,7 +238,7 @@
 			uso de técnicas de programação específicas, a utilização de laço de repetição,
 			por exemplo. 
 
-	\section{Mineração e visualização}
+	\section{Trabalhos Relacionados}
 	\label{sec:TrabRel}
 	
 		A fim de encontrar a semelhança entre os códigos, \citeonline{Yin:2015}
@@ -259,9 +284,10 @@
 		de dados, para representar os diversos valores obtidos pela métrica ABC
 		\cite{fitzpatrick1997applying}, no qual seu tamanho é computado contando o
 		número de atribuições, a quantidade de ramos da árvore e as instruções de
-		condição para um segmento do código-fonte. Contudo, esse não é um tópico  % TODO: aqui você esqueceu de mencionar que o trabalho trata do fornecimento de dicas. Daí a frase "Contudo..." perdeu o sentido (e por isso veio a crítica da banca).
-		deste projeto. Cada ponto presente na visualização corresponde a uma implementação.
-		Todas as implementações possuem a função \foreign{combine\_anagrams} que possui a
+		condição para um segmento do código-fonte. Contudo, a finalidade desse projeto é
+		o fornecimento de dicas, o qual não é um tópico desta pesquisa. Cada ponto
+		presente na visualização corresponde a uma implementação. Todas as
+		implementações possuem a função \foreign{combine\_anagrams} que possui a
 		variável \foreign{words} como parâmetro (\cref{fig:implementacoesYin}). A
 		implementação em vermelho obteve a menor métrica pela utilização de somente
 		uma instrução. Os códigos-fontes roxo e laranja obtiveram pontuação semelhante,
@@ -302,28 +328,28 @@
 		distribuídos e notou-se que eles ignoraram características de baixo nível.
 		Esses autores utilizaram a métrica Informação Mútua Ajustada (AMI, do inglês
 		\foreign{Adjusted Mutual Information}), cálculo probabilístico, para comparar
-		cada agrupamento dos professores com os \foreign{clusters} gerado pelo \foreign{k-means}.
-		Quando o valor de AMI é 0 (zero), quer dizer que os agrupamentos são
-		independentes, entretanto, se for igual a 1, indica perfeita concordância
+		cada agrupamento dos professores com os \foreign{clusters} gerado pelo \foreign{k-means}
+		\cite{macqueen1967}. Quando o valor de AMI é 0 (zero), quer dizer que os agrupamentos
+		são independentes, entretanto, se for igual a 1, indica perfeita concordância
 		entre os \foreign{clusters}. Quando $k$ tinha um valor maior ou igual a 15,
 		os agrupamentos concordaram com o agrupamento de cada professor, conforme
 		medição do AMI.
 		
 		Apesar da grande quantidade de dados extraídos das implementações, não houve
-		nenhum alusão sobre como essas características interfeririam na cálculo de
+		nenhum alusão sobre como essas características interfeririam no cálculo de
 		similaridade utilizada. Contudo, a abordagem de dividir as informações a serem
 		coletadas em duas dimensões é relevante. Posto que as implementações com
 		a mesma quantidade de laços de repetição, por exemplo, deveriam ser agrupadas
 		facilitando a verificação se os alunos entenderam como fazer e utilizar
 		tal instrução.
 		
-		Em \citeonline{Taherkhani:2012}, desenvolveu-se uma ferramenta para classificar  % TODO: informar o nome da ferramenta aqui "ferramenta, denominada Aari, para classificar"
-		implementações baseado na utilização de conjuntos de treinamento e teste.
-		Com isso, é necessário o conhecimento prévio de implementações dos problemas
-		propostos para treinar o classificador e as características para reconhecer as
-		submissões dos alunos. Os autores separaram as características em quatro
-		categorias: características numéricas, características descritivas,
-		características e algoritmos de ordenação e outras características.
+		Em \citeonline{Taherkhani:2012}, desenvolveu-se uma ferramenta,denominada Aari,
+		para classificar implementações baseado na utilização de conjuntos de treinamento
+		e teste. Com isso, é necessário o conhecimento prévio de implementações dos
+		problemas propostos para treinar o classificador e as características para
+		reconhecer as submissões dos alunos. Os autores separaram as características
+		em quatro categorias: características numéricas, características descritivas,
+		características de algoritmos de ordenação e outras características.
 		
 %		Em \citeonline{Taherkhani:2012}, testou-se a ferramenta Aari para cinco tipos
 %		de métodos de ordenação: \foreign{bubble sort}, \foreign{insertion sort},
@@ -348,10 +374,9 @@
 		informação do contador do \foreign{loop} e informações de dependência.
 		
 		Após extrair as características, cada algoritmo pode ser representado pelo seu
-		vetor de características. O Aari, ferramenta de avaliação automática, utiliza  % TODO: s/O Aari/A ferramenta do estudo utiliza a técnica de árvore...
-		a técnica de árvore de decisão para classificar os algoritmos. É por meio
-		dessa abordagem que os autores classificaram os programas enviados por um
-		determinado grupo de alunos.
+		vetor de características. A ferramenta do estudo utiliza a técnica de árvore
+		de decisão para classificar os algoritmos. É por meio dessa abordagem que os
+		autores classificaram os programas enviados por um determinado grupo de alunos.
 		
 		Para verificar a precisão do Aari, foi realizado uma categorização manual.
 		Inicialmente foi realizado um agrupamento manual dos algoritmos de ordenação,
@@ -467,10 +492,11 @@
 		
 		Após todos esses passos, a normalização do código-fonte realizada em todas as
 		implementações garante que o estilo de escrita do aluno não influenciará na
-		verificação de similaridade. O agrupamento é realizado por meio da comparação entre
-		conjuntos de linhas de diversas implementações. Cada agrupamento, representado
-		como conjunto de programas, pode possuir 1 ou mais programas cujo conjunto de
-		linhas é idêntico.
+		verificação de similaridade. O agrupamento é realizado por meio da comparação
+		estática entre conjuntos de linhas de diversas implementações. Desta forma, não
+		utiliza uma técnica de agrupamento e de similaridade específica. Cada agrupamento,
+		representado como conjunto de programas, pode possuir 1 ou mais programas cujo
+		conjunto de linhas é idêntico.
 		
 		\begin{figure}[ht]
 			\centering
@@ -489,14 +515,14 @@
 		quadro inferior. A terceira coluna apresenta a frequência com que as linhas
 		de códigos estão presentes nas soluções dos agrupamentos.
 
-		A comparação dos conjuntos de programas menores com a conjunto de programa maior ocorre entre
-		a primeira e a segunda coluna dando ênfase nas linhas que estão implementadas
-		diferentes. Com isso, é possível verificar como cada conjunto foi montada e a
-		característica daquele agrupamento quando comparada com o conjunto maior. Como
-		utiliza análise dinâmica, extraindo o histórico de execução para agrupar as
-		submissões, é possível verificar o \foreign{trace} de uma variável ao longo de
-		sua execução em um caso de teste a fim de auxiliar os usuários a entenderem a
-		execução do algoritmo.
+		A comparação dos conjuntos de programas menores com a conjunto de programa maior
+		ocorre entre a primeira e a segunda coluna dando ênfase nas linhas que estão
+		implementadas diferentes. Com isso, é possível verificar como cada conjunto
+		foi montado e a característica daquele agrupamento quando comparada com o
+		conjunto maior. Como utiliza análise dinâmica, extraindo o histórico de execução
+		para agrupar as submissões, é possível verificar o \foreign{trace} de uma
+		variável ao longo de sua execução em um caso de teste a fim de auxiliar os
+		usuários a entenderem a execução do algoritmo.
 		
 		\begin{figure}[h]
 			\centering
@@ -599,7 +625,6 @@
 		auxílio a correções de códigos-fontes. 
 		
 		% TODO: revisar tabela e deixar mais sucinta as colunas 3 (características extraídas), 5 (avaliação) e 6 (conclusões).
-		\begin{landscape}
 			\begin{table}[h]
 				\tiny
 				\begin{tabularx}{\linewidth}{ |X|X|X|X|X|X|X| }
@@ -618,59 +643,58 @@
 					& Distância de Edição de TED normalizada que utiliza estrutura
 					\foreign{top-down} e pontuação silhueta
 					& OPTICS
-					& Clusterização de algoritmos baseado nas soluções de um problema.
+					& Agrupamento de algoritmos baseado nas soluções de um problema.
 					Em cada \foreign{cluster}, identifica as diferenças nas
 					implementações de uma abordagem particular
 					& TED normalizado demonstra conjuntos mais estáveis e menos discrepantes \\
 					\hline % Terceira linha
 					\citeonline{Glassman:2014}
 					& Implementações
-					& Linguagem de alto nível: 12 características - posição de declarações
-					condicionais em relação a instruções de \foreign{loop}, profundidade
-					dos \foreign{loops} aninhados, números de nós AST, instruções de
-					retorno, laços, comparações, etc. Linguagem de baixo nível: 48
-					características - operações aritméticas, comparações, \foreign{loops},
-					funções de bibliotecas, declarações, número de variáveis do programa,
-					valores constantes, etc.
+					& 12 características de alto nível dos elementos da linguagem e
+					instruções relacionados com laços de repetição. 48 características
+					de baixo nível envolvendo operações primitivas.
+%					& Linguagem de alto nível: 12 características - posição de declarações
+%					condicionais em relação a instruções de \foreign{loop}, profundidade
+%					dos \foreign{loops} aninhados, números de nós AST, instruções de
+%					retorno, laços, comparações, etc. Linguagem de baixo nível: 48
+%					características - operações aritméticas, comparações, \foreign{loops},
+%					funções de bibliotecas, declarações, número de variáveis do programa,
+%					valores constantes, etc.
 					& Informação Mútua Ajustada
 					& K-means
-					& Utilizando a métrica AMI, compara com os agrupamento feitos
-					pelos professores, no qual 0 indica agrupamentos puramente independentes
-					e 1, perfeita concordância entre os agrupamentos.
+					& Utilizando a métrica AMI, compara os agrupamento automatizados com
+					os manuais. 0 indica agrupamentos puramente independentes e 1, perfeita
+					concordância entre os agrupamentos.
 					& Para k maior ou igual a 15, encontrou-se alta concordância entre os
 					\foreign{cluster} do k-means e do professor \\
 					\hline % Quarta linha
 					\citeonline{Taherkhani:2012}
 					& Implementações
-					& Características numéricas: NAS, LoC, MCC, N1, N2, n1, n2, N, n, Nov,
-					NoL, NoNL, NoB. Características descritivas: recursivo, \foreign{tail
-					recursive}, funções de variáveis, \foreign{array} auxiliar. Outras
-					características: informações de \foreign{loop}/bloco, informações do
-					contador de laço, informações de dependência. Características de algoritmos
-					de ordenação: MWH, TEMP, In-place, OIID e IITO.
+					& Características extraídas com valores inteiros, específicas de
+					métodos de ordenação, do contador de \foreign{loops} e dependência
+					de informação e para reconhecer padrões para classificação.
+%					& As características numéricas são extraídas com valores inteiros.
+%					As descritivas são específicas de métodos de ordenação. As de algoritmos
+%					de ordenação são informações do contador de \foreign{loops}
+%					e dependência de informação. E as outras características são para
+%					reconhecer padrões para classificação.
 					& Vetor de características,calculada a partir das características extraídas
 					das implementações
 					& C4.5 (árvore de decisão)
-					& Com os algoritmos da primeira rodada, obteve 71\% de precisão; da
-					segunda rodada, 81\%.
-					& Bom reconhecimento do algoritmo, se estiver conforme a teoria. Taxa de
-					acerto considerável baseado em um possível erro do professor. Utilização
-					semiautomática: o Aari corrige partes do trabalho no qual foi treinado e
-					o professor, o restante \\
+					& Comparação da ferramenta com a classificação manual dos professores.
+					& Bons resultados para algoritmos de ordenação que foram utilizados na
+					fase de treinamento. E taxa de acerto considerável baseado em um possível
+					erro do professor. \\
 					\hline % Quinta linha
 					\citeonline{Glassman:2015,glassman2016clustering,glassman2014interacting,glassman2013toward,glassman2013visualizing}
 					& Implementações
-					& Rastro do programa (Sequência de variáveis, variáveis comuns e
-					renomeação de variáveis: colisão comum / comum; colisão de múltiplas
-					instâncias; e colisão único/comum), blocos de código.
+					& Rastro do programa e blocos de código.
 					& Diferença entre o tamanho dos conjuntos de linhas
 					& Comparação entre conjuntos de linhas de código
 					& Grande quantidade de conjunto de programas com poucos blocos de código-fonte e poucas
 					conjunto de programas com grande quantidade de blocos implementados
-					& A partir do OverCode e os conjunto de programas organizados considerando-se as
-					características extraídas, dá a possibilidade de retornar um
-					\foreign{feedback} mais preciso para cada grupo e facilita a observação
-					da solução do problema. \\
+					& Possibilidade de retornar um \foreign{feedback} mais preciso para cada
+					grupo e facilita a observação da solução do problema. \\
 					\hline % Sexta linha
 					\citeonline{Wei2015}
 					& Implementações
@@ -684,7 +708,6 @@
 				\caption{Principais informações dos trabalhos relacionados}
 				\label{tab:caracPrinc}
 			\end{table}
-		\end{landscape}
 		
 		A \cref{tab:caracPrinc} apresenta as principais características de cada trabalho
 		relacionado importantes para o desenvolvimento desse projeto. Possibilitando a
@@ -707,3 +730,6 @@
 		E a abordagem utilizando dois níveis hierárquicos para agrupamento \cite{Glassman:2014}   % TODO: explicar melhor o raciocínio: não temos implementações a priori e não existe garantia que essas implementações, caso existam, sejam representativas de todas as possíveis implementações de algoritmos para a resolução de um problema. Na seção sobre características de programas, precisamos incluir um diagrama mostrando a relação entre problemas, algoritmos e implementações, deixando evidente a questão e subsidiando a resposta aqui.
 		possui um conjunto de características vasto, mas a maioria das características pode
 		ser descartada no momento do agrupamento manual realizado pelos professores.
+		Isso pode ter ocorrido pelo fato dos códigos-fontes utilizados na pesquisa não
+		representarem todas as soluções possíveis de um problema. Não é possível afirmar
+		isso, visto que não possuímos as implementações.
