@@ -53,15 +53,15 @@
 	e compreender as variações de implementações \cite{Yin:2015}, a fim de diminuir
 	o tempo gasto para correção dos códigos-fontes submetidos, por meio de agrupamentos
 	(\foreign{clusters}). Por exemplo, tais agrupamentos podem ser realizados por meio
-	da similaridade dos códigos. % e agrupados com um algoritmo como o \foreign{k-means}. % TODO: Retirar a menção ao k-means. No capítulo 2, ao tratar de agrupamentos, referencia-lo devidamente.
-	Compreendendo as variações de implementação, é possível extrair caraterísticas por
-	meio da análise estática \cite{Yin:2015,Glassman:2014,Taherkhani:2012}, análise
-	dinâmica \cite{Glassman:2015} e análise do estilo de escrita \cite{Wei2015}.
-	Com	isso, o agrupamento das submissões semelhantes infere na correção de poucos
-	projetos, já que todos os outros códigos que estão no agrupamento serão
-	parecidos, podendo melhorar a qualidade de vida do professor, a eficiência da correção  % TODO: de fato, "melhorar a qualidade de vida" é algo muito vago ou pretencioso. Ao invés deisso, diga que isso pemitirá que o professor dedique o tempo poupado na correção de diversos trabalhos para melhorar a correção de poucos trabalhos, permitindo feedback mais preciso (...).
-	por meio de \foreign{feedbacks} mais precisos e menor custo para o MOOC.
-
+	da similaridade dos códigos. Compreendendo as variações de implementação, é possível
+	extrair caraterísticas por meio da análise estática \cite{Yin:2015,Glassman:2014,Taherkhani:2012},
+	análise dinâmica \cite{Glassman:2015} e análise do estilo de escrita \cite{Wei2015}.
+	Com	isso, o agrupamento das submissões semelhantes infere na correção efetiva de
+	poucos projetos, já que todos os outros códigos que estão no agrupamento serão
+	parecidos, permitindo que o professor dedique o tempo poupado na correção de diversas
+	implementações para aprimorar as correções de poucos trabalhos, possibilitando
+	\foreign{feedbacks} mais precisos e menor custo para o MOOC.
+	
 %	\citeonline{Yin:2015} extraem uma árvore de sintaxe abstrata de cada implementação
 %	e verifica a similaridade par a par por meio da distância de edição de árvore. Tal
 %	abordagem pode agrupar algoritmos corretos e incorretos, por exemplo: pode ocorrer
@@ -108,9 +108,16 @@
 %	implementação. Entretanto, sua normalização foi interessante e a pouca quantidade de
 %	características extraídas pode ter sido primordial para formar os agrupamentos.
 	
-	Considerando este cenário, o objetivo deste trabalho é propor subsídios para a                       % TODO: a concretização das metas gerarão/são os resultados/subsídios definidos no título do trabalho. Podemos deixar as metas mais claras nesse sentido e colocá-las como itemize.
-	avaliação de programas submetidos em MOOC, utilizando técnicas de mineração e visualização
-	de dados com a finalidade de diminuir o tempo gasto na correção de todos os códigos
+	Considerando este cenário, a concretização dos objetivos deste trabalho gerará
+	os seguintes subsídios para a avaliação de programas submetidos em MOOC:  % TODO: a concretização das metas gerarão/são os resultados/subsídios definidos no título do trabalho. Podemos deixar as metas mais claras nesse sentido e colocá-las como itemize.
+	\begin{itemize}
+		\item Agrupamento dos códigos-fontes semelhantes, Utilizando técnicas de mineração;
+		\item Técnica de projeção para mapeamento dos \foreign{clusters};
+		\item Ferramenta de visualização;
+		\item Material para os professores sobre como corrigir as submissões utilizando a ferramenta.
+	\end{itemize}
+	
+	Por meio desses subsídios buscaremos diminuir o tempo gasto na correção de todos os códigos
 	fontes e  fornecer \foreign{feedbacks} construtivos de modo que o usuário consiga
 	corrigir seus erros e submeta novamente seu algoritmo. Como metas, estabeleceu-se
 	o desenvolvimento de uma ferramenta para recuperação de dados a partir de
@@ -123,7 +130,7 @@
 	qualidade do \foreign{feedback}.
 	
 	O restante desta proposta de trabalho de conclusão de curso é organizado da seguinte
-	forma. O \cref{chap:Ref} apresenta o referencial teórico, divido em 4 seções: a
+	forma. O \cref{chap:Ref} apresenta o referencial teórico, divido em quatro seções: a
 	\cref{sec:Mooc} apresenta algumas definições de MOOC e suas características; a
 	\cref{sec:FundTeor} trata dos principais conceitos referentes à mineração e
 	visualização de dados utilizados neste trabalho; a \cref{sec:MinVisual} cita as
