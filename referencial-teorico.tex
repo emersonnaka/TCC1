@@ -2,7 +2,7 @@
 \label{chap:Ref}
 	Neste capítulo serão apresentados os conceitos utilizados na pesquisa, bem como
 	os estudos que fundamentaram esse projeto. A \cref{sec:Mooc} apresenta
-	o conceito de MOOC e as principais características da plataforma de ensino.
+	o conceito de \acs{MOOC} e as principais características da plataforma de ensino.
 	A \cref{sec:FundTeor} descreve as os principais conceitos relacionados à
 	mineração e visualização: mineração, visualização, projeção, agrupamento e
 	classificador. A \cref{sec:MinVisual} descreve as características que
@@ -15,10 +15,10 @@
 		Após pesquisar o conceito de Curso Massivo, Aberto e \foreign{Online},
 		\citeonline{fassbinder2014} observam que não há uma definição comum na
 		literatura. Encontram-se três descrições distintas para o termo.
-		\citeonline{sivamuni2013} afirmam que o MOOC, em conformidade com o
+		\citeonline{sivamuni2013} afirmam que o \acs{MOOC}, em conformidade com o
 		dicionário Oxford, é um curso oferecido por meio da Internet, de forma
 		gratuita, para uma grande quantidade de alunos. \citeonline{subbian2013}
-		reitera que o MOOC disponibiliza curso gratuito, baseado na \foreign{web},
+		reitera que o \acs{MOOC} disponibiliza curso gratuito, baseado na \foreign{web},
 		com registro livre de taxas monetárias e compartilhamento público de
 		currículo. Por fim, \citeonline{siemens2013} defende a tendência em inovação e
 		experimentação do uso da tecnologia para o ensino a distância e
@@ -26,15 +26,15 @@
 		Não obstante, observa-se a concordância quanto ao oferecimento pela Internet
 		e para grande quantidade de pessoas (massivo).
 		
-		\citeonline{kim2014} afirmam que massivo refere-se a capacidade do MOOC em
+		\citeonline{kim2014} afirmam que massivo refere-se a capacidade do \acs{MOOC} em
 		suportar uma grande quantidade de alunos. Tal quantidade é bem superior
 		ao número de discentes que uma sala pode acomodar ou o total de
-		participantes em um curso \foreign{online} antes do surgimento do MOOC.
+		participantes em um curso \foreign{online} antes do surgimento do \acs{MOOC}.
 		Por exemplo, um curso de Inteligência Artificial foi ofertado, \foreign{online}
 		e gratuitamente, pela Universidade de Stanford em 2011, no qual houveram
 		160.000 estudantes inscritos \cite{rodriguez2012}.
 		
-		Os principais recursos das plataformas utilizados para MOOC são a integração
+		Os principais recursos das plataformas utilizados para \acs{MOOC} são a integração
 		com outras aplicações, como a utilização de e-mails e fóruns, o uso de questionário
 		relacionados com os vídeos e a inclusão de atividades para estimular e motivar
 		os alunos \cite{fassbinder2014}. Os fóruns de discussão auxiliam os usuários
@@ -103,8 +103,8 @@
 		diferentes ou não relacionados entre objetos de grupos diferentes, ou seja,
 		quanto maior a similaridade dos objetos dentro de um grupo e mais diferentes
 		são os agrupamentos, melhor ou mais distinto os agrupamentos \cite{Tan:2005:ch8}.
-		O K-means \cite{macqueen1967} e o \foreign{Density-based Algorithm for Discovering Clusters}
-		(DBSCAN) \cite{Ester1996} são exemplos de algoritmos de agrupamento.
+		O K-means \cite{macqueen1967} e o \ac{DBSCAN} \cite{Ester1996} são exemplos de
+		algoritmos de agrupamento.
 
 		Após a mineração dos dados, é desejável a utilização de ferramentas para
 		auxiliar na criação de hipóteses sobre conjuntos de dados complexos -- grande
@@ -164,7 +164,7 @@
 			A análise estática ocorre por meio da observação do código-fonte, considerando
 			apenas sua implementação, ou seja, não é necessária sua execução. Há diversas
 			características que podem ser extraídas dessa análise. Há abordagens que extraem
-			somente a Árvore de Sintaxe Abstrata (AST) que pode ser gerada durante a análise
+			somente a Árvore de Sintaxe Abstrata (\ac{AST}) que pode ser gerada durante a análise
 			sintática do compilador para representar o código-fonte em forma de árvore
 			armazenando símbolos não-terminais nos nós filhos e símbolos terminais nos
 			nós folha, como representa a \cref{fig:AST} em uma declaração de condição.
@@ -248,22 +248,22 @@
 		A fim de encontrar a semelhança entre os códigos, \citeonline{Yin:2015}
 		utilizaram a AST dos programas submetidos pelos alunos. Após a criação das
 		árvores, é necessário o uso de métricas para verificar a similaridade entre
-		as árvores. Desta forma, foi utilizada a Distância de Edição de Árvore (TED)
+		as árvores. Desta forma, foi utilizada a Distância de Edição de Árvore (\ac{TED})
 		– ao comparar duas árvores, verificam-se quais são as movimentações (inserção,
 		movimentação e remoção) necessárias para que as árvores fiquem iguais. Mais
-		precisamente, foi selecionada a TED normalizada, atribuindo pesos maiores para
+		precisamente, foi selecionada a \acs{TED} normalizada, atribuindo pesos maiores para
 		os nós mais próximos da raiz (de menor altura) \cite{zhang1989simple}, quanto
 		mais próximo do nó raiz, maior sua importância.
 
-		A TED normalizada realiza comparações nó a nó da raiz até as folhas, priorizando
+		A \acs{TED} normalizada realiza comparações nó a nó da raiz até as folhas, priorizando
 		os nós mais próximos da raiz, atribuindo um peso maior a eles. A fim de evitar
 		que pequenas diferenças na sintaxe influenciem diretamente na pontuação de
 		similaridade, visto que a estrutura podem ser semelhantes, diferenciando-os
 		em detalhes de baixo nível.
 		
-		Os autores desse artigo utilizaram o algoritmo de agrupamento OPTICS
+		Os autores desse artigo utilizaram o algoritmo de agrupamento \ac{OPTICS}
 		\cite{Ankerst1999} para agrupar os códigos semelhantes. Para visualizar os
-		agrupamentos foi utilizado o t-SNE \cite{maaten2008} – técnica utilizada para
+		agrupamentos foi utilizado o \ac{t-SNE} \cite{maaten2008} – técnica utilizada para
 		reduzir dados de alta dimensionalidade para duas ou três dimensões preservando
 		a estrutura local dos dados.
 		
@@ -283,7 +283,7 @@
 		\end{figure}
 
 		Na \cref{fig:t-SNE} é possível observar cinco grupos distintos criados a
-		partir da comparação das TEDs normalizadas destacados em cores diferentes.
+		partir da comparação das \acs{TED}s normalizadas destacados em cores diferentes.
 		Tais cores foram obtidas, conforme o foco do trabalho para geração e fornecimento
 		de dados, para representar os diversos valores obtidos pela métrica ABC
 		\cite{fitzpatrick1997applying}, no qual seu tamanho é computado contando o
@@ -302,8 +302,8 @@
 		suficiente para formar um agrupamento ou serem classificados em outro agrupamento,
 		ou seja, \foreign{outliers}.
 
-		A extração de características por meio da AST é interessante, como também
-		o uso da TED normalizada para verificar sua similaridade, devido ao seu
+		A extração de características por meio da \acs{AST} é interessante, como também
+		o uso da \acs{TED} normalizada para verificar sua similaridade, devido ao seu
 		baixo custo computacional. Entretanto, como o autor testou seu agrupamento
 		somente com implementações para resolver um único problema, não sabemos se
 		tal abordagem é eficiente quando houver implementações que buscam resolver
@@ -316,7 +316,8 @@
 		considerando apenas características abstratas, como, por exemplo: posição da
 		declaração de condicional em relação a declarações de laço de repetição (antes,
 		dentro ou depois), profundidade de um laço de repetição (\foreign{loop})
-		aninhado, números de nós AST e declarações de retorno, \foreign{loops} e comparações.
+		aninhado, números de nós \acs{AST} e declarações de retorno, \foreign{loops} e
+		comparações.
 		
 		Dentro de cada agrupamento de alto nível, é utilizado o \foreign{K-means}
 		novamente, para produzir subagrupamentos destinados a capturar a dimensão
@@ -330,14 +331,14 @@
 		criados pelo algoritmo de agrupamento com os que foram criados pelos professores.
 		Para os professores foram entregues 50 códigos dos estudantes randomicamente
 		distribuídos e notou-se que eles ignoraram características de baixo nível.
-		Esses autores utilizaram a métrica Informação Mútua Ajustada (AMI, do inglês
-		\foreign{Adjusted Mutual Information}), cálculo probabilístico, para comparar
-		cada agrupamento dos professores com os \foreign{clusters} gerado pelo \foreign{k-means}
-		\cite{macqueen1967}. Quando o valor de AMI é 0 (zero), quer dizer que os agrupamentos
-		são independentes, entretanto, se for igual a 1, indica perfeita concordância
-		entre os \foreign{clusters}. Quando $k$ tinha um valor maior ou igual a 15,
-		os agrupamentos concordaram com o agrupamento de cada professor, conforme
-		medição do AMI.
+		Esses autores utilizaram a métrica Informação Mútua Ajustada (\ac{AMI}), cálculo
+		probabilístico, para comparar cada agrupamento dos professores com os
+		\foreign{clusters} gerado pelo \foreign{k-means} \cite{macqueen1967}. Quando o
+		valor de \acs{AMI} é 0 (zero), quer dizer que os agrupamentos são independentes,
+		entretanto, se for igual a 1, indica perfeita concordância entre os
+		\foreign{clusters}. Quando $k$ tinha um valor maior ou igual a 15, os
+		agrupamentos concordaram com o agrupamento de cada professor, conforme medição
+		do \acs{AMI}.
 		
 		Apesar da grande quantidade de dados extraídos das implementações, não houve
 		nenhum alusão sobre como essas características interfeririam no cálculo de
@@ -455,7 +456,7 @@
 		há um plano de ensino detalhando os problemas a serem resolvidos, possibilitando
 		o treinamento da ferramenta. Entretanto, caso seja utilizado para classificar
 		diversos problemas desconhecidos para o classificador, não há uma categorização
-		prévia adequada. Desta forma, inviabilizaria sua utilização em MOOCs se fosse
+		prévia adequada. Desta forma, inviabilizaria sua utilização em \acs{MOOC} se fosse
 		utilizado para classificar os problemas de todos os cursos de programação.
 		
 		\citeonline{Glassman:2015} apresentam uma ferramenta para visualização de
@@ -568,7 +569,7 @@
 		verificar qual seria o resultado dos agrupamentos e compará-los.
 		
 		\citeonline{Wei2015} apresentam uma ferramenta para auxiliar na correção das
-		submissões dos MOOC's de forma a agrupar pedaços (\foreign{chuncks}) de códigos
+		submissões do \acs{MOOC} de forma a agrupar pedaços (\foreign{chuncks}) de códigos
 		fontes semelhantes, agrupá-los conforme sua similaridade e alocar cada conjunto
 		de implementações ao estudante com conhecimento suficiente para revisá-los.
 		
@@ -591,9 +592,8 @@
 		
 		E com a finalidade de identificar a dificuldade da implementação, foi utilizado
 		a distância Euclidiana para comparar as características extraídas -- quantidade
-		de métodos invocados e laços de repetição aninhados -- e o \foreign{K Nearest Neighbor}
-		(\texttt{k-NN}) para identificar o nível de dificuldade de revisão do
-		\foreign{chunck}.
+		de métodos invocados e laços de repetição aninhados -- e o \ac{k-NN} para identificar
+		o nível de dificuldade de revisão do \foreign{chunck}.
 		
 		\begin{figure}
 			\centering
@@ -644,13 +644,13 @@
 					\citeonline{Yin:2015,Moghadam:2015:ATC,choudhury2016autostyle}
 					& Implementações
 					& Árvore de sintaxe abstrata
-					& Distância de Edição de TED normalizada que utiliza estrutura
+					& Distância de Edição de \acs{TED} normalizada que utiliza estrutura
 					\foreign{top-down} e pontuação silhueta
-					& OPTICS
+					& \acs{OPTICS}
 					& Agrupamento de algoritmos baseado nas soluções de um problema.
 					Em cada \foreign{cluster}, identifica as diferenças nas
 					implementações de uma abordagem particular
-					& TED normalizado demonstra conjuntos mais estáveis e menos discrepantes \\
+					& \acs{TED} normalizado demonstra conjuntos mais estáveis e menos discrepantes \\
 					\hline % Terceira linha
 					\citeonline{Glassman:2014}
 					& Implementações
@@ -666,7 +666,7 @@
 %					valores constantes, etc.
 					& Informação Mútua Ajustada
 					& K-means
-					& Utilizando a métrica AMI, compara os agrupamento automatizados com
+					& Utilizando a métrica \acs{AMI}, compara os agrupamento automatizados com
 					os manuais. 0 indica agrupamentos puramente independentes e 1, perfeita
 					concordância entre os agrupamentos.
 					& Para k maior ou igual a 15, encontrou-se alta concordância entre os
@@ -705,7 +705,7 @@
 					& Normaliza o código e considera apenas o estilo de escrita do estudante
 					& Coeficiente de similaridade de Jaccard
 					& Algoritmo \foreign{Winnowing}
-					& Classificação de \foreign{workload}: distância Euclidiana e k-NN
+					& Classificação de \foreign{workload}: distância Euclidiana e \acs{k-NN}
 					& A agrupamento por pedaços de código aumentou sua eficiência. \\
 					\hline
 				\end{tabularx}
@@ -723,13 +723,13 @@
 		quantidade de conjuntos de linhas ou \foreign{chunks} agrupados. A renomeação
 		de variáveis comuns, obtidas por meio de casos de teste, também é interessante
 		devido ao fato de igualar as instruções que utilizam tais variáveis a fim de
-		realizar as comparações \cite{Glassman:2015}. Apesar da utilização das ASTs
+		realizar as comparações \cite{Glassman:2015}. Apesar da utilização das \acs{AST}s
 		somente em um único problema \cite{Yin:2015}, tal abordagem obteve agrupamentos
 		significativos a fim de auxiliar os professores para realizar as correções.
 		
 		Contudo, a utilização de um algoritmo de classificação para identificar
 		implementações semelhantes \cite{Taherkhani:2012} torna-se inviável a utilização
-		da ferramenta em MOOC que contenha diversos tipos de problema, devido a necessidade
+		da ferramenta em \acs{MOOC} que contenha diversos tipos de problema, devido a necessidade
 		de realizar o conjunto de treinamento e teste a fim de treinar o classificador.
 		E a abordagem utilizando dois níveis hierárquicos para agrupamento \cite{Glassman:2014}   % TODO: explicar melhor o raciocínio: não temos implementações a priori e não existe garantia que essas implementações, caso existam, sejam representativas de todas as possíveis implementações de algoritmos para a resolução de um problema. Na seção sobre características de programas, precisamos incluir um diagrama mostrando a relação entre problemas, algoritmos e implementações, deixando evidente a questão e subsidiando a resposta aqui.
 		possui um conjunto de características vasto, mas a maioria das características pode
