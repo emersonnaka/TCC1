@@ -77,7 +77,9 @@
 		Pós-processamento equivale a análise dos padrões obtidos anteriormente e
 		possibilita a extração de outros padrões; por fim, a Utilização do Conhecimento
 		é a utilização dos dados extraídos em algum sistema ou utilizado diretamente
-		pelo usuário. Observe que esse sistema pode se realimentar. % TODO: faltou completar algo aqui... se realimentar de que e onde?
+		pelo usuário. Observe que esse sistema pode se realimentar, caso seja necessário
+		adicionar mais informações, dessa forma, necessita-se realizar essas etapas
+		novamente realimentando o sistema com novas características. % TODO: faltou completar algo aqui... se realimentar de que e onde?
 		
 		Muitos métodos de mineração de dados são baseados em técnicas de treinamento
 		e teste de aprendizagem de máquina e, reconhecimento de padrões e estatísticas,
@@ -184,10 +186,11 @@
 			A análise do estilo de escrita é um tipo da análise estática. Entretanto,
 			se difere no fato das implementações estarem sintaticamente corretas. Nesse
 			tipo de análise é considerado o estilo de escrita do programador, abrindo a
-			possibilidade de coletar dados como: há mais que uma instrução e importação
+			possibilidade de coletar dados como: indentação, há mais que uma instrução e importação
 			de bibliotecas por linha, há espaços entre operando e operador, os métodos
-			são separados por uma linha em branco e tamanho da instrução, medido em
-			caracteres. A \cref{tab:exemploEstEsc} exemplifica possíveis características
+			são separados por uma linha em branco, tamanho da instrução  medido em
+			caracteres e espaço entre operando e operador, por exemplo (\cref{apendice:pep8}).
+			A \cref{tab:exemploEstEsc} exemplifica possíveis características
 			extraídas em uma chamada de função, na qual é possível inserir ou não um
 			espaço entre o parâmetro e os \foreign{tokens} abrir e fechar parêntese,
 			como também a utilização de uma ou mais instruções por linha. Caso a primeira
