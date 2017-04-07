@@ -130,6 +130,44 @@
 		ou tridimensional. Para criar essa visualização deve-se selecionar o formato
 		de como as características extraídas serão armazenadas, como o vetor de
 		características ou o modelo de tabela de dados \cite{de2003}.
+		
+		\subsection{Dissimilaridade de dados}
+		Dianta da necessidade de uma medida conter quatro propriedades - não-negatividade,
+		identidade, simetria e desigualdade triangular - para que possa ser considerada
+		uma métrica, há medidas que não obedecem a essas propriedades, mas que também
+		são importantes, conhecido como dissimilaridade \cite{phd:paulovich}. Tais
+		dissimilaridades produz um grupo maior de medidads, já que pode conter qualquer
+		tipo de função que compare numéricamente o quanto dois objetos podem ser
+		diferentes \cite{Tan:2005:IDM:1095618}.
+		
+		Considerando espaços de alta dimensão e esparsos, é preferível a utilização
+		da inversão da similaridade do cosseno, visto que comparações entre zeros
+		não afeta seu resultado. Isso é consequência da dependencia do número
+		de medidas que os objetos compartilham entre si, suprimindo os números
+		não existentes entre eles \cite{phd:paulovich}. Nesse caso de alta
+		dimensionalidade dos dados e esparços, essa aspecto torna-se desejável pelo
+		fato da limitação do conjunto de características com medidas diferentes de
+		0 (zero), com isso serão correspondentes por meio das características que não
+		os representa, iguais a 0 (zero) \cite{Tan:2005:IDM:1095618}.
+		
+		\citeonline{phd:paulovich} afirma que há dois cenários distintos que podem
+		adulterar o resultado: quando a norma Euclidiana do vetor de característica
+		que representa os objetos são muito diferentes; e quando alguns aspectos
+		do vetor de características possuem valores em escalas diferentes dos demais
+		atributos do vetor. Tais cenários podem ser evitados. Para evitar a primeira
+		situação, aplica-se o processo de normalização para que todos os vetores possuem
+		norma Euclidiana unitária. Enquanto a segunda situação evita-se por meio da
+		aplicação de um processo chamado padronização (\foreignlanguage{standardization})
+		\cite{Tan:2005:IDM:1095618}, atribuindo novos valores com média igual a 0 (zero)
+		e desvio padrão igual a 1 (um), por meio da transformação da média de cada
+		característica com seu desvio padrão.
+		
+		%TODO
+		Professora Aretha, na página 15 da tese do Paulovich, no seguinte parágrafo:
+		"Para evitar o primeiro cenário um processo de normalização...". Ele fala sobre
+		a média da COORDENADA. Eu não entendi se essa média é daquela característica
+		específica ou do vetor de característica, apesar de ter escrito:
+		"por meio da transformação da média de cada característica com seu desvio padrão."
 
 	\section{Mineração e Visualização de Programas}
 	\label{sec:MinVisual}
