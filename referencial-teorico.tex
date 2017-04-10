@@ -158,7 +158,7 @@
 			atributos do vetor. Tais cenários podem ser evitados. Para evitar a primeira
 			situação, aplica-se o processo de normalização para que todos os vetores possuem
 			norma Euclidiana unitária. Enquanto a segunda situação evita-se por meio da
-			aplicação de um processo chamado padronização (\foreignlanguage{standardization})
+			aplicação de um processo chamado padronização (\foreign{standardization})
 			\cite{Tan:2005:IDM:1095618}, atribuindo novos valores com média igual a 0 (zero)
 			e desvio padrão igual a 1 (um), por meio da transformação da média de cada
 			característica com seu desvio padrão.
@@ -193,7 +193,31 @@
 			
 			\subsubsection{Pontuação silhueta}
 
-				ESCREVER
+				Pontuação silhueta é um método bem popular que combina coesão e separação
+				\cite{Tan:2005:ch8}. Coesão ou compacidade, determina que os objetos
+				de um determinado agrupamento devem ser o mais semelhante possível. Enquanto
+				a separação indica o quão diferentes os agrupamentos são entre si
+				\cite{Tan:2005:ch8, Berry:1997:DMT:560675}.
+				
+				\citeonline{rousseeuw1987silhouettes,Tan:2005:ch8} definem
+				três passos para a criação da pontuação silhueta em um determinado conjunto
+				de dados. Primeiro, para cada objeto de um agrupamento, é calculado a distância
+				média em relação a todos os outros objetos pertencentes a esse agrupamento.
+				O segundo passo consiste no cálculo da distância média entre um objeto e 
+				os objetos de outro agrupamento, no qual aquele não está presente. Por fim, o
+				terceiro passo define a pontuação silhueta para um objeto pela diferença das
+				médias do segundo passo com o primeiro passo, divido pela maior distância média
+				encontrado nos passos anteriores.
+				
+				A pontuação silhueta de cada objeto pode variar entre $-1$ e $1$ e seu resultado
+				pode ter três significados distintos \cite{rousseeuw1987silhouettes}.
+				Quanto mais próximo de $1$, melhor agrupado aquele objeto foi. Quanto mais
+				próximo de $0$ (zero), o objeto pode ser considerado semelhante com um dado
+				de um grupo distinto, desta forma, há incertezas para qual dos dois agrupamentos
+				aquele objeto deveria ser atribuído, esse caso é conhecido como "caso intermediário".
+				Por fim, o pior resultado, próximo a $-1$, condiz que o objeto possui maior
+				semelhança com o agrupamento do outro objeto com o qual foi comparado, podendo
+				assumir que o objeto foi atribuído ao seu agrupamento incorretamente. 
 
 	\section{Mineração e Visualização de Programas}
 	\label{sec:MinVisual}
@@ -305,13 +329,8 @@
 			uso de técnicas de programação específicas, a utilização de laço de repetição,
 			por exemplo. 
 
-<<<<<<< HEAD
-	\subsection{Mineração e visualização}
-=======
 	\section{Trabalhos Relacionados}
->>>>>>> d80c3a12312ba77213ace652eb951e0fce85b640
 	\label{sec:TrabRel}
-	
 		A fim de encontrar a semelhança entre os códigos, \citeonline{Yin:2015}
 		utilizaram a AST dos programas submetidos pelos alunos. Após a criação das
 		árvores, é necessário o uso de métricas para verificar a similaridade entre
