@@ -170,7 +170,7 @@
 			específica ou do vetor de características, apesar de ter escrito:
 			"por meio da transformação da média de cada característica com seu desvio padrão."
 		
-		\subsection{Qualidade do agrupamento}
+		\subsection{Qualidade do agrupamento e da projeção}
 		\label{sebsec:qualidade}
 			O objetivo dos algoritmos de agrupamento é encontrar grupos significativos
 			presentes em um conjunto de dados \cite{Halkidi2001}. De forma que cada agrupamento
@@ -190,6 +190,20 @@
 			os resultador da análise do agrupamento sem informações externas dos dados;
 			comparação do resultado da análise do agrupamento com resultados externos;
 			e a comparação de dois agrupamentos distintos para determinar qual é o melhor.
+			
+			Além de verificar a qualidade do agrupamento, também devemos observar a
+			qualidade da projeção. Como citado na \cref{sec:FundTeor}, técnicas de projeção
+			multidimensionais visam diminuir a alta dimensionalidade dos dados para uma, duas
+			ou três dimensões. Contudo, é necessário conservar as relações de vizinhança
+			\cite{bauer1992quantifying}. Desta forma, a distância entre os objetos após a
+			utilização de uma técnica de projeção multidimensional deve ser aproximada
+			ou exatamente igual a distância entre eles no espaço de alta dimensionalidade.
+			
+			Apesar do conhecimento dessas propriedades, \citeonline{bauer1992quantifying}
+			afirma que é difícil qualificar a vizinhança após a utilização de uma técnica
+			de projeção multidimensional. Pelo fato de, geralmente, somente ser possível
+			verificar os erros de preservação da vizinhança por meio do controle visual
+			da projeção.
 			
 			\subsubsection{Pontuação silhueta}
 
@@ -217,7 +231,25 @@
 				aquele objeto deveria ser atribuído, esse caso é conhecido como "caso intermediário".
 				Por fim, o pior resultado, próximo a $-1$, condiz que o objeto possui maior
 				semelhança com o agrupamento do outro objeto com o qual foi comparado, podendo
-				assumir que o objeto foi atribuído ao seu agrupamento incorretamente. 
+				assumir que o objeto foi atribuído ao seu agrupamento incorretamente.
+				
+			\subsubsection{Preservação de vizinhança}
+			
+				A preservação de vizinhança, ou \foreign{neighborhood preservation}
+				\cite{paulovich2008hipp}, tem por objetivo: analisar a qualidade dos agrupamentos
+				após a aplicação da ténica de projeção, verificando se as relações de distância
+				entre os documentos são mantidas \cite{phd:paulovich}. Para cada objeto
+				multi-dimensional, sua vizinhança (\foreign{neighborhood}) é calculada observando
+				os $k$ vizinhos mais próximos no plano multidimensional e os $k$ vizinhos mais
+				próximos após a utilização da técnica de projeção. Com isso é possível verificar
+				se a proporção de vizinhança é preservada (\foreign{preservation}).
+				
+				O resultado do cálculo da preservação de vizinhança pode variar entre $0$ e $1$.
+				Quanto mais a vizinhança do objeto mutidimensional se assemelha a vizinhança
+				do mesmo objeto aplicado as técnicas de projeção, seu resultado tenderá a $1$,
+				podendo ser exatamente igual a $1$. Entretanto, quanto mais próximo ou igual a
+				$0$, condiz que as vizinhanças de um objeto multidimensional e de sua projeção
+				são muito ou totalmente distintos.
 
 	\section{Mineração e Visualização de Programas}
 	\label{sec:MinVisual}
