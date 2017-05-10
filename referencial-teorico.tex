@@ -137,16 +137,16 @@
 			identidade, simetria e desigualdade triangular - para que possa ser considerada
 			uma métrica, há medidas que não obedecem a essas propriedades, mas que também
 			são importantes, conhecido como dissimilaridade \cite{phd:paulovich}. Tais
-			dissimilaridades produz um grupo maior de medidads, já que pode conter qualquer
-			tipo de função que compare numéricamente o quanto dois objetos podem ser
+			dissimilaridades produz um grupo maior de medidas, já que pode conter qualquer
+			tipo de função que compare numericamente o quanto dois objetos podem ser
 			diferentes \cite{Tan:2005:IDM:1095618}.
 			
 			Considerando espaços de alta dimensão e esparsos, é preferível a utilização
 			da inversão da similaridade do cosseno, visto que comparações entre zeros
-			não afeta seu resultado. Isso é consequência da dependencia do número
+			não afeta seu resultado. Isso é consequência da dependência do número
 			de medidas que os objetos compartilham entre si, suprimindo os números
 			não existentes entre eles \cite{phd:paulovich}. Nesse caso de alta
-			dimensionalidade dos dados e esparços, essa aspecto torna-se desejável pelo
+			dimensionalidade dos dados e esparsos, essa aspecto torna-se desejável pelo
 			fato da limitação do conjunto de características com medidas diferentes de
 			0 (zero), com isso serão correspondentes por meio das características que não
 			os representa, iguais a 0 (zero) \cite{Tan:2005:IDM:1095618}.
@@ -181,8 +181,17 @@
 			agrupamento para garantir que todos os objetos de um determinado grupo
 			estão condizentes conforme o cálculo de similaridade selecionado.
 			
-			O parágrafo abaixo é necessário? Tudo bem que eu não escrevi ele bem, por enquanto.
-			Mas não vai fazer diferença se eu tirá-lo. Eu acho.
+			A \cref{fig:projecoes} apresenta duas projeções distintas formadas a partir da
+			seleção de cálculos de normalização diferentes. Reforçando a ideia de verificar
+			a qualidade da projeção, devido a geração de diferentes projeções conforme a
+			alteração dos valores, por meio da normalização selecionada.
+			
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=0.7\linewidth]{imagem/projecoes}
+				\caption{Representação de projeções, utilizando diferentes cálculos de normalização}
+				\label{fig:projecoes}
+			\end{figure}
 			
 			Entretanto, há uma série que problemas para a validação do agrupamento
 			\cite{Tan:2005:ch8}: distinguir se há ocorrências de estruturas não aleatórios
@@ -245,7 +254,7 @@
 				se a proporção de vizinhança é preservada (\foreign{preservation}).
 				
 				O resultado do cálculo da preservação de vizinhança pode variar entre $0$ e $1$.
-				Quanto mais a vizinhança do objeto mutidimensional se assemelha a vizinhança
+				Quanto mais a vizinhança do objeto multidimensional se assemelha a vizinhança
 				do mesmo objeto aplicado as técnicas de projeção, seu resultado tenderá a $1$,
 				podendo ser exatamente igual a $1$. Entretanto, quanto mais próximo ou igual a
 				$0$, condiz que as vizinhanças de um objeto multidimensional e de sua projeção
