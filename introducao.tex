@@ -4,28 +4,31 @@
 	com cursos massivos e abertos que visa oferecer os mais diversos cursos a nível
 	global. Para realizar um curso ofertado pelo \acs{MOOC}, é necessário apenas a conexão
 	com a Internet e o cadastro na plataforma, geralmente gratuito. Foi popularizado
-	em 2011 quando grandes universidades, como o Instituto de Tecnologia de
-	Massachusetts, a Universidade de Harvard e a Universidade de Stanford tiveram
+	em 2011 quando grandes universidades, como Instituto de Tecnologia de
+	Massachusetts (MIT), Universidade de Harvard e Universidade de Stanford, tiveram
 	a iniciativa mediados pelos provedores Cousera, edX e Udacity, respectivamente
 	\cite{Mehlenbacher:2012}. Além de permitir explorar novos modelos de negócio
 	\cite{dellarocas2013money}, possibilita englobar mais alunos a custos menores
 	e com boa qualidade \cite{schmidt2013producing}.
 	
+	%TODO Listar mais abordagens de ensino
 	Em cursos de introdução a programação, seja \acs{MOOC} ou presencial, há uma introdução
 	sobre algoritmo seguido da seleção de uma linguagem de programação para
 	desenvolvimento. Alguns desses cursos orientam a utilização de ferramentas, como
-	o \ac{IDE} e ensinam o funcionamento da linguagem sintaticamente.
+	o \acs{IDE} e ensinam o funcionamento da linguagem sintaticamente.
 	Entretanto, esse tipo de ensino tem levado o estudante a fazer seu programa baseado
 	na tentativa e erro, visto que buscam gerar o algoritmo sem o total conhecimento
 	lógico do problema \cite{edwards2003}. Isso funcionou como um incentivo para que
 	surgissem outras abordagens de ensino, como a reflexão na ação (\foreign{Reflection
-	in action}) e o \ac{TDD} \cite{camara_graciottoSilva2016}. Na primeira abordagem, a
+	in action}) e o \acf{TDD} para ensino (\acs{TDD}) \cite{camara_graciottoSilva2016}. Na primeira abordagem, a
 	implementação do \foreign{software} ocorre somente após o entendimento apropriado
 	do problema \cite{edwards2004}. No \acs{TDD}, cumpre-se um ciclo dividido em três etapas:
 	na primeira etapa o programador insere um teste que deve falhar no momento de sua
 	execução; na segunda etapa é implementado a solução para que o caso de teste
 	escrito anteriormente seja aceito; e a última etapa refere-se a refatoração
 	(simplificar ou melhorar) o código recém implementado \cite{beck2003}.
+	
+	%TODO Criar um gancho de porquê as abordagens de reflexão na ação e TDD são interessantes p/ MOOC
 	
 	% Problema de pesquisa
 	Principalmente em \acs{MOOC} de ensino de programação, tratando-se de uma ferramenta de
@@ -47,8 +50,8 @@
 	% Justificativa
 	
 	% Objetivo
-	Considerando que muito projetos podem ser semelhantes, os professores podem explorar
-	e compreender as variações de implementações \cite{Yin:2015}, a fim de diminuir
+	Considerando que muitas atividades podem ser semelhantes, os professores podem explorar
+	e compreender as variações de implementações enviados pelos estudantes \cite{Yin:2015}, a fim de diminuir
 	o tempo gasto para correção dos códigos-fontes submetidos, por meio de agrupamentos
 	(\foreign{clusters}). Por exemplo, tais agrupamentos podem ser realizados por meio
 	da similaridade dos códigos. Compreendendo as variações de implementação, é possível
@@ -59,6 +62,8 @@
 	parecidos, permitindo que o professor dedique o tempo poupado na correção de diversas
 	implementações para aprimorar as correções de poucos trabalhos, possibilitando
 	\foreign{feedbacks} mais precisos e menor custo para o \acs{MOOC}.
+	
+	%TODO Solicitar submissão para edital DIRGRAD
 	
 %	\citeonline{Yin:2015} extraem uma árvore de sintaxe abstrata de cada implementação
 %	e verifica a similaridade par a par por meio da distância de edição de árvore. Tal
@@ -106,18 +111,16 @@
 %	implementação. Entretanto, sua normalização foi interessante e a pouca quantidade de
 %	características extraídas pode ter sido primordial para formar os agrupamentos.
 	
-	Considerando este cenário, a concretização dos objetivos deste trabalho gerará
+	Considerando este cenário, a concretização dos objetivos deste trabalho gerou
 	os seguintes subsídios para a avaliação de programas submetidos em \acs{MOOC}:  % TODO: a concretização das metas gerarão/são os resultados/subsídios definidos no título do trabalho. Podemos deixar as metas mais claras nesse sentido e colocá-las como itemize.
 	\begin{itemize}
 		\item Agrupamento dos códigos-fontes semelhantes, utilizando técnicas de mineração;
-		\item Técnica de projeção para mapeamento dos \foreign{clusters};
+		\item Seleção de uma técnica de projeção adequado para o mapeamento dos \foreign{clusters};
 		\item Ferramenta de visualização;
 		\item Material para os professores sobre como corrigir as submissões utilizando a ferramenta.
 	\end{itemize}
 	
-	Por meio desses subsídios buscaremos diminuir o tempo gasto na correção de todos os códigos
-	fontes e  fornecer \foreign{feedbacks} construtivos de modo que o usuário consiga
-	corrigir seus erros e submeta novamente seu algoritmo. Como metas, estabeleceu-se
+	Como metas, estabeleceu-se
 	o desenvolvimento de uma ferramenta para recuperação de dados a partir de
 	códigos-fontes e da alteração de uma ferramenta para mineração e visualização de
 	dados \cite{Alencar-etal:2012}. Com o auxílio dessas ferramentas, serão investigadas as
@@ -127,13 +130,14 @@
 	qualidade dos agrupamentos realizados pelo sistema e, principalmente, a
 	qualidade do \foreign{feedback}.
 	
+	Por meio desses subsídios buscamos diminuir o tempo gasto na correção de todos os
+	códigos-fontes referente às atividades de Introdução a Ciência da Computação e fornecer
+	\foreign{feedbacks} construtivos para o professor de modo que ele consiga corrigir
+	uma quantidade menor do total de implementações submetidas, produzindo correções
+	relevantes para todos os usuários.
+	
 	O restante desta proposta de trabalho de conclusão de curso é organizado da seguinte
-	forma. O \cref{chap:Ref} apresenta o referencial teórico, divido em quatro seções: a
-	\cref{sec:Mooc} apresenta algumas definições de \acs{MOOC} e suas características; a
-	\cref{sec:FundTeor} trata dos principais conceitos referentes à mineração e
-	visualização de dados utilizados neste trabalho; a \cref{sec:MinVisual} cita as
-	formas que podem ser realizados a extração de características e quais os possíveis
-	dados a serem coletados conforme o tipo de análise utilizado; e a \cref{sec:TrabRel}
-	descreve os trabalhos relacionados que fundamentaram o projeto. O \cref{chap:Proposta}
-	apresenta a método de pesquisa para obter os resultados, seguido do \cref{chap:Result}
-	que possui os resultados preliminares.
+	forma. O \cref{chap:Ref} apresenta o referencial teórico sobre: \acs{MOOC} e visualização,
+	além dos trabalhos relacionados à visualização e avaliação de implementações submetidos
+	em \acs{MOOC}. O \cref{chap:Result} apresenta o método de pesquisa e os resultados. E
+	o \cref{chap:Conclusao} possui a conclusão desse estudo.
