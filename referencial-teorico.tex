@@ -38,10 +38,10 @@
 		com outras aplicações, como a utilização de e-mails e fóruns, o uso de questionário
 		relacionados com os vídeos e a inclusão de atividades para estimular e motivar
 		os alunos \cite{fassbinder2014}. Os fóruns de discussão auxiliam os usuários
-		a aprenderem sobre o problema abordado \citeonline{schmidt2013producing}.
+		a aprenderem sobre o problema abordado \cite{schmidt2013producing}.
 		Em adição, também é possível utilizar recursos para avaliar alguns tipos de
 		teste, como as questões de múltipla escolha, na qual verifica-se a alternativa
-		selecionada com a presente no gabarito de questões \citeonline{alario2013analysing}.
+		selecionada com a presente no gabarito de questões \cite{alario2013analysing}.
 		% TODO: acrescentar algo  quanto a integração, voltado a integração de aplicação para auxiliar na avaliação de tarefas. Citar trabalhos/pesquisas sobre a integração desse tipo de instrumentos/aplicações em MOOC (tanto os que citamos na seção de mineração e visualização e que usam dados de MOOC quanto outros de avaliação como um todo). Daí sim siga com o texto que "Focaremos no desenvolvimento...".
 		Focaremos no desenvolvimento de recursos avançados de visualização dos dados
 		obtidos por meio das implementações submetidas em cursos de programação e na
@@ -50,11 +50,8 @@
 
 	\section{Mineração e visualização de dados}
 	\label{sec:FundTeor}
-		Nesta seção apresentaremos as definições de alguns termos utilizados
-		durante a pesquisa: mineração, a diferença na área de Inteligência
-		Artificial sobre classificadores e agrupamento, visualização de dados e projeção.
-
-		\begin{figure}[h]
+		
+		\begin{figure}[b]
 			\centering
 			\includegraphics[width=0.6\linewidth]{imagem/mineracaoDados}
 			\caption[Etapas da mineração de dados]{Etapas da mineração de dados \cite{rezende2003}}
@@ -76,13 +73,16 @@
 		consiste na aplicação do algoritmo de mineração de dados escolhido; o estágio
 		Pós-processamento equivale a análise dos padrões obtidos anteriormente e
 		possibilita a extração de outros padrões; por fim, a Utilização do Conhecimento
-		é a utilização dos dados extraídos em algum sistema ou utilizado diretamente
+		é a utilização dos dados extraídos em algum sistema ou diretamente
 		pelo usuário. Observe que esse sistema pode se realimentar, caso seja necessário
-		adicionar mais informações, dessa forma, necessita-se realizar essas etapas
-		novamente realimentando o sistema com novas características. % TODO: faltou completar algo aqui... se realimentar de que e onde?
+		adicionar mais informações. Dessa forma, necessita-se realizar essas etapas
+		novamente, fornecendo ao sistema novas características. A realimentação
+		ocorre após a análise do Pós-processamento, caso os padrões adquiridos não
+		sejam eficientes para a aplicação. Com isso é possível retornar a etapa
+		Pré-processamento a fim de adicionar ou remover qualquer dado.   % TODO: faltou completar algo aqui... se realimentar de que e onde?
 		
 		Muitos métodos de mineração de dados são baseados em técnicas de treinamento
-		e teste de aprendizagem de máquina e, reconhecimento de padrões e estatísticas,
+		e teste de aprendizagem de máquina, e reconhecimento de padrões e estatísticas,
 		como os algoritmos de classificação e agrupamentos, respectivamente \cite{fayyad1996}.
 		
 		Classificação é a tarefa de aprendizagem de uma função alvo que mapeia cada
@@ -116,7 +116,7 @@
 		cognitiva do ser humano, por meio da percepção visual, para colaborar com
 		a exploração e obtenção de informações úteis presente nos dados \cite{de2003,keim2002}.
 		Ademais, a visualização de dados é intuitiva, permitindo explorar os dados
-		mais rápido e fornecendo melhores resultados na maioria das vezes \cite{keim2002}.
+		mais rapidamente e fornecendo melhores resultados na maioria das vezes \cite{keim2002}.
 		
 		Entretanto, não é possível gerar visualizações sobre conjuntos de dados
 		complexos. Assim sendo, é necessário a utilização de técnicas de projeção que
@@ -127,7 +127,17 @@
 		unidimensional, bidimensional ou tridimensional \cite{paulovich2008least},
 		sempre buscando a menor perca de informação possível, como a relação de
 		similaridade do espaço n-dimensional no espaço unidimensional, bidimensional
-		ou tridimensional. Para criar essa visualização deve-se selecionar o formato
+		ou tridimensional. Essa relação é encontrada, utilizando cálculos de similaridade
+		ou dissimilaridade entre os dados.
+		
+		Considerando espaços de alta dimensão e esparsos, é preferível a utilização
+		da inversão da similaridade do cosseno, visto que comparações entre zeros
+		não afeta seu resultado. Isso é consequência da dependência do número
+		de medidas que os objetos compartilham entre si, suprimindo os números
+		não existentes entre eles \cite{phd:paulovich}.
+		
+		
+		Para criar essa visualização deve-se selecionar o formato
 		de como as características extraídas serão armazenadas, como o vetor de
 		características ou o modelo de tabela de dados \cite{de2003}.
 		
@@ -137,19 +147,15 @@
 			identidade, simetria e desigualdade triangular - para que possa ser considerada
 			uma métrica, há medidas que não obedecem a essas propriedades, mas que também
 			são importantes, conhecido como dissimilaridade \cite{phd:paulovich}. Tais
-			dissimilaridades produz um grupo maior de medidas, já que pode conter qualquer
+			dissimilaridades produzem um grupo maior de medidas, já que pode conter qualquer
 			tipo de função que compare numericamente o quanto dois objetos podem ser
 			diferentes \cite{Tan:2005:IDM:1095618}.
 			
-			Considerando espaços de alta dimensão e esparsos, é preferível a utilização
-			da inversão da similaridade do cosseno, visto que comparações entre zeros
-			não afeta seu resultado. Isso é consequência da dependência do número
-			de medidas que os objetos compartilham entre si, suprimindo os números
-			não existentes entre eles \cite{phd:paulovich}. Nesse caso de alta
-			dimensionalidade dos dados e esparsos, essa aspecto torna-se desejável pelo
-			fato da limitação do conjunto de características com medidas diferentes de
-			0 (zero), com isso serão correspondentes por meio das características que não
-			os representa, iguais a 0 (zero) \cite{Tan:2005:IDM:1095618}.
+			No caso de alta	dimensionalidade dos dados e esparsos, a dissimilaridade do
+			cosseno torna-se desejável pelo fato de não realizar comparações entre zeros e
+			da limitação do conjunto de características com medidas diferentes de 0 (zero),
+			visto que os dados são correspondentes se considerar as características
+			que não possuem ocorrência, iguais a $0$ (zero) \cite{Tan:2005:IDM:1095618}.
 			
 			\citeonline{phd:paulovich} afirma que há dois cenários distintos que podem
 			adulterar o resultado: quando a norma Euclidiana do vetor de característica
@@ -157,29 +163,11 @@
 			do vetor de características possuem valores em escalas diferentes dos demais
 			atributos do vetor. Tais cenários podem ser evitados. Para evitar a primeira
 			situação, aplica-se o processo de normalização para que todos os vetores possuem
-			norma Euclidiana unitária. Enquanto a segunda situação evita-se por meio da
+			norma Euclidiana unitária. A segunda situação evita-se por meio da
 			aplicação de um processo chamado padronização (\foreign{standardization})
 			\cite{Tan:2005:IDM:1095618}, atribuindo novos valores com média igual a 0 (zero)
 			e desvio padrão igual a 1 (um), por meio da transformação da média de cada
 			característica com seu desvio padrão.
-			
-			%TODO
-			Professora Aretha, na página 15 da tese do Paulovich, no seguinte parágrafo:
-			"Para evitar o primeiro cenário um processo de normalização...". Ele fala sobre
-			a média da COORDENADA. Eu não entendi se essa média é daquela característica
-			específica ou do vetor de características, apesar de ter escrito:
-			"por meio da transformação da média de cada característica com seu desvio padrão."
-		
-		\subsection{Qualidade do agrupamento e da projeção}
-		\label{sebsec:qualidade}
-			O objetivo dos algoritmos de agrupamento é encontrar grupos significativos
-			presentes em um conjunto de dados \cite{Halkidi2001}. De forma que cada agrupamento
-			possua dados muito semelhantes entre si e discrepante com os dados de outros grupos.
-			Independente do algoritmo utilizado e da estrutura dos dados,
-			esses algoritmos sempre encontrarão grupos dentro do conjunto de dados
-			\cite{Tan:2005:ch8}. Por isso, é necessário verificar a qualidade do
-			agrupamento para garantir que todos os objetos de um determinado grupo
-			estão condizentes conforme o cálculo de similaridade selecionado.
 			
 			A \cref{fig:projecoes} apresenta duas projeções distintas formadas a partir da
 			seleção de cálculos de normalização diferentes. Reforçando a ideia de verificar
@@ -192,6 +180,17 @@
 				\caption{Representação de projeções, utilizando diferentes cálculos de normalização}
 				\label{fig:projecoes}
 			\end{figure}
+		
+		\subsection{Qualidade do agrupamento e da projeção}
+		\label{sebsec:qualidade}
+			O objetivo dos algoritmos de agrupamento é encontrar grupos significativos
+			presentes em um conjunto de dados \cite{Halkidi2001}, de forma que cada agrupamento
+			possua dados muito semelhantes entre si e discrepante com os dados de outros grupos.
+			Independente do algoritmo utilizado e da estrutura dos dados,
+			esses algoritmos sempre encontrarão grupos dentro do conjunto de dados
+			\cite{Tan:2005:ch8}. Por isso, é necessário verificar a qualidade do
+			agrupamento para garantir que todos os objetos de um determinado grupo
+			estão condizentes conforme o cálculo de similaridade selecionado.
 			
 			Entretanto, há uma série que problemas para a validação do agrupamento
 			\cite{Tan:2005:ch8}: distinguir se há ocorrências de estruturas não aleatórios
@@ -209,27 +208,33 @@
 			ou exatamente igual a distância entre eles no espaço de alta dimensionalidade.
 			
 			Apesar do conhecimento dessas propriedades, \citeonline{bauer1992quantifying}
-			afirma que é difícil qualificar a vizinhança após a utilização de uma técnica
+			afirmam que é difícil qualificar a vizinhança após a utilização de uma técnica
 			de projeção multidimensional. Pelo fato de, geralmente, somente ser possível
 			verificar os erros de preservação da vizinhança por meio do controle visual
 			da projeção.
 			
+			Devido a essa dificuldade é necessário utilizar técnicas que possa verificar
+			se um objeto foi classificado corretamente àquele grupo, como a pontuação
+			silhueta. E verificar a qualidade da projeção, como a Preservação da vizinhança,
+			que analisa se os vizinhos de um objeto na projeção são os mesmos vizinhos
+			no espaço multidimensional.
+			
 			\subsubsection{Pontuação silhueta}
 
 				Pontuação silhueta é um método bem popular que combina coesão e separação
-				\cite{Tan:2005:ch8}. Coesão ou compacidade, determina que os objetos
+				\cite{Tan:2005:ch8}. Coesão, ou compacidade determina que os objetos
 				de um determinado agrupamento devem ser o mais semelhante possível. Enquanto
 				a separação indica o quão diferentes os agrupamentos são entre si
 				\cite{Tan:2005:ch8, Berry:1997:DMT:560675}.
 				
-				\citeonline{rousseeuw1987silhouettes,Tan:2005:ch8} definem
+				\citeonline{rousseeuw1987silhouettes} e \citeonline{Tan:2005:ch8} definem
 				três passos para a criação da pontuação silhueta em um determinado conjunto
-				de dados. Primeiro, para cada objeto de um agrupamento, é calculado a distância
+				de dados. Primeiro, para cada objeto de um agrupamento é calculado a distância
 				média em relação a todos os outros objetos pertencentes a esse agrupamento.
 				O segundo passo consiste no cálculo da distância média entre um objeto e 
 				os objetos de outro agrupamento, no qual aquele não está presente. Por fim, o
 				terceiro passo define a pontuação silhueta para um objeto pela diferença das
-				médias do segundo passo com o primeiro passo, divido pela maior distância média
+				médias do segundo passo com o primeiro passo, dividido pela maior distância média
 				encontrado nos passos anteriores.
 				
 				A pontuação silhueta de cada objeto pode variar entre $-1$ e $1$ e seu resultado
@@ -237,7 +242,7 @@
 				Quanto mais próximo de $1$, melhor agrupado aquele objeto foi. Quanto mais
 				próximo de $0$ (zero), o objeto pode ser considerado semelhante com um dado
 				de um grupo distinto, desta forma, há incertezas para qual dos dois agrupamentos
-				aquele objeto deveria ser atribuído, esse caso é conhecido como "caso intermediário".
+				aquele objeto deveria ser atribuído: esse caso é conhecido como "caso intermediário".
 				Por fim, o pior resultado, próximo a $-1$, condiz que o objeto possui maior
 				semelhança com o agrupamento do outro objeto com o qual foi comparado, podendo
 				assumir que o objeto foi atribuído ao seu agrupamento incorretamente.
@@ -245,7 +250,7 @@
 			\subsubsection{Preservação de vizinhança}
 			
 				A preservação de vizinhança, ou \foreign{neighborhood preservation}
-				\cite{paulovich2008hipp}, tem por objetivo: analisar a qualidade dos agrupamentos
+				\cite{paulovich2008hipp}, tem por objetivo analisar a qualidade dos agrupamentos
 				após a aplicação da ténica de projeção, verificando se as relações de distância
 				entre os documentos são mantidas \cite{phd:paulovich}. Para cada objeto
 				multi-dimensional, sua vizinhança (\foreign{neighborhood}) é calculada observando
@@ -254,8 +259,8 @@
 				se a proporção de vizinhança é preservada (\foreign{preservation}).
 				
 				O resultado do cálculo da preservação de vizinhança pode variar entre $0$ e $1$.
-				Quanto mais a vizinhança do objeto multidimensional se assemelha a vizinhança
-				do mesmo objeto aplicado as técnicas de projeção, seu resultado tenderá a $1$,
+				Quanto mais a vizinhança do objeto multidimensional se assemelha à vizinhança
+				do mesmo objeto após a aplicação das técnicas de projeção, seu resultado tenderá a $1$,
 				podendo ser exatamente igual a $1$. Entretanto, quanto mais próximo ou igual a
 				$0$, condiz que as vizinhanças de um objeto multidimensional e de sua projeção
 				são muito ou totalmente distintos.
@@ -271,13 +276,6 @@
 		
 		\subsection{Características de programas}
 		\label{subSec:Caracteristicas}
-		
-			\begin{figure}[h]
-				\centering
-				\includegraphics[width=0.7\linewidth]{imagem/fluxoProgramacao}
-				\caption{Representação da implementação de um problema}
-				\label{fig:fluxoProgramacao}
-			\end{figure}
 			
 			Um programa de computador é um conjunto de instruções computacionais que visa
 			solucionar um problema. A \cref{fig:fluxoProgramacao} apresenta os passos
@@ -288,15 +286,24 @@
 			possível resolver esse problema. O algoritmo é constituído por uma sequência
 			de passos que resolva algum problema, condizendo com o que deve ser feito.
 			Por fim, realiza-se a implementação do algoritmo, definindo como as instruções
-			devem ser executadas.
+			devem ser executadas para que seja possível visualizar todos os participantes
+			presentes na fila indiana.
 
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=0.7\linewidth]{imagem/fluxoProgramacao}
+				\caption{Representação da implementação de um problema}
+				\label{fig:fluxoProgramacao}
+			\end{figure}
+			
+			No entanto, consideramos características somente das implementações.
 			A extração de características por meio das implementações pode ocorrer das
 			seguintes formas: análise estática, análise do estilo de escrita e análise dinâmica.
 			A análise estática ocorre por meio da observação do código-fonte, considerando
 			apenas sua implementação, ou seja, não é necessária sua execução. Há diversas
 			características que podem ser extraídas dessa análise. Há abordagens que extraem
 			somente a \ac{AST} que pode ser gerada durante a análise
-			sintática do compilador para representar o código-fonte em forma de árvore
+			sintática do compilador para representar o código-fonte em forma de árvore,
 			armazenando símbolos não-terminais nos nós filhos e símbolos terminais nos
 			nós folha, como representa a \cref{fig:AST} em uma declaração de condição.
 			Esse tipo de árvore possui símbolos não terminais como nós filhos
@@ -346,12 +353,13 @@
 			\end{table}
 			
 			A análise dinâmica do código-fonte consiste na observação da execução do
-			programa, por meio do rastro de execução
-			do programa (\foreign{trace}) e de teste de \foreign{software}. Analisando esse histórico é
-			possível verificar algumas características, como: em que momento foi realizado
+			programa, por meio do rastro de execução do programa
+			(\foreign{trace}) e de teste de \foreign{software}. Analisando esse histórico, é
+			possível verificar algumas características, como: em que momento foi realizada
 			uma atribuição, chamada de função e recursão, qual bloco de código foi
 			executado em uma declaração de condição, a quantidade de vezes que um laço
-			de repetição foi executado e a saída no final da execução. Já o teste de
+			de repetição foi executado e a saída no final da execução, entre outras situações
+			e informações. Já o teste de
 			software pode ser utilizado executando casos de teste nos quais é verificado
 			se produção final do programa era o esperado e esta informação, se o caso de
 			teste funcionou corretamente ou não, também pode ser uma característica do programa.
@@ -372,6 +380,19 @@
 
 	\section{Trabalhos relacionados}
 	\label{sec:TrabRel}
+	
+		Os \acs{MOOC}s disponibilizam diversos cursos por meio de plataformas de ensino
+		online e para grande quantidade de pessoas. Por isso, desenvolveram ferramentas
+		para auxiliar no ensino, como o uso de questionário relacionados com os vídeos
+		\cite{fassbinder2014}, e na avaliação de questões de múltipla escolha \cite{alario2013analysing}.
+		Entre os cursos disponibilizados, há cursos relacionados a computação, no qual
+		as atividades a serem submetidas requer a implementação de um programa a
+		questões objetivas. Contudo, não há recursos para auxiliar os professores
+		a corrigirem tais implementações. Considerando a grande quantidade de usuários,
+		pesquisadores buscam desenvolver ferramentas para auxiliar na correção,
+		utilizando técnicas de mineração e visualização a fim de facilitar a correção
+		de todas as implementações.
+	
 		A fim de encontrar a semelhança entre os códigos, \citeonline{Yin:2015}
 		utilizaram a AST dos programas submetidos pelos alunos. Após a criação das
 		árvores, é necessário o uso de métricas para verificar a similaridade entre
@@ -394,15 +415,7 @@
 		reduzir dados de alta dimensionalidade para duas ou três dimensões preservando
 		a estrutura local dos dados.
 		
-		
-		\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.7\linewidth]{imagem/implementacoesYin}
-		\caption[Quatro implementações distintas que formaram os agrupamentos]{Quatro implementações distintas que formaram os agrupamentos \cite{Yin:2015}}
-		\label{fig:implementacoesYin}
-		\end{figure}
-
-		\begin{figure}[ht]
+		\begin{figure}[b]
 			\centering
 			\includegraphics[scale=0.5]{imagem/visualizacao-tSNE.png}
 			\caption[Visualização da técnica de projeção t-SNE]{Visualização da técnica de projeção t-SNE \cite{Yin:2015}}
@@ -425,9 +438,18 @@
 		entretanto, esse obteve uma pontuação maior devido a um laço de repetição para
 		cada chave presente na \foreign{hash} antes de terminar a função. Por fim, a
 		implementação verde obteve a maior pontuação, visto que utilizou de mais instruções
-		para resolver o problema. Enquanto os pontos azuis não obtiveram similaridade
+		para resolver o problema. Os pontos azuis não obtiveram similaridade
 		suficiente para formar um agrupamento ou serem classificados em outro agrupamento,
 		ou seja, \foreign{outliers}.
+		
+		
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.7\linewidth]{imagem/implementacoesYin}
+			\caption[Quatro implementações distintas que formaram os agrupamentos]{Quatro implementações distintas que formaram os agrupamentos \cite{Yin:2015}}
+			\label{fig:implementacoesYin}
+		\end{figure}
 
 		A extração de características por meio da \acs{AST} é interessante, como também
 		o uso da \acs{TED} normalizada para verificar sua similaridade, devido ao seu
@@ -437,7 +459,7 @@
 		diversos problemas, em razão da possibilidade dos códigos-fontes gerarem
 		árvores parecidas ainda quando solucionam problemas distintos.
 		
-		Em \citeonline{Glassman:2014}, foi proposto um agrupamento hierárquico de dois
+		\citeonline{Glassman:2014} propuseram um agrupamento hierárquico de dois
 		níveis. No nível mais alto ocorre o agrupamento das soluções, utilizando o
 		\foreign{K-means} com diversos valores para $k$, ao longo do plano de separação,
 		considerando apenas características abstratas, como, por exemplo: posição da
@@ -475,7 +497,7 @@
 		facilitando a verificação se os alunos entenderam como fazer e utilizar
 		tal instrução.
 		
-		Em \citeonline{Taherkhani:2012}, desenvolveu-se uma ferramenta,denominada Aari,
+		\citeonline{Taherkhani:2012} desenvolveram uma ferramenta, denominada Aari,
 		para classificar implementações baseado na utilização de conjuntos de treinamento
 		e teste. Com isso, é necessário o conhecimento prévio de implementações dos
 		problemas propostos para treinar o classificador e as características para
