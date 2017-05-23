@@ -4,7 +4,7 @@
 	os estudos que fundamentaram esse projeto. A \cref{sec:Mooc} apresenta
 	o conceito de \acs{MOOC} e as principais características da plataforma de ensino.
 	A \cref{sec:FundTeor} descreve as os principais conceitos relacionados à
-	mineração e visualização: mineração, visualização, projeção, agrupamento e
+	mineração e visualização: mineração, visualização, projeção multidimensional, agrupamento e
 	classificador. A \cref{sec:MinVisual} descreve as características que
 	podem ser extraídas dado a escolha de um dos tipos de análise de código-fonte.
 	Finalmente, a \cref{sec:TrabRel} apresenta as pesquisas relacionadas a este estudo
@@ -62,7 +62,7 @@
 		\cite{fayyad1996} que busca descobrir padrões em grandes conjuntos de dados,
 		podendo utilizar métodos de inteligência artificial, estatísticos e sistemas
 		de banco de dados \cite{chakrabarti2006}. O objeto do processo de mineração
-		de dados consiste na extração de informações de um conjunto de dados e
+		de dados consiste na extração automática de informações de um conjunto de dados e
 		transformá-lo em uma estrutura compreensível para uso posterior \cite{chakrabarti2006}.
 		A \cref{fig:mineracaoDados} apresenta os estágios da mineração de dados:
 		o Conhecimento do Domínio condiz com a identificação do problema para possuir
@@ -97,33 +97,34 @@
 		deve-se sumarizar dados como a temperatura do corpo, característica da pele,
 		se é uma criatura aquática, se possui patas e hiberna.
 		
-		O que difere a classificação do agrupamento é que esse é formado por meio da
+		O que difere a classificação do agrupamento é que o último é formado por meio da
 		comparação de informações entre os objetos e não existem rótulos pré-definidos,
-		enquanto aquele é realizado por meio da comparação das informações do objeto
+		enquanto o primeiro é realizado por meio da comparação das informações do objeto
 		com os dados contidos em cada classe predefinida da função alvo. Desta forma,
 		os objetos dentro de um grupo devem ser similares ou relacionados entre si e
 		diferentes ou não relacionados entre objetos de grupos diferentes, ou seja,
 		quanto maior a similaridade dos objetos dentro de um grupo e mais diferentes
-		são os agrupamentos, melhor ou mais distinto os agrupamentos \cite{Tan:2005:ch8}.
+		são os agrupamentos, melhores ou mais distintos os agrupamentos formados \cite{Tan:2005:ch8}.
 		O K-means \cite{macqueen1967} e o \ac{DBSCAN} \cite{Ester1996} são exemplos de
 		algoritmos de agrupamento.
 
 		Após a mineração dos dados, é desejável a utilização de ferramentas para
 		auxiliar na criação de hipóteses sobre conjuntos de dados complexos -- grande
 		conjunto de dados ou de alta dimensionalidade -- para que os analistas possuam
-		capacidade de explorá-los e compreendê-los \cite{de2003}. A visualização de dados
+		capacidade de explorá-los e compreendê-los \cite{de2003}. Dado um conjunto de
+		dados ou padrões extraídos previamente, a visualização de dados
 		produz modelos gráficos e representações visuais a fim de utilizar a capacidade
 		cognitiva do ser humano, por meio da percepção visual, para colaborar com
 		a exploração e obtenção de informações úteis presente nos dados \cite{de2003,keim2002}.
 		Ademais, a visualização de dados é intuitiva, permitindo explorar os dados
 		mais rapidamente e fornecendo melhores resultados na maioria das vezes \cite{keim2002}.
 		
-		Entretanto, não é possível gerar visualizações sobre conjuntos de dados
-		complexos. Assim sendo, é necessário a utilização de técnicas de projeção que
-		criam o mapeamento de dados para reconhecimento visual \cite{friedman1974} e,
-		com isso, produzir a visualização. Devido a alta dimensionalidade dos dados,
-		é necessário a utilização de projeções multidimensionais. Essa técnica realiza
-		a diminuição n-dimensional, sendo $n$ uma alta dimensão, para uma espaço
+		Entretanto, é uma tarefa complexa gerar visualizações de qualidade e intuitivas para
+		dados numerosos ou com alta dimensionalidade. Assim sendo, uma opção é a utilização
+		de técnicas de projeção que criam o mapeamento de dados para reconhecimento visual
+		\cite{friedman1974} e, com isso, produzir a visualização. Devido a alta dimensionalidade
+		dos dados, é recomendável a utilização de projeções multidimensionais. Essa técnica
+		realiza a diminuição n-dimensional, sendo $n$ uma alta dimensão, para uma espaço
 		unidimensional, bidimensional ou tridimensional \cite{paulovich2008least},
 		sempre buscando a menor perca de informação possível, como a relação de
 		similaridade do espaço n-dimensional no espaço unidimensional, bidimensional
