@@ -135,14 +135,7 @@
 		sempre buscando a menor perca de informação possível, como a relação de
 		similaridade do espaço n-dimensional no espaço unidimensional, bidimensional
 		ou tridimensional. Essa relação é encontrada, utilizando cálculos de similaridade
-		ou dissimilaridade entre os dados.
-		
-		Considerando espaços de alta dimensão e esparsos, é preferível a utilização
-		da inversão da similaridade do cosseno, visto que comparações entre zeros
-		não afeta seu resultado. Isso é consequência da dependência do número
-		de medidas que os objetos compartilham entre si, suprimindo os números
-		não existentes entre eles \cite{phd:paulovich}.
-		
+		ou dissimilaridade entre os dados.		
 		
 		Para criar essa visualização deve-se selecionar o formato
 		de como as características extraídas serão armazenadas, como o vetor de
@@ -150,31 +143,40 @@
 		
 		\subsection{Dissimilaridade de dados}
 		\label{subsec:dissimilaridade}
+			De posse de uma representação da coleção de objetos, por exemplo uma presentação
+			vetorial, é possível utilizar medidas de dissimilaridade para quantificar a
+			semelhança entre duas distâncias.
+		
 			Diante da necessidade de uma medida conter quatro propriedades - não-negatividade,
 			identidade, simetria e desigualdade triangular - para que possa ser considerada
 			uma métrica, há medidas que não obedecem a essas propriedades, mas que também
 			são importantes, conhecido como dissimilaridade \cite{phd:paulovich}. Tais
-			dissimilaridades produzem um grupo maior de medidas, já que pode conter qualquer
+			dissimilaridades resultam em um grupo maior de medidas que pode conter qualquer
 			tipo de função que compare numericamente o quanto dois objetos podem ser
 			diferentes \cite{Tan:2005:IDM:1095618}.
 			
-			No caso de alta	dimensionalidade dos dados e esparsos, a dissimilaridade do
-			cosseno torna-se desejável pelo fato de não realizar comparações entre zeros e
-			da limitação do conjunto de características com medidas diferentes de 0 (zero),
-			visto que os dados são correspondentes se considerar as características
-			que não possuem ocorrência, iguais a $0$ (zero) \cite{Tan:2005:IDM:1095618}.
+			Considerando espaços de alta dimensão e esparsos, é preferível a utilização da
+			similaridade do cosseno, visto que comparações entre zeros não afeta
+			seu resultado. Isso é consequência da dependência do número de medidas que os
+			objetos compartilham entre si, suprimindo os números não existentes entre
+			eles \cite{phd:paulovich}. Nesse caso de alta dimensionalidade dos dados e
+			esparsos, a dissimilaridade do cosseno torna-se desejável pelo fato de não
+			realizar comparações entre zeros e da limitação do conjunto de características
+			com medidas diferentes de 0 (zero), visto que os dados são correspondentes se
+			considerar as características que não possuem ocorrência, iguais a $0$
+			(zero) \cite{Tan:2005:IDM:1095618}.
 			
 			\citeonline{phd:paulovich} afirma que há dois cenários distintos que podem
 			adulterar o resultado: quando a norma Euclidiana do vetor de característica
-			que representa os objetos são muito diferentes; e quando alguns aspectos
-			do vetor de características possuem valores em escalas diferentes dos demais
+			que representa os objetos são muito diferentes; e quando as características
+			possuem valores em escalas diferentes dos demais
 			atributos do vetor. Tais cenários podem ser evitados. Para evitar a primeira
 			situação, aplica-se o processo de normalização para que todos os vetores possuem
 			norma Euclidiana unitária. A segunda situação evita-se por meio da
 			aplicação de um processo chamado padronização (\foreign{standardization})
 			\cite{Tan:2005:IDM:1095618}, atribuindo novos valores com média igual a 0 (zero)
-			e desvio padrão igual a 1 (um), por meio da transformação da média de cada
-			característica com seu desvio padrão.
+			e desvio padrão igual a 1 (um), por meio da transformação da média daquela
+			característica específica.
 			
 			A \cref{fig:projecoes} apresenta duas projeções distintas formadas a partir da
 			seleção de cálculos de normalização diferentes. Reforçando a ideia de verificar
