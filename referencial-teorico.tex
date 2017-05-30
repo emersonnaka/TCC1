@@ -179,9 +179,9 @@
 			característica específica.
 			
 			A \cref{fig:projecoes} apresenta duas projeções distintas formadas a partir da
-			seleção de cálculos de normalização diferentes. Reforçando a ideia de verificar
-			a qualidade da projeção, devido a geração de diferentes projeções conforme a
-			alteração dos valores, por meio da normalização selecionada.
+			seleção de cálculos de normalização diferentes. Por isso, deve-se avaliar: a
+			qualidade da projeção quanto a preservação das vizinhanças; e a qualidade dos
+			agrupamentos formados com base nessas projeções.
 			
 			\begin{figure}[h]
 				\centering
@@ -208,13 +208,13 @@
 			comparação do resultado da análise do agrupamento com resultados externos;
 			e a comparação de dois agrupamentos distintos para determinar qual é o melhor.
 			
-			Além de verificar a qualidade do agrupamento, também devemos observar a
+			Além de verificar a qualidade do agrupamento também devemos observar a
 			qualidade da projeção. Como citado na \cref{sec:FundTeor}, técnicas de projeção
-			multidimensionais visam diminuir a alta dimensionalidade dos dados para uma, duas
+			multidimensionais transformam a alta dimensionalidade dos dados para uma, duas
 			ou três dimensões. Contudo, é necessário conservar as relações de vizinhança
 			\cite{bauer1992quantifying}. Desta forma, a distância entre os objetos após a
-			utilização de uma técnica de projeção multidimensional deve ser aproximada
-			ou exatamente igual a distância entre eles no espaço de alta dimensionalidade.
+			utilização de uma técnica de projeção multidimensional deve ser
+			exatamente igual a distância entre eles no espaço de alta dimensionalidade.
 			
 			Apesar do conhecimento dessas propriedades, \citeonline{bauer1992quantifying}
 			afirmam que é difícil qualificar a vizinhança após a utilização de uma técnica
@@ -230,7 +230,7 @@
 			
 			\subsubsection{Pontuação silhueta}
 
-				Pontuação silhueta é um método bem popular que combina coesão e separação
+				Pontuação silhueta é um método, bem popular, que combina: coesão e separação
 				\cite{Tan:2005:ch8}. Coesão, ou compacidade determina que os objetos
 				de um determinado agrupamento devem ser o mais semelhante possível. Enquanto
 				a separação indica o quão diferentes os agrupamentos são entre si
@@ -249,28 +249,29 @@
 				A pontuação silhueta de cada objeto pode variar entre $-1$ e $1$ e seu resultado
 				pode ter três significados distintos \cite{rousseeuw1987silhouettes}.
 				Quanto mais próximo de $1$, melhor agrupado aquele objeto foi. Quanto mais
-				próximo de $0$ (zero), o objeto pode ser considerado semelhante com um dado
+				próximo de $0$ (zero), o objeto pode ser considerado semelhante com um objeto
 				de um grupo distinto, desta forma, há incertezas para qual dos dois agrupamentos
 				aquele objeto deveria ser atribuído: esse caso é conhecido como "caso intermediário".
 				Por fim, o pior resultado, próximo a $-1$, condiz que o objeto possui maior
 				semelhança com o agrupamento do outro objeto com o qual foi comparado, podendo
 				assumir que o objeto foi atribuído ao seu agrupamento incorretamente.
 				
+				Após pontuar todos os objetos, é possível obter a média da pontuação silhueta
+				de um \foreign{cluster}, fazendo a média da pontuação de todos os objetos
+				presentes no grupo \cite{Tan:2005:ch8}. Quanto mais objetos de um agrupamento
+				obtiverem a pontução silhueta, melhor sera a média atribuída àquele grupo.
+				
 			\subsubsection{Preservação de vizinhança}
 			
 				A preservação de vizinhança, ou \foreign{neighborhood preservation}
-				\cite{paulovich2008hipp}, tem por objetivo analisar a qualidade dos agrupamentos
-				após a aplicação da ténica de projeção, verificando se as relações de distância
+				\cite{paulovich2008hipp}, tem por objetivo a qualidade dos agrupamentos,
+				verificando se as relações de distância
 				entre os documentos são mantidas \cite{phd:paulovich}. Para cada objeto
 				multi-dimensional, sua vizinhança (\foreign{neighborhood}) é calculada observando
 				os $k$ vizinhos mais próximos no plano multidimensional e os $k$ vizinhos mais
 				próximos após a utilização da técnica de projeção. Com isso é possível verificar
-				se a proporção de vizinhança é preservada (\foreign{preservation}).
-				
-				O resultado do cálculo da preservação de vizinhança pode variar entre $0$ e $1$.
-				Quanto mais a vizinhança do objeto multidimensional se assemelha à vizinhança
-				do mesmo objeto após a aplicação das técnicas de projeção, seu resultado tenderá a $1$,
-				podendo ser exatamente igual a $1$. Entretanto, quanto mais próximo ou igual a
+				se a proporção de vizinhança é preservada (\foreign{preservation}).Seu resultado
+				pode variar entre $0$ e $1$. Entretanto, quanto mais próximo ou igual a
 				$0$, condiz que as vizinhanças de um objeto multidimensional e de sua projeção
 				são muito ou totalmente distintos.
 
