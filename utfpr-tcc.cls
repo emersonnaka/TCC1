@@ -1041,6 +1041,7 @@
 		\Crefname{lstlisting}{C\'odigo-fonte}{C\'odigos-fonte}
 		\crefname{lstnumber}{Linha}{Linhas}
 		\Crefname{lstnumber}{Linha}{Linhas}
+		\crefname{appendix}{Ap\^endice}{Ap\^endices}
 		\crefrangelabelformat{chapter}{#3#1#4~a~#5#2#6}
 		\crefrangelabelformat{section}{#3#1#4~a~#5#2#6}
 		
