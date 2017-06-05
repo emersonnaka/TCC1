@@ -11,9 +11,22 @@
 	de características ocorreu por meio de ferramentas disponibilizadas livremente, a
 	mineração e agrupamento dos dados foi realizada utilizando a similaridade do
 	cosseno, enquanto a projeção e a visualização dos dados foi realizada pela ferramenta
-	\texttt{ScienceView}.
+	\texttt{Science View}.
 	 % TODO: mencionar que este capítulo é uma instância do método apresentado no capítulo anterior, considerando as fases XYZ. Explique em uma linha o que foi feito para cada fase.
 	 
+	\section{\foreign{Science View}}
+		A ferramenta \foreign{Science View} \cite{Alencar} foi desenvolvida para exibir
+		as relações entre os documentos dado um acervo de artigos científicos, utilizando
+		a \acs{T-LSP} a partir de artigos nos formatos \foreign{ISI}, \foreign{Endnote Export Format}
+		ou \foreign{BibTeX}.
+		
+		A fim de criar uma nova projeção multidimensional dinâmica, a ferramenta guia o usuário
+		para: inserir um novo conjunto de documentos ou utilizar uma coleção presente no banco
+		de dados; definir parâmetros sobre o pré-processamentos dos dados e a redução de
+		dimensionalidade; decidir qual ténica de projeção e o cálculo de distância a ser utilizado;
+		e determinar os parâmetros referente a \acs{T-LSP}.
+
+
  	\section{Método}
 	 	Após a revisão da literatura, verificamos que o projeto é baseado em algumas etapas.
 	 	Conforme a \cref{fig:fluxogramaProposta}, é necessário escolher qual linguagem de programação
@@ -87,7 +100,7 @@
 	 		de correção de todas as submissões?
 	 	\end{itemize}
 	 	
-	 	O subsídio de avaliação será uma adaptação da \texttt{ScienceView} \cite{Alencar-etal:2012}
+	 	O subsídio de avaliação será uma adaptação da \texttt{Science View} \cite{Alencar-etal:2012}
 	 	que, originalmente, verifica as mudanças nas relações de documentos com o decorrer do tempo,
 	 	utilizando técnicas de mineração, projeção e visualização. Com isso, teremos as
 	 	seguintes hipóteses (HP) em relação a utilização da proposta deste estudo:
@@ -259,7 +272,7 @@
 		pode ser observada na \cref{fig:arquivoCSV}.
 	
 	\section{Projeção e visualização}
-		Para possibilitar a visualização dos agrupamentos utilizaremos a \texttt{ScienceView}
+		Para possibilitar a visualização dos agrupamentos utilizaremos a \texttt{Science View}
 		\cite{Alencar-etal:2012} que utiliza o algoritmo de agrupamento \acs{DBSCAN} \cite{Ester1996}
 		e a técnica de projeção multidimensional dinâmica \ac{T-LSP} \cite{Alencar}. Até o momento,
 		realizamos a adaptação para leitura do arquivo no formato \texttt{CSV}. A \acs{T-LSP} \cite{Alencar}
@@ -272,8 +285,8 @@
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=1\linewidth]{imagem/projecaoFinal} % TODO: substituir, futuramente, pela figura da ferramenta corrigida.
-			\caption[Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView}]
-			{Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView} \cite{Alencar-etal:2012}}
+			\caption[Visualização dos agrupamentos da base de dados gerado pela \texttt{Science View}]
+			{Visualização dos agrupamentos da base de dados gerado pela \texttt{Science View} \cite{Alencar-etal:2012}}
 			\label{fig:projecaoFinal}
 		\end{figure}
 		
