@@ -15,6 +15,7 @@
 	 % TODO: mencionar que este capítulo é uma instância do método apresentado no capítulo anterior, considerando as fases XYZ. Explique em uma linha o que foi feito para cada fase.
 	 
 	\section{\foreign{Science View}}
+	\label{sec:scienceView}
 		A ferramenta \foreign{Science View} \cite{Alencar} foi desenvolvida para exibir
 		as relações entre os documentos dado um acervo de artigos científicos, utilizando
 		a \acs{T-LSP} a partir de artigos nos formatos \foreign{ISI}, \foreign{Endnote Export Format}
@@ -297,44 +298,57 @@
 	\subsection{Descrição da base}
 	% TODO: descrever base de dados: quais foram os tipos de programas, quantos foram, falar que a
 	% base foi anomizada.
-	Essa base é constituída de 152 implementações de 5 problemas distintos. O primeiro exercício
-	consiste na revisão de conceitos básicos como: estruturas de condição e laço de repetição. O
-	segundo exercício define a criação de classes com mais de um construtor, e manipulação de
-	arquivos e cadeia de caracteres. O terceiro exercício consiste na criação das classes
-	\texttt{Palavra} e \texttt{Texto}, no qual a primeira classe deve ser utilizada na segunda
-	classe, e uma classe para gerar orações gramaticais. O quarto exercício refere-se a
-	utilização de herança e polimorfismo, identificando cada palavra contida em um arquivo. E
-	o quinto exercício consiste na alteração de uma classe, implementando sobreposição de
-	operadores. Os desenvolvedores das implementações foram anonimizados, sendo representado
-	por uma sequência de números.
+		Essa base é constituída de 152 implementações de 5 problemas distintos. O primeiro exercício
+		consiste na revisão de conceitos básicos como: estruturas de condição e laço de repetição. O
+		segundo exercício define a criação de classes com mais de um construtor, e manipulação de
+		arquivos e cadeia de caracteres. O terceiro exercício consiste na criação das classes
+		\texttt{Palavra} e \texttt{Texto}, no qual a primeira classe deve ser utilizada na segunda
+		classe, e uma classe para gerar orações gramaticais. O quarto exercício refere-se a
+		utilização de herança e polimorfismo, identificando cada palavra contida em um arquivo. E
+		o quinto exercício consiste na alteração de uma classe, implementando sobreposição de
+		operadores. Os desenvolvedores das implementações foram anonimizados, sendo representado
+		por uma sequência de números.
 	
 	\subsection{Avaliação da projeção com preservação de vizinhança}
-	
+	% TODO recomendo a colocação de uma imagem da curva de neihborhood  preservation para uma de suas projeções na seção resultados.
+	A \foreign{Science View} (\ref{sec:scienceView}) utiliza a preservação da vizinhança
+	(\ref{subsubsec:vizinhanca}) para verificar a qualidade das projeções
 	
 	\subsection{Avaliação qualitativa da visualização}
 	% TODO: relatar o estudo: treinamento, instruções, questionário, resultados
-	Para obter resultados qualitativos dessa pesquisa, realizamos um experimento com
-	as seguintes etapas: treinamento, utilização e questionário. O treinamento foi
-	realizado na forma de tutorial com a apresentação da ferramenta. Dessa forma,
-	foi apresentado todos os passos para realizar uma nova projeção. Desde a inserção
-	de uma nova coleção no banco de dados até a visualização das implementações. Em
-	seguida, foi apresentado as funcionalidades da ferramenta para visualizar os
-	agrupamentos formados ao longo das projeções, selecionar um determinado conjunto
-	de implementações, identificar as características semelhantes de tais grupos e
-	abrir mais de uma implementação simultaneamente.
-	
-	Para iniciarmos a etapa da utilização da ferramenta, foi pedido para que os
-	participantes encerrassem o funcionamento da \foreign{Science View} e a
-	executassem com a criação da base de dados. Os participantes utilizaram a
-	ferramenta sem ajuda no que já tinha sido apresentado e o avaliaram por meio
-	de um questionário.
-	
-	O questionário (\cref{apendice:questionario}) apresenta questões objetivas e
-	dissertativas para avaliar a qualidade do treinamento e da ferramenta. Enquanto
-	as questões objetivas visavam a qualidade do treinamento, da ferramenta e se
-	é possível utilizá-la para auxiliar na correção, as questões dissertativas
-	visam a encontrar lacunas observadas pelo participante para uma possível 
-	atualização da ferramenta.
+		Para obter resultados qualitativos dessa pesquisa, realizamos um experimento com
+		as seguintes etapas: treinamento, utilização e questionário. O treinamento foi
+		realizado na forma de tutorial com a apresentação da ferramenta. Dessa forma,
+		foi apresentado todos os passos para realizar uma nova projeção. Desde a inserção
+		de uma nova coleção no banco de dados até a visualização das implementações. Em
+		seguida, foi apresentado as funcionalidades da ferramenta para visualizar os
+		agrupamentos formados ao longo das projeções, selecionar um determinado conjunto
+		de implementações, identificar as características semelhantes de tais grupos e
+		abrir mais de uma implementação simultaneamente.
+		
+		Para iniciarmos a etapa da utilização da ferramenta, foi pedido para que os
+		participantes encerrassem o funcionamento da \foreign{Science View} e a
+		executassem com a criação da base de dados. Os participantes utilizaram a
+		ferramenta sem ajuda no que já tinha sido apresentado e o avaliaram por meio
+		de um questionário.
+		
+		O questionário (\cref{apendice:questionario}) apresenta questões objetivas e
+		dissertativas para avaliar a qualidade do treinamento e da ferramenta. Enquanto
+		as questões objetivas visavam a qualidade do treinamento, da ferramenta e se
+		é possível utilizá-la para auxiliar na correção, as questões dissertativas
+		visam a encontrar lacunas observadas pelo participante para uma possível 
+		atualização da ferramenta.
+		
+		A \cref{fig:projecaoFinal} apresenta a visualização dos agrupamentos das 152
+		implementações contidas na base de dados. Isso foi possível após a adaptação da
+		ferramenta para leitura de arquivos no formato \texttt{CSV}. Cada ponto da
+		visualização é referente a um código-fonte. Ao clicar em um dos pontos, a
+		\cref{fig:codigo1} mostra a exibição da sua implementação e as características
+		extraídas das ferramentas para aquele código-fonte. Também é possível ordenar
+		as colunas de características \foreign{Quantity} e \foreign{Normalized} em
+		ordem  crescente ou decrescente para visualizar as características que mais
+		ocorreram. Por padrão, a tabela é apresentado ordenada de forma descrescente
+		pela coluna \foreign{Normalized}.
 	
 		\begin{figure}[h]
 			\centering
@@ -344,20 +358,11 @@
 			\label{fig:projecaoFinal}
 		\end{figure}
 		
-		A \cref{fig:projecaoFinal} apresenta a visualização dos agrupamentos das 152
-		implementações contidas na base de dados. Isso foi possível após a adaptação da
-		ferramenta para leitura de arquivos no formato \texttt{CSV}. Cada ponto da
-		visualização é referente a um código-fonte. Ao clicar em um dos pontos, a
-		\cref{fig:codigo1} mostra a exibição da sua implementação e
-		as características extraídas das ferramentas para aquele código-fonte. Também
-		é possível ordenar a coluna de características \foreign{Quantity} em ordem
-		decrescente para visualizar as características que mais ocorreram.
-		
 		As implementações das \cref{fig:codigo1} e \cref{fig:codigo2} foram consideradas
 		semelhantes, devido aos seus respectivos pontos estarem próximos no mapa de
-		projeção. Ao ordenarmos a coluna \foreign{Quantity} é possível notar que há
-		diversas semelhanças nos tipos das características extraídas e erros que
-		ocorreram, além da quantidade dessas características.
+		projeção. É possível notar que há diversas semelhanças nos tipos das características
+		extraídas e erros que ocorreram pela coluna \foreign{Normalized}, além da quantidade
+		dessas características apresentadas na coluna \foreign{Quantity}.
 		
 		\begin{figure}[h]
 			\centering
@@ -374,9 +379,6 @@
 			{Representação parcial da interface que apresenta o código considerado semelhante ao da \cref{fig:codigo1} \cite{Alencar-etal:2012}}
 			\label{fig:codigo2}
 		\end{figure}
-
-
-	% TODO recomendo a colocação de uma imagem da curva de neihborhood  preservation para uma de suas projeções na seção resultados.
 	
 	
 	\section{Projeção e visualização de MIT 6.00.1x}	
