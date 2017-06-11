@@ -5,9 +5,9 @@
 	o desenvolvimento deste estudo conforme a \cref{fig:fluxogramaProposta},o qual
 	apresenta as fases: definição da linguagem de programação e das características
 	a serem extraídas; códigos-fontes; extração de características; mineração de dados e
-	agrupamento; e projeção e visualização. A linguagem de programação escolhida foi Python,
+	agrupamento; e projeção e visualização. A linguagem de programação escolhida foi \texttt{Python},
 	as características serão originadas pela análise estática e do estilo de escrita,
-	os códigos-fontes consiste em 152 implementações de 5 trabalhos distintos, a extração
+	os códigos-fontes consiste em duas base de dados distintas, a extração
 	de características ocorreu por meio de ferramentas disponibilizadas livremente, a
 	mineração e agrupamento dos dados foi realizada utilizando a similaridade do
 	cosseno, enquanto a projeção e a visualização dos dados foi realizada pela ferramenta
@@ -121,7 +121,7 @@
 		Foi definido a utilização da linguagem de programação Python. A escolha foi
 		devido ao conhecimento prévio de ferramentas que possam auxiliar na verificação
 		e extração de características, bem como a disponibilidade de cursos sobre
-		introdução a programação, utilizando Python, em diversos \acs{MOOC}s.
+		introdução a programação, utilizando \texttt{Python}, em diversos \acs{MOOC}s.
 
 	\section{Definição das características a serem extraídas}
 		Considerando a combinação de características originadas de tipos de análises
@@ -144,8 +144,9 @@
 
 	\section{Códigos-fontes}	
 		Essa etapa refere-se a construção da base de dados que será utilizada no experimento.
-		Inicialmente, possuímos uma pequena base de dados constituída de 152 implementações
-		que solucionam 5 problemas distintos.
+		É necessário que o conjunto de implementações obtenha uma quantidade considerável de
+		códigos-fontes a fim de avaliar a utilização da ferramenta para \acs{MOOC}. A
+		base de dados desse estudo possui somente implementações desenvolvidas em \texttt{Python}.
 		
 	\section{Extração de características}
 		Obtivemos as informações necessárias por meio da análise estática e do estilo de   % TODO: mover parte deste texto para a seção de definição de características extraídas. 
@@ -294,6 +295,15 @@
 	\subsection{Descrição da base}
 	% TODO: descrever base de dados: quais foram os tipos de programas, quantos foram, falar que a
 	% base foi anomizada.
+	Essa base é constituída de 152 implementações de 5 problemas distintos. O primeiro exercício
+	consiste na revisão de conceitos básicos como: estruturas de condição e laço de repetição. O
+	segundo exercício define a criação de classes com mais de um construtor, e manipulação de
+	arquivos e cadeia de caractéres. O terceiro exercício consiste na criação das classes
+	\texttt{Palavra} e \texttt{Texto}, no qual a primeira classe deve ser utilizada na segunda
+	classe, e uma classe para gerar orações gramáticais. O quarto exercício refere-se a
+	utilização de herança e polimorfismo, identificando cada palavra contida em um arquivo. E
+	o quinto exercício consiste na alteração de uma classe, implementando sobreposição de
+	operadores.
 	
 	\subsection{Avaliação da projeção com preservação de vizinhança}
 	
