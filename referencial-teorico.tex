@@ -140,55 +140,12 @@
 		Para criar essa visualização deve-se selecionar o formato
 		de como as características extraídas serão armazenadas, como o vetor de
 		características ou o modelo de tabela de dados \cite{de2003}.
-		
-		\subsection{Dissimilaridade de dados}  % TODO: deixar apenas a subseção de similaridade 
-		\label{subsec:dissimilaridade}
-			De posse de uma representação da coleção de objetos, por exemplo uma representação
-			vetorial, é possível utilizar medidas para quantificar a semelhança entre duas
-			distâncias.
-		
-			Diante da necessidade de uma medida conter quatro propriedades - não-negatividade,
-			identidade, simetria e desigualdade triangular - para que possa ser considerada
-			uma métrica, há medidas que não obedecem a essas propriedades, mas que também
-			são importantes, conhecido como dissimilaridade \cite{phd:paulovich}. Tais
-			dissimilaridades resultam em um grupo maior de medidas que pode conter qualquer
-			tipo de função que compare numericamente o quanto dois objetos podem ser
-			diferentes \cite{Tan:2005:IDM:1095618}.
-			
-			Considerando espaços de alta dimensão e esparsos, é preferível a utilização da
-			similaridade do cosseno, visto que comparações entre zeros não afeta
-			seu resultado. Isso é consequência da dependência do número de medidas que os
-			objetos compartilham entre si, suprimindo os números não existentes entre
-			eles \cite{phd:paulovich}. Nesse caso de alta dimensionalidade dos dados e
-			esparsos, a dissimilaridade do cosseno torna-se desejável pelo fato de não
-			realizar comparações entre zeros e da limitação do conjunto de características
-			com medidas diferentes de 0 (zero), visto que os dados são correspondentes se
-			considerar as características que não possuem ocorrência, iguais a $0$
-			(zero) \cite{Tan:2005:IDM:1095618}.
-			
-			\citeonline{phd:paulovich} afirma que há dois cenários distintos que podem
-			adulterar o resultado: quando a norma Euclidiana do vetor de característica
-			que representa os objetos são muito diferentes; e quando as características
-			possuem valores em escalas diferentes dos demais
-			atributos do vetor. Tais cenários podem ser evitados. Para evitar a primeira
-			situação, aplica-se o processo de normalização para que todos os vetores possuem
-			norma Euclidiana unitária. A segunda situação evita-se por meio da
-			aplicação de um processo chamado padronização (\foreign{standardization})
-			\cite{Tan:2005:IDM:1095618}, atribuindo novos valores com média igual a 0 (zero)
-			e desvio padrão igual a 1 (um), por meio da transformação da média daquela
-			característica específica.
-			
-			A \cref{fig:projecoes} apresenta duas projeções distintas formadas a partir da
-			seleção de cálculos de normalização diferentes. Por isso, deve-se avaliar: a
-			qualidade da projeção quanto a preservação das vizinhanças; e a qualidade dos
-			agrupamentos formados com base nessas projeções.
 
-			
 		\subsection{Similaridade dos dados}
 		\label{subsec:similaridade}
 			De posse de uma representação da coleção de objetos, por exemplo uma representação
 			vetorial, é possível utilizar medidas de similaridade para quantificar a semelhança
-			entre duas distâncias. Medidas de similiridade retornam valores entre $0$ e $1$,
+			entre duas distâncias. Medidas de similaridade retornam valores entre $0$ e $1$,
 			podendo ser exatamente iguais \cite{Alencar}. Quanto mais próximo de $1$, mais
 			parecido os objetos são. E quanto mais próximo de $0$, mais diferentes serão os objetos
 			comparados.
@@ -196,7 +153,7 @@
 			Para uma medida ser considerada uma métrica, é necessário conter quatro propriedades:
 			não-negatividade, identidade, simetria e desigualdade triangular. Não obstante, há
 			medidas, como similaridade, que não obedecem a essas propriedades, mas que também
-			sao importante \cite{phd:paulovich}, pois resultam em um grupo maior de medidas que
+			são importante \cite{phd:paulovich}, pois resultam em um grupo maior de medidas que
 			pode conter qualquer tipo de função que compare numericamente o quanto dois objetos
 			podem ser diferentes \cite{Tan:2005:IDM:1095618}.
 			
@@ -224,23 +181,10 @@
 			valores com média igual a 0 (zero) e desvio padrão igual a 1 (um), por meio
 			da transformação da média daquela característica específica.
 			
-			A \cref{fig:projecoes} apresenta duas projeções distintas formadas a partir da
-			não utilização de um cálculo de normalização (Parte A) e, utilizando a
-			\foreign{Vectors Unit Length} (Parte B). Visualmente, não é possível identificar qual
-			a melhor projeção. Para isso, deve-se avaliar: a qualidade da projeção quanto % TODO: seria interessante informar os valores para estas projeções. Outra opção é omitir a explicação e a figura, mantendo apenas da segunda frase em diante (como gancho para a próxima subseção).
+			Para isso, deve-se avaliar: a qualidade da projeção quanto % TODO: seria interessante informar os valores para estas projeções. Outra opção é omitir a explicação e a figura, mantendo apenas da segunda frase em diante (como gancho para a próxima subseção).
 			a preservação das vizinhanças; e a qualidade dos agrupamentos formados com base
 			nessas projeções, conforme apresentado na próxima seção.
 						
-			\begin{figure}[h]
-				\centering
-				\includegraphics[width=0.7\linewidth]{imagem/projecoes}
-				\caption{Representação de projeções, utilizando diferentes cálculos de normalização}
-				\label{fig:projecoes}
-				
-				% TODO: pergunta: quão diferente são as figuras se girar a parte B em 180°?
-			\end{figure}
-			
-		
 		\subsection{Qualidade do agrupamento e da projeção}
 		\label{subsec:qualidade}
 			O objetivo dos algoritmos de agrupamento é encontrar grupos significativos
