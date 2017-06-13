@@ -97,6 +97,7 @@
 \widowpenalty = 9999
 \clubpenalty = 9999
 \displaywidowpenalty = 9999
+\usepackage[all]{nowidow}
 
 
 
@@ -955,7 +956,6 @@
 \sloppy
 \clubpenalty4000
 \@clubpenalty \clubpenalty
-\widowpenalty4000%
 \sfcode`\.\@m
 }{
 \def\@noitemerr{\@latex@warning{Empty thebibliography environment}}
