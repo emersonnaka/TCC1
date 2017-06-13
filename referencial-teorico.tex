@@ -141,7 +141,7 @@
 		de como as características extraídas serão armazenadas, como o vetor de
 		características ou o modelo de tabela de dados \cite{de2003}.
 		
-		\subsection{Dissimilaridade de dados}
+		\subsection{Dissimilaridade de dados}  % TODO: deixar apenas a subseção de similaridade 
 		\label{subsec:dissimilaridade}
 			De posse de uma representação da coleção de objetos, por exemplo uma representação
 			vetorial, é possível utilizar medidas para quantificar a semelhança entre duas
@@ -206,6 +206,9 @@
 			medidas diferentes de 0 (zero), visto que os dados são correspondentes se
 			considerar as características que não possuem ocorrência, iguais a $0$
 			(zero) \cite{Tan:2005:IDM:1095618,phd:paulovich}.
+
+			% TODO: na versão corrigida do TCC, incluir figura da projeção com dissimilaridade
+			% euclidiana e cosseno.
 			
 			Além de atribuir medidas adequadas ao modelo de dados de alta dimensionalidade
 			e esparsos, alguns cuidados são necessário quanto aos valores de cada
@@ -222,9 +225,9 @@
 			da transformação da média daquela característica específica.
 			
 			A \cref{fig:projecoes} apresenta duas projeções distintas formadas a partir da
-			não utilização de um cálculo de normalização (Figura A) e, utilizando a
-			\foreign{Vectors Unit Length}. Visualmente, não é possível identificar qual
-			a melhor projeção. Para isso, deve-se avaliar: a qualidade da projeção quanto
+			não utilização de um cálculo de normalização (Parte A) e, utilizando a
+			\foreign{Vectors Unit Length} (Parte B). Visualmente, não é possível identificar qual
+			a melhor projeção. Para isso, deve-se avaliar: a qualidade da projeção quanto % TODO: seria interessante informar os valores para estas projeções. Outra opção é omitir a explicação e a figura, mantendo apenas da segunda frase em diante (como gancho para a próxima subseção).
 			a preservação das vizinhanças; e a qualidade dos agrupamentos formados com base
 			nessas projeções, conforme apresentado na próxima seção.
 						
@@ -233,6 +236,8 @@
 				\includegraphics[width=0.7\linewidth]{imagem/projecoes}
 				\caption{Representação de projeções, utilizando diferentes cálculos de normalização}
 				\label{fig:projecoes}
+				
+				% TODO: pergunta: quão diferente são as figuras se girar a parte B em 180°?
 			\end{figure}
 			
 		
@@ -721,7 +726,7 @@
 		
 		\begin{figure}[ht]
 			\centering
-			\includegraphics[scale=0.4]{imagem/overCode.png}
+			\includegraphics[width=.95\textwidth]{imagem/overCode.png}
 			\caption[Interface da ferramenta OverCode]{Interface da ferramenta OverCode \cite{Glassman:2015}.}
 			\label{fig:interfaceOverCode}
 		\end{figure}
