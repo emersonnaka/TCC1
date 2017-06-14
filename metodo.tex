@@ -274,13 +274,21 @@
 		
 	\section{Ferramentas}
 
+		Definido o objetivo da pesquisa, nesta seção apresentaremos todas as ferramentas
+		e modificações necessárias para que seja possível alcançá-la. A \cref{sec:scienceView-Python}
+		apresentará as ferramentas e suas modificações para que seja possível criar
+		o arquivo de entrada da \foreign{ScienceView}. E a \cref{sec:scienceView}, descreve a
+		ferramenta utilizada para visualizar as projeções e agrupamentos, as
+		modificações necessárias para leitura do arquivo \texttt{CSV} e um tutorial
+		sobre como utilizar a ferramenta a fim de aprimorar a correção das submissões.
+		
 
 		\subsection{ScienceView-Python}
 		\label{sec:scienceView-Python}
 			% TODO: descrever
 			A \foreign{ScienceView-Python} é o conjunto de ferramentas e modificações
 			necessárias para criarmos um arquivo com as características extraídas de
-			cada código-fonte a fim de ser utilizada na \foreign{ScienceView} \ref{sec:scienceView}.
+			cada código-fonte a fim de ser utilizada na \foreign{ScienceView} (\cref{sec:scienceView}).
 			Essa ferramenta analisa a pasta passada por parâmetro recursivamente,
 			analisando todos os arquivos com extensão \texttt{py}.
 			
@@ -380,7 +388,9 @@
 		clique no botão \foreign{Select file}, altere o filtro do tipo do arquivo, selecionando
 		\texttt{CSV File (*.csv)}. Depois clique no botão \foreign{Select path} e selecione o
 		caminho que está as implementações. Esse caminho deve conter a primeira pasta do
-		arquivo descrito no arquivo \texttt{CSV}.
+		arquivo descrito no arquivo \texttt{CSV}. Clique em \foreign{Load} para inserir a
+		coleção na base de dados e selecione a coleção, clicando em \foreign{Select} no painel
+		\foreign{Selected collection}.
 		
 		\begin{figure}
 			\centering
@@ -392,11 +402,11 @@
 		A \cref{fig:normalizacao} apresenta o painel para seleção do cálculo de normalização
 		descrito como \foreign{Normalization}. É possível selecionar o cálculo que deseja
 		utilizar ao clicar em \texttt{NONE}. Será apresentado todos os cálculos de
-		normalização disponíveis. Após selecionar, clique em \foreign{Next} para continuar.
+		normalização disponíveis.
 		
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.8\linewidth]{imagem/normalizacao}
+			\includegraphics[width=0.5\linewidth]{imagem/normalizacao}
 			\caption{Interface para selecionar o cálculo de normalização}
 			\label{fig:normalizacao}
 		\end{figure}
@@ -416,6 +426,53 @@
 			\caption{Interface inicial da visualização}
 			\label{fig:projecao}
 		\end{figure}
+		
+		Também é possível ativar a extração de tópicos ao decorrer das projeções. Desta
+		forma é possível visualizar os agrupamentos encontrados pela \foreign{ScienceView},
+		bem como, os tópicos ou características, de cada grupo. A \cref{fig:topics3}
+		exibi os agrupamentos formados pela ferramenta no decorrer da projeção na instância
+		$3$. É possível verificar os agrupamentos formados, pois eles estão agrupados
+		pelo fundo na cor cinza e, para cada agrupamento, é apresentado as características
+		relevantes àquele agrupamento. A extração de tópicos pode ser ativada pelo menu
+		superior, clicando em: \foreign{Data Mining}, \foreign{Topic Extraction and Tracking}
+		e \foreign{Run}.
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.8\linewidth]{imagem/topics3}
+			\caption{Final da exibição das projeções com a extração de tópicos ativada}
+			\label{fig:topics3}
+		\end{figure}
+		
+		A \cref{fig:multiplosDoc} exibe a possibilidade de abrir mais de uma implementação
+		em uma mesma janela, utilizando abas. Para habilitar esse recurso, é necessário
+		clicar no segundo botão no painel vertical a direita. Ao deixa o cursor sobre esse
+		botão, aparecerá o seguinte texto: \foreign{View Content}. Em seguida, selecione
+		as implementações que deseja abrir, mantendo o botão esquerdo do \foreign{mouse}
+		pressionado e enquadrando na área verde, as implementações que deseja abrir na
+		mesma janela.
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{imagem/multiplosDoc}
+			\caption{Abrir várias implementações em uma única janela}
+			\label{fig:multiplosDoc}
+		\end{figure}
+		
+		A \cref{fig:ladoAlado} apresenta a possibilidade de abrir uma implementação em
+		cada janela para que seja possível comparar a tabela de erros, por exemplo.
+		Para abrir cada implementação em uma janela diferente, clique duas vezes com
+		o botão esquerdo do \foreign{mouse} sobre o ponto da implementação. O
+		visualizador da implementações permite redimensionar sua janela, bem como
+		cada painel.
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{imagem/ladoAlado}
+			\caption{Varias implementações abertas em janelas diferentes}
+			\label{fig:ladoAlado}
+		\end{figure}
+		
 
 	\section{Considerações finais}
 	

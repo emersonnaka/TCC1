@@ -46,7 +46,7 @@
 		Em relação aos cursos de programação ofertados no \acs{MOOC}, por experiência,
 		notou-se somente o uso de vídeo aulas, no qual um especialista disserta sobre
 		a linguagem e apresenta alguns recursos, perguntas objetivas relacionadas ao
-		video e ao texto presente naquela etapa do ensino e é solicitado a implementação
+		texto presente naquela etapa do ensino e é solicitado a implementação
 		de um problema ao final de cada curso e, as vezes, no decorrer do curso.
 		Devido a quantidade massiva de usuários que podem realizar e submeter as
 		implementações dos exercícios propostos, focaremos no desenvolvimento de
@@ -198,17 +198,17 @@
 			
 			Entretanto, há uma série que problemas para a validação do agrupamento
 			\cite{Tan:2005:ch8}: distinguir se há ocorrências de estruturas não aleatórias
-			no conjunto de dados; determinar o número correto de agrupamentos; avaliar
-			os resultador da análise do agrupamento sem informações externas dos dados;
-			comparação do resultado da análise do agrupamento com resultados externos;
-			e a comparação de dois agrupamentos distintos para determinar qual é o melhor.
+			no conjunto de dados; determinar o número correto de agrupamentos; avaliação
+			da análise do agrupamento sem informações externas dos dados; comparação do
+			resultado da análise do agrupamento com resultados externos; e a comparação
+			de dois agrupamentos distintos para determinar qual é o melhor.
 			
 			Além de verificar a qualidade do agrupamento também devemos observar a
 			qualidade da projeção. Como citado na \cref{sec:FundTeor}, técnicas de projeção
 			multidimensionais transformam a alta dimensionalidade dos dados para uma, duas
 			ou três dimensões. Contudo, é necessário conservar as relações de vizinhança
 			\cite{bauer1992quantifying}. Desta forma, a distância entre os objetos após a
-			utilização de uma técnica de projeção multidimensional deve ser igual a distância
+			utilização de uma técnica de projeção multidimensional deve ser a distância
 			entre eles no espaço de alta dimensionalidade.
 			
 			Apesar do conhecimento dessas propriedades, \citeonline{bauer1992quantifying}
@@ -254,23 +254,22 @@
 				Após pontuar todos os objetos, é possível obter a média da pontuação silhueta
 				de um agrupamento, fazendo a média da pontuação de todos os objetos
 				presentes no grupo \cite{Tan:2005:ch8}. Quanto mais objetos de um agrupamento
-				obtiverem a pontução silhueta, melhor sera a média atribuída àquele grupo.
+				melhor sera a média atribuída àquele grupo.
 				
 			\subsubsection{Preservação de vizinhança}
 			\label{subsubsec:vizinhanca}
 			
 				A preservação de vizinhança, ou \foreign{neighborhood preservation}
-				\cite{paulovich2008hipp}, tem por objetivo a qualidade dos agrupamentos,
-				verificando se as relações de distância entre os documentos são mantidas
-				\cite{phd:paulovich}. Para cada objeto multi-dimensional, sua vizinhança
-				(\foreign{neighborhood}) é calculada observando os $k$ vizinhos mais
-				próximos no plano multidimensional e os $k$ vizinhos mais próximos após a
-				utilização da técnica de projeção. Com isso é possível verificar se a
-				proporção de vizinhança é preservada (\foreign{preservation}).Seu resultado
-				pode variar entre $0$ e $1$. Logo, quanto mais próximo ou igual a
-				$0$, condiz que as vizinhanças de um objeto multidimensional e de sua projeção
-				são muito ou totalmente distintos. Quanto mais pŕoximo de $1$, melhor é a
-				preservação da vizinhança.
+				\cite{paulovich2008hipp}, tem por objetivo verificar as relações de distância
+				são mantidas \cite{phd:paulovich}. Para cada objeto multi-dimensional, sua
+				vizinhança (\foreign{neighborhood}) é calculada observando os $k$ vizinhos
+				mais próximos no plano multidimensional e os $k$ vizinhos mais próximos na
+				projeção, sendo $n$ a quantidade de documentos na coleção, $k$ pode variar
+				entre $1$ até $n - 1$. Com isso é possível verificar se a proporção de vizinhança
+				é preservada (\foreign{preservation}). Seu resultado pode variar entre $0$ e
+				$1$. Logo, quanto mais próximo ou igual a $0$, condiz que as vizinhanças de
+				um objeto multidimensional e de sua projeção são muito ou totalmente
+				distintos. Quanto mais próximo de $1$, melhor é a preservação da vizinhança.
 
 	\section{Mineração e visualização de programas}
 	\label{sec:MinVisual}
@@ -329,10 +328,10 @@
 			difere no fato das implementações estarem sintaticamente corretas. Nesse
 			tipo de análise é considerado o estilo de escrita do programador, abrindo a
 			possibilidade de coletar dados como: indentação, há mais que uma instrução e importação
-			de bibliotecas por linha, ocorrência de espaços entre operando e operador,métodos
-			separados por uma linha em branco, tamanho da instrução  medido em
+			de bibliotecas por linha, ocorrência de espaços entre operando e operador,
+			métodos separados por uma linha em branco, tamanho da instrução  medido em
 			caracteres e espaço entre operando e operador, por exemplo (\cref{apendice:pep8}).
-			As \cref{tab:estEscChamFunc,tab:estEscInstrucao} exemplifica possíveis características
+			As \cref{tab:estEscChamFunc,tab:estEscInstrucao} apresenta possíveis características
 			extraídas em uma chamada de função, na qual é possível inserir ou não um
 			espaço entre o parâmetro e os \foreign{tokens} abrir e fechar parêntese,
 			como também a utilização de uma ou mais instruções por linha. Caso a primeira
@@ -403,7 +402,7 @@
 		para auxiliar no ensino, como o uso de questionário relacionados com os vídeos
 		\cite{fassbinder2014}, e na avaliação de questões de múltipla escolha \cite{alario2013analysing}.
 		Entre os cursos disponibilizados, há cursos relacionados a computação, no qual
-		as atividades a serem submetidas requer a implementação de um programa a
+		as atividades a serem submetidas pode ser a implementação de um programa a
 		questões objetivas. Contudo, não há recursos para auxiliar os professores
 		a corrigirem tais implementações. Considerando a grande quantidade de usuários,
 		pesquisadores buscam desenvolver ferramentas para auxiliar na correção,
