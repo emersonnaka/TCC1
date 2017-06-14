@@ -336,6 +336,10 @@
 			& Múltiplos import em uma linha 
 			& import sys, os \\ 
 			\hline
+			E402
+			& import após qualquer outro tipo de instrução
+			& a = 1$\backslash$nimport os \\
+			\hline
 		\end{tabularx}
 		\caption{Erros extraídos do estilo de escrita PEP8 referente a importação de bibliotecas}
 		\label{tab:pep8E400}
@@ -457,6 +461,14 @@
 			E721 
 			& Não comparar tipos, usar isinstance() 
 			& if type(obj) is type(1): \\
+			\hline
+			
+			& 
+			&  \\
+			\hline
+			E731
+			& Utilizou expressão lamba, sendo que é pra usar def
+			& f = lambda x: 2*x \\
 			\hline
 		\end{tabularx}
 		\caption{Erros extraídos do estilo de escrita PEP8 referente a quantidade de instrução por linha e formas de instrução}
