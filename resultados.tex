@@ -21,17 +21,24 @@
 	% TODO recomendo a colocação de uma imagem da curva de neihborhood  preservation para uma de suas projeções na seção resultados.
 	A \foreign{Science View} (\cref{sec:scienceView}) utiliza a preservação da vizinhança
 	(\cref{subsubsec:vizinhanca}) para verificar a qualidade das projeções. A \cref{fig:neighborhoodAPOO30}
-	apresenta a qualidade da projeção para essa base de dados. O ponto de origem do
-	gráfico condiz que não há perca de qualidade no eixo $x$, e não considera a quantidade
-	de vizinhos no eixo $y$. Quanto maior o valor do eixo $x$, menor a qualidade da projeção.
-	Quanto maior o valor do eixo $y$, maior a quantidade de vizinhos que está sendo analisado.
+	apresenta a qualidade da projeção para essa base de dados. Essa técnica visa avaliar
+	se houve uma preservação da vizinhança dos objetos no espaço de alta dimensionalidade
+	na projeção. A \foreign{Neighborhood Preservation} é calculada tomando os $k$ vizinhos
+	mais próximos de uma instância no espaço de alta dimensionalidade e os $k$ vizinhos
+	mais próximos na projeção, e verificando-se que proporção da vizinhança é preservada
+	na projeção. A precisão final para um dado valor de $k$ é a média das precisões para
+	cada instância. Esse cálculo é feito para vários valores de $k$ (tipicamente $k=[2,...,30]$)
+	de forma a obtermos uma curva. Quanto mais baixos os valores da curva para cada valor
+	de $k$, maior a qualidade da projeção. Lembrando que na técnica \acl{T-LSP} \cite{Alencar}
+	é gerado uma sequência de projeções, e portanto temos uma curva para cada projeção na
+	sequência.
 	
-	Na \cref{fig:neighborhoodAPOO30} é possível observar que quanto menor a quantidade de
-	instâncias a serem comparadas, menor a qualidade da projeção, como é possível observar
+	Na \cref{fig:neighborhoodAPOO30} é possível observar que as projeções no início da
+	sequência apresentam menor qualidade quando comparada as demais, como é possível observar
 	nas curvas dos anos $1$ e $2$, nas cores vermelho e azul, respectivamente. Também é
-	possível notar que a projeção perde 20\% de qualidade para as projeções dos anos
-	$4$ e $5$ considerando a comparação de $30$ vizinhos do espaço $n$-dimensional com
-	o espaço bidimensional.
+	possível notar que a projeção perde um pouco mais que $12\%$ de informação para as
+	projeções dos anos $4$ e $5$ considerando a comparação de $15$ vizinhos do espaço
+	$n$-dimensional com o espaço bidimensional.
 	
 	
 	\begin{figure}

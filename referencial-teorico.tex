@@ -46,7 +46,7 @@
 		Em relação aos cursos de programação ofertados no \acs{MOOC}, por experiência,
 		notou-se somente o uso de vídeo aulas, no qual um especialista disserta sobre
 		a linguagem e apresenta alguns recursos, perguntas objetivas relacionadas ao
-		texto presente naquela etapa do ensino e é solicitado a implementação
+		vídeo e ao texto presente naquela etapa do ensino e é solicitado a implementação
 		de um problema ao final de cada curso e, as vezes, no decorrer do curso.
 		Devido a quantidade massiva de usuários que podem realizar e submeter as
 		implementações dos exercícios propostos, focaremos no desenvolvimento de
@@ -135,7 +135,11 @@
 		sempre buscando a menor perca de informação possível, como a relação de
 		similaridade do espaço n-dimensional no espaço unidimensional, bidimensional
 		ou tridimensional. Essa relação é encontrada, utilizando cálculos de similaridade
-		ou dissimilaridade entre os dados.		
+		ou dissimilaridade entre os dados. Instâncias são representadas por marcadores visuais 
+		no espaço tipicamente bidimensional de forma que instâncias com características
+		similares permaneçam próximas. Devido a favorecerem a percepção de similaridade
+		entre instâncias, projeções permitem identificar grupos de instâncias altamente
+		relacionados e fronteiras entre grupos.
 		
 		Para criar essa visualização deve-se selecionar o formato
 		de como as características extraídas serão armazenadas, como o vetor de
@@ -196,20 +200,20 @@
 			agrupamento para garantir que todos os objetos de um determinado grupo
 			estão condizentes conforme o cálculo de similaridade selecionado.
 			
-			Entretanto, há uma série que problemas para a validação do agrupamento
+			Entretanto, há uma série de problemas para a validação do agrupamento
 			\cite{Tan:2005:ch8}: distinguir se há ocorrências de estruturas não aleatórias
-			no conjunto de dados; determinar o número correto de agrupamentos; avaliação
-			da análise do agrupamento sem informações externas dos dados; comparação do
-			resultado da análise do agrupamento com resultados externos; e a comparação
-			de dois agrupamentos distintos para determinar qual é o melhor.
+			no conjunto de dados; determinar o número correto de agrupamentos; avaliar os
+			resultados da análise do agrupamento sem informações externas dos dados;
+			comparação do resultado da análise do agrupamento com resultados externos;
+			e a comparação de dois agrupamentos distintos para determinar qual é o melhor.
 			
 			Além de verificar a qualidade do agrupamento também devemos observar a
 			qualidade da projeção. Como citado na \cref{sec:FundTeor}, técnicas de projeção
 			multidimensionais transformam a alta dimensionalidade dos dados para uma, duas
 			ou três dimensões. Contudo, é necessário conservar as relações de vizinhança
 			\cite{bauer1992quantifying}. Desta forma, a distância entre os objetos após a
-			utilização de uma técnica de projeção multidimensional deve ser a distância
-			entre eles no espaço de alta dimensionalidade.
+			utilização de uma técnica de projeção multidimensional deve ser o mais próximo
+			possível da distância entre eles no espaço de alta dimensionalidade.
 			
 			Apesar do conhecimento dessas propriedades, \citeonline{bauer1992quantifying}
 			afirmam que é difícil qualificar a vizinhança após a utilização de uma técnica
@@ -252,24 +256,27 @@
 				assumir que o objeto foi atribuído ao seu agrupamento incorretamente.
 				
 				Após pontuar todos os objetos, é possível obter a média da pontuação silhueta
-				de um agrupamento, fazendo a média da pontuação de todos os objetos
-				presentes no grupo \cite{Tan:2005:ch8}. Quanto mais objetos de um agrupamento
-				melhor sera a média atribuída àquele grupo.
+				de um agrupamento, fazendo a média da pontuação de todos os objetos presentes
+				no grupo \cite{Tan:2005:ch8}. Dado a pontuação para cada objeto, quanto mais
+				objetos de um agrupamento possuírem pontuação próxima a $1$, melhor sera a
+				média atribuída àquele grupo.
 				
 			\subsubsection{Preservação de vizinhança}
 			\label{subsubsec:vizinhanca}
 			
 				A preservação de vizinhança, ou \foreign{neighborhood preservation}
-				\cite{paulovich2008hipp}, tem por objetivo verificar as relações de distância
-				são mantidas \cite{phd:paulovich}. Para cada objeto multi-dimensional, sua
-				vizinhança (\foreign{neighborhood}) é calculada observando os $k$ vizinhos
-				mais próximos no plano multidimensional e os $k$ vizinhos mais próximos na
-				projeção, sendo $n$ a quantidade de documentos na coleção, $k$ pode variar
-				entre $1$ até $n - 1$. Com isso é possível verificar se a proporção de vizinhança
-				é preservada (\foreign{preservation}). Seu resultado pode variar entre $0$ e
-				$1$. Logo, quanto mais próximo ou igual a $0$, condiz que as vizinhanças de
-				um objeto multidimensional e de sua projeção são muito ou totalmente
-				distintos. Quanto mais próximo de $1$, melhor é a preservação da vizinhança.
+				\cite{paulovich2008hipp}, tem por objetivo quantificar a qualidade de uma
+				projeção multidimensional de um conjunto de dados, verificando as relações
+				de distância entre os objetos são mantidas \cite{phd:paulovich}. Para cada
+				objeto multi-dimensional, sua vizinhança (\foreign{neighborhood}) é calculada
+				observando os $k$ vizinhos mais próximos no plano multidimensional e os $k$
+				vizinhos mais próximos na projeção, sendo $n$ a quantidade de documentos na
+				coleção, $k$ pode variar entre $2$ até $30$. Com isso é possível verificar
+				se a proporção de vizinhança é preservada (\foreign{preservation}). Seu
+				resultado pode variar entre $0$ e $1$. Logo, quanto mais próximo ou igual
+				a $0$, condiz que as vizinhanças de um objeto multidimensional e de sua
+				projeção são muito ou totalmente distintos. Quanto mais próximo de $1$,
+				melhor é a preservação da vizinhança.
 
 	\section{Mineração e visualização de programas}
 	\label{sec:MinVisual}
@@ -331,7 +338,7 @@
 			de bibliotecas por linha, ocorrência de espaços entre operando e operador,
 			métodos separados por uma linha em branco, tamanho da instrução  medido em
 			caracteres e espaço entre operando e operador, por exemplo (\cref{apendice:pep8}).
-			As \cref{tab:estEscChamFunc,tab:estEscInstrucao} apresenta possíveis características
+			As \cref{tab:estEscChamFunc,tab:estEscInstrucao} exemplificam possíveis características
 			extraídas em uma chamada de função, na qual é possível inserir ou não um
 			espaço entre o parâmetro e os \foreign{tokens} abrir e fechar parêntese,
 			como também a utilização de uma ou mais instruções por linha. Caso a primeira
@@ -402,7 +409,7 @@
 		para auxiliar no ensino, como o uso de questionário relacionados com os vídeos
 		\cite{fassbinder2014}, e na avaliação de questões de múltipla escolha \cite{alario2013analysing}.
 		Entre os cursos disponibilizados, há cursos relacionados a computação, no qual
-		as atividades a serem submetidas pode ser a implementação de um programa a
+		as atividades a serem submetidas requerem a implementação de um programa a
 		questões objetivas. Contudo, não há recursos para auxiliar os professores
 		a corrigirem tais implementações. Considerando a grande quantidade de usuários,
 		pesquisadores buscam desenvolver ferramentas para auxiliar na correção,
