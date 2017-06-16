@@ -23,7 +23,7 @@
 	
 	\section{Avaliação da projeção com preservação de vizinhança}
 
-	A \foreign{Science View} (\cref{sec:scienceView}) utiliza a preservação da vizinhança
+	A \foreign{ScienceView} (\cref{sec:scienceView}) utiliza a preservação da vizinhança
 	(\cref{subsubsec:vizinhanca}) para verificar a qualidade das projeções. A \cref{fig:neighborhoodAPOO30}
 	apresenta a qualidade da projeção para essa base de dados. Essa técnica visa avaliar
 	se houve uma preservação da vizinhança dos objetos no espaço de alta dimensionalidade
@@ -73,10 +73,21 @@
 		abrir mais de uma implementação simultaneamente. Durante o treinamento, foi utilizada uma
 		base de dados distinta da descrita na \cref{sec:resultados:base-apoo}.
 		
-		Encerrado o treinamento, procedeu-se para a utilização da ferramenta com a base descrita na
-		\cref{sec:resultados:base-apoo}. Para iniciarmos essa etapa, foi pedido para que os
-		participantes encerrassem o funcionamento da \foreign{Science View} e a
-		executassem com a criação da base de dados. Os participantes utilizaram a
+		Encerrado o treinamento, procedeu-se para a utilização da ferramenta com a base
+		descrita na \cref{sec:resultados:base-apoo}. Para iniciarmos essa etapa, foi
+		pedido para que os participantes encerrassem o funcionamento da \foreign{ScienceView}
+		e a executassem com a criação da base de dados. O experimento teve participação
+		de $4$ pessoas. Todos os contribuintes realizaram  correção manual, o qual
+		consistiu na correção somente do código-fonte sem utilizar a ferramenta, e
+		somente $3$ pessoas utilizaram a ferramenta \foreign{ScienceView} para auxiliar
+		na correção. O experimento consistiu em duas etapas. Na primeira etapa, $1$
+		voluntário realizou a correção manual, enquanto os outros $2$, utilizaram a
+		ferramenta para auxiliar na correção com duração de $20$ minutos. Na segunda
+		etapa, o contribuinte que realizou a correção manual, passou a utilizar a
+		\foreign{ScienceView}, enquanto os $2$ que utilizaram a ferramenta na etapa
+		anterior, realizaram a correção manual durante $22$ minutos.
+		
+		Os participantes utilizaram a
 		ferramenta sem ajuda no que já tinha sido apresentado e o avaliaram por meio  % TODO: informar que eles tiveram 20 minutos para avaliar trabalhos. 
 		% TODO: falar quantas pessoas foram e como elas foram organizados (dois grupos: primeiramente, um grupo avaliou de forma tradicional, com auxílio dos dados obtidos pela ScienceView-Python e o outro grupo avaliou com auxílio da ferramenta. Depois foram invertidas as intervenções. Em ambos os casos, a cada rodada de avaliações, cada participante criou um relato sobre os programas avaliados e comentários que seriam enviados para os alunos, considerando os erros identificados.)
 		de um questionário.
@@ -102,42 +113,32 @@
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=1\linewidth]{imagem/projecaoFinal} % TODO: substituir, futuramente, pela figura da ferramenta corrigida.
-			\caption[Visualização dos agrupamentos da base de dados gerado pela \texttt{Science View}]
-			{Visualização dos agrupamentos da base de dados gerado pela \texttt{Science View} \cite{Alencar-etal:2012}}
+			\caption[Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView}]
+			{Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView} \cite{Alencar-etal:2012}}
 			\label{fig:projecaoFinal}
 		\end{figure}
 		
-		As implementações das \cref{fig:codigo1} e \cref{fig:codigo2} foram consideradas
-		semelhantes, devido aos seus respectivos pontos estarem próximos no mapa de
-		projeção. É possível notar que há diversas semelhanças nos tipos das características
-		extraídas e erros que ocorreram pela coluna \foreign{Normalized}, além da quantidade
-		dessas características apresentadas na coluna \foreign{Quantity}.
-		
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.8\linewidth]{imagem/codigo1}
-			\caption[Representação parcial da interface que apresenta o código e suas características]
-			{Representação parcial da interface que apresenta o código e suas características \cite{Alencar-etal:2012}}
-			\label{fig:codigo1}
-		\end{figure}
-		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.8\linewidth]{imagem/codigo2}
-			\caption[Representação parcial da interface que apresenta o código considerado semelhante ao da \cref{fig:codigo1}]
-			{Representação parcial da interface que apresenta o código considerado semelhante ao da \cref{fig:codigo1} \cite{Alencar-etal:2012}}
-			\label{fig:codigo2}
-		\end{figure}
-		
-		O experimento teve participação de $3$ pessoas. Todos os contribuintes realizaram
-		a correção manual, o qual consistiu na correção somente do código-fonte sem
-		utilizar a ferramenta, e utilizaram a ferramenta \foreign{Science View}
-		para auxiliar na correção. O experimento consistiu em duas etapas. Na primeira
-		etapa, $1$ voluntário realizou a correção manual, enquanto os outros $2$,
-		utilizaram a ferramenta para auxiliar na correção com duração de $20$ minutos.
-		Na segunda etapa, o contribuinte que realizou a correção manual, passou a
-		utilizar a \foreign{Science View}, enquanto os $2$ que utilizaram a ferramenta
-		na etapa anterior, realizaram a correção manual durante $22$ minutos.
+%		As implementações das \cref{fig:codigo1} e \cref{fig:codigo2} foram consideradas
+%		semelhantes, devido aos seus respectivos pontos estarem próximos no mapa de
+%		projeção. É possível notar que há diversas semelhanças nos tipos das características
+%		extraídas e erros que ocorreram pela coluna \foreign{Normalized}, além da quantidade
+%		dessas características apresentadas na coluna \foreign{Quantity}.
+%		
+%		\begin{figure}[h]
+%			\centering
+%			\includegraphics[width=0.8\linewidth]{imagem/codigo1}
+%			\caption[Representação parcial da interface que apresenta o código e suas características]
+%			{Representação parcial da interface que apresenta o código e suas características \cite{Alencar-etal:2012}}
+%			\label{fig:codigo1}
+%		\end{figure}
+%		
+%		\begin{figure}[H]
+%			\centering
+%			\includegraphics[width=0.8\linewidth]{imagem/codigo2}
+%			\caption[Representação parcial da interface que apresenta o código considerado semelhante ao da \cref{fig:codigo1}]
+%			{Representação parcial da interface que apresenta o código considerado semelhante ao da \cref{fig:codigo1} \cite{Alencar-etal:2012}}
+%			\label{fig:codigo2}
+%		\end{figure}
 		
 		Para finalizar o experimentos, os voluntários, responderam o questionário (\cref{apendice:questionario})
 		anonimamente. A primeira questão refere-se ao tempo de experiência como professor,
@@ -145,13 +146,13 @@
 		de correções realizadas com a ferramenta. Dentre eles, $2$ cooperadores possuem
 		menos que $1$ ano de experiência, enquanto $1$ possui mais de $10$ anos de
 		experiência como professor. E todos eles afirmaram que o treinamento em forma
-		de tutorial da \foreign{Science View} contribui para sua utilização.
+		de tutorial da \foreign{ScienceView} contribui para sua utilização.
 		
 		Obtivemos êxito com a adaptação da interface que apresenta o código-fonte e a
 		tabela de erros \cref{fig:codigo1}, visto que, ao serem questionados se faltava
 		alguma informação nessa interface, todos responderam negativamente.
 		
-		Apesar dos $3$ voluntários afirmarem que a \foreign{Science View} colaborou
+		Apesar dos $3$ voluntários afirmarem que a \foreign{ScienceView} colaborou
 		para a correção das implementações, $2$ deles corrigiram a mesma quantidade
 		de implementações utilizando a ferramenta e manualmente. A exceção ocorreu com 
 		apenas $1$ participante que extraiu os tópicos semelhantes manualmente. Na
@@ -162,7 +163,7 @@
 		que os erros ocorreram nas implementações e foi compreendido corretamente
 		pela ferramenta.
 		
-		Ao relatarem sobre o \foreign{feedback} recebido da \foreign{Science View}
+		Ao relatarem sobre o \foreign{feedback} recebido da \foreign{ScienceView}
 		por meio da visualização dos agrupamentos, $2$ participantes afirmaram que
 		os agrupamentos auxiliaram na verificação de implementações com características
 		similares. O outro participantes constatou a possibilidade de utilizar a
@@ -172,7 +173,7 @@
 		Sobre a experiência em relação ao uso da ferramenta, um dos participantes
 		admite que, como não utilizou muito a ferramenta, foi mais rápido realizar
 		as correções manuais. Contudo, outra resposta afirma que a utilização mais
-		frequente da \foreign{Science View}, evidenciará analisar as implementações
+		frequente da \foreign{ScienceView}, evidenciará analisar as implementações
 		de forma mais rápida.
 		
 		
