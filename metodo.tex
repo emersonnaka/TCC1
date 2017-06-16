@@ -1,19 +1,19 @@
 \chapter{Métodos e ferramentas}
 \label{chap:metodos-ferramentas}
 
-	% TODO: atualizar este parágrafo para refletir o novo conteúdo deste capítulo
-	Neste capítulo será apresentado o método e as ferramentas utilizadas para gerar
-	nossos resultados. O método consiste na explicação das etapas (\cref{fig:fluxogramaProposta}):
+	Neste capítulo é apresentado o método e as ferramentas desenvolvidas e alteradas para
+	gerar nossos resultados. O método consiste das seguintes etapas:
 	definição da linguagem de programação e das características a serem extraídas;
 	códigos-fontes; extração de características; cálculo da matriz de similaridade;
-	e projeção e visualização. Em seguida, é apresentado as definições das etapas
-	citadas anteriormente. Por fim, é apresentado as ferramentas utilizadas para
+	e projeção e visualização. Em seguida, são especificadas as configurações dessas etapas
+	para o contexto do presente trabalho. Por fim, são apresentadas as ferramentas utilizadas para
 	extrair as características e visualizar as projeções, bem como as modificações
 	necessárias de cada ferramenta.
 
  	\section{Método}
+ 	
 	 	Após a revisão da literatura, verificamos que o nosso estudo pode ser dividido
-	 	em algumas etapas. Conforme a \cref{fig:fluxogramaProposta}, primeiro é necessário
+	 	em algumas etapas. Conforme apresentado na \cref{fig:fluxogramaProposta}, primeiro é necessário
 	 	escolher qual linguagem de programação será utilizada. Em seguida, deve-se verificar
 	 	quais características podem ser extraídas das implementações submetidas utilizando a
 	 	linguagem especificada. Posteriormente, é necessário construir a base de dados por
@@ -22,22 +22,22 @@
 	 	Por fim, realizar a projeção multidimensional e visualizar os possíveis agrupamentos
 	 	formados na projeção.
 	 	
-	 	\begin{figure}[h]
+	 	\begin{figure}[ht]
 	 		\centering
-	 		\includegraphics[width=0.7\linewidth]{imagem/fluxogramaProposta}
-	 		\caption{Fluxograma das etapas necessárias para a realização do projeto}
+	 		\includegraphics[width=0.75\linewidth]{imagem/fluxogramaProposta}
+	 		\caption{Fluxograma das etapas necessárias para a realização do projeto.}
 	 		\label{fig:fluxogramaProposta}
 	 	\end{figure}
 	 	
 	 	A \textbf{linguagem de programação} refere-se a definição de qual linguagem será
-	 	utilizada para o desenvolvimento do projeto. Por exemplo: \texttt{C}, \texttt{Java}
+	 	considerada para os programas a serem avaliados. Por exemplo: \texttt{C}, \texttt{Java}
 	 	ou \texttt{Python}. Deve ser escolhida conforme a demanda da sua utilização, pela
 	 	disponibilidade de cursos de programação ofertado em \acs{MOOC}s ou pelo conhecimento
-	 	de ferramentas que possam verificar características dessa linguagem, como o
+	 	de ferramentas que possam extrair características de programas escritos nessa linguagem, como o
 	 	\texttt{cpplint} para a linguagem \texttt{C}, \texttt{Checkstyle} para
 	 	\texttt{Java} e \texttt{PEP8} para \texttt{Python}.
 	 	
-	 	A etapa seguinte de \textbf{definição das características a serem extraídas} será
+	 	A etapa seguinte trata da \textbf{definição das características a serem extraídas} e será
 	 	realizada com base nos trabalhos relacionados (\cref{sec:TrabRel}). Verificamos
 	 	que é possível utilizar características originadas de um único tipo de análise
 	 	(estática, dinâmica ou do estilo de escrita), bem como associar características
@@ -56,11 +56,10 @@
 	 	possível obter as características e salvá-las em algum tipo de arquivo, como o
 	 	formato \texttt{XML} e o \texttt{CSV}, por exemplo.
 	 	
-	 	Na etapa de \textbf{cálculo da matriz de similaridade} analisa-se os dados obtidos a
-	 	fim de verificar a similaridade entre características entre as diferentes instâncias
-	 	de códigos-fontes. Isso permite a utilização de técnicas para verificar a similaridade
-	 	entre os códigos-fontes, como a similaridade do cosseno, a fim de produzir a projeção
-	 	multidimensional.
+	 	Na etapa de \textbf{cálculo da matriz de similaridade} analisam-se os dados obtidos a
+	 	fim de verificar a similaridade entre as diferentes instâncias de códigos-fontes com relação
+	 	às características extraídas. Isso permite a utilização de técnicas para verificar a similaridade
+	 	entre os códigos-fontes, como a similaridade do cosseno.
 	 	
 	 	Por fim, \textbf{projeção e visualização} refere-se ao emprego de técnicas de
 	 	projeção multidimensional para que seja possível realizar um mapeamento de um
@@ -68,22 +67,22 @@
 	 	dimensionalidade (bidimensional ou tridimensional), buscando a menor perda de
 	 	informação possível, como a manutenção das relações de similaridade do espaço
 	 	multidimensional no espaço de baixa dimensionalidade. Neste estudo uma dimensão
-	 	é referente a uma característica extraída da implementação, portanto a quantidade
+	 	é referente a uma característica extraída da implementação. Portanto, a quantidade
 	 	de dimensões nos dados é igual a quantidade de características extraídas. Com isso,
 	 	é necessário selecionar uma técnica para diminuir um espaço n-dimensional para
 	 	duas ou três dimensões a fim de realizar a visualização exploratória para
 	 	identificar padrões nos dados e possíveis agrupamentos formados.
 	 	
-	 	No caso das características extraídas nã'o serem relevantes o suficiente, a
+	 	No caso das características extraídas não serem relevantes o suficiente, a
 	 	visualização não será capaz de produzir modelos gráficos significativos que
-	 	evidenciem os padrões existentes nos dados, será necessário voltar a segunda
+	 	evidenciem os padrões existentes nos dados, sendo necessário voltar à segunda
 	 	etapa para definição de outras características a serem extraídas.
 	 	
-	 	Nosso objetivo, por meio dessas etapas, consiste no desenvolvimento de subsídios
-	 	de avaliação, utilizando técnicas de visualização para auxiliar os professores a
+	 	Nosso objetivo, por meio dessas etapas, consistiu no desenvolvimento de subsídios
+	 	para avaliação de programas, utilizando técnicas de visualização para auxiliar os professores a
 	 	corrigirem todas as submissões, considerando o tempo de correção e a qualidade do
-	 	\foreign{feedback} da \foreign{ScienceView} (\cref{sec:scienceView}) para o professor.
-	 	Por isso, teremos duas questões de pesquisa (QP):
+	 	\foreign{feedback} referente a \foreign{ScienceView} para o professor.
+	 	Por isso, temos duas questões de pesquisa (QP):
 	 	
 	 	\begin{itemize}
 	 		\item \textbf{QP$_1$}: o algoritmo de agrupamento produz grupos de códigos-fontes
@@ -92,22 +91,13 @@
 	 		de correção de todas as submissões?
 	 	\end{itemize}
 	 	
-	 	O subsídio de avaliação será uma adaptação da ferramenta \texttt{ScienceView}
+	 	O subsídio de avaliação foi uma adaptação da ferramenta \texttt{ScienceView}
 	 	\cite{Alencar-etal:2012} que, originalmente, verifica as mudanças nas relações
 	 	de artigos científicos com o decorrer do tempo, utilizando técnicas de mineração
 	 	visual embasadas em uma técnica de projeção multidimensional chamada \acl{T-LSP}
 	 	\cite{Alencar}.
 	 	
-% % TODO: conforme conversamos anteriormente, retiramos a hipótese de pesquisa
-%	 	 E com isso, teremos a seguinte hipótese (HP) em relação a
-%	 	utilização da proposta deste estudo:
-%	 	
-%	 	\begin{itemize}
-%	 		\item \textbf{HP$_1$}: tempo para corrigir os exercícios com os subsídios é inferior  % TODO: mudar esta hipótese para avaliar a qualidade da visualização
-%	 		ao tempo necessário com a correção manual;
-%	 	\end{itemize}
-%	 	
-	 	Para validar o tempo gasto para todas as correções, será criado dois grupos de
+	 	Para validar o tempo gasto para todas as correções, foram criado dois grupos de
 	 	professores. Um grupo utilizou a técnica proposta nessa pesquisa para realizar
 	 	a avaliação das implementações, enquanto o outro grupo avaliou as mesmas submissões
 	 	manualmente. Além disso, avaliamos o \foreign{feedback} da ferramenta para os
@@ -115,46 +105,21 @@
 	 		
 	\section{Considerações para avaliações}
 
-		% TODO: inserir um texto nesta linha: Considerando os estágios estabelecidos no método
-		% descrito na seção anterior, foram definidos requisitos e elementos a serem empregados
-		% na avaliação de programas [...]
-		Considerando os estágios estabelecidos no método descrito na Seção anterior
+		Considerando os estágios estabelecidos no método descrito na seção anterior
 		(\ref{fig:fluxogramaProposta}), foram definidos requisitos e elementos a serem
-		empregados na avaliação dos códigos-fontes apresentados nas seções seguintes.
+		empregados na avaliação dos códigos-fontes neste trabalho, apresentados
+		nas seções seguintes.
 
 		\subsection{Definição da linguagem de programação}
+		
 			Foi definido a utilização da linguagem de programação Python. A escolha foi
 			devido ao conhecimento prévio de ferramentas que possam auxiliar na verificação
 			e extração de características, bem como a disponibilidade de cursos sobre
-			introdução a programação, utilizando \texttt{Python}, em diversos \acs{MOOC}s.
+			introdução a programação utilizando \texttt{Python} em diversos \acs{MOOC}s
+			e cursos de graduação.
 
 		\subsection{Definição das características a serem extraídas}
-			Considerando a combinação de características originadas de tipos de análises
-			distintas, utilizamos uma combinação de aspectos provenientes da análise  % TODO: a banca apresentou dúvidas o que seriam tais características. Isso é sinal de que precisamos melhor a descrição do capítulo 2. Além disso, parte das informações apresentads na seção "Extração de características" deve vir pra cá (não é necessário colocar partes sobre ferramenta utilizada, mas precisamos informar que foram selecionadas as características de quantidades de linhas de código, complexidade ciclomática e quantidade de violações de regras de estilo de escrita definida pelo PEP8).
-			estática e do estilo de escrita. A escolha da análise estática se dá pela
-			possibilidade de implementações para solucionar o mesmo problema possuírem
-			o mesmo tamanho. Enquanto a organização do código, realizado pelo programador,
-			pode impactar no entendimento da solução do problema, por isso a escolha da
-			análise do estilo de escrita. Para isso, utilizaremos a ferramenta \texttt{Flake8}
-			\cite{flake8} que pode adquirir todas as características necessárias por meio da
-			utilização de \foreign{plugins}. Não utilizaremos a análise dinâmica pela falta
-			de conhecimento de ferramentas que nos forneça tal característica e pelo pouco
-			tempo hábil para implementação de uma ferramenta para realizar esse tipo de
-			análise e validação dessa ferramenta.
-			
-			As características a serem extraídas da análise estática serão apenas a quantidade
-			de linhas de código e a complexidade ciclomática da implementação. Em relação
-			a análise do estilo de escrita, será considerado todas as violações do estilo de
-			escrita definido pelo \texttt{PEP8} \cite{van2001pep}. 
 
-		\subsection{Códigos-fontes}	
-			Essa etapa refere-se a construção da base de dados que será utilizada no experimento.
-			É necessário que o conjunto de implementações obtenha uma quantidade considerável de
-			códigos-fontes a fim de avaliar a utilização da ferramenta para \acs{MOOC}. A
-			base de dados desse estudo possui somente implementações desenvolvidas em \texttt{Python}.
-			
-		\subsection{Extração de características} % TODO: citar que foram escolhidas características por conveniência, mas que isso não afeta a qualidade das projeções com relação aos critérios escolhidos (desde que posteriormente sejam escolhidas características mais interessantes para a avaliação -> trabalho futuro)		
-		
 			Com base em todos os trabalhos relacionados, podemos perceber que os três
 			tipos de análise -- estática, estilo de escrita e dinâmica -- obtiveram
 			bons resultados. Isso nos possibilitou decidir qual tipo de análise
@@ -162,10 +127,36 @@
 			de ferramentas para verificar tais tipos de características e que possuíssem
 			código aberto para realizar adaptações a fim de alcançar nosso objetivo.
 			Desde que posteriormente ocorra uma seleção das características mais relevantes
-			para avaliação, a escolha natural das características apresentadas a seguir,
-			não afeta a qualidade das projeções.A seleção de características relevantes
+			para avaliação, a escolha natural das características, apresentadas a seguir,
+			não	afeta a qualidade das projeções.A seleção de características relevantes
 			faz parte dos trabalhos futuros.
+
+			Considerando a combinação de características originadas de tipos de análises
+			distintas, utilizamos uma combinação de aspectos provenientes da análise  
+			estática e do estilo de escrita. A escolha da análise estática deu-se pela
+			possibilidade de implementações para solucionar o mesmo problema possuírem
+			o mesmo tamanho. Adicionalmente, a organização do código, realizado pelo programador,
+			pode impactar no entendimento da solução do problema: por isso a escolha da
+			análise do estilo de escrita.  Não utilizaremos a análise dinâmica pela falta
+			de conhecimento de ferramentas que nos forneça tal característica e pelo pouco
+			tempo hábil para implementação de uma ferramenta para realizar esse tipo de
+			análise e validação dessa ferramenta.
 			
+			As características a serem extraídas da análise estática foram a quantidade
+			de linhas de código e a complexidade ciclomática da implementação. Em relação
+			a análise do estilo de escrita, foram consideradas todas as violações do estilo de
+			escrita definido pelo \texttt{PEP8}~\cite{van2001pep}. 
+
+		\subsection{Códigos-fontes}	
+		
+			Essa etapa refere-se a construção da base de dados que será utilizada no experimento.
+			É necessário que o conjunto de implementações obtenha uma quantidade considerável de
+			códigos-fontes a fim de avaliar a utilização da ferramenta para \acs{MOOC}. A
+			base de dados desse estudo possui somente implementações desenvolvidas em \texttt{Python}
+			de um curso introdutório à Computação e Programação.
+			
+		\subsection{Extração de características}
+					
 			Obtivemos as informações necessárias por meio da análise estática e do estilo de   
 			escrita com o auxílio das ferramentas \texttt{PEP8} \cite{pep8} e \texttt{McCabe}
 			\cite{mccabe} que funcionam como \foreign{plugins} para o \texttt{Flake8}.
@@ -239,35 +230,36 @@
 			
 		
 		\subsection{Cálculo da matriz de similaridade}
+		
 			Com a finalidade de encontrar relações de similaridade entre os códigos-fontes
 			com base nos valores das características extraídas para eles, utilizamos a
 			técnica de similaridade do cosseno. Visto que, durante a extração de
 			características obtemos uma representação matricial dos dados. Essa matriz é
-			tipicamente esparsa - possui grande quantidade de 0 (zeros). Sendo a
-			similaridade do cosseno conhecida por dar resultados melhores nesse tipo de
-			situação. A ocorrência da grande quantidade de 0 (zeros) ocorre pela busca
+			tipicamente esparsa -- possui grande quantidade de 0 (zeros). 
+			A ocorrência da grande quantidade de 0 (zeros) ocorre pela busca
 			dos programadores em implementar suas soluções computacionais corretamente.
-			Além disso, faz com que implementações para problemas distintos não sejam
+			Nesse tipo de situação, a similaridade do cosseno é conhecida por apresentar
+			bons resultados.
+			Além disso, ela faz com que implementações para problemas distintos não sejam
 			consideradas semelhantes devido a quantidade de 0 (zeros) nas mesmas
 			características. A grande quantidade de 0 (zeros) pode ser observada na
 			\cref{fig:arquivoCSV}.
 		
+		
 		\subsection{Projeção e visualização}
-			Para possibilitar a visualização dos padrões nos dados utilizaremos a
-			ferramenta \foreign{ScienceView} \cite{Alencar-etal:2012} que utiliza a
+		
+			Para possibilitar a visualização dos padrões nos dados utilizamos a
+			ferramenta \foreign{ScienceView} \cite{Alencar-etal:2012}, que utiliza a
 			técnica de projeção multidimensional dinâmica \cite{Alencar} e o algoritmo
 			de agrupamento \acs{DBSCAN} \cite{Ester1996} para encontrar possíveis
-			agrupamentos na projeção. Até o momento, realizamos a adaptação para
-			leitura do arquivo no formato \texttt{CSV}. A \acs{T-LSP} \cite{Alencar}
+			agrupamentos na projeção. A \acs{T-LSP} \cite{Alencar}
 			produz uma sequência temporal de mapas conforme a mudança nas relações de
 			similaridade dos dados. Com isso, poderemos verificar se o aluno está
 			progredindo no curso, visto que a técnica de projeção permitirá visualizar
 			projeções relativas a implementações ao longo de várias semanas ou meses,
-			por exemplo. Desta forma, poderemos obter sequências temporais de mapas
+			por exemplo. Desta forma, podemos obter sequências temporais de mapas
 			baseado na similaridade das implementações de um único aluno.
 			
-			% TODO: Marco: escrever sobre como a projeção pode ser utilizada para avaliação de trabalhos: requisitos
-			% e instruções com a ScienceView
 			É possível evidenciar os padrões formados na projeção de duas formas:
 			executa-se o algoritmo de agrupamento para cada uma das projeções na
 			sequência, exibindo as características cujos valores provocaram a formação
@@ -277,7 +269,7 @@
 			
 			Salienta-se que, para entender os agrupamentos, é necessário saber o que cada
 			erro significa a fim de verificar se todas as implementações contidas no grupo
-			possuem esses erros e, então corrigi-las.
+			possuem esses erros e, então, avaliá-las.
 			
 			Após gerar a visualização, é possível identificar os grupos formados ao longo da
 			projeção ativando o que a ferramenta chama de extração de tópicos. Com isso, é
@@ -288,10 +280,10 @@
 		
 	\section{Ferramentas}
 
-		Definido o objetivo da pesquisa, nesta seção apresentaremos todas as ferramentas
-		e modificações necessárias para que seja possível alcançá-la. A \cref{sec:scienceView-Python}
-		apresentará as ferramentas e suas modificações para que seja possível criar
-		o arquivo de entrada da \foreign{ScienceView}. E a \cref{sec:scienceView}, descreve a
+		Definido o método da pesquisa e as configurações adotadas neste trabalho, nesta seção apresentamos todas as ferramentas
+		e modificações necessárias para que fosse possível realizá-la. A \cref{sec:scienceView-Python}
+		apresenta as ferramentas e suas modificações para que seja possível criar
+		o arquivo de entrada da \foreign{ScienceView}. A \cref{sec:scienceView} descreve a
 		ferramenta utilizada para visualizar as projeções e agrupamentos, as
 		modificações necessárias para leitura do arquivo \texttt{CSV} e um tutorial
 		sobre como utilizar a ferramenta a fim de aprimorar a correção das submissões.
@@ -299,7 +291,7 @@
 
 		\subsection{ScienceView-Python}
 		\label{sec:scienceView-Python}
-			% TODO: descrever
+
 			A \foreign{ScienceView-Python} é o conjunto de ferramentas e modificações
 			necessárias para criarmos um arquivo com as características extraídas de
 			cada código-fonte a fim de ser utilizada na \foreign{ScienceView} (\cref{sec:scienceView}).
@@ -307,18 +299,18 @@
 			parâmetro recursivamente, analisando todos os arquivos com extensão
 			\texttt{py}.
 			
-			Essa ferramenta é composta pelo \texttt{Flake8} \cite{flake8}, \texttt{pep8}
-			\cite{pep8} e \texttt{mccabe} \cite{mccabe2013}, pois, além de atender ao tipo
-			de características a serem extraídas, todas elas possuem código aberto. Contudo,
+			Essa ferramenta é composta pelo \texttt{Flake8}~\cite{flake8} e os plugins
+			\texttt{pep8}~\cite{pep8} e \texttt{mccabe}~\cite{mccabe2013} pois, além de atender ao tipo
+			de características a serem extraídas, todas eles possuem código aberto. Contudo,
 			antes de extrair as características das implementações, foi necessário definir
 			qual o formato de arquivo seria adequado para utilizar como saída da
 			\foreign{ScienceView-Python} e como arquivo de entrada da \foreign{ScienceView}.
 
-			% TODO: melhorar este início (ele estava em outra parte do texto). Acrescente uma frase sobre a importância de extrair as características e disponibilizá-las em um formato adequado para a ferramenta de visualização (justificando assim as modificações relatadas a seguir)
 			É importante selecionar um formato de arquivo para padronizar a escrita
-			e leitura do arquivo. Além de possibilitar a adaptação da \foreign{ScienceView}
+			e leitura do arquivo, além de possibilitar a adaptação da \foreign{ScienceView}
 			para exibir a similidade de implementações desenvolvidas em outras linguagens.
-			A escolha do formato \texttt{CSV}, também facilita sua edição em \foreign{softwares}
+			O formato CSV (valores separados por vírgulas ou algum outro símbolo distinto)
+			é genérico o suficiente para este propósito e também facilita sua edição em \foreign{softwares}
 			de planilhas, caso queria remover uma coluna, por exemplo.
 			
 			Para extrair as características das implementações, foi necessário a modificação
@@ -328,14 +320,7 @@
 			comando. Tal modificação consiste na criação do arquivo no formato \texttt{CSV}
 			com o cabeçalho: nome do arquivo, total de linhas do código-fonte, quantidade
 			de erros do estilo de escrita e cada erro do \texttt{PEP8}.
-			
-			\begin{figure}[h]
-				\centering
-				\includegraphics[width=1\linewidth]{imagem/flake8}
-				\caption{Representação das características analisadas pelo \texttt{Flake8}}
-				\label{fig:flake8}
-			\end{figure}
-			
+				
 			A \cref{fig:flake8} apresenta o formato da impressão de cada característica do
 			\texttt{Flake8}. Notamos que era possível obter as características no momento em
 			que fosse realizado cada \texttt{print} dos dados, visto que, todas as linhas
@@ -344,22 +329,29 @@
 			\texttt{reporter} do \texttt{Flake8}. Criamos um dicionário contendo todos os
 			erros do \texttt{PEP8} e do \texttt{mccabe} como chave. A cada impressão
 			verificamos qual é o tipo do erro e incrementamos o valor dessa chave.
-			
+	
 			\begin{figure}[h]
 				\centering
-				\includegraphics[width=1\linewidth]{imagem/arquivoCSV}
-				\caption{Arquivo no formato \texttt{CSV} gerado após as adaptações inseridas nas ferramentas \texttt{Flake8} e \texttt{PEP8}}
-				\label{fig:arquivoCSV}
-			\end{figure}
-			
+				\includegraphics[width=1\linewidth]{imagem/flake8}
+				\caption{Representação das características analisadas pelo \texttt{Flake8}.}
+				\label{fig:flake8}
+			\end{figure}		
+
 			A \cref{fig:arquivoCSV} apresenta o arquivo gerado pelas ferramentas após a
-			execução das análises de cada código-fonte presente no caminho \texttt{base-de-dados/}.
+			execução das análises de cada código-fonte presente no repositório analisado.
 			As três primeiras colunas são: o nome do arquivo, a quantidade de linhas implementadas
 			e o total de erros do estilo de escrita PEP 8 \cite{van2001pep}, respectivamente. As
-			demais colunas são referentes a cada erro do \texttt{PEP8} \cite{pep8} com a última
+			demais colunas são referentes a cada erro do \texttt{PEP8} \cite{pep8}, com a última
 			coluna representando a complexidade ciclomática calculada pela ferramenta
 			\texttt{McCabe} \cite{mccabe}.
 
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=1\linewidth]{imagem/arquivoCSV}
+				\caption{Arquivo no formato \texttt{CSV} gerado após as adaptações inseridas nas ferramentas \texttt{Flake8} e \texttt{PEP8}.}
+				\label{fig:arquivoCSV}
+			\end{figure}
+		
 
 		\subsection{ScienceView}
 		\label{sec:scienceView}
@@ -370,30 +362,33 @@
 		a partir de artigos nos formatos \foreign{ISI}, \foreign{Endnote Export Format}
 		ou \foreign{BibTeX}.
 		
-		% TODO: Mencione também, principalmente no início, as modificações que você fez na ferramenta (importação de dados no formato CSV, alteração do modelo de representação para valores em ponto flutuante e ajustes na ferramenta para calcular a projeção e os agrupamentos para este novo tipo de dados).
-		A primeira adaptação na ferramenta, condiz com a inserção do novo formato \texttt{CSV}.
+		A primeira adaptação na ferramenta condiz com a inserção do novo formato \texttt{CSV}.
 		Foi necessário criar um filtro para a extensão \texttt{.csv} a fim que só aparecesse
-		os arquivos desse formato no momento de selecionar o arquivo. Em seguida, é preciso
+		os arquivos desse formato no momento de selecionar o arquivo. Em seguida, foi preciso
 		realizar a leitura desses dados contidos no arquivo. Assim, foi necessário encontrar
 		uma biblioteca disponível no Maven para realizar a leitura do arquivo para obtermos
 		as características presentes no cabeçalho, nome do arquivo e a quantidade de cada
 		erro desse arquivo para pode inserir no banco de dados da ferramenta. Inserimos novos
 		comandos \texttt{SQL} para guardar todas as informações da leitura no banco de dados.
-		Toda a matriz esparsa obtida na leitura, é salva no banco de dados para que seja
+		Toda matriz esparsa obtida na leitura é salva no banco de dados para que seja
 		utilizada como base para o cálculo da matriz de similaridade.
 		
-		Modificamos também a ferramenta para que ao clicar duas vezes em um marcador visual
-		na projeção, que representa um código fonte, seja aberto o mesmo em modo textual e
-		seu vetor de características (com e sem normalização) também seja exibido.
+		Originalmente, a ferramenta suportava apenas números inteiros em sua representação
+		interna. No entanto, alguns dos valores importados do formato \texttt{CSV} podem
+		ser números reais. Desta forma, foram alteradas as formas de representação e cálculos
+		para utilizar números em ponto flutuante de precisão dupla.
+		
+		Modificamos também a ferramenta para que, ao clicar duas vezes em um marcador visual
+		na projeção (que representa um código fonte), seja mostrado o código-fonte referente
+		ao marcador (programa sob avaliação) e
+		seu vetor de características (com e sem normalização).
 		
 		A fim de criar uma nova projeção multidimensional dinâmica, a ferramenta guia o
 		usuário para: inserir um novo conjunto de dados ou utilizar uma coleção presente
 		no banco de dados; definir parâmetros sobre o pré-processamentos dos dados; decidir
 		qual cálculo de similaridade será utilizado; e determinar os parâmetros referente
 		a \acs{T-LSP}.
-
-		% TODO: apresentar screenshot da tela de entrada (para importar a base gerada pela ScienceView-Python), da tela de normalização e da tela de projeção, com as devidas explicações. 
-		
+	
 		\begin{figure}[b]
 			\centering
 			\includegraphics[width=0.8\linewidth]{imagem/createDatabase}
@@ -418,7 +413,7 @@
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.5\linewidth]{imagem/normalizacao}
-			\caption{Interface para selecionar o cálculo de normalização}
+			\caption{Interface para selecionar o cálculo de normalização.}
 			\label{fig:normalizacao}
 		\end{figure}
 		
@@ -429,36 +424,36 @@
 		
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.5\linewidth]{imagem/similaridade}
-			\caption{Interface para selecionar o cálculo de similaridade}
+			\includegraphics[width=0.35\linewidth]{imagem/similaridade}
+			\caption{Interface para selecionar o cálculo de similaridade.}
 			\label{fig:similaridade}
 		\end{figure}
 		
 		
 		A \cref{fig:projecao} apresenta a interface inicial para verificar a visualização da
-		projeção. É possível visualizar o desenvolvimento da projeção, clicando no botão
-		com o ícone \foreign{Play}. Ou visualizar cada projeção na sequência de projeções
-		interagindo com a barra de progressão da visualização, localizado na parte inferior
+		projeção. É possível visualizar o desenvolvimento da projeção de duas formas: clicando no botão
+		com o ícone \foreign{Play}; ou visualizar cada projeção na sequência de projeções
+		interagindo com a barra de progressão da visualização, localizada na parte inferior
 		da interface ao lado dos botões, clicando no botão com o ícone \foreign{Forward}.
 		Ao final, dado que a sequência de projeções é cumulativa, será apresentado a projeção
-		completa, conforme a \cref{fig:projecaoFinal}. No qual cada ponto, corresponde a uma
+		completa, conforme a \cref{fig:projecaoFinal}, na qual cada ponto corresponde a uma
 		implementação e, ao clicar duas vezes, é apresentado seu código-fonte, bem como a
 		quantidade de erros e seus valores normalizados.
 		
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.8\linewidth]{imagem/projecao}
-			\caption{Interface inicial da visualização}
+			\includegraphics[width=1\linewidth]{imagem/projecao}
+			\caption{Interface inicial da visualização.}
 			\label{fig:projecao}
 		\end{figure}
 		
 		Também é possível ativar a extração de tópicos ao decorrer das projeções. Desta
 		forma é possível visualizar os agrupamentos encontrados pela \foreign{ScienceView},
-		bem como, os tópicos ou características, de cada grupo. A \cref{fig:topics3}
+		bem como os tópicos ou características de cada grupo. A \cref{fig:topics3}
 		exibe os agrupamentos formados pela ferramenta no decorrer da projeção no instante
 		de tempo $3$. É possível verificar os agrupamentos formados, pois eles são
 		visualmente delimitados por polígonos  na cor cinza e, para cada agrupamento,
-		é apresentado as características relevantes àquele agrupamento. A ferramenta
+		são apresentadas as características relevantes àquele agrupamento. A ferramenta
 		também realiza o rastreamento dos grupos simultaneamente. Consequentemente, além
 		de gerar os grupos para cada projeção na sequência, a \foreign{ScienceView}
 		também rastreia esses grupos ao longo do tempo. A extração de tópicos e o
@@ -467,8 +462,8 @@
 		
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.8\linewidth]{imagem/topics3}
-			\caption{Final da exibição das projeções com a extração de tópicos ativada}
+			\includegraphics[width=1\linewidth]{imagem/topics3}
+			\caption{Final da exibição das projeções com a extração de tópicos ativada.}
 			\label{fig:topics3}
 		\end{figure}
 		
@@ -480,10 +475,10 @@
 		pressionado e enquadrando na área verde, as implementações que deseja abrir na
 		mesma janela.
 		
-		\begin{figure}
+		\begin{figure}[t]
 			\centering
-			\includegraphics[width=0.7\linewidth]{imagem/multiplosDoc}
-			\caption{Abrir várias implementações em uma única janela}
+			\includegraphics[width=.95\linewidth]{imagem/multiplosDoc}
+			\caption{Abrir várias implementações em uma única janela.}
 			\label{fig:multiplosDoc}
 		\end{figure}
 		
@@ -494,10 +489,10 @@
 		visualizador da implementações permite redimensionar sua janela, bem como
 		cada painel.
 		
-		\begin{figure}
+		\begin{figure}[hb]
 			\centering
-			\includegraphics[width=0.7\linewidth]{imagem/ladoAlado}
-			\caption{Varias implementações abertas em janelas diferentes}
+			\includegraphics[width=.95\linewidth]{imagem/ladoAlado}
+			\caption{Varias implementações abertas em janelas diferentes.}
 			\label{fig:ladoAlado}
 		\end{figure}
 		
