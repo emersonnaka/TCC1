@@ -1,21 +1,15 @@
 \chapter{Métodos e ferramentas}
 \label{chap:metodos-ferramentas}
 
-	Neste capítulo será apresentado o método utilizado, os resultados obtidos durante   % TODO: atualizar este parágrafo para refletir o novo conteúdo deste capítulo
-	o desenvolvimento deste estudo conforme a \cref{fig:fluxogramaProposta},o qual
-	apresenta as fases: definição da linguagem de programação e das características
-	a serem extraídas; códigos-fontes; extração de características; cálculo da matriz
-	de similaridade; e projeção e visualização. Foi selecionada uma base de dados de
-	códigos-fontes na linguagem de programação \texttt{Python} nesse estudo. A etapa
-	de extração de características desses códigos-fontes foram feitas por meio da
-	análise estática e do estilo de escrita, usando ferramentas disponibilizadas
-	livremente para tal extração. Dadas as características extraídas para cada
-	código-fonte, foi possível a geração de uma matriz de similaridade, que registra
-	a similaridade par a para entre os códigos-fontes. Por fim, de posse dessa matriz
-	foi possível a criação de uma projeção multidimensional para visualizar os dados.
-	As etapas de geração da matriz de dissimilaridade e projeção multidimensional
-	foram feitas usando a ferramenta \foreign{Science View}.
-
+	% TODO: atualizar este parágrafo para refletir o novo conteúdo deste capítulo
+	Neste capítulo será apresentado o método e as ferramentas utilizadas para gerar
+	nossos resultados. O método consiste na explicação das etapas (\cref{fig:fluxogramaProposta}):
+	definição da linguagem de programação e das características a serem extraídas;
+	códigos-fontes; extração de características; cálculo da matriz de similaridade;
+	e projeção e visualização. Em seguida, é apresentado as definições das etapas
+	citadas anteriormente. Por fim, é apresentado as ferramentas utilizadas para
+	extrair as características e visualizar as projeções, bem como as modificações
+	necessárias de cada ferramenta.
 
  	\section{Método}
 	 	Após a revisão da literatura, verificamos que o nosso estudo pode ser dividido
@@ -88,7 +82,7 @@
 	 	Nosso objetivo, por meio dessas etapas, consiste no desenvolvimento de subsídios
 	 	de avaliação, utilizando técnicas de visualização para auxiliar os professores a
 	 	corrigirem todas as submissões, considerando o tempo de correção e a qualidade do
-	 	\foreign{feedback} da \foreign{Science View} (\cref{sec:scienceView}) para o professor.
+	 	\foreign{feedback} da \foreign{ScienceView} (\cref{sec:scienceView}) para o professor.
 	 	Por isso, teremos duas questões de pesquisa (QP):
 	 	
 	 	\begin{itemize}
@@ -98,7 +92,7 @@
 	 		de correção de todas as submissões?
 	 	\end{itemize}
 	 	
-	 	O subsídio de avaliação será uma adaptação da ferramenta \texttt{Science View}
+	 	O subsídio de avaliação será uma adaptação da ferramenta \texttt{ScienceView}
 	 	\cite{Alencar-etal:2012} que, originalmente, verifica as mudanças nas relações
 	 	de artigos científicos com o decorrer do tempo, utilizando técnicas de mineração
 	 	visual embasadas em uma técnica de projeção multidimensional chamada \acl{T-LSP}
@@ -124,7 +118,6 @@
 		% TODO: inserir um texto nesta linha: Considerando os estágios estabelecidos no método
 		% descrito na seção anterior, foram definidos requisitos e elementos a serem empregados
 		% na avaliação de programas [...]
-		
 		Considerando os estágios estabelecidos no método descrito na Seção anterior
 		(\ref{fig:fluxogramaProposta}), foram definidos requisitos e elementos a serem
 		empregados na avaliação dos códigos-fontes apresentados nas seções seguintes.
@@ -261,7 +254,7 @@
 		
 		\subsection{Projeção e visualização}
 			Para possibilitar a visualização dos padrões nos dados utilizaremos a
-			ferramenta \foreign{Science View} \cite{Alencar-etal:2012} que utiliza a
+			ferramenta \foreign{ScienceView} \cite{Alencar-etal:2012} que utiliza a
 			técnica de projeção multidimensional dinâmica \cite{Alencar} e o algoritmo
 			de agrupamento \acs{DBSCAN} \cite{Ester1996} para encontrar possíveis
 			agrupamentos na projeção. Até o momento, realizamos a adaptação para
@@ -309,7 +302,7 @@
 			% TODO: descrever
 			A \foreign{ScienceView-Python} é o conjunto de ferramentas e modificações
 			necessárias para criarmos um arquivo com as características extraídas de
-			cada código-fonte a fim de ser utilizada na \foreign{Science View} (\cref{sec:scienceView}).
+			cada código-fonte a fim de ser utilizada na \foreign{ScienceView} (\cref{sec:scienceView}).
 			Essa ferramenta analisa a pasta contendo os códigos-fontes passada por
 			parâmetro recursivamente, analisando todos os arquivos com extensão
 			\texttt{py}.
@@ -319,11 +312,11 @@
 			de características a serem extraídas, todas elas possuem código aberto. Contudo,
 			antes de extrair as características das implementações, foi necessário definir
 			qual o formato de arquivo seria adequado para utilizar como saída da
-			\foreign{ScienceView-Python} e como arquivo de entrada da \foreign{Science View}.
+			\foreign{ScienceView-Python} e como arquivo de entrada da \foreign{ScienceView}.
 
 			% TODO: melhorar este início (ele estava em outra parte do texto). Acrescente uma frase sobre a importância de extrair as características e disponibilizá-las em um formato adequado para a ferramenta de visualização (justificando assim as modificações relatadas a seguir)
 			É importante selecionar um formato de arquivo para padronizar a escrita
-			e leitura do arquivo. Além de possibilitar a adaptação da \foreign{Science View}
+			e leitura do arquivo. Além de possibilitar a adaptação da \foreign{ScienceView}
 			para exibir a similidade de implementações desenvolvidas em outras linguagens.
 			A escolha do formato \texttt{CSV}, também facilita sua edição em \foreign{softwares}
 			de planilhas, caso queria remover uma coluna, por exemplo.
@@ -371,7 +364,7 @@
 		\subsection{ScienceView}
 		\label{sec:scienceView}
 		
-		A ferramenta \foreign{Science View} \cite{Alencar} foi desenvolvida para criar
+		A ferramenta \foreign{ScienceView} \cite{Alencar} foi desenvolvida para criar
 		mapas de documentos temporais que exibam as mudanças nas as relações entre
 		artigos científicos, utilizando a projeção multidimensional dinâmica \acs{T-LSP}
 		a partir de artigos nos formatos \foreign{ISI}, \foreign{Endnote Export Format}
@@ -460,14 +453,14 @@
 		\end{figure}
 		
 		Também é possível ativar a extração de tópicos ao decorrer das projeções. Desta
-		forma é possível visualizar os agrupamentos encontrados pela \foreign{Science View},
+		forma é possível visualizar os agrupamentos encontrados pela \foreign{ScienceView},
 		bem como, os tópicos ou características, de cada grupo. A \cref{fig:topics3}
 		exibe os agrupamentos formados pela ferramenta no decorrer da projeção no instante
 		de tempo $3$. É possível verificar os agrupamentos formados, pois eles são
 		visualmente delimitados por polígonos  na cor cinza e, para cada agrupamento,
 		é apresentado as características relevantes àquele agrupamento. A ferramenta
 		também realiza o rastreamento dos grupos simultaneamente. Consequentemente, além
-		de gerar os grupos para cada projeção na sequência, a \foreign{Science View}
+		de gerar os grupos para cada projeção na sequência, a \foreign{ScienceView}
 		também rastreia esses grupos ao longo do tempo. A extração de tópicos e o
 		rastreamento podem ser ativados pelo menu superior, clicando em:
 		\foreign{Data Mining}, \foreign{Topic Extraction and Tracking} e \foreign{Run}.
