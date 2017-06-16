@@ -1,11 +1,14 @@
 \chapter{Resultados}
 \label{chap:resultados}
 
-	\section{Projeção e visualização de APOO com Python}
+	% TODO: descrever o conteúdo deste capítulo
+	% Neste capítulo, avaliaremos com auxílio da ferramenta um conjunto de programas escritos em
+	% Python para uma disciplina introdutória à Computação [..]
 	
-	\subsection{Descrição da base}
-	% TODO: descrever base de dados: quais foram os tipos de programas, quantos foram, falar que a
-	% base foi anomizada.
+	
+	\section{Descrição da base}
+	\label{sec:resultados:base-apoo}
+
 		Essa base é constituída de 152 implementações de 5 problemas distintos. O primeiro exercício
 		consiste na revisão de conceitos básicos como: estruturas de condição e laço de repetição. O
 		segundo exercício define a criação de classes com mais de um construtor, e manipulação de
@@ -17,8 +20,8 @@
 		operadores. Os desenvolvedores das implementações foram anonimizados, sendo representado
 		por uma sequência de números.
 	
-	\subsection{Avaliação da projeção com preservação de vizinhança}
-	% TODO recomendo a colocação de uma imagem da curva de neihborhood  preservation para uma de suas projeções na seção resultados.
+	\section{Avaliação da projeção com preservação de vizinhança}
+
 	A \foreign{Science View} (\cref{sec:scienceView}) utiliza a preservação da vizinhança
 	(\cref{subsubsec:vizinhanca}) para verificar a qualidade das projeções. A \cref{fig:neighborhoodAPOO30}
 	apresenta a qualidade da projeção para essa base de dados. Essa técnica visa avaliar
@@ -46,25 +49,31 @@
 		\includegraphics[width=0.7\linewidth]{imagem/neighborhoodAPOO30}
 		\caption{Qualidade da projeção, utilizando a preservação de vizinhança (\foreign{neighborhood preservation})}
 		\label{fig:neighborhoodAPOO30}
-	\end{figure}
+	\end{figure}	
+
 	
+	\section{Avaliação qualitativa da visualização}
 	
-	\subsection{Avaliação qualitativa da visualização}
-	% TODO: relatar o estudo: treinamento, instruções, questionário, resultados
-		Para obter resultados qualitativos dessa pesquisa, realizamos um experimento com
+		Para obter resultados qualitativos dessa pesquisa, realizamos um estudo experimental com
 		as seguintes etapas: treinamento, utilização e questionário. O treinamento foi
-		realizado na forma de tutorial com a apresentação da ferramenta. Dessa forma,
-		foi apresentado todos os passos para realizar uma nova projeção. Desde a inserção
-		de uma nova coleção no banco de dados até a visualização das implementações. Em
-		seguida, foi apresentado as funcionalidades da ferramenta para visualizar os
+		realizado na forma de tutorial com a apresentação dos critérios de avaliação (estilo de
+		escrita e complexidade ciclomática) e da ferramenta. Especificamente quanto à ferramenta,
+		foram apresentados todos os passos referentes ao seu funcionamento, desde a inserção
+		de uma nova coleção no banco de dados até a visualização das implementações com a visualização
+		da projeção criada a partir da coleção. Em
+		seguida, foi apresentado como utilizar a ferramenta para auxiliar na avaliação das
+		implementações: visualizar os
 		agrupamentos formados ao longo das projeções, selecionar um determinado conjunto
 		de implementações, identificar as características semelhantes de tais grupos e
-		abrir mais de uma implementação simultaneamente.
+		abrir mais de uma implementação simultaneamente. Durante o treinamento, foi utilizada uma
+		base de dados distinta da descrita na \cref{sec:resultados:base-apoo}.
 		
-		Para iniciarmos a etapa da utilização da ferramenta, foi pedido para que os
+		Encerrado o treinamento, procedeu-se para a utilização da ferramenta com a base descrita na
+		\cref{sec:resultados:base-apoo}. Para iniciarmos essa etapa, foi pedido para que os
 		participantes encerrassem o funcionamento da \foreign{Science View} e a
 		executassem com a criação da base de dados. Os participantes utilizaram a
-		ferramenta sem ajuda no que já tinha sido apresentado e o avaliaram por meio
+		ferramenta sem ajuda no que já tinha sido apresentado e o avaliaram por meio  % TODO: informar que eles tiveram 20 minutos para avaliar trabalhos. 
+		% TODO: falar quantas pessoas foram e como elas foram organizados (dois grupos: primeiramente, um grupo avaliou de forma tradicional, com auxílio dos dados obtidos pela ScienceView-Python e o outro grupo avaliou com auxílio da ferramenta. Depois foram invertidas as intervenções. Em ambos os casos, a cada rodada de avaliações, cada participante criou um relato sobre os programas avaliados e comentários que seriam enviados para os alunos, considerando os erros identificados.)
 		de um questionário.
 		
 		O questionário (\cref{apendice:questionario}) apresenta questões objetivas e
@@ -161,61 +170,62 @@
 		frequente da \foreign{Science View}, evidenciará analisar as implementações
 		de forma mais rápida.
 		
-	
-	
-	\section{Projeção e visualização de MIT 6.00.1x}	
-
-	\subsection{Descrição da base}
-	% TODO: descrever base de dados: quais foram os tipos de programas, quantos foram, falar que a
-	% base não foi anonimizada porque os programas estavam publicamente disponíveis no GitHub.
-	Essa base de dados é constituída de 3470 implementações referente a 10 exercícios
-	distintos. Todos as atividades solicitam manipulação de arquivo e cadeia de caracteres.
-	
-	O primeiro exercício requer conceitos de matriz, utilizando lista dentro
-	de lista, e programação dinâmica para solucionar o transporte de animais.
-	
-	O segundo exercício necessita de conhecimento sobre aleatoriedade, lista, condicional,
-	cadeia de caracteres, operações aritméticas e lógicas para implementar o jogo da
-	forca.
-	
-	O terceiro exercício solicita a utilização de laço de repetição, condicional, lista,
-	operações aritméticas e lógicas para implementar o jogo das palavras.
-	
-	O quarto exercício requer conhecimento de lista e dicionário pra codificar e
-	decodificar um texto.
-	O quinto exercício requer o uso de analisador (\foreign{parser}), construção
-	de classe, interface, polimorfismo e operadores lógicos para desenvolver um programa
-	de monitoramento de novos \foreign{feeds} na Internet.
-	
-	O sexto exercício solicita conhecimento sobre criação de classes, matriz, laço de
-	repetição e manipulação de interface gráfica para implementar um aspirador de pó
-	inteligente e sua simulação.
-	
-	O sétimo exercício consiste no uso de classes, aleatoriedade, laço de repetição,
-	condicional, lista e conhecimento de estatística para implementar uma simulação
-	e um sistema de tratamento de pacientes conforme o vírus que eles possuem.
-	
-	O oitavo problema consiste na implementação de classes a partir do exercício $7$.
-	Pedindo a implementação da classe \texttt{ResistantVirus} e \texttt{SimplePatient}
-	para realizar simulações desses vírus em pacientes.
-	
-	O nono exercício requer o uso de dicionário e operador lógico para desenvolver
-	um software que apresente uma lista de assuntos para cada aluno da universidade.
-	
-	E para o décimo exercício, é necessário conhecer um algoritmo de agrupamento para
-	realizar sua implementação.
-	
-	Os desenvolvedores dessas implementações não foram anonimizados, pois seus
-	códigos-fontes estavam presentes em repositórios públicos no GitHub \cite{github}.
-	
-	% TODO: Marco: colocar a string utilizada para buscar os programas e como foi criada a base
-	
-
-\subsection{Avaliação da projeção com preservação de vizinhança}
-
-
-\subsection{Avaliação qualitativa da visualização}
-% TODO: relatar o estudo: treinamento, instruções, questionário, resultados
+		
+% TODO: deixar para artigo
+%	
+%	\section{Projeção e visualização de MIT 6.00.1x}	
+%
+%	\subsection{Descrição da base}
+%	% TODO: descrever base de dados: quais foram os tipos de programas, quantos foram, falar que a
+%	% base não foi anonimizada porque os programas estavam publicamente disponíveis no GitHub.
+%	Essa base de dados é constituída de 3470 implementações referente a 10 exercícios
+%	distintos. Todos as atividades solicitam manipulação de arquivo e cadeia de caracteres.
+%	
+%	O primeiro exercício requer conceitos de matriz, utilizando lista dentro
+%	de lista, e programação dinâmica para solucionar o transporte de animais.
+%	
+%	O segundo exercício necessita de conhecimento sobre aleatoriedade, lista, condicional,
+%	cadeia de caracteres, operações aritméticas e lógicas para implementar o jogo da
+%	forca.
+%	
+%	O terceiro exercício solicita a utilização de laço de repetição, condicional, lista,
+%	operações aritméticas e lógicas para implementar o jogo das palavras.
+%	
+%	O quarto exercício requer conhecimento de lista e dicionário pra codificar e
+%	decodificar um texto.
+%	O quinto exercício requer o uso de analisador (\foreign{parser}), construção
+%	de classe, interface, polimorfismo e operadores lógicos para desenvolver um programa
+%	de monitoramento de novos \foreign{feeds} na Internet.
+%	
+%	O sexto exercício solicita conhecimento sobre criação de classes, matriz, laço de
+%	repetição e manipulação de interface gráfica para implementar um aspirador de pó
+%	inteligente e sua simulação.
+%	
+%	O sétimo exercício consiste no uso de classes, aleatoriedade, laço de repetição,
+%	condicional, lista e conhecimento de estatística para implementar uma simulação
+%	e um sistema de tratamento de pacientes conforme o vírus que eles possuem.
+%	
+%	O oitavo problema consiste na implementação de classes a partir do exercício $7$.
+%	Pedindo a implementação da classe \texttt{ResistantVirus} e \texttt{SimplePatient}
+%	para realizar simulações desses vírus em pacientes.
+%	
+%	O nono exercício requer o uso de dicionário e operador lógico para desenvolver
+%	um software que apresente uma lista de assuntos para cada aluno da universidade.
+%	
+%	E para o décimo exercício, é necessário conhecer um algoritmo de agrupamento para
+%	realizar sua implementação.
+%	
+%	Os desenvolvedores dessas implementações não foram anonimizados, pois seus
+%	códigos-fontes estavam presentes em repositórios públicos no GitHub \cite{github}.
+%	
+%	% TODO: Marco: colocar a string utilizada para buscar os programas e como foi criada a base
+%	
+%
+%\subsection{Avaliação da projeção com preservação de vizinhança}
+%
+%
+%\subsection{Avaliação qualitativa da visualização}
+%% TODO: relatar o estudo: treinamento, instruções, questionário, resultados
 
 
 
