@@ -60,19 +60,20 @@
 		
 		% TODO: como foram organizadas as pessoas, quantas pessoas, os tempos
 		
-		O treinamento foi
-		realizado na forma de tutorial com a apresentação dos critérios de avaliação (estilo de
-		escrita e complexidade ciclomática) e da ferramenta. Especificamente quanto à ferramenta,
-		foram apresentados todos os passos referentes ao seu funcionamento, desde a inserção
-		de uma nova coleção no banco de dados até a visualização das implementações com a visualização
-		da projeção criada a partir da coleção. Em
-		seguida, foi apresentado como utilizar a ferramenta para auxiliar na avaliação das
-		implementações: visualizar os
+		O treinamento foi realizado na forma de tutorial com a apresentação dos critérios
+		de avaliação (estilo de escrita e complexidade ciclomática) e da ferramenta com
+		duração de $55$ minutos. Especificamente quanto à ferramenta, foram apresentados
+		todos os passos referentes ao seu funcionamento, desde a inserção de uma nova
+		coleção no banco de dados até a visualização das implementações com a visualização
+		da projeção criada a partir da coleção. Em seguida, foi apresentado como utilizar
+		a ferramenta para auxiliar na avaliação das implementações: visualizar os
 		agrupamentos formados ao longo das projeções, selecionar um determinado conjunto
 		de implementações, identificar as características semelhantes de tais grupos e
 		abrir mais de uma implementação simultaneamente. Durante o treinamento, foi utilizada uma
 		base de dados distinta da descrita na \cref{sec:resultados:base-apoo}.
 		
+		% TODO: informar que eles tiveram 20 minutos para avaliar trabalhos. 
+		% TODO: falar quantas pessoas foram e como elas foram organizados (dois grupos: primeiramente, um grupo avaliou de forma tradicional, com auxílio dos dados obtidos pela ScienceView-Python e o outro grupo avaliou com auxílio da ferramenta. Depois foram invertidas as intervenções. Em ambos os casos, a cada rodada de avaliações, cada participante criou um relato sobre os programas avaliados e comentários que seriam enviados para os alunos, considerando os erros identificados.)
 		Encerrado o treinamento, procedeu-se para a utilização da ferramenta com a base
 		descrita na \cref{sec:resultados:base-apoo}. Para iniciarmos essa etapa, foi
 		pedido para que os participantes encerrassem o funcionamento da \foreign{ScienceView}
@@ -85,12 +86,9 @@
 		ferramenta para auxiliar na correção com duração de $20$ minutos. Na segunda
 		etapa, o contribuinte que realizou a correção manual, passou a utilizar a
 		\foreign{ScienceView}, enquanto os $2$ que utilizaram a ferramenta na etapa
-		anterior, realizaram a correção manual durante $22$ minutos.
-		
-		Os participantes utilizaram a
-		ferramenta sem ajuda no que já tinha sido apresentado e o avaliaram por meio  % TODO: informar que eles tiveram 20 minutos para avaliar trabalhos. 
-		% TODO: falar quantas pessoas foram e como elas foram organizados (dois grupos: primeiramente, um grupo avaliou de forma tradicional, com auxílio dos dados obtidos pela ScienceView-Python e o outro grupo avaliou com auxílio da ferramenta. Depois foram invertidas as intervenções. Em ambos os casos, a cada rodada de avaliações, cada participante criou um relato sobre os programas avaliados e comentários que seriam enviados para os alunos, considerando os erros identificados.)
-		de um questionário.
+		anterior, realizaram a correção manual durante $22$ minutos. Os participantes
+		utilizaram a ferramenta sem ajuda no que já tinha sido apresentado e o
+		avaliaram por meio de um questionário.		
 		
 		O questionário (\cref{apendice:questionario}) apresenta questões objetivas e
 		dissertativas para avaliar a qualidade do treinamento e da ferramenta. Enquanto
@@ -117,6 +115,36 @@
 			{Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView} \cite{Alencar-etal:2012}}
 			\label{fig:projecaoFinal}
 		\end{figure}
+		
+				
+		
+		\begin{table}[h]
+			\begin{tabularx}{\linewidth}{|X|X|X|X|X|}
+		        \hline
+		        
+		        & Voluntário 1
+		        & Voluntário 2
+		        & Voluntário 3
+		        & Voluntário 4\\
+		        
+		        \hline
+		        Correção tradicional
+		        & 3 códigos-fontes e 3 comentários para correção do aluno
+		        & 4 códigos-fontes e 4 comentários para correção do aluno
+		        & 3 códigos-fontes e 3 comentários para correção do aluno
+		        & 5 códigos-fontes e 3 comentários para correção do aluno\\
+		        
+		        \hline
+		        \foreign{ScienceView}
+		        & Não utilizou a ferramenta
+		        & 4 códigos-fontes e 4 comentários realizados
+		        & 3 códigos-fontes e observou que a ferramenta auxiliou no encontro dos erros de forma mais rápida.
+		        & 4 códigos-fontes e 3 comentários para correção dos alunos\\
+		        \hline
+			\end{tabularx}
+			\caption{Quantidade de correções e comentários realizados com e sem a utilização da ferramenta}
+			\label{tab:resultados}
+		\end{table}
 		
 %		As implementações das \cref{fig:codigo1} e \cref{fig:codigo2} foram consideradas
 %		semelhantes, devido aos seus respectivos pontos estarem próximos no mapa de
@@ -149,7 +177,7 @@
 		de tutorial da \foreign{ScienceView} contribui para sua utilização.
 		
 		Obtivemos êxito com a adaptação da interface que apresenta o código-fonte e a
-		tabela de erros \cref{fig:codigo1}, visto que, ao serem questionados se faltava
+		tabela de erros, visto que, ao serem questionados se faltava
 		alguma informação nessa interface, todos responderam negativamente.
 		
 		Apesar dos $3$ voluntários afirmarem que a \foreign{ScienceView} colaborou
