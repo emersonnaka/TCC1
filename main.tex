@@ -61,8 +61,8 @@
 
 % Dados do TCC (precisa alterar)
 \author{Emerson Yudi Nakashima}  % Seu nome
-\title{Avaliação de Atividades de Programação Submetidos em MOOC com Emprego de Técnicas de Visualização} % Título do trabalho
-\titleen{Evaluation of Programming Activities Submitted MOOC with Use of Visualization Techniques} % Título traduzido para inglês
+\title{Avaliação de atividades de programação submetidos em MOOC com emprego de técnicas de visualização} % Título do trabalho
+\titleen{Evaluation of programming activities submitted in MOOC using visualization techniques} % Título traduzido para inglês
 \advisor{Prof. Dr. Marco Aurélio Graciotto Silva} % Nome do orientador. Lembre-se de prefixar com "Prof. Dr.", "Profª. Drª.", "Prof. Me." ou "Profª. Me."}
 \coadvisor{Profª. Drª. Aretha Barbosa Alencar} % Nome do coorientador, caso exista. Caso não exista, comente a linha.
 \depositshortdate{2017} % Ano em que depositou este documento
@@ -80,107 +80,7 @@
 \frontmatter
 \maketitle
 
-\begin{resumo}
-% TODO: se possível, escreva um resumo estruturado. Para TCC 1, o resumo estruturado teria os seguintes elementos:
-\textbf{Contexto:} Em disciplinas de algoritmos ou programação, é necessário criar
-e implementar uma solução para um problema. Entretanto, há a possibilidade de possuir
-diversas formas de solucionar o problema e, consequentemente, formas de implementações.
-Desta forma, a quantidade de implementações possíveis é vasta, dificultando a avaliação
-delas pelo professor quanto ao custo, tempo e qualidade da avaliação. Além disso, é
-necessário realizar um \foreign{feedback} para o aluno com relação a sua implementação.
-Para agravar essa dificuldade, cursos massivos, abertos e \foreign{online} (MOOC)
-possuem uma grande quantidade de usuários, agravando este problema e inviabilizando
-a correção individual das submissões.
-
-\textbf{Context:} In algogrithm or programming classes, it's necessary to create and
-implement a solution to a problem. However, there is the possibility of having several
-ways so solve a problem and, consequently, forms of implementations. This, the amount
-of possible implementations is vast, making it difficult for teachers to evaluate them
-as to the cost, time and quality of assessment. Moreover, it's necessary to perform a
-feedback to students regarding their implementations.To worsen this difficulty,
-massive courses, open and online (\acs{MOOC}) have large numbers of users, worsing this
-problem and making it impossible individual correction of submissions.
-
-\textbf{Objetivo:} O objetivo deste trabalho é propor subsídios para a avaliação de
-programas submetidos em disciplinas introdutórias à computação, utilizando técnicas
-de mineração e visualização de dados para construir e apresentar agrupamentos de
-código-fonte semelhantes. Os subsídios propostos consistem na utilização de ferramentas
-para extração de características, padronização no armazenamento dessas características
-e a utilização de técnicas agrupamento e visualização, com o auxílio de uma ferramenta.
-
-\textbf{Objective:} The objective this project is propose tools to software evaluate
-submitted in introductory courses to computing, using data miniing and visualization
-techniques to build and show clusters of similar source codes. Tools propose consist
-of the utilization of tools for features extraction, standardization in the storage
-of these features and the use clusters and visualization techniques with de aid of
-a tool.
-
-\textbf{Método:} A primeira etapa consiste na identificação das características que
-podem ser extraídas conforme o tipo de análise utilizado: características estática, do
-estilo de escrita e dinâmica. Após a identificação, é necessário o desenvolvimento
-de ferramentas para coletar tais medidas de forma que possamos utilizá-las para realizar
-o agrupamento. Com isso, desenvolvemos uma ferramenta para minerar as informações
-disponíveis, realizando os agrupamentos e gerando uma visualização dos programas submetidos.
-Para testar a ferramenta, temos uma base de dados de implementações com soluções de cinco
-problemas distintos. A validação ocorrerá em duas etapas: mediante a qualidade
-das visualizações considerando as técnicas de mineração e visualização de dados; e
-verificando o \foreign{feedback} da ferramenta para o professor por meio de um
-questionário.
-
-\textbf{Method:} The first step consist of identification of features that can be
-extract according the analysis type used: static, style code and dynamic features.
-After identification, it be necessary to develop tools to colect such measures so
-that we can use them to do the cluster. Thereby, we developed a tool to mine available
-information, performing clusters and gerenating a visualization of the submitted
-programs. To test the tool, we have one source database with solutions of 5 different
-problems. The validation will occur in two steps: through the quality of the visualizations
-considering the mining techniques and data visualization; and checking the feedback
-of the tool to the teacher.
-
-%TODO No final, atualizar para Resultados
-\textbf{Resultados:} Com uma base de dados de 152 implementações, obtivemos boa
-avaliação da qualidade dos agrupamentos com perca um pouco acima de $20\%$ para
-a última projeção. Realizamos um treinamento com a apresentação dos critérios
-de avaliação e da ferramenta. O estudo experimental procedeu da utilização da
-ferramenta \foreign{ScienceView}, criando uma nova base de dados, e dividindo
-as correções em 2 grupos: um grupo realizara a correção tradicional e o outro
-utilizara a ferramenta para auxiliar na correção. Em seguida, esses dois grupos
-inverteram o modo como foi realizado as correções. Ao final do estudo experimental,
-os voluntários avaliaram o treinamento e a ferramenta positivamente.
-
-%TODO Escrever conclusão
-\textbf{Conclusões:} Concluímos que, quanto maior a quantidade de dados a serem
-observados, menor a perca de qualidade da projeção a fim de responder a \textbf{QP$_1$}.
-E a pouca utilização da ferramenta \foreign{ScienceView} pode ter sido um dos
-motivos para que respondêssemos a \textbf{QP$_2$} negativamente. Por fim,
-identificamos os trabalhos futuros desse estudo a fim de torná-lo mais relevante.
-
-% ou, para TCC 2:
-% \textbf{Contexto:} \\
-% \textbf{Objetivo:} \\
-% \textbf{Método:} \\
-% \textbf{Resultados:} \\
-% \textbf{Conclusões:}
-
-% Palavras-chaves, separadas por ponto (tente não definir mais do que cinco)
-\palavraschaves{MOOC. Programação. Agrupamentos. Mineração. Visualização}
-\end{resumo}
-
-
-
-% Caso seja TCC 2, precisa traduzir o resumo e as palavras-chaves para inglês:
-% \begin{abstract}
-% \textbf{Context:}
-% \textbf{Objective:}
-% \textbf{Method:}
-% \textbf{Results:}
-% \textbf{Conclusions:}
-
-% Palavras-chaves em inglês, separadas por ponto.
-% \keywords{MOOC. Programming. Clustering. Data mining. Visualization}
-% \end{abstract}
-
-
+\include{resumo}
 
 % Listas (opcionais, mas recomenda-se a partir de 5 elementos)
 \listoffigures
@@ -199,7 +99,7 @@ identificamos os trabalhos futuros desse estudo a fim de torná-lo mais relevant
 \include{conclusao}
 
 \bibliographystyle{abntex2-alf}
-\bibliography{main} % geração automática das referências a partir do arquivo main.bib
+\bibliography{main}
 
 \backmatter
 \appendix
