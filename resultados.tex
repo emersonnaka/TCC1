@@ -54,6 +54,7 @@
 
 	
 	\section{Avaliação qualitativa da visualização}
+	\label{sec:avalQualitativa}
 	
 		Para obter resultados qualitativos dessa pesquisa, realizamos um estudo experimental com
 		as seguintes etapas: treinamento, utilização e questionário.
@@ -267,17 +268,42 @@
 %% TODO: relatar o estudo: treinamento, instruções, questionário, resultados
 
 	\section{Ameaças a validade}
+	\label{sec:ameacas}
 	
-	% TODO: treinamento não foi suficiente para utilização da ferramenta para avaliação
-	% TODO: treinamento tem de deixar claro que a avaliação é quanto aos trabalhos, mas não quanto a correção dos problemas automaticamente identicados
-	
-	% TODO: outra ameaça é quanto ao tamanho da base
-	% TODO: outra ameaça é quanto a quantidade de participantes
+		% TODO: treinamento não foi suficiente para utilização da ferramenta para avaliação
+		O treinamento realizado, não foi suficiente para avaliar as implementações por meio
+		da utilização da \foreign{ScienceView}, visto que um dos participantes relatou que
+		a falta de conhecimento sobre a ferramenta fez com que correção manual acontecesse de
+		forma mais rápida. Enquanto, outro participante observou que a ferramenta agilizará
+		o processo de correção conforme aumentar a frequência de uso da ferramenta. Dado
+		essas duas observações, podemos concluir que o treinamento não foi suficiente para
+		capacitar todos os participantes sobre a utilização da ferramenta.
+		
+		% TODO: treinamento tem de deixar claro que a avaliação é quanto aos trabalhos, mas não quanto a correção dos problemas automaticamente identicados
+		Durante o treinamento, não foi exposto explicitamente que, ao utilizar a \foreign{ScienceView},
+		a avaliação é quanto aos códigos-fontes. Com isso, além de corrigirem as implementações,
+		alguns participantes buscaram verificar se as características semelhantes apontadas
+		pela extração de tópicos realmente ocorria nas implementações. E isso pode ter
+		impactado na correção, devido ao tempo gasto para fazer essas verificações.
+		
+		% TODO: outra ameaça é quanto ao tamanho da base
+		O banco de dados formado por 152 códigos-fontes que solucionam 5 problemas distintos
+		é considerado pequeno. Visto que, uma das características do \ac{MOOC} é a grande
+		quantidade de usuários (\foreign{massive}). Desta forma, essa base de dados não
+		reflete ao montante de submissões que podem ocorrer em um \acs{MOOC}
+		
+		% TODO: outra ameaça é quanto a quantidade de participantes
+		A aplicação do experimento somente com $4$ pessoas, e ainda, somente $3$ pessoas
+		utilizarem a \foreign{ScienceView} não nos retorna nada concreto estatisticamente.
+		Devido a essa quantidade, temos apenas indícios do objetivo da pesquisa. Para
+		viabilizar mais participantes, é necessário, além de tempo, a disponibilidade
+		de professores para participar do treinamento e utilizar a ferramenta, focando
+		que o desenvolvimento do projeto pode contribuir para vossas correções, além
+		de possibilitar a verificação do erro mais frequente a fim de melhorar suas
+		aulas.
 
 	\section{Considerações finais}
 	
-		O atual banco de dados de implementações, formado por 152 códigos-fontes que
-		solucionam 5 problemas distintos é considerado pequeno e pode enviesar o
-		projeto. Para isso, construiremos outro banco de dados de implementações
-		por meio de submissões de voluntários, visando possuir um conjunto de
-		implementações vasto para a pesquisa.
+		Por meio dos resultados obtidos, a próxima Seção apresentará nossa conclusão,
+		considerando tanto a análise qualitativa, quanto a quantitativa. E as ameaças
+		a validade observadas.
