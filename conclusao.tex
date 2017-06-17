@@ -1,2 +1,62 @@
 \chapter{Conclusão}
 \label{chap:Conclusao}
+
+	Este capítulo apresentará nossa conclusão com base nos resultados obtidos a fim de
+	responder nossas questões de pesquisa e os trabalhos futuros para uma possível
+	continuidade do projeto.
+	
+	\section{Satisfação de objetivo}
+	Por meio dos resultados obtidos, podemos responder nossas questões de pesquisa
+	firmadas na \cref{sec:metodo}:
+	
+	\begin{itemize}
+		\item \textbf{QP$_1$}: o algoritmo de agrupamento produz grupos de códigos-fontes
+		com boa qualidade?
+		\item \textbf{QP$_2$}: a utilização de subsídios de avaliação reduz o tempo
+		de correção de todas as submissões?
+	\end{itemize}
+	
+	A fim de responder a \textbf{QP$_1$}, foi estudado e utilizado a preservação
+	da vizinhança \cite{paulovich2008hipp}, que quantifica a qualidade de uma projeção.
+	Sua utilização ocorreu por meio da \foreign{ScienceView}. E tomaremos como base
+	para a nossa resposta, a \cref{fig:neighborhoodAPOO30}. Por meio dela é possível
+	observar que, quanto maior a quantidade de dados a serem observados, menor a perca
+	na qualidade da projeção. As variações que ocorrem nas curvas vermelha e azul
+	escuro, na instância de tempo $1$ e $2$, respectivamente, possuem perca de
+	qualidade maior quando comparadas com as curvas rosa e azul claro, na instância de
+	tempo $4$ e $5$, respectivamente. Desta forma, responderemos a questão de pesquisa
+	a seguir, utilizando as curvas das instâncias de tempo $4$ e $5$. O algoritmo
+	de agrupamentos gera grupos com boa qualidade, apesar de ocorrer uma perca, no
+	pior caso, de um pouco mais de $20\%$ quando consideramos a quantidade de vizinhos
+	igual a $30$. No melhor caso, ocorre uma perca de aproximadamente $12,5\%$ quando
+	a quantidade de vizinhos é igual a $15$. Desta forma, entre $15$ vizinhos de um
+	código-fonte qualquer, no máximo duas implementações estão agrupadas inadequadamente. 
+	
+	Para responder a \textbf{QP$_2$} foi necessário aplicar o experimento (\cref{sec:avalQualitativa})
+	para saber quantas implementações os participantes analisariam em um determinado
+	período de tempo, realizando as correções manualmente e por meio da utilização dos
+	subsídios proposto. A utilização de subsídios não reduziu o tempo de correção
+	das implementações em um período de $20$ minutos. Visto que, alguns participantes
+	corrigiram a mesma quantidade de implementações nas duas formas de análise, enquanto
+	um participante realizou mais correções manualmente, quando comparado a utilização
+	da ferramenta. A negativa para essa resposta pode ser pela pouca experiência de uso
+	com a \foreign{ScienceView}, como também a preocupação de alguns participantes em
+	verificar se os erros apresentados na extração de tópicos realmente aconteceram
+	nas implementações.
+	
+	\section{Trabalhos futuros}
+	
+		Como trabalhos futuros, é importante sanar as ameaças a validade (\cref{sec:ameacas})
+		desse projeto. Focando, inicialmente, na construção de uma base de dados de
+		implementações maior, a fim de tornar-se próximo a quantidade de submissões
+		possíveis em um \acs{MOOC}. Em seguida, melhorar nosso treinamento para que
+		todos os participantes utilizem a ferramenta para sua finalidade, e encontrar
+		mais professores dispostos a participar de todo o experimento.
+		
+		Para uma base de dados maior, seria interessante avaliar o quanto as características
+		extraídas nesse estudo são relevantes. E, caso necessário, realimentar o
+		sistema da mineração de dados, como descrito na \cref{sec:FundTeor}. Caso
+		houver tempo disponível, desenvolver uma ferramenta para realizar análise
+		dinâmicas das submissões, executando casos de teste e, encontrando as variáveis
+		comuns e renomeando-as para o nome mais utilizado \cite{Glassman:2015}.
+		A combinação da análise dinâmica e estática pode gerar resultados interessantes.
