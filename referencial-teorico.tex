@@ -271,9 +271,9 @@
 				objeto multi-dimensional, sua vizinhança (\foreign{neighborhood}) é calculada
 				observando os $k$ vizinhos mais próximos no plano multidimensional e os $k$
 				vizinhos mais próximos na projeção, sendo $n$ a quantidade de documentos na
-				coleção, $k$ pode variar entre $2$ até $30$. Com isso é possível verificar
+				coleção, $k$ pode variar entre 1 até $n - 1$, adotando-se tipicamente o valor de 30 como limite superior. Com isso é possível verificar
 				se a proporção de vizinhança é preservada (\foreign{preservation}). Seu
-				resultado pode variar entre $0$ e $1$. Logo, quanto mais próximo ou igual
+				resultado pode variar entre 0 e 1. Logo, quanto mais próximo ou igual
 				a $0$, condiz que as vizinhanças de um objeto multidimensional e de sua
 				projeção são muito ou totalmente distintos. Quanto mais próximo de $1$,
 				melhor é a preservação da vizinhança.

@@ -3,10 +3,9 @@
 e implementar uma solução para um problema. Entretanto, há a possibilidade de possuir
 diversas formas de solucionar o problema e, consequentemente, formas de implementações.
 Desta forma, a quantidade de implementações possíveis é vasta, dificultando a avaliação
-delas pelo professor quanto ao custo, tempo e qualidade da avaliação. Além disso, é
-necessário realizar um \foreign{feedback} para o aluno com relação a sua implementação.
+delas pelo professor quanto ao custo, tempo e qualidade da avaliação.
 Para agravar essa dificuldade, cursos massivos, abertos e \foreign{online} (MOOC)
-possuem uma grande quantidade de usuários, agravando este problema e inviabilizando
+possuem uma grande quantidade de usuários, inviabilizando
 a correção individual das submissões.
 
 \textbf{Objetivo:} O objetivo deste trabalho é propor subsídios para a avaliação de
@@ -14,35 +13,41 @@ programas submetidos em disciplinas introdutórias à computação, utilizando t
 de mineração e visualização de dados para construir e apresentar agrupamentos de
 código-fonte semelhantes. Os subsídios propostos consistem na utilização de ferramentas
 para extração de características, padronização no armazenamento dessas características
-e a utilização de técnicas agrupamento e visualização, com o auxílio de uma ferramenta.
+e a utilização de técnicas de agrupamento e visualização, com o auxílio de uma ferramenta.
 
-\textbf{Método:} A primeira etapa consiste na identificação das características que
-podem ser extraídas conforme o tipo de análise utilizado: características estática, do
-estilo de escrita e dinâmica. Após a identificação, é necessário o desenvolvimento
-de ferramentas para coletar tais medidas de forma que possamos utilizá-las para realizar
-o agrupamento. Com isso, desenvolvemos uma ferramenta para minerar as informações
-disponíveis, realizando os agrupamentos e gerando uma visualização dos programas submetidos.
-Para testar a ferramenta, temos uma base de dados de implementações com soluções de cinco
-problemas distintos. A validação ocorrerá em duas etapas: mediante a qualidade
+\textbf{Método:} A primeira etapa consistiu na identificação das características que
+podem ser extraídas conforme o tipo de análise utilizado: características estáticas
+referentes a estilo de escrita e complexidade. Após a identificação, foi necessário o desenvolvimento de ferramentas para coletar tais medidas de forma que pudéssemos
+utilizá-las para realizar a projeção e visualização. Com isso, desenvolvemos uma
+ferramenta para analisar as informações disponíveis, realizando os agrupamentos e
+gerando uma visualização dos programas submetidos.
+Para avaliar a visualização de submissões com auxílio da ferramenta, utilizamos
+uma base de dados de implementações com soluções de cinco
+problemas distintos. A avaliação ocorreu em duas etapas: mediante a qualidade
 das visualizações considerando as técnicas de mineração e visualização de dados; e
 verificando o \foreign{feedback} da ferramenta para o professor por meio de um
 questionário.
 
 \textbf{Resultados:} Com uma base de dados de 152 implementações, obtivemos boa
-avaliação da qualidade dos agrupamentos com perca um pouco acima de $20\%$ para
-a última projeção. Realizamos um treinamento com a apresentação dos critérios
-de avaliação e da ferramenta. O estudo experimental procedeu da utilização da
+avaliação da qualidade dos agrupamento. Quanto à qualidade da visualização para
+fins de avaliação dos programas submetidos, realizamos um treinamento com a
+apresentação dos critérios de avaliação e da ferramenta. O estudo experimental
+procedeu da utilização da
 ferramenta \foreign{ScienceView}, criando uma nova base de dados, e dividindo
 as correções em 2 grupos: um grupo realizara a correção tradicional e o outro
 utilizara a ferramenta para auxiliar na correção. Em seguida, esses dois grupos
 inverteram o modo como foi realizado as correções. Ao final do estudo experimental,
 os voluntários avaliaram o treinamento e a ferramenta positivamente.
 
-\textbf{Conclusões:} Concluímos que, quanto maior a quantidade de dados a serem
-observados, menor a perca de qualidade da projeção a fim de responder a \textbf{QP$_1$}.
-E a pouca utilização da ferramenta \foreign{ScienceView} pode ter sido um dos
-motivos para que respondêssemos a \textbf{QP$_2$} negativamente. Por fim,
-identificamos os trabalhos futuros desse estudo a fim de torná-lo mais relevante.
+\textbf{Conclusões:} 
+Considerando a preservação de vizinhança, a qualidade da projeção é compatível
+com outras projeções feitas com a técnica LSP e similares, apresentando bons
+resultados. Em relação ao emprego de visualização para avaliação de programas,
+os resultados foram limitados devido ao emprego pouco eficiente da ferramenta
+e dos agrupamentos. Ainda assim, os participantes avaliaram como positiva a
+utilização da ferramenta. Como trabalho futuro, serão investigadas a utilização
+de outras características do programa e o aperfeiçoamento da usabilidade e
+treinamento quanto ao uso da ferramenta.
 
 % Palavras-chaves, separadas por ponto (tente não definir mais do que cinco)
 \palavraschaves{MOOC. Programação. Agrupamentos. Mineração. Visualização}
