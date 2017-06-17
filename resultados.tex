@@ -48,7 +48,7 @@
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.85\linewidth]{imagem/neighborhoodAPOO30}
-			\caption{Qualidade da projeção, utilizando a preservação de vizinhança (\foreign{neighborhood preservation})}
+			\caption{Qualidade da projeção, utilizando a preservação de vizinhança (\foreign{neighborhood preservation}).}
 			\label{fig:neighborhoodAPOO30}
 		\end{figure}	
 	
@@ -66,8 +66,6 @@
 	
 		Para obter resultados qualitativos dessa pesquisa, realizamos um estudo experimental com
 		as seguintes etapas: treinamento, utilização e questionário.
-		
-		% TODO: como foram organizadas as pessoas, quantas pessoas, os tempos
 		
 		O treinamento foi realizado na forma de tutorial com a apresentação dos critérios
 		de avaliação (estilo de escrita e complexidade ciclomática) e da ferramenta com
@@ -87,26 +85,26 @@
 		descrita na \cref{sec:resultados:base-apoo}. Para iniciarmos essa etapa, foi
 		pedido para que os participantes encerrassem o funcionamento da \foreign{ScienceView}
 		e a executassem com a criação da base de dados. O experimento teve participação
-		de $4$ pessoas e ambos os grupos utilizaram os dados obtidos pela \foreign{ScienceView-Python}
+		de 4 pessoas e ambos os grupos utilizaram os dados obtidos pela \foreign{ScienceView-Python}
 		\cref{sec:scienceView-Python}. Todos os contribuintes realizaram  correção manual,
 		o qual consistiu na correção somente do código-fonte sem utilizar a ferramenta, e
-		somente $3$ pessoas utilizaram a ferramenta \foreign{ScienceView} para auxiliar
-		na correção. O experimento consistiu em duas etapas. Na primeira etapa, $1$
-		voluntário realizou a correção manual, enquanto os outros $2$, utilizaram a
-		ferramenta para auxiliar na correção com duração de $20$ minutos. Na segunda
-		etapa, o contribuinte que realizou a correção manual, passou a utilizar a
-		\foreign{ScienceView}, enquanto os $2$ que utilizaram a ferramenta na etapa
-		anterior, realizaram a correção manual durante $22$ minutos. Os participantes
+		somente 3 pessoas utilizaram a ferramenta \foreign{ScienceView} para auxiliar
+		na correção. O experimento consistiu em duas etapas, todas envolvendo a correção
+		dos programas considerando os tipos de erros considerandos na extração de
+		características e a criação de um relato com os programas avaliados e comentários
+		de correção. 
+
+		Na primeira etapa, 2 voluntários realizaram a correção manual, utilizando a planilha
+		com erros identificados pela ScienceView-Python, enquanto os outros 2
+		utilizaram a ferramenta ScienceView para auxiliar na correção. A primeira etapa deve
+		duração de 20 minutos. Na segunda etapa, um dos contribuintes que realizou a correção
+		manual passou a utilizar a \foreign{ScienceView}\footnote{O outro participante não
+		conseguiu executar a ferramenta ScienceView e não participou desta parte do estudo
+		experimental.}, enquanto os 2 que utilizaram a ferramenta
+		na etapa anterior, realizaram a correção manual durante 20 minutos. Os participantes
 		utilizaram a ferramenta sem ajuda no que já tinha sido apresentado e o
-		avaliaram por meio de um questionário.		
-		
-		O questionário (\cref{apendice:questionario}) apresenta questões objetivas e
-		dissertativas para avaliar a qualidade do treinamento e da ferramenta. Enquanto
-		as questões objetivas visavam a qualidade do treinamento, da ferramenta e se
-		é possível utilizá-la para auxiliar na correção, as questões dissertativas
-		visam a encontrar lacunas observadas pelo participante para uma possível 
-		atualização da ferramenta.
-		
+		avaliaram por meio de um questionário. 	
+
 		A \cref{fig:projecaoFinal} apresenta a visualização dos agrupamentos das 152
 		implementações contidas na base de dados. Isso foi possível após a adaptação da
 		ferramenta para leitura de arquivos no formato \texttt{CSV}. Cada ponto da
@@ -120,9 +118,9 @@
 	
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=1\linewidth]{imagem/projecaoFinal} % TODO: substituir, futuramente, pela figura da ferramenta corrigida.
+			\includegraphics[width=1\linewidth]{imagem/projecaoFinal}
 			\caption[Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView}]
-			{Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView} \cite{Alencar-etal:2012}}
+			{Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView}.}
 			\label{fig:projecaoFinal}
 		\end{figure}
 		
@@ -134,6 +132,9 @@
 		comentários conforme o tipo de correção.
 		
 		\begin{table}[h]
+			\small
+			\caption{Quantidade de correções e comentários realizados com e sem a utilização da ferramenta}
+			\label{tab:resultados}
 			\begin{tabularx}{\linewidth}{|X|X|X|X|X|}
 		        \hline
 		        
@@ -157,10 +158,20 @@
 		        & 4 códigos-fontes e 3 comentários para correção dos alunos\\
 		        \hline
 			\end{tabularx}
-			\caption{Quantidade de correções e comentários realizados com e sem a utilização da ferramenta}
-			\label{tab:resultados}
 		\end{table}
 		
+		Apesar dos 3 voluntários afirmarem que a \foreign{ScienceView} colaborou
+		para a correção das implementações, 2 deles corrigiram a mesma quantidade
+		de implementações utilizando a ferramenta e manualmente. A exceção ocorreu com 
+		apenas 1 participante que extraiu os tópicos semelhantes manualmente. Na
+		primeira extração, selecionou apenas 2 códigos-fontes e observou que os
+		erros apresentados na tabela de erros eram semelhantes, visto que observou
+		a importação de bibliotecas entre funções ao invés de realizá-las no início
+		da implementação. Na segunda extração, selecionou 8 códigos-fontes e constatou
+		que os erros ocorreram nas implementações e foi compreendido corretamente
+		pela ferramenta.
+
+
 %		As implementações das \cref{fig:codigo1} e \cref{fig:codigo2} foram consideradas
 %		semelhantes, devido aos seus respectivos pontos estarem próximos no mapa de
 %		projeção. É possível notar que há diversas semelhanças nos tipos das características
@@ -183,38 +194,36 @@
 %			\label{fig:codigo2}
 %		\end{figure}
 		
-		Para finalizar o experimentos, os voluntários, responderam o questionário (\cref{apendice:questionario})
-		anonimamente. A primeira questão refere-se ao tempo de experiência como professor,
+		Para finalizar o estudo experimental, os voluntários responderam um questionário
+		anonimamente. O questionário, apresentado no (\cref{apendice:questionario}),
+		contém questões
+		objetivas e	dissertativas para avaliar a qualidade do treinamento e da ferramenta.
+		Enquanto as questões objetivas visavam a qualidade do treinamento, da ferramenta e
+		se é possível utilizá-la para auxiliar na correção, as questões dissertativas
+		visam a encontrar lacunas observadas pelo participante para uma possível 
+		atualização da ferramenta.
+		
+		A primeira questão refere-se ao tempo de experiência como professor,
 		visto que acreditávamos que essa experiência poderia interferir na quantidade
 		de correções realizadas com a ferramenta. Dentre eles, $2$ cooperadores possuem
 		menos que $1$ ano de experiência, enquanto $1$ possui mais de $10$ anos de
-		experiência como professor. E todos eles afirmaram que o treinamento em forma
+		experiência como professor. Um dos participantes não respondeu o questionário.
+		Todos os respondentes afirmaram que o treinamento em forma
 		de tutorial da \foreign{ScienceView} contribui para sua utilização.
 		
 		Obtivemos êxito com a adaptação da interface que apresenta o código-fonte e a
 		tabela de erros, visto que, ao serem questionados se faltava
 		alguma informação nessa interface, todos responderam negativamente.
 		
-		Apesar dos $3$ voluntários afirmarem que a \foreign{ScienceView} colaborou
-		para a correção das implementações, $2$ deles corrigiram a mesma quantidade
-		de implementações utilizando a ferramenta e manualmente. A exceção ocorreu com 
-		apenas $1$ participante que extraiu os tópicos semelhantes manualmente. Na
-		primeira extração, selecionou apenas $2$ códigos-fontes e observou que os
-		erros apresentados na tabela de erros eram semelhantes, visto que observou
-		a importação de bibliotecas entre funções ao invés de realizá-las no início
-		da implementação. Na segunda extração, selecionou $8$ códigos-fontes e constatou
-		que os erros ocorreram nas implementações e foi compreendido corretamente
-		pela ferramenta.
-		
 		Ao relatarem sobre o \foreign{feedback} recebido da \foreign{ScienceView}
-		por meio da visualização dos agrupamentos, $2$ participantes afirmaram que
+		por meio da visualização dos agrupamentos, 2 participantes afirmaram que
 		os agrupamentos auxiliaram na verificação de implementações com características
 		similares. O outro participantes constatou a possibilidade de utilizar a
 		ferramenta em uma turma fechada de alunos a fim de verificar quais os principais
 		erros deles por meio da extração de tópicos da ferramenta.
 		
 		Sobre a experiência em relação ao uso da ferramenta, um dos participantes
-		admite que, como não utilizou muito a ferramenta, foi mais rápido realizar
+		admitiu que, como não utilizou muito a ferramenta, foi mais rápido realizar
 		as correções manuais. Contudo, outra resposta afirma que a utilização mais
 		frequente da \foreign{ScienceView}, evidenciará analisar as implementações
 		de forma mais rápida.
@@ -279,40 +288,38 @@
 	\section{Ameaças a validade}
 	\label{sec:ameacas}
 	
-		% TODO: treinamento não foi suficiente para utilização da ferramenta para avaliação
-		O treinamento realizado, não foi suficiente para avaliar as implementações por meio
+		O treinamento realizado não foi suficiente para avaliar as implementações por meio
 		da utilização da \foreign{ScienceView}, visto que um dos participantes relatou que
 		a falta de conhecimento sobre a ferramenta fez com que correção manual acontecesse de
-		forma mais rápida. Enquanto, outro participante observou que a ferramenta agilizará
-		o processo de correção conforme aumentar a frequência de uso da ferramenta. Dado
-		essas duas observações, podemos concluir que o treinamento não foi suficiente para
+		forma mais rápida. Corrobora com isto a opinião de outro participante, que observou que a ferramenta agilizará
+		o processo de correção conforme aumentar a frequência de uso da ferramenta. 
+		Principalmente, pudemos observar que os participantes do estudo não consideraram a
+		avaliação de grupos de trabalho, optando por avaliar os trabalhos individualmente.
+		Dadas essas observações, podemos concluir que o treinamento não foi suficiente para
 		capacitar todos os participantes sobre a utilização da ferramenta.
 		
-		% TODO: treinamento tem de deixar claro que a avaliação é quanto aos trabalhos, mas não quanto a correção dos problemas automaticamente identicados
 		Durante o treinamento, não foi exposto explicitamente que, ao utilizar a \foreign{ScienceView},
 		a avaliação é quanto aos códigos-fontes. Com isso, além de corrigirem as implementações,
 		alguns participantes buscaram verificar se as características semelhantes apontadas
-		pela extração de tópicos realmente ocorria nas implementações. E isso pode ter
+		pela extração de tópicos realmente ocorriam nas implementações. Isso pode ter
 		impactado na correção, devido ao tempo gasto para fazer essas verificações.
 		
-		% TODO: outra ameaça é quanto ao tamanho da base
-		O banco de dados formado por 152 códigos-fontes que solucionam 5 problemas distintos
-		é considerado pequeno. Visto que, uma das características do \ac{MOOC} é a grande
+		Outra ameaça é quanto ao tamanho da base de dados.
+		Esta era formada por 152 códigos-fontes que solucionam 5 problemas distintos, algo
+		considerado pequeno para um MOOC visto que uma das características do \ac{MOOC} é a grande
 		quantidade de usuários (\foreign{massive}). Desta forma, essa base de dados não
 		reflete ao montante de submissões que podem ocorrer em um \acs{MOOC}
 		
-		% TODO: outra ameaça é quanto a quantidade de participantes
-		A aplicação do experimento somente com $4$ pessoas, e ainda, somente $3$ pessoas
-		utilizarem a \foreign{ScienceView} não nos retorna nada concreto estatisticamente.
-		Devido a essa quantidade, temos apenas indícios do objetivo da pesquisa. Para
+		Outra limitação é quanto a quantidade de participantes.
+		A aplicação do experimento contou com somente $4$ pessoas, e ainda, somente $3$ pessoas
+		utilizarem a \foreign{ScienceView}, não nos retorna nada concreto estatisticamente.
+		Para
 		viabilizar mais participantes, é necessário, além de tempo, a disponibilidade
 		de professores para participar do treinamento e utilizar a ferramenta, focando
-		que o desenvolvimento do projeto pode contribuir para vossas correções, além
-		de possibilitar a verificação do erro mais frequente a fim de melhorar suas
-		aulas.
+		que o desenvolvimento do projeto pode contribuir para avaliação de trabalhos,
+		além de possibilitar a verificação do erro mais frequentes a fim de melhorar o
+		aprendizado.
 
 	\section{Considerações finais}
 	
-		Por meio dos resultados obtidos, a próxima Seção apresentará nossa conclusão,
-		considerando tanto a análise qualitativa, quanto a quantitativa. E as ameaças
-		a validade observadas.
+		Por meio dos resultados obtidos, o próximo capítulo apresenta as conclusões deste trabalho, considerando tanto a análise qualitativa quanto a quantitativa.
