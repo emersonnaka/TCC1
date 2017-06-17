@@ -1,29 +1,30 @@
 \chapter{Resultados}
 \label{chap:resultados}
 
-	% TODO: descrever o conteúdo deste capítulo
-	% Neste capítulo, avaliaremos com auxílio da ferramenta um conjunto de programas escritos em
-	% Python para uma disciplina introdutória à Computação [..]
+	Neste capítulo, são apresentadas as avaliações da projeção e da visualização como
+	instrumento para avaliação de programas, ambos considerando um conjunto de
+	programas escritos em Python para uma disciplina introdutória à Computação.
 	
 	
 	\section{Descrição da base}
 	\label{sec:resultados:base-apoo}
 
-		Essa base é constituída de 152 implementações de 5 problemas distintos. O primeiro exercício
+		Essa base é constituída de 152 implementações em Python de 5 problemas distintos.
+		Os desenvolvedores das implementações foram anonimizados, sendo representados por 
+		sequências de números. Os problemas tratados foram os seguintes. O primeiro exercício
 		consiste na revisão de conceitos básicos como: estruturas de condição e laço de repetição. O
 		segundo exercício define a criação de classes com mais de um construtor, e manipulação de
 		arquivos e cadeia de caracteres. O terceiro exercício consiste na criação das classes
 		\texttt{Palavra} e \texttt{Texto}, no qual a primeira classe deve ser utilizada na segunda
 		classe, e uma classe para gerar orações gramaticais. O quarto exercício refere-se a
-		utilização de herança e polimorfismo, identificando cada palavra contida em um arquivo. E
-		o quinto exercício consiste na alteração de uma classe, implementando sobreposição de
-		operadores. Os desenvolvedores das implementações foram anonimizados, sendo representado
-		por uma sequência de números.
+		utilização de herança e polimorfismo, identificando cada palavra contida em um arquivo. O
+		quinto exercício consiste na alteração de uma classe, implementando sobreposição de
+		operadores. 
 		
 	
 	\section{Avaliação da projeção com preservação de vizinhança}
 
-	A \foreign{ScienceView} (\cref{sec:scienceView}) utiliza a preservação da vizinhança
+	A \foreign{ScienceView} utiliza a preservação da vizinhança
 	(\cref{subsubsec:vizinhanca}) para verificar a qualidade das projeções. A \cref{fig:neighborhoodAPOO30}
 	apresenta a qualidade da projeção para essa base de dados. Essa técnica visa avaliar
 	se houve uma preservação da vizinhança dos objetos no espaço de alta dimensionalidade
@@ -32,14 +33,21 @@
 	mais próximos na projeção, e verificando-se que proporção da vizinhança é preservada
 	na projeção. A precisão final para um dado valor de $k$ é a média das precisões para
 	cada instância. Esse cálculo é feito para vários valores de $k$ (tipicamente $k=[2,...,30]$)
-	de forma a obtermos uma curva. Quanto mais baixos os valores da curva para cada valor
-	de $k$, maior a qualidade da projeção. Lembrando que na técnica \acl{T-LSP} \cite{Alencar}
-	é gerado uma sequência de projeções, e portanto temos uma curva para cada projeção na
+	de forma a obtermos uma curva. Quanto mais altos os valores da curva para cada valor
+	de $k$, maior a qualidade da projeção. Considerando que a técnica \acl{T-LSP} \cite{Alencar}
+	gera uma sequência de projeções, temos uma curva para cada projeção da
 	sequência.
+	
+	Observa-se a precisão de 20\% para a linha (\texttt{year} $5$, obtida com 30 vizinhos para a
+	projeção considerando todos os problemas (e, consequentemente, todas as submissões). Considerando
+	outros trabalhos que utilizam esta medida para avaliação de qualidade de projeções~\cite{phd:paulovich},
+	a qualidade da projeção é adequada e compatível com outras projeções feitas com a técnica LSP e
+	similares.
+	
 	
 	Na \cref{fig:neighborhoodAPOO30} é possível observar que as projeções no início da
 	sequência apresentam menor qualidade quando comparada as demais, como é possível observar
-	nas curvas dos anos $1$ e $2$, nas cores vermelho e azul, respectivamente. Também é
+	nas curvas dos problemas $3$, $4$ e $5$. Também é
 	possível notar que a projeção perde um pouco mais que $12\%$ de informação para as
 	projeções dos anos $4$ e $5$ considerando a comparação de $15$ vizinhos do espaço
 	$n$-dimensional com o espaço bidimensional.
