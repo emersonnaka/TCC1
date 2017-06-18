@@ -36,7 +36,7 @@
 	 	disponibilidade de cursos de programação ofertado em \acs{MOOC}s ou pelo conhecimento
 	 	de ferramentas que possam extrair características de programas escritos nessa linguagem, como o
 	 	\texttt{cpplint} para a linguagem \texttt{C}, \texttt{Checkstyle} para
-	 	\texttt{Java} e \texttt{PEP8} para \texttt{Python}.
+	 	\texttt{Java} e \texttt{pep8} para \texttt{Python}.
 	 	
 	 	A etapa seguinte trata da \textbf{definição das características a serem extraídas} e será
 	 	realizada com base nos trabalhos relacionados (\cref{sec:TrabRel}). Verificamos
@@ -146,7 +146,7 @@
 			As características a serem extraídas da análise estática foram a quantidade
 			de linhas de código e a complexidade ciclomática da implementação. Em relação
 			a análise do estilo de escrita, foram consideradas todas as violações do estilo de
-			escrita definido pelo \texttt{PEP8}~\cite{van2001pep}. 
+			escrita definido pelo \texttt{PEP 8}~\cite{van2001pep}. 
 
 		\subsection{Códigos-fontes}	
 		
@@ -159,10 +159,10 @@
 		\subsection{Extração de características}
 					
 			Obtivemos as informações necessárias por meio da análise estática e do estilo de   
-			escrita com o auxílio das ferramentas \texttt{PEP8} \cite{pep8} e \texttt{McCabe}
-			\cite{mccabe} que funcionam como \foreign{plugins} para o \texttt{Flake8}.
+			escrita com o auxílio das ferramentas \texttt{pep8} \cite{pep8} e \texttt{mccabe}
+			\cite{mccabe} que funcionam como \foreign{plugins} para o \texttt{flake8}.
 			Extraímos da análise estática, além do estilo de escrita, a quantidade de linhas do código-fonte e a complexidade ciclomática de cada \foreign{plugin}, respectivamente. Contudo, o
-			foco do \texttt{PEP8} é verificar se o estilo de escrita PEP 8 \cite{van2001pep}
+			foco do \texttt{pep8} é verificar se o estilo de escrita PEP 8 \cite{van2001pep}
 			está sendo praticado corretamente. Por esse motivo, extraímos as características
 			relacionadas a: indentação (\cref{tab:pep8E100}); espaços em branco
 			(\cref{tab:pep8E200}); linhas em branco (\cref{tab:pep8E300}); declaração de
@@ -223,7 +223,7 @@
 %	\textbf{Falta falar sobre o erro E902, mas não entendi a definição no PEP8:
 %		"Tokenize the file, run physical line checks and yield tokens."}
 	
-			A ferramenta \texttt{mccabe} \cite{mccabe2013} fornece informações sobre a
+			A ferramenta \texttt{mccabe} \cite{mccabeabebe2013} fornece informações sobre a
 			complexidade ciclomática \cite{mccabe} de cada função ou método implementado.
 			Essa complexidade é referente às estruturas de decisões implementadas \cite{mccabe},
 			ou seja, seu cálculo é realizado com base na utilização de \texttt{if/else} e laços
@@ -300,7 +300,7 @@
 			parâmetro recursivamente, analisando todos os arquivos com extensão
 			\texttt{py}.
 			
-			Essa ferramenta é composta pelo \texttt{Flake8}~\cite{flake8} e os plugins
+			Essa ferramenta é composta pelo \texttt{flake8}~\cite{flake8} e os \textit{plugins}
 			\texttt{pep8}~\cite{pep8} e \texttt{mccabe}~\cite{mccabe2013} pois, além de atender ao tipo
 			de características a serem extraídas, todas eles possuem código aberto. Contudo,
 			antes de extrair as características das implementações, foi necessário definir
@@ -315,26 +315,26 @@
 			de planilhas, caso queria remover uma coluna, por exemplo.
 			
 			Para extrair as características das implementações, foi necessário a modificação
-			das ferramentas \texttt{PEP8} e \texttt{Flake8}. No \texttt{PEP8}, alteramos o
+			das ferramentas \texttt{pep8} e \texttt{flake8}. No \texttt{pep8}, alteramos o
 			método \texttt{check\_files()} que é chamado apenas uma vez e é responsável por
 			verificar cada código-fonte especificado no momento da execução por linha de
 			comando. Tal modificação consiste na criação do arquivo no formato \texttt{CSV}
 			com o cabeçalho: nome do arquivo, total de linhas do código-fonte, quantidade
-			de erros do estilo de escrita e cada erro do \texttt{PEP8}.
+			de erros do estilo de escrita e cada erro do \texttt{PEP 8}.
 				
 			A \cref{fig:flake8} apresenta o formato da impressão de cada característica do
-			\texttt{Flake8}. Notamos que era possível obter as características no momento em
+			\texttt{flake8}. Notamos que era possível obter as características no momento em
 			que fosse realizado cada \texttt{print} dos dados, visto que, todas as linhas
 			possuem o tipo do erro, E302 ou a complexidade ciclomática C901, por exemplo.
 			Desta forma, alteramos o método \texttt{get\_file\_result()} da classe
-			\texttt{reporter} do \texttt{Flake8}. Criamos um dicionário contendo todos os
-			erros do \texttt{PEP8} e do \texttt{mccabe} como chave. A cada impressão
+			\texttt{reporter} do \texttt{flake8}. Criamos um dicionário contendo todos os
+			erros do \texttt{PEP 8} e do \texttt{mccabe} como chave. A cada impressão
 			verificamos qual é o tipo do erro e incrementamos o valor dessa chave.
 	
 			\begin{figure}[h]
 				\centering
 				\includegraphics[width=1\linewidth]{imagem/flake8}
-				\caption{Representação das características analisadas pelo \texttt{Flake8}.}
+				\caption{Representação das características analisadas pelo \texttt{flake8}.}
 				\label{fig:flake8}
 			\end{figure}		
 
@@ -342,14 +342,14 @@
 			execução das análises de cada código-fonte presente no repositório analisado.
 			As três primeiras colunas são: o nome do arquivo, a quantidade de linhas implementadas
 			e o total de erros do estilo de escrita PEP 8 \cite{van2001pep}, respectivamente. As
-			demais colunas são referentes a cada erro do \texttt{PEP8} \cite{pep8}, com a última
+			demais colunas são referentes a cada erro do PEP 8, com a última
 			coluna representando a complexidade ciclomática calculada pela ferramenta
-			\texttt{McCabe} \cite{mccabe}.
+			\texttt{mccabe} \cite{mccabe2013}.
 
 			\begin{figure}[h]
 				\centering
 				\includegraphics[width=1\linewidth]{imagem/arquivoCSV}
-				\caption{Arquivo no formato \texttt{CSV} gerado após as adaptações inseridas nas ferramentas \texttt{Flake8} e \texttt{PEP8}.}
+				\caption{Arquivo no formato \texttt{CSV} gerado após as adaptações inseridas nas ferramentas \texttt{flake8} e \texttt{pep8}.}
 				\label{fig:arquivoCSV}
 			\end{figure}
 		
