@@ -42,7 +42,6 @@
 		Em adição, também é possível utilizar recursos para avaliar alguns tipos de
 		teste, como as questões de múltipla escolha, na qual verifica-se a alternativa
 		selecionada com a presente no gabarito de questões \cite{alario2013analysing}.
-		% TODO: acrescentar algo  quanto a integração, voltado a integração de aplicação para auxiliar na avaliação de tarefas. Citar trabalhos/pesquisas sobre a integração desse tipo de instrumentos/aplicações em MOOC (tanto os que citamos na seção de mineração e visualização e que usam dados de MOOC quanto outros de avaliação como um todo). Daí sim siga com o texto que "Focaremos no desenvolvimento...".
 		Em relação aos cursos de programação ofertados no \acs{MOOC}, por experiência,
 		notou-se somente o uso de vídeo aulas, no qual um especialista disserta sobre
 		a linguagem e apresenta alguns recursos, perguntas objetivas relacionadas ao
@@ -55,15 +54,7 @@
 		que o usuário possa verificar seu nível de conhecimento.
 
 	\section{Mineração e visualização de dados}
-	\label{sec:FundTeor}
-		
-		\begin{figure}[b]
-			\centering
-			\includegraphics[width=0.6\linewidth]{imagem/mineracaoDados}
-			\caption[Etapas da mineração de dados]{Etapas da mineração de dados \cite{rezende2003}}
-			\label{fig:mineracaoDados}
-		\end{figure}
-		
+	\label{sec:FundTeor}		
 		A mineração de dados é uma etapa do \foreign{Knowledge Discovery in Databases}
 		\cite{fayyad1996} que busca descobrir padrões em grandes conjuntos de dados,
 		podendo utilizar métodos de inteligência artificial, estatísticos e sistemas
@@ -85,7 +76,14 @@
 		novamente, fornecendo ao sistema novas características. A realimentação
 		ocorre após a análise do Pós-processamento, caso os padrões adquiridos não
 		sejam eficientes para a aplicação. Com isso é possível retornar a etapa
-		Pré-processamento a fim de adicionar ou remover qualquer dado.   % TODO: faltou completar algo aqui... se realimentar de que e onde?
+		Pré-processamento a fim de adicionar ou remover qualquer dado.
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.6\linewidth]{imagem/mineracaoDados}
+			\caption[Etapas da mineração de dados]{Etapas da mineração de dados \cite{rezende2003}}
+			\label{fig:mineracaoDados}
+		\end{figure}
 		
 		Muitos métodos de mineração de dados são baseados em técnicas de treinamento
 		e teste de aprendizagem de máquina, e reconhecimento de padrões e estatísticas,
@@ -103,16 +101,16 @@
 		deve-se sumarizar dados como a temperatura do corpo, característica da pele,
 		se é uma criatura aquática, se possui patas e hiberna.
 		
-		O que difere a classificação do agrupamento é que o último é formado por meio da
-		comparação de informações entre os objetos e não existem rótulos pré-definidos,
-		enquanto o primeiro é realizado por meio da comparação das informações do objeto
-		com os dados contidos em cada classe predefinida da função alvo. Desta forma,
-		os objetos dentro de um grupo devem ser similares ou relacionados entre si e
-		diferentes ou não relacionados entre objetos de grupos diferentes, ou seja,
-		quanto maior a similaridade dos objetos dentro de um grupo e mais diferentes
-		são os agrupamentos, melhores ou mais distintos os agrupamentos formados \cite{Tan:2005:ch8}.
-		O K-means \cite{macqueen1967} e o \ac{DBSCAN} \cite{Ester1996} são exemplos de
-		algoritmos de agrupamento.
+		Em relação ao agrupamento, o que difere a classificação do agrupamento é que
+		o último é formado por meio da comparação de informações entre os objetos e
+		não existem rótulos pré-definidos, enquanto o primeiro é realizado por meio
+		da comparação das informações do objeto com os dados contidos em cada classe
+		predefinida da função alvo. Desta forma, os objetos dentro de um grupo devem
+		ser similares ou relacionados entre si e diferentes ou não relacionados entre
+		objetos de grupos diferentes, ou seja, quanto maior a similaridade dos objetos
+		dentro de um grupo e mais diferentes são os agrupamentos, melhores ou mais
+		distintos os agrupamentos formados \cite{Tan:2005:ch8}. O K-means \cite{macqueen1967}
+		e o \ac{DBSCAN} \cite{Ester1996} são exemplos de algoritmos de agrupamento.
 
 		Após a mineração dos dados, é desejável a utilização de ferramentas para
 		auxiliar na criação de hipóteses sobre conjuntos de dados complexos -- grande
@@ -185,7 +183,7 @@
 			valores com média igual a 0 (zero) e desvio padrão igual a 1 (um), por meio
 			da transformação da média daquela característica específica.
 			
-			Para isso, deve-se avaliar: a qualidade da projeção quanto % TODO: seria interessante informar os valores para estas projeções. Outra opção é omitir a explicação e a figura, mantendo apenas da segunda frase em diante (como gancho para a próxima subseção).
+			Para isso, deve-se avaliar: a qualidade da projeção quanto 
 			a preservação das vizinhanças; e a qualidade dos agrupamentos formados com base
 			nessas projeções, conforme apresentado na próxima seção.
 						
@@ -221,7 +219,7 @@
 			verificar os erros de preservação da vizinhança por meio do controle visual
 			da projeção.
 			
-			Devido a essa dificuldade é necessário utilizar técnicas que possa verificar
+			Devido a essa dificuldade é necessário utilizar técnicas que possam verificar
 			se um objeto foi classificado corretamente àquele grupo, como a pontuação
 			silhueta, e verificar a qualidade da projeção, como a Preservação da vizinhança,
 			que analisa se os vizinhos de um objeto na projeção são os mesmos vizinhos
@@ -251,7 +249,7 @@
 				próximo de $0$ (zero), o objeto pode ser considerado semelhante com um objeto
 				de um grupo distinto, desta forma há incertezas para qual dos dois agrupamentos
 				aquele objeto deveria ser atribuído: esse caso é conhecido como ``caso intermediário''.
-				Por fim, o pior resultado, próximo a $-1$, condiz que o objeto possui maior
+				Por fim, o pior resultado, próximo a $-1$, indica que o objeto possui maior
 				semelhança com o agrupamento do outro objeto com o qual foi comparado, podendo
 				assumir que o objeto foi atribuído ao seu agrupamento incorretamente.
 				
@@ -500,7 +498,7 @@
 		
 		A validação dos agrupamentos ocorreu por meio da comparação dos \foreign{clusters}
 		criados pelo algoritmo de agrupamento com os que foram criados pelos professores.
-		Para os professores foram entregues 50 códigos dos estudantes randomicamente
+		Para os professores foram entregues 50 códigos dos estudantes aleatoriamente
 		distribuídos e notou-se que eles ignoraram características de baixo nível.
 		Esses autores utilizaram a métrica Informação Mútua Ajustada (\ac{AMI}), cálculo
 		probabilístico, para comparar cada agrupamento dos professores com os
@@ -676,7 +674,7 @@
 		
 		\begin{figure}[ht]
 			\centering
-			\includegraphics[width=.95\textwidth]{imagem/overCode.png}
+			\includegraphics[width=1\textwidth]{imagem/overCode.png}
 			\caption[Interface da ferramenta OverCode]{Interface da ferramenta OverCode \cite{Glassman:2015}.}
 			\label{fig:interfaceOverCode}
 		\end{figure}
@@ -799,13 +797,18 @@
 		ferramenta. Caso contrário, seu uso não interferirá significativamente no
 		auxílio a correções de códigos-fontes. 
 		
+		A \cref{tab:caracPrinc} apresenta as principais características de cada trabalho
+		relacionado importantes para o desenvolvimento desse projeto. Possibilitando a
+		comparação dos tipos de análises utilizados, quais características foram
+		extraídas a partir dessas análises e qual abordagem obteve melhor desempenho.
+		Para todos trabalhos relacionados, os dados de entrada são implementações.
+		
 		% TODO: revisar tabela e deixar mais sucinta as colunas 3 (características extraídas), 5 (avaliação) e 6 (conclusões).
 			\begin{table}[h]
 				\tiny
-				\begin{tabularx}{\linewidth}{ |X|X|X|X|X|X|X| }
+				\begin{tabularx}{\linewidth}{ |X|X|X|X|X|X| }
 					\hline % Primeira linha
 					\textbf{Artigos}
-					& \textbf{Dados de entrada}
 					& \textbf{Característica extraídas dos dados de entrada}
 					& \textbf{Algoritmo para cálculo de distância ou similaridade}
 					& \textbf{Algoritmo de clusterização / Classificador}
@@ -813,7 +816,6 @@
 					& \textbf{Conclusões} \\
 					\hline % Segunda Linha
 					\citeonline{Yin:2015,Moghadam:2015:ATC,choudhury2016autostyle}
-					& Implementações
 					& Árvore de sintaxe abstrata
 					& Distância de Edição de \acs{TED} normalizada que utiliza estrutura
 					\foreign{top-down} e pontuação silhueta
@@ -824,7 +826,6 @@
 					& \acs{TED} normalizado demonstra conjuntos mais estáveis e menos discrepantes \\
 					\hline % Terceira linha
 					\citeonline{Glassman:2014}
-					& Implementações
 					& 12 características de alto nível dos elementos da linguagem e
 					instruções relacionados com laços de repetição. 48 características
 					de baixo nível envolvendo operações primitivas.
@@ -844,7 +845,6 @@
 					\foreign{cluster} do k-means e do professor \\
 					\hline % Quarta linha
 					\citeonline{Taherkhani:2012}
-					& Implementações
 					& Características extraídas com valores inteiros, específicas de
 					métodos de ordenação, do contador de \foreign{loops} e dependência
 					de informação e para reconhecer padrões para classificação.
@@ -862,7 +862,6 @@
 					erro do professor. \\
 					\hline % Quinta linha
 					\citeonline{Glassman:2015,glassman2016clustering,glassman2014interacting,glassman2013toward,glassman2013visualizing}
-					& Implementações
 					& Rastro do programa e blocos de código.
 					& Diferença entre o tamanho dos conjuntos de linhas
 					& Comparação entre conjuntos de linhas de código
@@ -872,7 +871,6 @@
 					grupo e facilita a observação da solução do problema. \\
 					\hline % Sexta linha
 					\citeonline{Wei2015}
-					& Implementações
 					& Normaliza o código e considera apenas o estilo de escrita do estudante
 					& Coeficiente de similaridade de Jaccard
 					& Algoritmo \foreign{Winnowing}
@@ -884,24 +882,20 @@
 				\label{tab:caracPrinc}
 			\end{table}
 		
-		A \cref{tab:caracPrinc} apresenta as principais características de cada trabalho
-		relacionado importantes para o desenvolvimento desse projeto. Possibilitando a
-		comparação dos tipos de análises utilizados, quais características foram
-		extraídas a partir dessas análises e qual abordagem obteve melhor desempenho.
-		
 		Ambas as abordagens que utilizaram pedaços das implementações para realizar
 		o agrupamento \cite{Glassman:2015,Wei2015} mostraram-se vantajosos pela
-		quantidade de conjuntos de linhas ou \foreign{chunks} agrupados. A renomeação
-		de variáveis comuns, obtidas por meio de casos de teste, também é interessante
-		devido ao fato de igualar as instruções que utilizam tais variáveis a fim de
-		realizar as comparações \cite{Glassman:2015}. Apesar da utilização das \acs{AST}s
-		somente em um único problema \cite{Yin:2015}, tal abordagem obteve agrupamentos
-		significativos a fim de auxiliar os professores para realizar as correções.
-		
+		quantidade de conjuntos de linhas. A renomeação de variáveis comuns, obtidas
+		por meio de casos de teste, também é interessante devido ao fato de igualar
+		as instruções que utilizam tais variáveis a fim de realizar as comparações
+		\cite{Glassman:2015}. Apesar da utilização das \acs{AST}s somente em um único
+		problema \cite{Yin:2015}, tal abordagem obteve agrupamentos significativos a
+		fim de auxiliar os professores para realizar as correções.
+				
+		% TODO: correção da conclusão do Taherkani atualizada
 		Contudo, a utilização de um algoritmo de classificação para identificar
-		implementações semelhantes \cite{Taherkhani:2012} torna-se inviável a utilização
-		da ferramenta em \acs{MOOC} que contenha diversos tipos de problema, devido a necessidade
-		de realizar o conjunto de treinamento e teste a fim de treinar o classificador.
+		implementações semelhantes \cite{Taherkhani:2012} torna inviável a utilização
+		nessa pesquisa, devido a necessidade de um grande conjuntos de implementações para
+		realizar o conjunto de treinamento e teste a fim de treinar o classificador.
 		E a abordagem utilizando dois níveis hierárquicos para agrupamento \cite{Glassman:2014}   % TODO: explicar melhor o raciocínio: não temos implementações a priori e não existe garantia que essas implementações, caso existam, sejam representativas de todas as possíveis implementações de algoritmos para a resolução de um problema. Na seção sobre características de programas, precisamos incluir um diagrama mostrando a relação entre problemas, algoritmos e implementações, deixando evidente a questão e subsidiando a resposta aqui.
 		possui um conjunto de características vasto, mas a maioria das características pode
 		ser descartada no momento do agrupamento manual realizado pelos professores.
