@@ -31,7 +31,7 @@
 	 	\end{figure}
 	 	
 	 	A \textbf{linguagem de programação} refere-se a definição de qual linguagem será
-	 	considerada para os programas a serem avaliados. Por exemplo: \texttt{C}, \texttt{Java}
+	 	considerada para as submissões a serem avaliadas. Por exemplo: \texttt{C}, \texttt{Java}
 	 	ou \texttt{Python}. Deve ser escolhida conforme a demanda da sua utilização, pela
 	 	disponibilidade de cursos de programação ofertado em \acs{MOOC}s ou pelo conhecimento
 	 	de ferramentas que possam extrair características de programas escritos nessa linguagem, como o
@@ -45,7 +45,7 @@
 	 	de análises distintas para obter um melhor resultado.
 	 	
 	 	A etapa \textbf{códigos-fontes} refere-se à construção da base de dados que será
-	 	utilizada no experimento. Tal base tem que possuir uma quantidade considerável de
+	 	utilizada no estudo. Tal base tem que possuir uma quantidade considerável de
 	 	submissões de códigos-fontes, devido a quantidade de usuários que utilizam o \acs{MOOC},
 	 	para que seja possível avaliar o desenvolvimento do projeto com uma quantidade
 	 	condizente com o número de usuários.
@@ -58,7 +58,7 @@
 	 	formato \texttt{XML} e o \texttt{CSV}, por exemplo.
 	 	
 	 	Na etapa de \textbf{cálculo da matriz de similaridade} analisam-se os dados obtidos a
-	 	fim de verificar a similaridade entre as diferentes instâncias de códigos-fontes com relação
+	 	fim de verificar a similaridade entre as diferentes instâncias de submissões com relação
 	 	às características extraídas. Isso permite a utilização de técnicas para verificar a similaridade
 	 	entre os códigos-fontes, como a similaridade do cosseno.
 	 	
@@ -106,18 +106,19 @@
 	 		
 	\section{Considerações para avaliações}
 
-		Considerando os estágios estabelecidos no método descrito na seção anterior
+		Considerando os estágios estabelecidos no método descrito na Seção anterior
 		(\ref{fig:fluxogramaProposta}), foram definidos requisitos e elementos a serem
 		empregados na avaliação dos códigos-fontes neste trabalho, apresentados
 		nas seções seguintes.
 
 		\subsection{Definição da linguagem de programação}
 		
+			% TODO: inversão dos argumentos
 			Foi definido a utilização da linguagem de programação Python. A escolha foi
-			devido ao conhecimento prévio de ferramentas que possam auxiliar na verificação
-			e extração de características, bem como a disponibilidade de cursos sobre
-			introdução a programação utilizando \texttt{Python} em diversos \acs{MOOC}s
-			e cursos de graduação.
+			devido a disponibilidade de cursos sobre introdução a programação utilizando
+			\texttt{Python} em diversos \acs{MOOC}s e cursos de graduação. Como também
+			o conhecimento prévio de ferramentas que possam auxiliar na verificação
+			e extração de características.
 
 		\subsection{Definição das características a serem extraídas}
 
@@ -161,14 +162,16 @@
 			Obtivemos as informações necessárias por meio da análise estática e do estilo de   
 			escrita com o auxílio das ferramentas \texttt{pep8} \cite{pep8} e \texttt{mccabe}
 			\cite{mccabe} que funcionam como \foreign{plugins} para o \texttt{flake8}.
-			Extraímos da análise estática, além do estilo de escrita, a quantidade de linhas do código-fonte e a complexidade ciclomática de cada \foreign{plugin}, respectivamente. Contudo, o
-			foco do \texttt{pep8} é verificar se o estilo de escrita PEP 8 \cite{van2001pep}
+			Extraímos da análise estática, além do estilo de escrita, a quantidade de linhas
+			do código-fonte e a complexidade ciclomática de cada \foreign{plugin}, respectivamente.
+			Contudo, o foco do \texttt{pep8} é verificar se o estilo de escrita PEP 8 \cite{van2001pep}
 			está sendo praticado corretamente. Por esse motivo, extraímos as características
 			relacionadas a: indentação (\cref{tab:pep8E100}); espaços em branco
 			(\cref{tab:pep8E200}); linhas em branco (\cref{tab:pep8E300}); declaração de
 			importação de bibliotecas (\cref{tab:pep8E400}); tamanho da linha (\cref{tab:pep8E500});
 			quantidade de instruções por linha e formas de instrução (\cref{tab:pep8E700}); por fim,
-			verificação de sintaxe e geração de \foreign{tokens} (\cref{tab:pep8E900}).
+			verificação de sintaxe e geração de \foreign{tokens} (\cref{tab:pep8E900}). Todas essas
+			tabelas estão presentes no \cref{apendice:pep8}.
 		
 %	A indentação possui as seguintes características: tabulações e espaços misturados;
 %	o nível não possui indentação, mas foi encontrado espaços em branco ou uma indentação,
@@ -223,7 +226,7 @@
 %	\textbf{Falta falar sobre o erro E902, mas não entendi a definição no PEP8:
 %		"Tokenize the file, run physical line checks and yield tokens."}
 	
-			A ferramenta \texttt{mccabe} \cite{mccabeabebe2013} fornece informações sobre a
+			A ferramenta \texttt{mccabe} \cite{mccabe2013} fornece informações sobre a
 			complexidade ciclomática \cite{mccabe} de cada função ou método implementado.
 			Essa complexidade é referente às estruturas de decisões implementadas \cite{mccabe},
 			ou seja, seu cálculo é realizado com base na utilização de \texttt{if/else} e laços
@@ -239,9 +242,12 @@
 			tipicamente esparsa -- possui grande quantidade de 0 (zeros). 
 			A ocorrência da grande quantidade de 0 (zeros) ocorre pela busca
 			dos programadores em implementar suas soluções computacionais corretamente.
-			Nesse tipo de situação, a similaridade do cosseno é conhecida por apresentar
-			bons resultados.
-			Além disso, ela faz com que implementações para problemas distintos não sejam
+%			Nesse tipo de situação, a similaridade do cosseno é conhecida por apresentar
+%			bons resultados.
+			% TODO: Igor pediu referência da afirmação anterior. Reformulei para a frase abaixo
+			Nesse tipo de situação, a similaridade do cosseno é mais utilizada por não
+			favorecer comparações entre 0 (zeros)~\cite{Alencar}.
+			Por isso, ela faz com que implementações para problemas distintos não sejam
 			consideradas semelhantes devido a quantidade de 0 (zeros) nas mesmas
 			características. A grande quantidade de 0 (zeros) pode ser observada na
 			\cref{fig:arquivoCSV}.
@@ -311,8 +317,8 @@
 			e leitura do arquivo, além de possibilitar a adaptação da \foreign{ScienceView}
 			para exibir a similidade de implementações desenvolvidas em outras linguagens.
 			O formato CSV (valores separados por vírgulas ou algum outro símbolo distinto)
-			é genérico o suficiente para este propósito e também facilita sua edição em \foreign{softwares}
-			de planilhas, caso queria remover uma coluna, por exemplo.
+			é genérico o suficiente para este propósito e também facilita sua edição em
+			softwares de planilhas, caso queria remover uma coluna, por exemplo.
 			
 			Para extrair as características das implementações, foi necessário a modificação
 			das ferramentas \texttt{pep8} e \texttt{flake8}. No \texttt{pep8}, alteramos o

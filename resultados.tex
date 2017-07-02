@@ -3,17 +3,25 @@
 
 	Neste capítulo, são apresentadas as avaliações da projeção e da visualização como
 	instrumento para avaliação de programas, ambos considerando um conjunto de
-	programas escritos em Python para uma disciplina introdutória à Computação.
+	programas escritos em Python para uma disciplina introdutória à Computação. A
+	\cref{sec:avalProjecao} e \cref{sec:avalQualitativa} respondem a primeira e
+	segunda questão de pesquisa, respectivamente.
 	
 	
 	\section{Descrição da base}
 	\label{sec:resultados:base-apoo}
 
-		Essa base é constituída de 152 implementações em Python de 5 problemas distintos.
-		Os desenvolvedores das implementações foram anonimizados, sendo representados por 
-		sequências de números. Os problemas tratados foram os seguintes. O primeiro exercício
-		consiste na revisão de conceitos básicos como: estruturas de condição e laço de repetição. O
-		segundo exercício define a criação de classes com mais de um construtor, e manipulação de
+		% TODO: descrição da base
+		Essa base é constituída de 152 submissões em Python de 5 problemas distintos.
+		Todas elas são oriundas de uma disciplina de programação orientada a objetos
+		com a duração de um semestre. No qual, cada aluno é representado por uma
+		sequência de números, visto que eles foram anonimizados. Os problemas
+		descritos abaixo foram aplicadas por meio de listas de exercícios durante o
+		período letivo.
+		
+		Os problemas tratados foram os seguintes. O primeiro exercício consiste na revisão
+		de conceitos básicos como: estruturas de condição e laço de repetição. O segundo
+		exercício define a criação de classes com mais de um construtor, e manipulação de
 		arquivos e cadeia de caracteres. O terceiro exercício consiste na criação das classes
 		\texttt{Palavra} e \texttt{Texto}, no qual a primeira classe deve ser utilizada na segunda
 		classe, e uma classe para gerar orações gramaticais. O quarto exercício refere-se a
@@ -23,6 +31,7 @@
 		
 	
 	\section{Avaliação da projeção com preservação de vizinhança}
+	\label{sec:avalProjecao}
 
 		A \foreign{ScienceView} utiliza a preservação da vizinhança
 		(\cref{subsubsec:vizinhanca}) para verificar a qualidade das projeções. A \cref{fig:neighborhoodAPOO30}
@@ -38,10 +47,12 @@
 		gera uma sequência de projeções, temos uma curva para cada projeção da
 		sequência.
 		
-		Por exemplo, na \cref{fig:neighborhoodAPOO30} é possível observar que as projeções no início da
+		% TODO: correção da figura e atualização do parágrafo abaixo
+		Por exemplo, na \cref{fig:neighborhoodAPOO30}, na qual cada curva representa um dos cinco
+		problemas citados anteriormente, é possível observar que as projeções no início da
 		sequência apresentam maior qualidade quando comparada as demais, como é possível observar
 		nas curvas dos problemas 3, 4 e 5. Isso é esperado, dado que, além de serem considerados
-		mais programas, os programas referentes aos problemas 3, 4 e 5 são mais complexos do que
+		mais submissões, as submissões referentes aos problemas 3, 4 e 5 são mais complexos do que
 		aqueles referentes aos problemas 1 e 2, com características mais diversificadas e difícil
 		representação com precisão no espaço 2D da projeção. 
 	
@@ -51,112 +62,128 @@
 			\caption{Qualidade da projeção, utilizando a preservação de vizinhança (\foreign{neighborhood preservation}).}
 			\label{fig:neighborhoodAPOO30}
 		\end{figure}	
-	
-		Finalmente, observa-se a precisão de 20\% para a linha (\texttt{year} $4$, obtida com 30 vizinhos para a
-		projeção considerando todos os problemas (e, consequentemente, todas as submissões). Considerando
-		outros trabalhos que utilizam esta medida para avaliação de qualidade de projeções~\cite{phd:paulovich},
-		a qualidade da projeção é adequada e compatível com outras projeções feitas com a técnica LSP e
-		similares.
-		
-		
 
+		% TODO: referência da qualidade da projeção
+		Finalmente, observa-se a precisão de 20\% para a linha $5$, obtida com 30 vizinhos
+		para a projeção considerando todos os problemas (e, consequentemente, todas as
+		submissões). Considerando outros trabalhos que utilizam esta medida para avaliação
+		de qualidade de projeções~\cite{phd:paulovich}, a qualidade da projeção é adequada
+		e compatível com outras projeções feitas com a técnica LSP e similares, visto
+		que obteve resultado semelhante aos obtidos por \citeonline{phd:paulovich}.
 	
 	\section{Avaliação qualitativa da visualização}
 	\label{sec:avalQualitativa}
 	
-		Para obter resultados qualitativos dessa pesquisa, realizamos um estudo experimental com
-		as seguintes etapas: treinamento, utilização e questionário.
+		% TODO: inserção e descrição do fluxograma
+		A \cref{fig:fluxogramaEstudo} apresenta os estágios realizados no estudo para
+		obter os resultados qualitativos dessa pesquisa. O estudo inicia-se com o
+		treinamento, seguido de duas etapas de correções das submissões utilizando a
+		ferramenta \foreign{ScienceView} e apenas a tabela de medidas (\cref{apendice:pep8}),
+		finalizando com o questionário (\cref{apendice:questionario}). A coluna a direita
+		mostra o tempo de duração em minutos de cada etapa, com exceção do questionário
+		que os voluntários responderam sem qualquer tipo de contagem de tempo.
 		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.4\linewidth]{imagem/fluxogramaEstudo}
+			\caption{Fluxograma do estudo da avaliação qualitativa da visualização}
+			\label{fig:fluxogramaEstudo}
+		\end{figure}
+		
+		% TODO: descrição do treinamento
 		O treinamento foi realizado na forma de tutorial com a apresentação dos critérios
 		de avaliação (estilo de escrita e complexidade ciclomática) e da ferramenta com
 		duração de $55$ minutos. Especificamente quanto à ferramenta, foram apresentados
 		todos os passos referentes ao seu funcionamento, desde a inserção de uma nova
-		coleção no banco de dados até a visualização das implementações com a visualização
+		coleção no banco de dados até a visualização das submissões com a visualização
 		da projeção criada a partir da coleção. Em seguida, foi apresentado como utilizar
 		a ferramenta para auxiliar na avaliação das implementações: visualizar os
 		agrupamentos formados ao longo das projeções, selecionar um determinado conjunto
 		de implementações, identificar as características semelhantes de tais grupos e
 		abrir mais de uma implementação simultaneamente. Durante o treinamento, foi utilizada uma
-		base de dados distinta da descrita na \cref{sec:resultados:base-apoo}.
+		base de dados distinta da descrita na \cref{sec:resultados:base-apoo} para não
+		enviesar o estudo.
 		
 		% TODO: informar que eles tiveram 20 minutos para avaliar trabalhos. 
-		% TODO: falar quantas pessoas foram e como elas foram organizados (dois grupos: primeiramente, um grupo avaliou de forma tradicional, com auxílio dos dados obtidos pela ScienceView-Python e o outro grupo avaliou com auxílio da ferramenta. Depois foram invertidas as intervenções. Em ambos os casos, a cada rodada de avaliações, cada participante criou um relato sobre os programas avaliados e comentários que seriam enviados para os alunos, considerando os erros identificados.)
-		Encerrado o treinamento, procedeu-se para a utilização da ferramenta com a base
-		descrita na \cref{sec:resultados:base-apoo}. Para iniciarmos essa etapa, foi
+		Encerrado o treinamento, procedeu-se para correção das submissões com a base
+		descrita na \cref{sec:resultados:base-apoo} com duração de $20$ minutos para
+		cada uma das duas etapas da correção. Para iniciarmos as correções, foi
 		pedido para que os participantes encerrassem o funcionamento da \foreign{ScienceView}
-		e a executassem com a criação da base de dados. O experimento teve participação
-		de 4 pessoas e ambos os grupos utilizaram os dados obtidos pela \foreign{ScienceView-Python}
-		\cref{sec:scienceView-Python}. Todos os contribuintes realizaram  correção manual,
-		o qual consistiu na correção somente do código-fonte sem utilizar a ferramenta, e
-		somente 3 pessoas utilizaram a ferramenta \foreign{ScienceView} para auxiliar
-		na correção. O experimento consistiu em duas etapas, todas envolvendo a correção
-		dos programas considerando os tipos de erros considerandos na extração de
-		características e a criação de um relato com os programas avaliados e comentários
-		de correção. 
+		e a executassem com a criação da base de dados. O estudo teve participação
+		de 4 pessoas, devido vossa disponibilidade, e ambos os grupos utilizaram os
+		dados obtidos pela \foreign{ScienceView-Python} (\cref{sec:scienceView-Python}).
+		Todos os contribuintes realizaram a correção manual, o qual consistiu na correção
+		somente do código-fonte, utilizando a tabela de medidas (\cref{apendice:pep8}),
+		e somente 3 pessoas utilizaram a ferramenta \foreign{ScienceView} para auxiliar
+		na correção. Essa etapa de correção consistiu em duas fases, todas envolvendo a
+		correção das submissões, considerando os tipos de erros apontados na extração
+		de características e a criação de um relato com os programas avaliados e
+		comentários de correção.
 
-		Na primeira etapa, 2 voluntários realizaram a correção manual, utilizando a planilha
-		com erros identificados pela ScienceView-Python, enquanto os outros 2
-		utilizaram a ferramenta ScienceView para auxiliar na correção. A primeira etapa deve
-		duração de 20 minutos. Na segunda etapa, um dos contribuintes que realizou a correção
-		manual passou a utilizar a \foreign{ScienceView}\footnote{O outro participante não
-		conseguiu executar a ferramenta ScienceView e não participou desta parte do estudo
-		experimental.}, enquanto os 2 que utilizaram a ferramenta
-		na etapa anterior, realizaram a correção manual durante 20 minutos. Os participantes
-		utilizaram a ferramenta sem ajuda no que já tinha sido apresentado e o
-		avaliaram por meio de um questionário. 	
+		Na primeira etapa da correção, 2 voluntários realizaram a correção manual,
+		utilizando a tabela de medidas identificados pela ScienceView-Python, enquanto
+		os outros 2 utilizaram a ferramenta ScienceView para auxiliar na correção. Na
+		segunda etapa da correção, um dos contribuintes que realizou a correção manual
+		passou a utilizar a \foreign{ScienceView}\footnote{O outro participante não
+		conseguiu executar a ferramenta ScienceView e não participou desta parte do
+		estudo.}, enquanto os 2 que utilizaram a ferramenta na etapa anterior, realizaram
+		a correção manual. Os participantes utilizaram a ferramenta sem ajuda no que já
+		tinha sido apresentado e o avaliaram por meio de um questionário. 	
+
+		\begin{figure}[b]
+			\centering
+			\includegraphics[width=1\linewidth]{imagem/projecaoFinal}
+			\caption[Visualização da projeção da base de dados gerado pela \texttt{ScienceView}]
+			{Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView}.}
+			\label{fig:projecaoFinal}
+		\end{figure}
 
 		A \cref{fig:projecaoFinal} apresenta a visualização dos agrupamentos das 152
-		implementações contidas na base de dados. Isso foi possível após a adaptação da
+		submissões contidas na base de dados. Isso foi possível após a adaptação da
 		ferramenta para leitura de arquivos no formato \texttt{CSV}. Cada ponto da
-		visualização é referente a um código-fonte. Ao clicar em um dos pontos,
+		visualização é referente a uma submissão. Ao clicar em um dos pontos,
 		uma interface exibe sua implementação e as características extraídas pela
-		\foreign{ScienceView-Python} para aquele código-fonte. Também é possível ordenar
+		\foreign{ScienceView-Python} para aquela submissão. Também é possível ordenar
 		as colunas de características \foreign{Quantity} e \foreign{Normalized} em
 		ordem  crescente ou decrescente para visualizar as características que mais
 		ocorreram. Por padrão, a tabela é apresentado ordenada de forma decrescente
 		pela coluna \foreign{Normalized}.
-	
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=1\linewidth]{imagem/projecaoFinal}
-			\caption[Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView}]
-			{Visualização dos agrupamentos da base de dados gerado pela \texttt{ScienceView}.}
-			\label{fig:projecaoFinal}
-		\end{figure}
 		
+		% TODO: Wiese levantou dúvidas quanto ao "comentário". Substitui por "avaliação" e alterei um pouco o texto
 		A \cref{tab:resultados} apresenta a quantidade de implementações que cada
-		participante corrigiu e de comentários realizados. A primeira linha identifica
+		participante corrigiu e de avaliações realizadas pelo voluntário a fim de
+		auxiliar o aluno na aprendizagem. A primeira linha identifica
 		qual participante realizou as correções e a primeira coluna indica a forma
 		de correção realizada pelos voluntários. Então, é apresentado a quantidade
 		de correções que cada participante conseguiu realizar e a quantidade de
-		comentários conforme o tipo de correção.
+		avaliações conforme o tipo de correção.
 		
 		\begin{table}[h]
 			\small
 			\begin{tabularx}{\linewidth}{|X|X|X|X|X|}
 		        \hline
 		        
-		        & Voluntário 1
-		        & Voluntário 2
-		        & Voluntário 3
-		        & Voluntário 4\\
+		        & Voluntário 1 % Bruna
+		        & Voluntário 2 % Guilherme
+		        & Voluntário 3 % Narci
+		        & Voluntário 4\\ % Wagner
 		        
 		        \hline
 		        Correção tradicional
-		        & 3 códigos-fontes e 2 comentários para correção do aluno
-		        & 4 códigos-fontes e 3 comentários para correção do aluno
-		        & 3 códigos-fontes e 2 comentários para correção do aluno
-		        & 5 códigos-fontes e 2 comentários para correção do aluno\\
+		        & 3 códigos-fontes e 3 avaliações % Bruna
+		        & 4 códigos-fontes e 20 avaliações % Guilherme
+		        & 3 códigos-fontes e 8 avaliações % Narci
+		        & 5 códigos-fontes e 11 avaliações\\ % Wagner
 		        
 		        \hline
 		        \foreign{ScienceView}
-		        & Não utilizou a ferramenta
-		        & 4 códigos-fontes e 4 comentários realizados
-		        & 3 códigos-fontes e observou que a ferramenta auxiliou no encontro dos erros de forma mais rápida.
-		        & 4 códigos-fontes e 3 comentários para correção dos alunos\\
+		        & Não utilizou a ferramenta % Bruna
+		        & 4 códigos-fontes e 4 avaliações % Guilherme
+		        & 3 códigos-fontes e observou que a ferramenta auxiliou no encontro dos erros de forma mais rápida. % Narci
+		        & 4 códigos-fontes e 8 avaliações\\ % Wagner
 		        \hline
 			\end{tabularx}
-			\caption{Quantidade de correções e comentários realizados com e sem a utilização da ferramenta}
+			\caption{Quantidade de correções e avaliações realizados com e sem a utilização da ferramenta}
 			\label{tab:resultados}
 		\end{table}
 		
@@ -167,7 +194,7 @@
 		primeira extração, selecionou apenas 2 códigos-fontes e observou que os
 		erros apresentados na tabela de erros eram semelhantes, visto que observou
 		a importação de bibliotecas entre funções ao invés de realizá-las no início
-		da implementação. Na segunda extração, selecionou 8 códigos-fontes e constatou
+		da implementação. Na segunda extração, selecionou 9 códigos-fontes e constatou
 		que os erros ocorreram nas implementações e foi compreendido corretamente
 		pela ferramenta.
 
@@ -194,29 +221,38 @@
 %			\label{fig:codigo2}
 %		\end{figure}
 		
-		Para finalizar o estudo experimental, os voluntários responderam um questionário
+	% TODO: criar seção para as respostas do questionário
+	\section{Respostas do questionário}
+		Para finalizar o estudo, os voluntários responderam um questionário
 		anonimamente. O questionário, apresentado no (\cref{apendice:questionario}),
-		contém questões
-		objetivas e	dissertativas para avaliar a qualidade do treinamento e da ferramenta.
-		Enquanto as questões objetivas visavam a qualidade do treinamento, da ferramenta e
-		se é possível utilizá-la para auxiliar na correção, as questões dissertativas
-		visam a encontrar lacunas observadas pelo participante para uma possível 
-		atualização da ferramenta.
+		contém questões objetivas e	dissertativas para sabermos algumas informações
+		profissionais do voluntário e avaliar a qualidade do treinamento e da
+		ferramenta. Enquanto as questões objetivas visavam as informações profissionais
+		e a qualidade do treinamento da ferramenta e se é possível utilizá-la para
+		auxiliar na correção, as questões dissertativas visam a encontrar lacunas
+		observadas pelo participante para uma possível atualização da ferramenta.
+		Um dos participantes não respondeu o questionário.
 		
-		A primeira questão refere-se ao tempo de experiência como professor,
-		visto que acreditávamos que essa experiência poderia interferir na quantidade
-		de correções realizadas com a ferramenta. Dentre eles, $2$ cooperadores possuem
-		menos que $1$ ano de experiência, enquanto $1$ possui mais de $10$ anos de
-		experiência como professor. Um dos participantes não respondeu o questionário.
-		Todos os respondentes afirmaram que o treinamento em forma
-		de tutorial da \foreign{ScienceView} contribui para sua utilização.
+		Sobre o nível de conhecimento em Python, $2$ voluntários afirmaram possuir
+		conhecimento intermediário sobre a linguagem de programação, enquanto $1$
+		voluntário declarou ter conhecimento básico.		
+		
+		Acreditávamos que o tempo de experiência como professor poderia interferir
+		na quantidade de correções realizadas com a ferramenta, por isso foi questionado
+		esse tempo de experiência. Dentre eles, $2$ voluntários possuem menos que $1$
+		ano de experiência, enquanto $1$ possui mais de $10$ anos de experiência como
+		professor.
+		
+		Ao serem questionados se o treinamento ajudou a utilizar a ferramenta.
+		Todos os respondentes afirmaram que o treinamento em forma de tutorial da
+		\foreign{ScienceView} contribui para sua utilização.
 		
 		Obtivemos êxito com a adaptação da interface que apresenta o código-fonte e a
 		tabela de erros, visto que, ao serem questionados se faltava
 		alguma informação nessa interface, todos responderam negativamente.
 		
 		Ao relatarem sobre o \foreign{feedback} recebido da \foreign{ScienceView}
-		por meio da visualização dos agrupamentos, 2 participantes afirmaram que
+		por meio da visualização da projeção, 2 participantes afirmaram que
 		os agrupamentos auxiliaram na verificação de implementações com características
 		similares. O outro participantes constatou a possibilidade de utilizar a
 		ferramenta em uma turma fechada de alunos a fim de verificar quais os principais
@@ -285,7 +321,7 @@
 %\subsection{Avaliação qualitativa da visualização}
 %% TODO: relatar o estudo: treinamento, instruções, questionário, resultados
 
-	\section{Ameaças a validade}
+	\section{Ameaças à validade}
 	\label{sec:ameacas}
 	
 		O treinamento realizado não foi suficiente para avaliar as implementações por meio
@@ -308,10 +344,10 @@
 		Esta era formada por 152 códigos-fontes que solucionam 5 problemas distintos, algo
 		considerado pequeno para um MOOC visto que uma das características do \ac{MOOC} é a grande
 		quantidade de usuários (\foreign{massive}). Desta forma, essa base de dados não
-		reflete ao montante de submissões que podem ocorrer em um \acs{MOOC}
+		reflete ao montante de submissões que podem ocorrer em um \acs{MOOC}.
 		
 		Outra limitação é quanto a quantidade de participantes.
-		A aplicação do experimento contou com somente $4$ pessoas, e ainda, somente $3$ pessoas
+		A aplicação do estudo contou com somente $4$ pessoas, e ainda, somente $3$ pessoas
 		utilizarem a \foreign{ScienceView}, não nos retorna nada concreto estatisticamente.
 		Para
 		viabilizar mais participantes, é necessário, além de tempo, a disponibilidade
