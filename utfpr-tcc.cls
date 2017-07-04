@@ -934,7 +934,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % References
 
-\RequirePackage[alf,abnt-full-initials=yes,abnt-missing-year=sd,abnt-doi=doi,abnt-etal-cite=2]{abntex2cite}
+\RequirePackage[alf,abnt-full-initials=yes,abnt-missing-year=sd,abnt-doi=doi,abnt-etal-cite=2,abnt-etal-list=0]{abntex2cite}
 
 % Do no use uppercase for \bibname.
 \renewenvironment{thebibliography}[1]{
