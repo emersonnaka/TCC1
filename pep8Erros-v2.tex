@@ -1,0 +1,480 @@
+\chapter{Erros do PEP8}
+\label{apendice:pep8}
+
+\lstset{resetmargins=true}
+\lstset{float=false}
+\lstset{showspaces=true}
+\lstset{showstringspaces=true}
+\lstset{frame=none}
+\lstset{aboveskip=0pt}
+\lstset{belowskip=0pt}
+\lstset{keepspaces=true}
+\lstset{tabsize=4}
+\lstset{showtabs=true}
+
+
+
+	\begin{table}
+		\scriptsize
+		\begin{tabular}{|l|p{8cm}|p{6cm}|}
+			\hline
+			\textbf{Erro}	& \textbf{Descrição}		& \textbf{Exemplo do erro} \\
+			\hline
+					&							& Correto:
+\begin{lstlisting}
+if a == 0:
+	a = 1
+b = 1
+\end{lstlisting}\\
+%			Correto: a = 1 ou if a == 0:$\backslash$n \ \ \ \ a = 1 \\
+%			Correto: a = ($\backslash$n) ou a = ($\backslash$n \ \ \ \ 42) \\
+
+			\hline
+			E101	& Indentação contém espaços e tabulações misturados	&
+\begin{lstlisting}
+if a == 0
+    a = 1
+	b = 1
+\end{lstlisting}\\
+			E111	& Nível sem indentação e foi encontrado espaços em branco &  \\
+			\hline
+			E112	& Nível com uma indentação, mas não foi encontrado uma indentação	&  \\
+			\hline
+			E113	& Nível sem indentação e foi encontrado indentação	&  \\
+			\hline
+			E114	& Nível sem indentação e foi encontrado espaços em branco e comentário de uma linha &  \\
+			\hline
+			E115	& Nível com uma indentação, mas não foi encontrado uma indentação, seguido de comentário &  \\
+			\hline
+			E116	& Nível sem indentação e foi encontrado indentação seguido de comentário &  \\
+			\hline
+			E121 	& Há espaços, porém é menos que uma tabulação (4 espaços) & 
+\begin{lstlisting}
+a =
+  42
+\end{lstlisting}\\
+			\hline
+			E122	& Sem indentação &
+\begin{lstlisting}
+a =
+42
+\end{lstlisting}\\			
+			\hline
+			E123 & Não encontra ")" ou indentação da linha com abertura de parênteses &
+%\begin{lstlisting}
+%a = (
+%42)\ \ \ \ ) ou a = ($\backslash$n \ \ \ \ 42$\backslash$n \ \ \ \ ) \\
+%\end{lstlisting}\\			
+			a = ($\backslash$n \ \ \ \ 42$\backslash$n \ \ \ \ )\\
+			\hline
+			E124 & Não encontra ")" visualmente indentado & a = (24,$\backslash$n \ \ \ \  42$\backslash$n) \\
+			\hline
+			E125 & Falta indentação na continuação da declaração
+			& if ($\backslash$n \ \ \ \ b):$\backslash$n \ \ \ \ pass \\
+			\hline
+			E126
+			& Excesso de indentação para ")"
+			& a = ($\backslash$n \ \ \ \ 42) \\
+			\hline
+			E127
+			& Excesso de indentação afim de indentar visualmente
+			& a = (24,$\backslash$n \ \ \ \   42) \\
+			\hline
+			E128
+			& Continuação da linha com limitação de indentação para indentar visualmente
+			& a = (24,$\backslash$n \ \ \ \ 42) \\
+			\hline
+			E129
+			& Linha indentada visualmente
+			& if (a or$\backslash$n \ \ \ \ b):$\backslash$n \ \ \ \ pass \\
+			\hline
+			E131
+			& unaligned for hanging indent
+			& a = ($\backslash$n \ \ \ \ 42$\backslash$n 24) \\
+			\hline
+			E133
+			& Fecha ")" e falta indentação
+			&  \\
+			\hline
+		\end{tabular}
+		\caption{Erros extraídos do estilo de escrita PEP8 referente a indentação}
+		\label{tab:pep8E100}
+	\end{table}
+
+	\begin{table}
+		\tiny
+		\begin{tabularx}{\linewidth}{ |l|X|X| }
+			\hline
+			\textbf{Erro}
+			& \textbf{Descrição}
+			& \textbf{Exemplo do erro} \\
+			\hline
+			
+			& 
+			& Correto: spam(ham[1], \{eggs: 2\}) \\ 
+			\hline
+			E201 
+			& Espaço em branco após (, [ ou \{ 
+			& spam( ham[1], \{eggs: 2\}) \\ 
+			\hline
+			E202 
+			& Espaço em branco antes de ), ] ou   
+			& spam(ham[1], \{eggs: 2\} ) \\ 
+			\hline
+			E203 
+			& Espaço em branco antes de ":", ";", "," 
+			& if x == 4: print x, y; x, y = y , x \\ 
+			\hline
+			
+			& 
+			&  \\ 
+			\hline
+			
+			& 
+			& Correto: spam(1) ou dict['key'] = list[index] \\ 
+			\hline
+			E211 
+			& Espaço em branco antes de "(" ou "[" 
+			& dict ['key'] = list[index] ou dict['key'] = list [index] \\ 
+			\hline
+			
+			& 
+			&  \\ 
+			\hline
+			
+			& 
+			& Correto: a = 12 + 3 \\ 
+			\hline
+			E221 
+			& Múltiplos espaços antes do operador 
+			& a = 4  + 5 \\ 
+			\hline
+			E222 
+			& Múltiplos espaços depois do operador 
+			& a = 4 +  5 \\ 
+			\hline
+			E223 
+			& Tabulação antes do operador 
+			& a = 4$\backslash$t+ 5 \\ 
+			\hline
+			E224 
+			& Tabulação depois do operador 
+			& a = 4 +$\backslash$t5 \\ 
+			\hline
+			
+			& 
+			&  \\ 
+			\hline
+			
+			& 
+			& Correto: foo(bar, key='word', *args, **kwargs) \\ 
+			\hline
+			E225 
+			& Falta espaço em branco em volta do operador 
+			& i=i+1 \\ 
+			\hline
+			E226 
+			& Aritmética 
+			& c = (a+b) * (a-b) ou hypot2 = x*x + y*y \\ 
+			\hline
+			E227 
+			& Bit a bit ou shift 
+			& c = a|b \\ 
+			\hline
+			E228 
+			& Modulo 
+			& msg = fmt\%(errno, errmsg) \\ 
+			\hline
+			
+			& 
+			&  \\ 
+			\hline
+			
+			& 
+			& Correto: [a, b] ou (3,) ou a[1:4] ou a[1:4:2] \\ 
+			\hline
+			E231 
+			& Não tem espaço em branco após ",", ";" e ":" 
+			& ['a','b'] \\ 
+			\hline
+			
+			& 
+			&  \\ 
+			\hline
+			
+			& 
+			& Correto: a = (1, 2) \\ 
+			\hline
+			E241 
+			& Múltiplos espaços após "," 
+			& a = (1,  2) \\ 
+			\hline
+			E242 
+			& Tabulação após "," 
+			& a = (1,$\backslash$t2) \\ 
+			\hline
+			
+			& 
+			&  \\ 
+			\hline
+			
+			& 
+			& Correto: def complex(real, imag=0.0): ou boolean(a >= b) \\ 
+			\hline
+			E251 
+			& Espaços inesperados ao redor de "=" (atribuição) 
+			& def complex(real, imag = 0.0): \\ 
+			\hline
+			
+			& 
+			&  \\ 
+			\hline
+			
+			& 
+			& Correto: x = x + 1  \# Increment x ou x = x + 1 \ \ \ \ \# Increment x \\ 
+			\hline
+			E261 
+			& Menos de dois espaços antes do comentário 
+			& x = x + 1 \# Increment x \\ 
+			\hline
+			E262 
+			& Comentário deve iniciar com \# e um espaço 
+			& x = x + 1  \#Increment x ou x = x + 1  \#  Increment x \\ 
+			\hline
+			E265 
+			& Comentário em bloco deve inicar com \# e um espaço 
+			& \#Block comment \\ 
+			\hline
+			E266 
+			& Muitos \# para o bloco de comentário 
+			& \#\#\# Block comment \\ 
+			\hline
+			
+			& 
+			&  \\ 
+			\hline
+			
+			& 
+			& Correto: True and False \\ 
+			\hline
+			E271 
+			& Múltiplos espaços antes de uma palavra reservada
+			& True and  False \\ 
+			\hline
+			E272 
+			& Múltiplos espaços depois de uma palavra reservada 
+			& True  and False \\ 
+			\hline
+			E273 
+			& Tabulação após a palavra reservada 
+			& True and$\backslash$tFalse \\ 
+			\hline
+			E274 
+			& Tabulação antes da palavra reservada 
+			& True$\backslash$tand False \\ 
+			\hline
+		\end{tabularx}
+		\caption{Erros extraídos do estilo de escrita PEP8 referente a espaços em branco}
+		\label{tab:pep8E200}
+	\end{table}
+
+	\begin{table}
+		\scriptsize
+		\begin{tabularx}{\linewidth}{ |l|X|X| }
+			\hline
+			\textbf{Erro}
+			& \textbf{Descrição}
+			& \textbf{Exemplo do erro} \\
+			\hline
+			
+			& 
+			& Correto: def a():$\backslash$n \ \ \ \ pass$\backslash$n$\backslash$n$\backslash$ndef b():$\backslash$n \ \ \ \ pass \\ 
+			\hline
+			
+			& 
+			& Correto: def a():$\backslash$n \ \ \ \ pass$\backslash$n$\backslash$n$\backslash$n\# Foo$\backslash$n\# Bar$\backslash$n$\backslash$ndef b():$\backslash$n \ \ \ \ pass \\ 
+			\hline
+			E301 
+			& Espera uma linha em branco e encontrou nenhuma 
+			& class Foo:$\backslash$n \ \ \ \ b = 0$\backslash$n \ \ \ \ def bar():$\backslash$n \ \ \ \  \ \ \ \ pass \\ 
+			\hline
+			E302 
+			& Espera duas linhas em branco e encontrou uma quantidade diferente de dois 
+			& def a():$\backslash$n \ \ \ \ pass$\backslash$n$\backslash$ndef b(n):$\backslash$n \ \ \ \ pass \\ 
+			\hline
+			E303 
+			& Muitas linhas em branco 
+			& def a():$\backslash$n \ \ \ \ pass$\backslash$n$\backslash$n$\backslash$n$\backslash$ndef b(n):$\backslash$n \ \ \ \ pass \\ 
+			\hline
+			E304 
+			& Blank lines found after function decorator - Encontrou linhas em branco após a função principal 
+			& @decorator$\backslash$n$\backslash$ndef a():$\backslash$n \ \ \ \ pass \\ 
+			\hline
+		\end{tabularx}
+		\caption{Erros extraídos do estilo de escrita PEP8 referente a linhas em branco}
+		\label{tab:pep8E300}
+	\end{table}
+
+	\begin{table}
+		\scriptsize
+		\begin{tabularx}{\linewidth}{ |l|X|X| }
+			\hline
+			\textbf{Erro}
+			& \textbf{Descrição}
+			& \textbf{Exemplo do erro} \\
+			\hline
+			
+			& 
+			& Correto: import os$\backslash$nimport sys \\ 
+			\hline
+			E401 
+			& Múltiplos import em uma linha 
+			& import sys, os \\ 
+			\hline
+		\end{tabularx}
+		\caption{Erros extraídos do estilo de escrita PEP8 referente a importação de bibliotecas}
+		\label{tab:pep8E400}
+	\end{table}
+
+	\begin{table}
+		\scriptsize
+		\begin{tabularx}{\linewidth}{ |l|X|X| }
+			\hline
+			\textbf{Erro}
+			& \textbf{Descrição}
+			& \textbf{Exemplo do erro} \\
+			\hline
+			E501 
+			& Linha com 80 caractéres ou mais 
+			& Correto: aaa = [123,$\backslash$n \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ 123] \\
+			\hline
+			& 
+			& Correto: aaa = ("bbb "$\backslash$n \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ "ccc") \\
+			\hline
+			& 
+			& Correto: aaa = "bbb " $\backslash$$\backslash$n \ \ \ \ \ \ \ \ "ccc" \\
+			\hline
+			& 
+			& Correto: aaa = 123  \# $\backslash$$\backslash$ \\
+			\hline
+			& 
+			&  \\
+			\hline
+			E502 
+			& Contrabarra é redundante entre parênteses 
+			& aaa = [123, $\backslash$$\backslash$n \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ 123] ou aaa = ("bbb " $\backslash$$\backslash$n \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ "ccc") \\
+			\hline
+		\end{tabularx}
+		\caption{Erros extraídos do estilo de escrita PEP8 referente a tamanho da instrução em caracteres}
+		\label{tab:pep8E500}
+	\end{table}
+
+	\begin{table}
+		\scriptsize
+		\begin{tabularx}{\linewidth}{ |l|X|X| }
+			\hline
+			\textbf{Erro}
+			& \textbf{Descrição}
+			& \textbf{Exemplo do erro} \\
+			\hline
+			
+			& 
+			& Correto: if foo == 'blah':$\backslash$n \ \ \ \ do\_blah\_thing() \\
+			\hline
+			
+			& 
+			& Correto: do\_one() ou do\_two() ou do\_three() \\
+			\hline
+			E701 
+			& Várias instruções em uma linha com ":" 
+			& if foo == 'blah': do\_blah\_thing() \\
+			\hline
+			E702 
+			& Múltiplas instruções em uma linha separados com ";" 
+			& do\_one(); do\_two(); do\_three() \\
+			\hline
+			E703 
+			& Declaração termina com um ";" 
+			& do\_four();  \# useless semicolon \\
+			\hline
+			
+			& 
+			&  \\
+			\hline
+			
+			& 
+			& Correto: if arg is not None: \\
+			\hline
+			E711 
+			& Comparar singleton com com operador lógico diferente
+			& if arg != None: \\
+			\hline
+			E712 
+			& Comparar singleton com com operador lógico igual
+			& if arg == True: \\
+			\hline
+			
+			& 
+			&  \\
+			\hline
+			
+			& 
+			& Correto: if x not in y:$\backslash$n \ \ \ \ pass \\
+			\hline
+			
+			& 
+			& Correto: assert (X in Y or X is Z) \\
+			\hline
+			
+			& 
+			& Correto: if not (X in Y):$\backslash$n    pass \\
+			\hline
+			
+			& 
+			& Correto: zz = x is not y \\
+			\hline
+			E713 
+			& Deve-se utilizar not in para verificar se variável está contido em outra 
+			& Z = not X in Y ou if not X.B in Y:$\backslash$n \ \ \ \ pass \\
+			\hline
+			E714 
+			& Deve-se utilizar is not para comparar objeto 
+			& if not X is Y:$\backslash$n \ \ \ \ pass ou Z = not X.B is Y \\
+			\hline
+			
+			& 
+			&  \\
+			\hline
+			
+			& 
+			& Correto: if isinstance(obj, int): \\
+			\hline
+			E721 
+			& Não comparar tipos, usar isinstance() 
+			& if type(obj) is type(1): \\
+			\hline
+		\end{tabularx}
+		\caption{Erros extraídos do estilo de escrita PEP8 referente a quantidade de instrução por linha e formas de instrução}
+		\label{tab:pep8E700}
+	\end{table}
+
+	\begin{table}
+		\scriptsize
+		\begin{tabularx}{\linewidth}{ |l|X|X| }
+			\hline
+			\textbf{Erro}
+			& \textbf{Descrição}
+			& \textbf{Exemplo do erro} \\
+			\hline
+			E901 
+			& Checa se a sintaxe é válida 
+			&  \\
+			\hline
+			E902 
+			& Tokenize the file, run physical line checks and yield tokens 
+			&  \\
+			\hline
+		\end{tabularx}
+		\caption{Erros extraídos do estilo de escrita PEP8 referente a verificação de sintaxe e geração de \foreign{tokens}}
+		\label{tab:pep8E900}
+	\end{table}
